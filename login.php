@@ -37,15 +37,15 @@
             <img class="logo-login" src="https://static.wixstatic.com/media/3cbee0_280ac02ce30f4cfba00d997e3c66b4a1~mv2.png/v1/fill/w_58,h_58,al_c,usm_0.66_1.00_0.01,enc_auto/3cbee0_280ac02ce30f4cfba00d997e3c66b4a1~mv2.png">
             <form class="form-login" action="session/session-usuario.php" method="post">
                 <div class="alinhamento-form">
-                    <label for="login">Login</label>
+                    <label for="login"><p class="label">Login</p></label>
                     <input autocomplete="off" id="login" type="text" name="emailUsuario">
-                    <label for="senha">Senha</label>
+                    <label for="senha"><p class="label">Senha</p></label>
                     <input id="senha" type="password" name="senhaUsuario">
                     <input type="submit" value="Entrar">
                 </div>
             </form>
             <div class="divisao-registrar">ou</div>
-            <p>não tem uma conta? <a href="form-cadastro/cadastro-usuario.php">registre-se</a></p>
+            <p class="pergunta">não tem uma conta? <a href="form-cadastro/cadastro-usuario.php">registre-se</a></p>
         </div>
     </div>
     <script src="javascript/login.js"></script>

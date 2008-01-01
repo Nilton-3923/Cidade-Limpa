@@ -23,7 +23,7 @@ body{
 .pesquisa > input[type=text]{
     outline:#9B9B9B solid 2px;
     border:none;
-    font-size:1.5vw;
+    font-size:1.3vw;
     width:500px;
     border-radius:40px;
     padding:20px 30px;

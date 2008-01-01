@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -15,8 +19,7 @@
            <!--Id do usuario-->
            <input type="hidden" name="txtIdUsuario" value="
                 <?php 
-                    session_start();
-                    echo $_SESSION['idUsuario'];
+                    echo $_SESSION['idUsuario'];    
                 ?>
             "> 
             <!--Titulo denuncia-->

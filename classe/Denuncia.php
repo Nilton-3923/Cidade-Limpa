@@ -233,7 +233,30 @@
         public function mostrarPontosMapa(){
             $conexao = Conexao :: pegarConexao();
 
-            $query = "SELECT coordeDenuncia, tituloDenuncia, descDenuncia, cepDenuncia, dataDenuncia FROM tbDenuncia";
+            $query = "SELECT pk_idDenuncia, coordeDenuncia, tituloDenuncia, descDenuncia, cepDenuncia, DATE_FORMAT(`dataDenuncia`,'%d/%m/%Y') as dataDenuncia, campoCategoria,imgDenuncia FROM tbDenuncia 
+                INNER JOIN tbcategoria 
+                    ON tbcategoria.pk_idCategoria = tbdenuncia.fk_idCategoria
+                        INNER JOIN tbimgdenun
+                            ON tbimgdenun.pk_idImgDenun = tbdenuncia.fk_idImgDenun
+            ";
+
+            $query = $conexao->query($query);
+            $query = $query->fetchAll();
+
+            return $query;
+        }
+
+        public function denunciaSelecionada($idDenuncia){
+            $conexao = Conexao :: pegarConexao();
+
+           
+            $query = " SELECT pk_idDenuncia, tituloDenuncia, descDenuncia, cepDenuncia, cepDenuncia, ruaDenuncia, bairroDenuncia, DATE_FORMAT(`dataDenuncia`,'%d/%m/%Y') as dataDenuncia,coordeDenuncia, campoCategoria,imgDenuncia FROM tbDenuncia 
+                INNER JOIN tbcategoria 
+                    ON tbcategoria.pk_idCategoria = tbdenuncia.fk_idCategoria 
+                        INNER JOIN tbimgdenun 
+                            ON tbimgdenun.pk_idImgDenun = tbdenuncia.fk_idImgDenun 
+                                WHERE pk_idDEnuncia = $idDenuncia
+            ";
 
             $query = $conexao->query($query);
             $query = $query->fetchAll();

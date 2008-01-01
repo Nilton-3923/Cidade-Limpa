@@ -1,3 +1,17 @@
+<?php
+    error_reporting(0);
+    session_start();
+    require_once("classe/Conexao.php");
+    require_once("classe/Denuncia.php");
+    
+
+    $pontos = new Denuncia();
+    $listaPontos = $pontos->mostrarPontosMapa();
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -47,22 +61,37 @@
             //ADCIONANDO MARCADORES POR MEIO DE ARRAY 
             //Array dos marcadores
             var markers = [
-                {
-                    coords:{lat: -23.5648, lng:-46.6518},
-                    iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-                    content:'<h1 style="color:green">Denuncia de descarte de lixo irregular</h1>'
-                            +'<p>Av Paulista</p>'
-                },
-                {
-                    coords: {lat: -23.5124, lng:-46.4108},
-                    content:'<h1 style="color: blue">Denuncia de foco de dengue</h1>'
-                            +'<p>Rua Carrossel</p>'
-                },
-                {
-                    coords:{lat: -23.4929, lng:-46.4375},
-                    content:'<h1 style="color: blue">Denuncia de foco de dengue</h1>'
-                            +'<p>Av São Miguel Paulista</p>'
+                <?php 
+                foreach ($listaPontos as $lista){
+
+                    $idDenuncia = $lista['pk_idDenuncia'];
+
+                    $titulo = $lista['tituloDenuncia'];
+                    $data = $lista['dataDenuncia'];
+                    $desc = $lista['descDenuncia'];
+                    $categoria = $lista['campoCategoria'];
+                    $img = $lista['imgDenuncia'];
+
+                    if($categoria == 'Descarte de lixo'){     
+                        $cor = "#097005";
+                    }
+                    
+                    else{
+                        $cor ="blue";
+                    }
+                ?>
+                        {
+                            coords:{<?php echo $lista['coordeDenuncia'];?>},
+                            //iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                            content:'<a style="text-decoration:none"href="denuncia-selecionada.php?idDenuncia=<?php echo $idDenuncia; ?>"><h2 style="color:<?php echo $cor; ?>"><?php echo $titulo; ?></h2>'
+                                    +'<span style="color:black"><?php echo $data;?></span>'
+                                    +'<p style="color:black"><?php echo $desc;?></p>'
+                                    +'<img style="height:150px; width:300px;"src="cadastro/<?php echo $img;?>"></a>'
+                         },
+                <?php
                 }
+                ?>
+                
             ]
 
             // Laço de repetição para percorrer os marcadores
