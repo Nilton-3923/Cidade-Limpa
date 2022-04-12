@@ -5,9 +5,15 @@ nav{
     background-color: #464646;
     height:90px;
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
-    width:100%;
+    width:100vw;
     position:absolute;
     top:0;
+}
+.link-login{
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    font-size:25px;
 }
 .navbar-parte-1{
     width:100%;
@@ -52,8 +58,9 @@ nav{
     justify-content:center;
     flex-direction: row;
 }
-.opcoes-navbar{
-    display:flex;
+.navbar-logado{
+    display:none;/* mudar para flex quando logado */
+
     cursor:pointer;
     gap:10px;
 }

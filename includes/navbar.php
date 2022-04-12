@@ -19,7 +19,10 @@
             <a href="denuncias.php">Denúncias</a>
         </div>
         <div class="navbar-parte-3">
-            <div class="opcoes-navbar">
+            <div class="navbar-deslogado">
+                <a class="link-login" href="login.php">Login</a>
+            </div>
+            <div class="navbar-logado">
                 <img class="foto-navbar circulo" src="imagens/foto-de-perfil-vazia.jpg">
                 <div class="seta">
                     <div class="linha-seta-1"></div>
