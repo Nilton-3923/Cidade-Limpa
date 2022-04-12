@@ -9,8 +9,8 @@
 </head>
 <body>
     <?php include 'includes/navbar.php'?>
-    <section>
-        
+    <section style="width:100vw;height:100vh;" class="flex-center">
+        <H1>SEM DENUNCIAS POR ENQUANTO HEHE</H1>
     </section>
 </body>
 </html>

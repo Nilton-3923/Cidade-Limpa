@@ -15,7 +15,7 @@
         </div>
         <div class="navbar-parte-2">
             <a href="index.php">Home</a>
-            <a href="#sobre">Sobre</a>
+            <a href="index.php#sobre">Sobre</a>
             <a href="denuncias.php">Denúncias</a>
         </div>
         <div class="navbar-parte-3">

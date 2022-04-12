@@ -10,7 +10,9 @@
 <body>
     <?php include 'includes/navbar.php'?>
     <section class="index-primeira-parte">
-        <img class="mapa-temporario" src="https://bordalo.observador.pt/v2/q:85/rs:fill:1440:809/c:1440:809:nowe:0:45/plain/https://s3.observador.pt/wp-content/uploads/2020/07/09182858/captura-de-ecracc83-2020-07-09-as-18-27-27.jpg">
+        <div id="parallax" class="mapa flex-center">
+            <h1>Bem-vindo ao Cidade Limpa</h1>
+        </div>
     </section>
 
     <section id="sobre" class="index-segunda-parte">
@@ -18,5 +20,6 @@
         <p>Somos  a Cidade Limpa, Somos uma plataforma dedicada á denúncias de meio ambiente humanitário .</p>
         
     </section>
+    <script src="javascript/parallax.js"></script>
 </body>
 </html>
