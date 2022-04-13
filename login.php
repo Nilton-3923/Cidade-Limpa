@@ -9,14 +9,18 @@
 </head>
 <body class="flex-center">
     <?php include 'includes/navbar.php'?>
-    <video class="video-background"src="imagens/video-background.mp4" height="150%" muted autoplay="True" loop></video>
-    <form class="form-login" action="">
-        <h1>Login</h1>
-        <div class="alinhamento-form">
-            <input type="text" placeholder="Login">
-            <input type="password" placeholder="Senha">
-            <input type="submit" value="Entrar">
+    <div class="conteudo">
+        <div class="anuncio">
+            <h1>Torne o mundo um lugar melhor!</h1>
         </div>
-    </form>
+        <form class="form-login" action="">
+            <h1>Login</h1>
+            <div class="alinhamento-form">
+                <input type="text" placeholder="Login">
+                <input type="password" placeholder="Senha">
+                <input type="submit" value="Entrar">
+            </div>
+        </form>
+    </div>
 </body>
 </html>
