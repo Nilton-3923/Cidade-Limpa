@@ -5,23 +5,36 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Denuncia</title>
+        
     </head>
     <body>
         <form action="../cadastro/cadastrarDenuncia.php" method="post" enctype="multipart/form-data">
-            <input type="text" name="categoria" placeholder="Categoria da Denúncia..."><br>
-            <input type="text" name="txtDenuncia" placeholder="Descrição da denúncia..."><br>
-            <input type="text" name="txtTituloDenuncia" placeholder="Titúlo da denúncia..."><br>
-            <input type="text" name="txtDtDenuncia" placeholder="Data da denúncia..."><br>
-            <input type="text" name="txtCepDenuncia" placeholder="CEP da denúncia..."><br>
-            <input type="text" name="txtUfDenuncia" placeholder="UF da denúncia..."><br>
-            <input type="text" name="txtLogradouroDenuncia" placeholder="Lougradouro da denúncia..."><br>
-            <input type="text" name="txtBairroDenuncia" placeholder="Bairro da denúncia..."><br>
+            
+            <!--Titulo denuncia-->
+            <input type="text" name="txtTituloDenuncia" placeholder="Titúlo"><br>
+
+            <!--Categoria da denuncia-->
+            <!--Aqui tem que ser um select-->
+            <input type="text" name="categoria" placeholder="Categoria"><br>
+
+            <!--Endereços-->
+            <input type="text" id="cep" name="txtCepDenuncia" placeholder="CEP" onblur="pesquisacep(value);><br>
+            <input type="text" id="bairro" name="txtBairroDenuncia" placeholder="Bairro"><br>
+            <input type="text" id="uf" name="txtUfDenuncia" placeholder="UF"><br>
+            <input type="text" id="logradouro" name="txtLogradouroDenuncia" placeholder="Lougradouro"><br>
+            
+            <!--Data denuncia-->
+            <input type="text" id="" name="txtDtDenuncia" placeholder="Data"><br>
+            <!--Descrição denuncia-->
+            <!--Aqui tem que ser uma área para escrever-->
+            <input type="text" name="txtDenuncia" placeholder="Descrição"><br>
+
+            <!--Imagem denuncia-->
             <label>Selcione a Foto da Denuncia</label>
             <input type="file" name="fotoDenuncia"><br>
 
-
             <input type="submit" value="cadastrar">
-
         </form>
     </body>
+    <script src="javascript/api-cep.js"></script>
 </html>

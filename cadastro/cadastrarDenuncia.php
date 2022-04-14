@@ -6,13 +6,15 @@
 
     $denuncia = new Denuncia();
 
-    $denuncia->setDescDenuncia($_POST['txtDenuncia']);
     $denuncia->setTituloDenuncia($_POST['txtTituloDenuncia']);
-    $denuncia->setDataDenuncia($_POST['txtDtDenuncia']);
+    $denuncia->setDescDenuncia($_POST['txtDenuncia']);
+
     $denuncia->setCepDenuncia($_POST['txtCepDenuncia']);
+    $denuncia->setBairroDenuncia($_POST['txtBairroDenuncia']);
+    $denuncia->setDataDenuncia($_POST['txtDtDenuncia']);
     $denuncia->setUfDenuncia($_POST['txtUfDenuncia']);
     $denuncia->setLogradouroDenuncia($_POST['txtLogradouroDenuncia']);
-    $denuncia->setBairroDenuncia($_POST['txtBairroDenuncia']);
+    
 
     echo $denuncia->denunciar($denuncia);
 
