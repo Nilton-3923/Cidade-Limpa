@@ -9,6 +9,7 @@
     </head>
     <body>
         <form action="../cadastro/cadastrarDenuncia.php" method="post" enctype="multipart/form-data">
+
             
             <!--Titulo denuncia-->
             <input type="text" name="txtTituloDenuncia" placeholder="Titúlo"><br>
