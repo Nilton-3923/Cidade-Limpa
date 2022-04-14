@@ -8,7 +8,11 @@
     </head>
     <body>
         <form action="../cadastro/cadastrarDenuncia.php" method="post" enctype="multipart/form-data">
-            <input type="text" name="categoria" placeholder="Categoria da Denúncia..."><br>
+      '     <select name="categoria" id="">
+                <option value="Descarte de Lixo">Descarte de Lixo</option>
+                <option value="Caso de Dengue">Casos de Dengue</option>
+            </select>
+           
             <input type="text" name="txtDenuncia" placeholder="Descrição da denúncia..."><br>
             <input type="text" name="txtTituloDenuncia" placeholder="Titúlo da denúncia..."><br>
             <input type="text" name="txtDtDenuncia" placeholder="Data da denúncia..."><br>
