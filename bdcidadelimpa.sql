@@ -40,13 +40,15 @@ CREATE TABLE `tbcategoria` (
 
 CREATE TABLE `tbdenuncia` (
   `pk_idDenuncia` int(11) NOT NULL,
-  `descDenuncia` varchar(255) NOT NULL,
   `tituloDenuncia` varchar(30) NOT NULL,
+  `descDenuncia` varchar(255) NOT NULL,
   `dataDenuncia` date NOT NULL,
   `ufDenuncia` varchar(2) NOT NULL,
   `logradouroDenuncia` varchar(30) DEFAULT NULL,
   `bairroDenuncia` varchar(50) NOT NULL,
   `cepDenuncia` varchar(8) DEFAULT NULL,
+  `ruaDenuncia` varchar(50) DEFAULT NULL,
+  `cidadeDenuncia` varchar(50) DEFAULT NULL,
   `fk_idImgDenun` int(11) DEFAULT NULL,
   `fk_idUsuario` int(11) DEFAULT NULL,
   `fk_idCategoria` int(11) DEFAULT NULL
