@@ -13,14 +13,19 @@
         <div class="anuncio">
             <h1>Torne o mundo um lugar melhor!</h1>
         </div>
-        <form class="form-login" action="">
-            <h1>Login</h1>
-            <div class="alinhamento-form">
-                <input type="text" placeholder="Login">
-                <input type="password" placeholder="Senha">
-                <input type="submit" value="Entrar">
-            </div>
-        </form>
+        <div class="login">
+            <h1>Cidade Limpa</h1>
+            <form class="form-login" action="">
+                <h2>Login</h2>
+                <div class="alinhamento-form">
+                    <label for="login">Login</label>
+                    <input id="login" type="text">
+                    <label for="senha">Senha</label>
+                    <input id="senha" type="password">
+                    <input type="submit" value="Entrar">
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>
