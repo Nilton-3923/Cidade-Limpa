@@ -13,32 +13,35 @@ body{
     height:100%;
 }
 .anuncios{  
+    display: flex;
+    flex-direction: row;
     transition: all 2s;
-    width:100%;
+    width:55%;
+}
+.anuncios > div >img{
+    width:1000px;
 }
 .anuncio1{
+    position: relative;
     width:100%;
     height:100%;
-    background:url(../imagens/anuncio-login.jpg);
-    background-size: cover;
 }
 .anuncio2{
+    position: relative;
     width:100%;
     height:100%;
-    background:url(../imagens/anuncio-login.jpg);
-    background-size: cover;
+    
 }
 .anuncio3{
+    position: relative;
     width:100%;
     height:100%;
-    background:url(../imagens/anuncio-login.jpg);
-    background-size: cover;
 }
 .anuncio-tamanho{
     height:1000px;
 }
-.anuncio1 > h1{
-    background:linear-gradient(to bottom, rgb(0, 207, 243) 50%,rgb(0, 255, 42) 50%);
+.texto-anuncio{
+    background:rgb(0, 207, 243);
     font-weight: 700;
     border-radius:8px;
     padding:5px;
@@ -46,32 +49,8 @@ body{
     width:300px;
     color:rgb(255, 255, 255);
     font-size:35px;
-    position:relative;
-    top:50px;
-}
-.anuncio2 > h1{
-    background:linear-gradient(to bottom, rgb(0, 207, 243) 50%,rgb(0, 255, 42) 50%);
-    font-weight: 700;
-    border-radius:8px;
-    padding:5px;
-    text-align: center;
-    width:300px;
-    color:rgb(255, 255, 255);
-    font-size:35px;
-    position:relative;
-    top:50px;
-}
-.anuncio3 > h1{
-    background:linear-gradient(to bottom, rgb(0, 207, 243) 50%,rgb(0, 255, 42) 50%);
-    font-weight: 700;
-    border-radius:8px;
-    padding:5px;
-    text-align: center;
-    width:300px;
-    color:rgb(255, 255, 255);
-    font-size:35px;
-    position:relative;
-    top:50px;
+    position:absolute;
+    bottom:250px;
 }
 
 .login{
@@ -79,6 +58,7 @@ body{
     z-index:15;
     font-size:18px;
     background-color:#94F250;
+    width:45%;
     height:100%;
     display:flex;
     flex-direction: column;
@@ -96,7 +76,7 @@ body{
     align-items: center;
     justify-content: center;
     padding-top:100px;
-    margin:0 150px;
+    padding:0 200px;
 
     width:350px;
     height:400px;

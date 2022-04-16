@@ -12,13 +12,16 @@
     <div class="conteudo">
         <div id="anuncios" class="anuncios">
             <div class="anuncio1 anuncio-tamanho flex-center">
-                <h1>1<h1>
+                <img src="imagens/anuncio1.jpg" >
+                <h1 class="texto-anuncio">1</h1>
             </div>
             <div class="anuncio2 anuncio-tamanho flex-center">
-                <h1>2</h1>
+                <img src="imagens/anuncio2.jpg" >
+                <h1 class="texto-anuncio">2</h1>
             </div>
             <div class="anuncio3 anuncio-tamanho flex-center">
-                <h1>3</h1>
+                <img src="imagens/anuncio3.jpg" >
+                <h1 class="texto-anuncio">3</h1>
             </div>
         </div>
         <div class="login">

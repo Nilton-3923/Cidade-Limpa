@@ -1,10 +1,12 @@
-var anuncios = document.getElementById('anuncios');
-var somador = 0;
+const anuncios = document.getElementById('anuncios');
+const img = document.querySelectorAll('img');
+let idx = 0;
 
 setInterval(()=>{
-    if(somador > 1999){
-        somador = -1000;
+    idx++;
+
+    if(idx > img.length - 4){
+        idx = 0;
     }
-    somador += 0;
-    anuncios.style.transform='translateY(-'+somador+'px)';
-},2000)
+    anuncios.style.transform='translateX(-'+idx*1000+'px)';
+},4000)
