@@ -16,3 +16,9 @@ body{
 .circulo{
     border-radius:50%;
 }
+.-div-{
+    width:80%;
+    height:2px;
+    background-color:#464646;
+    border-radius:15px;
+}

@@ -1,31 +1,43 @@
 body{
-    padding-top:90px;
+    
     background-color:white!important;
     width:100vw;
-    height:90vh;
+    height:100vh;
     position:relative;
     overflow: hidden;
 }
 .conteudo{
+    display: flex;
     position:absolute;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
     width:100%;
     height:100%;
 }
-.anuncio{
+.anuncios{  
+    transition: all 2s;
+    width:100%;
+}
+.anuncio1{
+    width:100%;
+    height:100%;
     background:url(../imagens/anuncio-login.jpg);
     background-size: cover;
-    display:flex;
-    align-items: end;
-    justify-content: center;
-    flex-direction: row;
-
+}
+.anuncio2{
     width:100%;
     height:100%;
+    background:url(../imagens/anuncio-login.jpg);
+    background-size: cover;
 }
-.anuncio > h1{
+.anuncio3{
+    width:100%;
+    height:100%;
+    background:url(../imagens/anuncio-login.jpg);
+    background-size: cover;
+}
+.anuncio-tamanho{
+    height:1000px;
+}
+.anuncio1 > h1{
     background:linear-gradient(to bottom, rgb(0, 207, 243) 50%,rgb(0, 255, 42) 50%);
     font-weight: 700;
     border-radius:8px;
@@ -35,17 +47,46 @@ body{
     color:rgb(255, 255, 255);
     font-size:35px;
     position:relative;
-    bottom:150px;
+    top:50px;
 }
+.anuncio2 > h1{
+    background:linear-gradient(to bottom, rgb(0, 207, 243) 50%,rgb(0, 255, 42) 50%);
+    font-weight: 700;
+    border-radius:8px;
+    padding:5px;
+    text-align: center;
+    width:300px;
+    color:rgb(255, 255, 255);
+    font-size:35px;
+    position:relative;
+    top:50px;
+}
+.anuncio3 > h1{
+    background:linear-gradient(to bottom, rgb(0, 207, 243) 50%,rgb(0, 255, 42) 50%);
+    font-weight: 700;
+    border-radius:8px;
+    padding:5px;
+    text-align: center;
+    width:300px;
+    color:rgb(255, 255, 255);
+    font-size:35px;
+    position:relative;
+    top:50px;
+}
+
 .login{
-    font-size:25px;
+    position: relative;
+    z-index:15;
+    font-size:18px;
     background-color:#94F250;
-    width:100%;
     height:100%;
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.logo-login{
+    width:150px;
 }
 .form-login{
     color:#464646;
@@ -55,6 +96,7 @@ body{
     align-items: center;
     justify-content: center;
     padding-top:100px;
+    margin:0 150px;
 
     width:350px;
     height:400px;
@@ -62,9 +104,16 @@ body{
 .form-login > h2{
     color:black;
     position:relative;
-    bottom:75px;
+    bottom:55px;
 }
-
+label[for="login"]{
+    margin-left:5px;
+    font-size:15px;
+}
+label[for="senha"]{
+    margin-left:5px;
+    font-size:15px;
+}
 .alinhamento-form{
     display: flex;
     flex-direction: column;
@@ -82,6 +131,7 @@ body{
     border-bottom:#464646 2px solid;
 }
 .alinhamento-form > input[type=submit]{
+    margin:25px 0;
     transition: all .2s;
     cursor:pointer;
     font-size:20px;
@@ -97,4 +147,30 @@ body{
 .alinhamento-form > input[type=submit]:hover{
     color:white;
     background-color:#35bcf2d8;
+}
+#login{
+    margin-bottom:15px;
+}
+.divisao-registrar{
+    margin:25px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:22px;
+}
+.divisao-registrar::before{
+    content:'';
+    display:flex;
+    width:150px;
+    height:2px;
+    border-radius:20px;
+    background-color:#46464688;
+}
+.divisao-registrar::after{
+    content:'';
+    display:flex;
+    width:150px;
+    height:2px;
+    border-radius:20px;
+    background-color:#46464688;
 }

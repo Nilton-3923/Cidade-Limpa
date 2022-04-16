@@ -10,22 +10,33 @@
 <body class="flex-center">
     <?php include 'includes/navbar.php'?>
     <div class="conteudo">
-        <div class="anuncio">
-            <h1>Torne o mundo um lugar melhor!</h1>
+        <div id="anuncios" class="anuncios">
+            <div class="anuncio1 anuncio-tamanho flex-center">
+                <h1>1<h1>
+            </div>
+            <div class="anuncio2 anuncio-tamanho flex-center">
+                <h1>2</h1>
+            </div>
+            <div class="anuncio3 anuncio-tamanho flex-center">
+                <h1>3</h1>
+            </div>
         </div>
         <div class="login">
-            <h1>Cidade Limpa</h1>
+            <img class="logo-login" src="https://static.wixstatic.com/media/3cbee0_280ac02ce30f4cfba00d997e3c66b4a1~mv2.png/v1/fill/w_58,h_58,al_c,usm_0.66_1.00_0.01,enc_auto/3cbee0_280ac02ce30f4cfba00d997e3c66b4a1~mv2.png">
             <form class="form-login" action="">
                 <h2>Login</h2>
                 <div class="alinhamento-form">
                     <label for="login">Login</label>
-                    <input id="login" type="text">
+                    <input autocomplete="off" id="login" type="text">
                     <label for="senha">Senha</label>
                     <input id="senha" type="password">
                     <input type="submit" value="Entrar">
                 </div>
             </form>
+            <div class="divisao-registrar">ou</div>
+            <p>não tem uma conta? <a href="registrar.php">registre-se</a></p>
         </div>
     </div>
+    <script src="javascript/login.js"></script>
 </body>
 </html>
