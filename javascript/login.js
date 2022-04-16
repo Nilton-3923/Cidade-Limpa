@@ -1,12 +1,14 @@
-const anuncios = document.getElementById('anuncios');
-const img = document.querySelectorAll('img');
+const imgs = document.getElementById('img');
+const img = document.querySelectorAll('#img img');
 let idx = 0;
 
 setInterval(()=>{
     idx++;
 
-    if(idx > img.length - 4){
+    if(idx > img.length - 1){
         idx = 0;
     }
-    anuncios.style.transform='translateX(-'+idx*1000+'px)';
-},4000)
+    imgs.style.transform='translateX(-'+idx*65+'vw)';
+    
+
+},4500)

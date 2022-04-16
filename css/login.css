@@ -1,6 +1,6 @@
 body{
     
-    background-color:white!important;
+    background-color:#ebe9e9!important;
     width:100vw;
     height:100vh;
     position:relative;
@@ -12,45 +12,24 @@ body{
     width:100%;
     height:100%;
 }
-.anuncios{  
-    display: flex;
-    flex-direction: row;
-    transition: all 2s;
+
+
+.carroussel{
     width:55%;
-}
-.anuncios > div >img{
-    width:1000px;
-}
-.anuncio1{
-    position: relative;
-    width:100%;
     height:100%;
+
 }
-.anuncio2{
-    position: relative;
-    width:100%;
-    height:100%;
-    
+.container-carroussel{
+    display:flex;
+    transition:all 1.5s;
+    transform:translateX(0);
 }
-.anuncio3{
-    position: relative;
-    width:100%;
-    height:100%;
-}
-.anuncio-tamanho{
-    height:1000px;
-}
-.texto-anuncio{
-    background:rgb(0, 207, 243);
-    font-weight: 700;
-    border-radius:8px;
-    padding:5px;
-    text-align: center;
-    width:300px;
-    color:rgb(255, 255, 255);
-    font-size:35px;
-    position:absolute;
-    bottom:250px;
+
+.container-carroussel > img{
+    object-fit:cover;
+    width:85vw;
+    height:100vh;
+
 }
 
 .login{

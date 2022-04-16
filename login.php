@@ -10,19 +10,13 @@
 <body class="flex-center">
     <?php include 'includes/navbar.php'?>
     <div class="conteudo">
-        <div id="anuncios" class="anuncios">
-            <div class="anuncio1 anuncio-tamanho flex-center">
+        <div class="carroussel">
+            <div id="img" class="container-carroussel">
                 <img src="imagens/anuncio1.jpg" >
-                <h1 class="texto-anuncio">1</h1>
-            </div>
-            <div class="anuncio2 anuncio-tamanho flex-center">
                 <img src="imagens/anuncio2.jpg" >
-                <h1 class="texto-anuncio">2</h1>
-            </div>
-            <div class="anuncio3 anuncio-tamanho flex-center">
                 <img src="imagens/anuncio3.jpg" >
-                <h1 class="texto-anuncio">3</h1>
             </div>
+              
         </div>
         <div class="login">
             <img class="logo-login" src="https://static.wixstatic.com/media/3cbee0_280ac02ce30f4cfba00d997e3c66b4a1~mv2.png/v1/fill/w_58,h_58,al_c,usm_0.66_1.00_0.01,enc_auto/3cbee0_280ac02ce30f4cfba00d997e3c66b4a1~mv2.png">
