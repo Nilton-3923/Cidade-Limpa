@@ -29,7 +29,7 @@
         function initMap(){
             // Opções para o mapa
             var options = {
-                zoom: 11,
+                zoom: 12,
                 center:{lat:-23.5489,lng:-46.6388},
                 styles:[{
                             "featureType": "poi",

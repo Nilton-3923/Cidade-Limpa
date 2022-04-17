@@ -20,7 +20,7 @@ function img3_(){
     img3.style.opacity="1"
 }
 
-const delay = 2; // <=== CONTROLA O DELAY POR AQUI 
+const delay = 5; // <=== CONTROLA O DELAY POR AQUI 
 const delayEmSegundos = delay * 1000
 
 function carroussel(){
@@ -37,7 +37,7 @@ function carroussel(){
     return delayEmSegundos;
 }
 
-const delayDoCarrossel = delayEmSegundos * 4; //AQUI O DELAY DO CARROSSEL
+const delayDoCarrossel = delayEmSegundos * 6; //AQUI O DELAY DO CARROSSEL
 
 carroussel();
 setInterval(()=>{
