@@ -11,10 +11,16 @@
     <?php include 'includes/navbar.php'?>
     <div class="conteudo">
         <div class="carroussel">
-            <div id="img" class="container-carroussel">
-                <img src="imagens/anuncio1.jpg" >
-                <img src="imagens/anuncio2.jpg" >
-                <img src="imagens/anuncio3.jpg" >
+            <div class="container-carroussel">
+                <div id="img3" style="display:flex;align-items:center;justify-content:center;">
+                    <img src="imagens/anuncio3.jpg" >
+                </div>
+                <div id="img2" style="display:flex;align-items:center;justify-content:center;">
+                    <img src="imagens/anuncio2.jpg" >
+                </div>
+                <div id="img1" style="display:flex;align-items:center;justify-content:center;">
+                    <img src="imagens/anuncio1.jpg" >
+                </div>
             </div>
               
         </div>

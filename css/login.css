@@ -20,17 +20,21 @@ body{
 
 }
 .container-carroussel{
-    display:flex;
-    transition:all 1.5s;
-    transform:translateX(0);
+    position:relative;
 }
 
-.container-carroussel > img{
-    object-fit:cover;
-    width:85vw;
+#img1,#img2,#img3{
+    background-color: white;
+    position:absolute;
+    transition:all .5s;
+    width:100%;
     height:100vh;
-
 }
+#img1 > img, #img2 > img, #img3 > img{
+    width:100%;
+    height:100%;
+}
+
 
 .login{
     position: relative;
