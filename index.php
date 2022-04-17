@@ -12,12 +12,9 @@
     <?php include 'includes/navbar.php'?>
 
     <section class="index-primeira-parte">
-
         <!--Adicionando o maps-->
-        <div id="map">
-            <h1>Bem-vindo ao Cidade Limpa</h1>
-        </div>
-
+        <h1 class="texto">MAPA DE DENUNCIAS</h1>
+        <div id="map"></div>
     </section>
 
     <section id="sobre" class="index-segunda-parte">
