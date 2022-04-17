@@ -8,6 +8,8 @@
         
     </head>
     <body>
+
+    <span id="mensagem" style="opacity:0;color:red;display:none">*Endereço invalido</span>
         <form action="../cadastro/objeto-cadastro-denuncia.php" method="post" enctype="multipart/form-data">
 
             
@@ -16,32 +18,50 @@
 
             <!--Categoria da denuncia-->
             <!--Aqui tem que ser um select-->
-            <select name="categoria" id="">
+            <select name="categoria" id="categoria">
+                <option disabled selected>Categoria da denuncia</option>
                 <option value="Descarte de Lixo">Descarte de Lixo</option>
-                <option value="Caso de Dengue">Casos de Dengue</option>
+                <option value="Casos de Dengue">Casos de Dengue</option>
             </select><br>
            
-
             <!--Endereços-->
-            <input type="text" id="cep" name="txtCepDenuncia" placeholder="CEP" onblur="pesquisacep(value)";><br>
-            <input type="text" id="bairro" name="txtBairroDenuncia" placeholder="Bairro"><br>
-            <input type="text" id="uf" name="txtUfDenuncia" placeholder="UF"><br>
-            <input type="text" id="logradouro" name="txtLogradouroDenuncia" placeholder="Lougradouro"><br>
-            <input type="text" id="rua" name="txtRuaDenuncia" placeholder="Rua"><br>
-            <input type="text" id="cidade" name="txtCidadeDenuncia" placeholder="Cidade"><br>
+            <input type="text" id="cep" name="txtCepDenuncia" placeholder="CEP";><br>
+            <input type="text" id="bairro" name="txtBairroDenuncia" placeholder="Bairro" disabled><br>
+            <input type="text" id="rua" name="txtRuaDenuncia" placeholder="Rua" disabled><br>
+            <input type="text" id="cidade" name="txtCidadeDenuncia" placeholder="Cidade" disabled><br>
+            <input type="text" id="uf" name="txtUfDenuncia" placeholder="UF" disabled><br>
+
+            <input type="text" id="numero" name="txtNumeroDenuncia" placeholder="Número"><br>
+            <!--Região-->
+
+            <select name="regiao" id="regiao">
+                <option disabled selected>Regiões de São Paulo</option>
+                <option value="Zona Leste">Zona Leste</option>
+                <option value="Zona Norte">Zona Norte</option>
+                <option value="Zona Sul">Zona Sul</option>
+                <option value="Zona Oeste">Zona Oeste</option>
+            </select><br>
+
             
             <!--Data denuncia-->
-            <input type="text" id="" name="txtDtDenuncia" placeholder="Data"><br>
+            <input type="hidden" id="data" name="txtDtDenuncia" 
+            value="      
+                <?php
+                date_default_timezone_set('America/Sao_Paulo');
+                echo date('d/m/Y');
+                ?>
+            ">
             <!--Descrição denuncia-->
             <!--Aqui tem que ser uma área para escrever-->
-            <input type="text" name="txtDenuncia" placeholder="Descrição"><br>
-
+            <textarea name="txtDenuncia" id="denuncia" cols="25" rows="5" placeholder="Descrição"></textarea>
+            <br>
             <!--Imagem denuncia-->
-            <label>Selcione a Foto da Denuncia</label>
+            <label>Selecione a Foto da Denuncia</label>
             <input type="file" name="fotoDenuncia"><br>
 
             <input type="submit" value="cadastrar">
         </form>
+  
     </body>
-    <script src="javascript/api-cep.js"></script>
+    <script src="../javascript/api-cep.js"></script>
 </html>

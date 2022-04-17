@@ -1,48 +1,50 @@
-function meu_callback(conteudo) {
-    if (!("erro" in conteudo)) {
-        //Atualiza os campos com os valores.
-   
-        document.getElementById('bairro').value=(conteudo.bairro);
-        document.getElementById('uf').value=(conteudo.uf);
-  
-    } //end if.
-    else {
-        //CEP não Encontrado.
-        limpa_formulário_cep();
-        alert("CEP não encontrado.");
+'use strict';
+
+const limparFormulario = (endereco) =>{
+    document.getElementById('bairro').value ="";
+    document.getElementById('rua').value ="" ;
+    document.getElementById('cidade').value ="";
+    document.getElementById('uf').value ="";
+}
+
+const preencherFormulario = (endereco) =>{
+    document.getElementById('bairro').value = endereco.bairro;
+    document.getElementById('rua').value = endereco.logradouro;
+    document.getElementById('cidade').value = endereco.localidade;
+    document.getElementById('uf').value = endereco.uf;
+}
+
+const isNumber = (numero) =>  /^[0-9]+$/.test(numero);
+const cepValido = (cep) => cep.length == 8 && isNumber(cep);
+
+
+const mensagem = document.getElementById('mensagem');
+
+const pesquisarCep = async() =>{
+
+    limparFormulario();
+    const cep = document.getElementById('cep').value;
+    const url = `http://viacep.com.br/ws/${cep}/json/`;
+
+    if(cepValido(cep)){
+        const dados = await fetch(url);
+        const endereco = await dados.json();
+        
+        if(endereco.hasOwnProperty('erro')){
+            mensagem.style.opacity='1';    
+            mensagem.style.display='block';       
+        }else{
+            mensagem.style.opacity='0';    
+            mensagem.style.display='none';       
+            preencherFormulario(endereco);
+        }    
+    }else{
+        mensagem.style.display='block';       
+        mensagem.style.opacity='1';       
     }
 }
 
 
+document.getElementById('cep')
+        .addEventListener('focusout', pesquisarCep);
 
-
-function pesquisarcep(valor){
-    //Nova variável 'cep' somente com digitos
-    var cep = valor.replace(/\D/g,'');
-
-    if(cep != ""){
-        //Expressão regular para validar o CEP.
-        var validacep = /^[0-9]{8}$/;
-
-        //Validando o formato do cep
-        if(validadecep.test(cep)){
-
-            //Prechendo os campos com '...' enquano consulta webservice
-
-            document.getElementById('bairro').value="...";
-            document.getElementById('uf').value="...";
-            document.getElementById('logradouro').value="...";
-
-            //Cria um elemento javascript.
-            var script = document.createElement('script');
-
-            //Sincroniza com o callback.
-            script.src = 'https://viacep.com.br/ws/'+ cep + '/json/';
-
-            //Insere script no documento e carrega o conteúdo.
-            document.body.appendChild(script);
-
-
-        }
-    }
-}
