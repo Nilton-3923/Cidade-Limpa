@@ -11,6 +11,7 @@
     <?php include 'includes/navbar.php'?>
     <section class="index-primeira-parte">
         <div id="parallax" class="mapa flex-center">
+            <!--AIzaSyD5opbRMRKjMKTKajH2CdyKJCIsqOdwdUI-->
             <h1>Bem-vindo ao Cidade Limpa</h1>
         </div>
     </section>
@@ -20,6 +21,20 @@
         <p>Somos  a Cidade Limpa, Somos uma plataforma dedicada á denúncias de meio ambiente humanitário .</p>
         
     </section>
+
+    <div id="map" style="height:300; width:300; background:red"></div>
+
     <script src="javascript/parallax.js"></script>
+            <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5opbRMRKjMKTKajH2CdyKJCIsqOdwdUI">
+                function initMap() {
+                    const uluru = { lat: -25.363, lng: 131.044 };
+                    const map = new google.maps.Map(document.getElementById("map"), {
+                        zoom: 4,
+                        center: uluru,
+                    });
+                    window.initMap = initMap;
+
+            </script>
 </body>
 </html>
