@@ -39,7 +39,7 @@ function carroussel(){
 
 const delayDoCarrossel = delayEmSegundos * 4; //AQUI O DELAY DO CARROSSEL
 
-carroussel();
+
 setInterval(()=>{
     carroussel();
 },delayDoCarrossel)
