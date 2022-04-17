@@ -30,7 +30,15 @@
             // Opções para o mapa
             var options = {
                 zoom: 11,
-                center:{lat:-23.5489,lng:-46.6388}
+                center:{lat:-23.5489,lng:-46.6388},
+                styles:[{
+                            "featureType": "poi",
+                            "stylers": [{
+                                "visibility": "off"
+                            }],
+                            
+
+                        }]
             }
             // New Map
             var map = new
@@ -43,14 +51,17 @@
                     coords:{lat: -23.5648, lng:-46.6518},
                     iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
                     content:'<h1 style="color:green">Denuncia de descarte de lixo irregular</h1>'
+                            +'<p>Av Paulista</p>'
                 },
                 {
                     coords: {lat: -23.5124, lng:-46.4108},
                     content:'<h1 style="color: blue">Denuncia de foco de dengue</h1>'
+                            +'<p>Rua Carrossel</p>'
                 },
                 {
                     coords:{lat: -23.4929, lng:-46.4375},
                     content:'<h1 style="color: blue">Denuncia de foco de dengue</h1>'
+                            +'<p>Av São Miguel Paulista</p>'
                 }
             ]
 
@@ -66,6 +77,7 @@
                         position:props.coords,
                         map: map,
                         icon:props.iconImage,
+                        
                 });
 
                 //Checando se o marcador está customizado
