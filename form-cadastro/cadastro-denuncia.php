@@ -26,14 +26,15 @@
            
             <!--Endereços-->
             <input type="text" id="cep" name="txtCepDenuncia" placeholder="CEP";><br>
+            <!--API do cep já preenche automaticamente-->
             <input type="text" id="bairro" name="txtBairroDenuncia" placeholder="Bairro" disabled><br>
             <input type="text" id="rua" name="txtRuaDenuncia" placeholder="Rua" disabled><br>
             <input type="text" id="cidade" name="txtCidadeDenuncia" placeholder="Cidade" disabled><br>
             <input type="text" id="uf" name="txtUfDenuncia" placeholder="UF" disabled><br>
-
+            <!--Número da casa-->
             <input type="text" id="numero" name="txtNumeroDenuncia" placeholder="Número"><br>
+            
             <!--Região-->
-
             <select name="regiao" id="regiao">
                 <option disabled selected>Regiões de São Paulo</option>
                 <option value="Zona Leste">Zona Leste</option>

@@ -10,14 +10,16 @@
         <form action="../cadastro/objeto-cadastro-usuario.php" enctype="multipart/form-data" method="post">
             <label>Digite seu nome:</label>
             <input type="text" name="txtNome"><br>
-            <label>Sobrenome:</label>
-            <input type="text" name="txtSobreNome"><br>
+
             <label>Digite seu Email:</label>
             <input type="text" name="txtEmail"><br>
-            <label>Informe seu Cep:</label>
+
+            <label>Informe seu CEP:</label>
             <input type="text" name="txtCep"><br>
+
             <label>Digite sua senha:</label>
             <input type="text" name="txtSenha"><br>
+            
             <label>Cadastre sua Foto:</label>
             <input type="file" name="fotoUsuario"><br>
 
