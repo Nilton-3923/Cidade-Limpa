@@ -13,11 +13,13 @@
     $denuncia->setBairroDenuncia($_POST['txtBairroDenuncia']);
     $denuncia->setRuaDenuncia($_POST['txtRuaDenuncia']);
     $denuncia->setCidadeDenuncia($_POST['txtCidadeDenuncia']);
-    $denuncia->setDataDenuncia($_POST['txtDtDenuncia']);
     $denuncia->setUfDenuncia($_POST['txtUfDenuncia']);
-    $denuncia->setLogradouroDenuncia($_POST['txtLogradouroDenuncia']);
     
+    $denuncia->setDataDenuncia($_POST['txtDtDenuncia']);
+
+    $denuncia->setIdUsuario($_POST['txtIdUsuario']);
 
     echo $denuncia->denunciar($denuncia);
 
+    header ("Location: ../area-restrita-usuario/index-restrita.php");
 ?>

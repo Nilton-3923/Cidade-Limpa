@@ -4,45 +4,28 @@
     class Denuncia{
 
         private $idDenuncia;
+
         private $descDenuncia;
         private $tituloDenuncia;
         private $dataDenuncia;
-        private $ufDenuncia;
-        private $logradouroDenuncia;
-        private $bairroDenuncia;
+
         private $cepDenuncia;
+        private $ufDenuncia;
+        private $bairroDenuncia;
+        private $ruaDenuncia;
+        private $cidadeDenuncia;
+
         private $idImagemDenuncia;
         private $idUsuario;
         private $idCategoria;
 
-        private $ruaDenuncia;
-        private $cidadeDenuncia;
 
 
         //Métodos Getters
+
+        # PK e FK
         public function getIdDenuncia(){
             return $this->idDenuncia;
-        }
-        public function getDescDenuncia(){
-            return $this->descDenuncia;
-        }
-        public function getTituloDenuncia(){
-            return $this->tituloDenuncia;
-        }
-        public function getDataDenuncia(){
-            return $this->dataDenuncia;
-        }
-        public function getUfDenuncia(){
-            return $this->ufDenuncia;
-        }
-        public function getLogradouroDenuncia(){
-            return $this->logradouroDenuncia;
-        }
-        public function getBairroDenuncia(){
-            return $this->bairroDenuncia;
-        }
-        public function getCepDenuncia(){
-            return $this->cepDenuncia;
         }
         public function getIdImagemDenuncia(){
             return $this->idImagemDenuncia;
@@ -53,6 +36,29 @@
         public function getIdCategoria(){
             return $this->idCategoria;
         }
+        
+
+        # Descrições e data
+        public function getDescDenuncia(){
+            return $this->descDenuncia;
+        }
+        public function getTituloDenuncia(){
+            return $this->tituloDenuncia;
+        }
+        public function getDataDenuncia(){
+            return $this->dataDenuncia;
+        }
+
+        # Localização
+        public function getCepDenuncia(){
+            return $this->cepDenuncia;
+        }
+        public function getUfDenuncia(){
+            return $this->ufDenuncia;
+        }
+        public function getBairroDenuncia(){
+            return $this->bairroDenuncia;
+        }
         public function getRuaDenuncia(){
             return $this->ruaDenuncia;
         }
@@ -60,30 +66,12 @@
             return $this->cidadeDenuncia;
         }
 
+
         //Métodos Setters
+
+        #PK e FK
         public function setIdDenuncia($idDenuncia){
             $this->idDenuncia = $idDenuncia;
-        }
-        public function setDescDenuncia($descDenuncia){
-            $this->descDenuncia = $descDenuncia;
-        }
-        public function setTituloDenuncia($tituloDenuncia){
-            $this->tituloDenuncia = $tituloDenuncia;
-        }
-        public function setDataDenuncia($dataDenuncia){
-            $this->dataDenuncia = $dataDenuncia;
-        }
-        public function setUfDenuncia($ufDenuncia){
-            $this->ufDenuncia = $ufDenuncia;
-        }
-        public function setLogradouroDenuncia($logradouroDenuncia){
-            $this->logradouroDenuncia = $logradouroDenuncia;
-        }
-        public function setBairroDenuncia($bairroDenuncia){
-            $this->bairroDenuncia = $bairroDenuncia;
-        }
-        public function setCepDenuncia($cepDenuncia){
-            $this->cepDenuncia = $cepDenuncia;
         }
         public function setIdImagemDenuncia($idImagemDenuncia){
             $this->idImagemDenuncia = $idImagemDenuncia;
@@ -93,6 +81,29 @@
         }
         public function setIdCategoria($idCategoria){
             $this->idCategoria = $idCategoria;
+        }
+
+
+        #Descrição e data
+        public function setDescDenuncia($descDenuncia){
+            $this->descDenuncia = $descDenuncia;
+        }
+        public function setTituloDenuncia($tituloDenuncia){
+            $this->tituloDenuncia = $tituloDenuncia;
+        }
+        public function setDataDenuncia($dataDenuncia){
+            $this->dataDenuncia = $dataDenuncia;
+        }
+
+        #Localização
+        public function setUfDenuncia($ufDenuncia){
+            $this->ufDenuncia = $ufDenuncia;
+        }
+        public function setBairroDenuncia($bairroDenuncia){
+            $this->bairroDenuncia = $bairroDenuncia;
+        }
+        public function setCepDenuncia($cepDenuncia){
+            $this->cepDenuncia = $cepDenuncia;
         }
         public function setRuaDenuncia($ruaDenuncia){
             $this->ruaDenuncia= $ruaDenuncia;
@@ -106,7 +117,7 @@
             $conexao = Conexao::pegarConexao();
 
             //Cadastro da Categoria
-            $categoria = $_POST['categoria'];
+            $categoria = "Descarte de lixo";//$_POST['categoria'];
             $stmtCat = $conexao->prepare("INSERT INTO tbCategoria VALUES(null,'$categoria')");
             $stmtCat->execute();
 
@@ -124,24 +135,29 @@
             $stmtImg->execute();
 
             $idImagem = $conexao->lastInsertId();
-            $teste = 1;
+
             //Cadastro da Denúncia
-            $stmt = $conexao->prepare("INSERT INTO tbDenuncia(tituloDenuncia,descDenuncia,dataDenuncia,ufDenuncia,
-            logradouroDenuncia,bairroDenuncia,cepDenuncia,ruaDenuncia,cidadeDenuncia,fk_idImgDenun,fk_idUsuario,fk_idCategoria)
-            VALUES (?,?,?,?,?,?,?,?,?,'$idImagem','$teste','$idCat')");
+            $stmtDenuncia = $conexao->prepare(
+                "INSERT INTO tbDenuncia
+                    (tituloDenuncia,descDenuncia,dataDenuncia,ufDenuncia,bairroDenuncia,cepDenuncia,ruaDenuncia,cidadeDenuncia,fk_idUsuario,fk_idImgDenun,fk_idCategoria)
+                        VALUES (?,?,?,?,?,?,?,?,?,'$idImagem','$idCat')"
+            );
 
-            $stmt->bindValue(1,$denuncia->getTituloDenuncia());
-            $stmt->bindValue(2,$denuncia->getDescDenuncia());
-            $stmt->bindValue(3,$denuncia->getDataDenuncia());
-            $stmt->bindValue(4,$denuncia->getUfDenuncia());
-            $stmt->bindValue(5,$denuncia->getLogradouroDenuncia());
-            $stmt->bindValue(6,$denuncia->getBairroDenuncia());
-            $stmt->bindValue(7,$denuncia->getCepDenuncia());
-            $stmt->bindValue(8,$denuncia->getRuaDenuncia());
-            $stmt->bindValue(9,$denuncia->getCidadeDenuncia());
+            $stmtDenuncia->bindValue(1,$denuncia->getTituloDenuncia());
+            $stmtDenuncia->bindValue(2,$denuncia->getDescDenuncia());
+            $stmtDenuncia->bindValue(3,$denuncia->getDataDenuncia());
 
-            $stmt->execute();
+            $stmtDenuncia->bindValue(4,$denuncia->getUfDenuncia());
+            $stmtDenuncia->bindValue(5,$denuncia->getBairroDenuncia());
+            $stmtDenuncia->bindValue(6,$denuncia->getCepDenuncia());
+            $stmtDenuncia->bindValue(7,$denuncia->getRuaDenuncia());
+            $stmtDenuncia->bindValue(8,$denuncia->getCidadeDenuncia());
+
+            $stmtDenuncia->bindValue(9,$denuncia->getIdUsuario());
+
+            $stmtDenuncia->execute();
             
+
         }
 
 

@@ -8,7 +8,7 @@
 
     $usuario = new Usuario();
 
-    $nome = $_POST['txtNome']." ".$_POST['txtSobreNome'];
+    $nome = $_POST['txtNome'];
 
     $usuario->setNomeUsuario($nome);
     $usuario->setSenhaUsuario($_POST['txtSenha']);

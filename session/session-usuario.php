@@ -15,7 +15,7 @@
             session_start();
             $_SESSION['emailAdm'] = $email;
             $_SESSION['senhaAdm'] = $senha;
-            header("Location: ../area-restrita/index-adm-restrita.php");
+            header("Location: ../area-restrita-adm/index-adm-restrita.php");
 
         }else{
 
@@ -23,7 +23,7 @@
                 if(isset($_SESSION['idUsuario'])){     
                     session_start();
                     $_SESSION['idUsuario'];
-                    header("Location: ../area-restrita/index-restrita.php");
+                    header("Location: ../area-restrita-usuario/index-restrita.php");
                     
                 }else{
                     header("Location: ../login.php");
