@@ -18,5 +18,6 @@
     
     echo $usuario->cadastrar($usuario);
 
+    header("Location: ../login.php");
 
 ?>
