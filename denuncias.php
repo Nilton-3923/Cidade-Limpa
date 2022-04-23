@@ -31,9 +31,46 @@
 
 </style>
 <body>
-    <?php include 'includes/navbar.php'?>
+<?php include 'includes/navbar.php'?>
     <section style="width:100vw;height:100vh;" class="flex-center">
-        <!-- <H1>SEM DENUNCIAS POR ENQUANTO HEHE</H1> -->
+
+    <div>
+        <h2>Filtrar por:</h2>
+
+
+        <div>
+            <h2>REGIÃO</h2>
+            <ul>
+                <li>Zona Leste</li>
+                <li>Zona Norte</li>
+                <li>Zona Oeste</li>
+                <li>Zona Sul</li>
+            </ul>
+        </div>
+        <div>
+            <h2>CATEGORIA</h2>
+            <ul>
+                <li>Todas</li>
+                <li>Descarte de lixo</li>
+                <li>Foco de dengue</li>
+            </ul>
+        </div>
+        <div>
+            <h2>DATA</h2>
+            <ul>
+                <li>Mais recentes</li>
+                <li>Mais antigas</li>
+            </ul>
+        </div>
+    </div>
+
+    <div>
+        <form action="">
+            <input type="text" placeholder="Pesquisar denuncia">
+        </form>
+    </div>
+
+    
         <?php
             require_once("classe/Denuncia.php");
             require_once("classe/Conexao.php");

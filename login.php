@@ -37,7 +37,7 @@
                 </div>
             </form>
             <div class="divisao-registrar">ou</div>
-            <p>não tem uma conta? <a href="registrar.php">registre-se</a></p>
+            <p>não tem uma conta? <a href="form-cadastro/cadastro-usuario.php">registre-se</a></p>
         </div>
     </div>
     <script src="javascript/login.js"></script>

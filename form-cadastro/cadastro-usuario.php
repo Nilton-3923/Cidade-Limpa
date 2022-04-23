@@ -15,7 +15,7 @@
             <input type="text" name="txtEmail"><br>
 
             <label>Informe seu CEP:</label>
-            <input type="text" name="txtCep"><br>
+            <input type="text" name="txtCep" id="cep"><br>
 
             <label>Digite sua senha:</label>
             <input type="text" name="txtSenha"><br>
@@ -29,5 +29,19 @@
             <input type="submit">
 
         </form>
+        <!--Mensagem de erro-->
+        <p id="mensagem">Digite o cep</p>
+
+
+        <label>Rua</label>
+        <input type="text" id="rua" disabled><br>
+
+        <label>Bairro</label>
+        <input type="text" id="bairro" disabled><br>
+
+        <label>Cidade</label>
+        <input type="text" id="cidade" disabled>
+        <input type="text" id="uf" disabled>
     </body>
+    <script src="../javascript/api-cep.js"></script>
 </html>
