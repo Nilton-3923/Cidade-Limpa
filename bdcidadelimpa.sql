@@ -53,6 +53,17 @@ INSERT INTO `tbcategoria` (`pk_idCategoria`, `campoCategoria`) VALUES
 
 -- --------------------------------------------------------
 
+CREATE TABLE `tbecoponto` (
+  `pk_idEcoponto` int(11) NOT NULL,
+  `descEcoponto` varchar(255) NOT NULL,
+  `ufEcoponto` varchar(2) NOT NULL,
+  `bairroEcoponto` varchar(50) NOT NULL,
+  `cepEcoponto` varchar(8) DEFAULT NULL,
+  `ruaEcoponto` varchar(50) DEFAULT NULL,
+  `cidadeEcoponto` varchar(50) DEFAULT NULL,
+  --adicionar FK do usuario
+) 
+
 --
 -- Estrutura da tabela `tbdenuncia`
 --
@@ -67,6 +78,7 @@ CREATE TABLE `tbdenuncia` (
   `cepDenuncia` varchar(8) DEFAULT NULL,
   `ruaDenuncia` varchar(50) DEFAULT NULL,
   `cidadeDenuncia` varchar(50) DEFAULT NULL,
+  `coordeDenuncia` varchar(25) NOT NULL,
   `fk_idImgDenun` int(11) DEFAULT NULL,
   `fk_idUsuario` int(11) DEFAULT NULL,
   `fk_idCategoria` int(11) DEFAULT NULL
