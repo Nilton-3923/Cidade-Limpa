@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Abr-2022 às 19:00
+-- Tempo de geração: 28-Abr-2022 às 22:17
 -- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.1.2
+-- versão do PHP: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -64,22 +64,23 @@ CREATE TABLE `tbdenuncia` (
   `dataDenuncia` date NOT NULL,
   `ufDenuncia` varchar(2) NOT NULL,
   `bairroDenuncia` varchar(50) NOT NULL,
-  `cepDenuncia` varchar(8) DEFAULT NULL,
-  `ruaDenuncia` varchar(50) DEFAULT NULL,
-  `cidadeDenuncia` varchar(50) DEFAULT NULL,
-  `fk_idImgDenun` int(11) DEFAULT NULL,
-  `fk_idUsuario` int(11) DEFAULT NULL,
-  `fk_idCategoria` int(11) DEFAULT NULL
+  `cepDenuncia` varchar(8) NOT NULL,
+  `ruaDenuncia` varchar(50) NOT NULL,
+  `cidadeDenuncia` varchar(50) NOT NULL,
+  `coordeDenuncia` varchar(25) NOT NULL,
+  `fk_idImgDenun` int(11) NOT NULL,
+  `fk_idUsuario` int(11) NOT NULL,
+  `fk_idCategoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `tbdenuncia`
 --
 
-INSERT INTO `tbdenuncia` (`pk_idDenuncia`, `tituloDenuncia`, `descDenuncia`, `dataDenuncia`, `ufDenuncia`, `bairroDenuncia`, `cepDenuncia`, `ruaDenuncia`, `cidadeDenuncia`, `fk_idImgDenun`, `fk_idUsuario`, `fk_idCategoria`) VALUES
-(1, '', '', '0000-00-00', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', 9, 1, 9),
-(4, '', '', '2022-04-20', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', 12, 1, 12),
-(5, '', '', '2022-04-20', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', 13, 1, 13);
+INSERT INTO `tbdenuncia` (`pk_idDenuncia`, `tituloDenuncia`, `descDenuncia`, `dataDenuncia`, `ufDenuncia`, `bairroDenuncia`, `cepDenuncia`, `ruaDenuncia`, `cidadeDenuncia`, `coordeDenuncia`, `fk_idImgDenun`, `fk_idUsuario`, `fk_idCategoria`) VALUES
+(1, '', '', '0000-00-00', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', '', 9, 1, 9),
+(4, '', '', '2022-04-20', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', '', 12, 1, 12),
+(5, '', '', '2022-04-20', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', '', 13, 1, 13);
 
 -- --------------------------------------------------------
 
