@@ -13,7 +13,10 @@
 
     <section class="index-primeira-parte">
         <!--Adicionando o maps-->
-        <h1 class="texto">MAPA DE DENUNCIAS</h1>
+        <div class="pesquisa">
+            <input type="text" placeholder="Localizar Denuncias" name id="">
+            <button>🔍</button>
+        </div>
         <div id="map"></div>
     </section>
 

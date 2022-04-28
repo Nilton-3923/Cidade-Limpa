@@ -2,7 +2,7 @@ nav{
     display:flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: #464646;
+    background-color: #7CDB3B;
     height:90px;
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
     width:100vw;
@@ -20,7 +20,7 @@ nav{
     width:100%;
     display: flex;
     justify-content:start;
-    padding-left:50px;
+    padding-left:70px;
 }
 .logo{
     transform: scale(1.35);
@@ -32,12 +32,13 @@ nav{
 }
 .navbar-parte-2 > a{
     transition:all .2s;
-    width:120%;
-    line-height:2;
+    width:100%;
     display:flex;
+    align-items: center;
     justify-content:center;
     text-decoration:none;
-    color:white;
+    text-align: center;
+    color:#097005;
     font-size:25px;
 }
 .navbar-parte-2 > a:hover{
@@ -47,7 +48,7 @@ nav{
     width:100%;
     display: flex;
     justify-content:end;
-    padding-right:50px;
+    padding-right:70px;
 }
 .foto-navbar{
     width:50px;

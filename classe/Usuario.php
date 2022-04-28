@@ -121,7 +121,6 @@
             
             }
         }
-
         //Método para mostrar as Denúncias que o úsuario já fez
         public function denunciasFeita(){
             $conexao = Conexao::pegarConexao();
@@ -139,21 +138,6 @@
 
             return $query;
         }
-        //Método para mostrar usuarios
-        public function perfil(){
-            $conexao = Conexao::pegarConexao();
-            $id = $_SESSION['idUsuario'];
-            $selectQuery = "SELECT * FROM tbUsuario
-                            INNER JOIN tbImgUsuario ON tbUsuario.fk_idImgUsuario = tbImgUsuario.pk_idImgUsuario
-                            WHERE pk_Usuario = $id";
-            
-            $selectQuery = $conexao->query($selectQuery);
-            $selectQuery = $selectQuery->fetchAll();
-            return $selectQuery;
-
-
-        }
-
     }
 
 ?>

@@ -12,14 +12,23 @@
     <div class="conteudo">
         <div class="carroussel">
             <div class="container-carroussel">
-                <div id="img3" style="display:flex;align-items:center;justify-content:center;">
+                <div id="img3" class="flex-center img-carroussel">
                     <img src="imagens/anuncio3.jpg" >
+                    <div class="flex-center frase-carroussel">
+                        <h1>descarte o lixo no lugar correto</h1>
+                    </div>
                 </div>
-                <div id="img2" style="display:flex;align-items:center;justify-content:center;">
+                <div id="img2" class="flex-center img-carroussel">
                     <img src="imagens/anuncio2.jpg" >
+                    <div class="flex-center frase-carroussel">
+                        <h1>preservando o meio ambiente em que vivemos</h1>
+                    </div>
                 </div>
-                <div id="img1" style="display:flex;align-items:center;justify-content:center;">
+                <div id="img1" class="flex-center img-carroussel">
                     <img src="imagens/anuncio1.jpg" >
+                    <div class="flex-center frase-carroussel">
+                        <h1>Ajude-nos a tornar são paulo em um lugar melhor</h1>
+                    </div>
                 </div>
             </div>
               
@@ -27,7 +36,6 @@
         <div class="login">
             <img class="logo-login" src="https://static.wixstatic.com/media/3cbee0_280ac02ce30f4cfba00d997e3c66b4a1~mv2.png/v1/fill/w_58,h_58,al_c,usm_0.66_1.00_0.01,enc_auto/3cbee0_280ac02ce30f4cfba00d997e3c66b4a1~mv2.png">
             <form class="form-login" action="session/session-usuario.php" method="post">
-                <h2>Login</h2>
                 <div class="alinhamento-form">
                     <label for="login">Login</label>
                     <input autocomplete="off" id="login" type="text" name="emailUsuario">

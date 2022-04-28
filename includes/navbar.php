@@ -14,9 +14,9 @@
             <img class="logo" src="https://static.wixstatic.com/media/3cbee0_280ac02ce30f4cfba00d997e3c66b4a1~mv2.png/v1/fill/w_58,h_58,al_c,usm_0.66_1.00_0.01,enc_auto/3cbee0_280ac02ce30f4cfba00d997e3c66b4a1~mv2.png">
         </div>
         <div class="navbar-parte-2">
-            <a href="index.php">Home</a>
-            <a href="index.php#sobre">Sobre</a>
-            <a href="denuncias.php">Denúncias</a>
+            <a href="index.php">HOME</a>
+            <a href="index.php#sobre">SOBRE</a>
+            <a href="denuncias.php">PORTAL DE DENÚNCIAS</a>
         </div>
         <div class="navbar-parte-3">
             <div class="navbar-deslogado">
