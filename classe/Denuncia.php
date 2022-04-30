@@ -15,6 +15,7 @@
         private $bairroDenuncia;
         private $ruaDenuncia;
         private $cidadeDenuncia;
+        private $numero; 
 
         private $idImagemDenuncia;
         private $idUsuario;
@@ -66,6 +67,9 @@
         public function getCidadeDenuncia(){
             return $this->cidadeDenuncia;
         }
+        public function getNumero(){
+            return $this -> numero; 
+        }
 
 
         //Métodos Setters
@@ -113,6 +117,40 @@
         public function setCidadeDenuncia($cidadeDenuncia){
             $this->cidadeDenuncia = $cidadeDenuncia;
         }
+        public function setNumero($numero){
+            $this -> numero = $numero; 
+        }
+
+
+        public function geolocalizacao(){
+
+            $ufDenuncia = $this -> ufDenuncia; 
+            $cidadeDenuncia = $this -> cidadeDenuncia;
+            $ruaDenuncia = $this -> ruaDenuncia;
+            $bairroDenuncia = $this -> bairroDenuncia;
+            $numero = $this -> numero; 
+
+
+            $enderecoJunto = "$numero $ruaDenuncia, $bairroDenuncia, $cidadeDenuncia - $ufDenuncia"; 
+
+            $addr = str_replace(" ", "+","$enderecoJunto");
+
+            $address = utf8_encode($addr);
+    
+            $url = "https://maps.googleapis.com/maps/api/geocode/json?address=$address&key=AIzaSyAo1uIjwfM3QBcwPKKDVuXv0z8eJlQGcYE";
+        
+            $json = file_get_contents($url);
+            $data = json_decode($json);
+    
+            $lat = $data->results[0]->geometry->location->lat;
+            $long = $data->results[0]->geometry->location->lng;
+
+            $localizacao = "lat: $lat, lng: $long"; 
+    
+            return $localizacao; 
+        }
+
+
 
 
         public function denunciar($denuncia){
@@ -134,8 +172,19 @@
             //Cadastro da Denúncia
             $stmtDenuncia = $conexao->prepare(
                 "INSERT INTO tbDenuncia
-                    (tituloDenuncia,descDenuncia,dataDenuncia,ufDenuncia,bairroDenuncia,cepDenuncia,ruaDenuncia,cidadeDenuncia,fk_idUsuario,fk_idImgDenun,fk_idCategoria)
-                        VALUES (?,?,?,?,?,?,?,?,?,?,?)"
+                    (tituloDenuncia,#1
+                    descDenuncia,   #2
+                    dataDenuncia,   #3
+                    ufDenuncia,     #4
+                    bairroDenuncia, #5
+                    cepDenuncia,    #6
+                    ruaDenuncia,    #7
+                    cidadeDenuncia, #8
+                    coordeDenuncia, #9
+                    fk_idUsuario,   #10
+                    fk_idImgDenun,  #11
+                    fk_idCategoria) #12
+                        VALUES (?,?,?,?,?,?,?,?,?,?,?,?)"
             );
 
             //Informações
@@ -149,12 +198,18 @@
             $stmtDenuncia->bindValue(6,$denuncia->getCepDenuncia());
             $stmtDenuncia->bindValue(7,$denuncia->getRuaDenuncia());
             $stmtDenuncia->bindValue(8,$denuncia->getCidadeDenuncia());
-            $stmtDenuncia->bindValue(9,$denuncia->getIdUsuario());
-            $stmtDenuncia->bindValue(10,$idImagem);
-            $stmtDenuncia->bindValue(11,$denuncia->getIdCategoria());
+
+            //Geolocalização
+            $stmtDenuncia-> bindValue(9,$denuncia->geolocalizacao());
+
+            //Id
+            $stmtDenuncia->bindValue(10,$denuncia->getIdUsuario());
+            $stmtDenuncia->bindValue(11,$idImagem);
+            $stmtDenuncia->bindValue(12,$denuncia->getIdCategoria());
 
             $stmtDenuncia->execute();
         }
+        
 
         //Método para Mostrar as Denúncias já feitas
         public function mostrar(){
@@ -175,6 +230,16 @@
 
         }
 
+        public function mostrarPontosMapa(){
+            $conexao = Conexao :: pegarConexao();
+
+            $query = "SELECT coordeDenuncia, tituloDenuncia, descDenuncia, cepDenuncia, dataDenuncia FROM tbDenuncia";
+
+            $query = $conexao->query($query);
+            $query = $query->fetchAll();
+
+            return $query;
+        }
 
 
 

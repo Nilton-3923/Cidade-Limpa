@@ -18,6 +18,11 @@
             echo $_SESSION['senhaAdm'];
         ?>
         <h2>Ola Adm</h2>
-        <a href="../session/logout-adm.php">Sair</a><br><a href="cadastro-categoria.php">Cadastrar Categoria</a>
+        <a href="../session/logout-adm.php">Sair</a><br>
+        <form action="../cadastro/objeto-cadastro-categoria.php" method="post"> 
+            <input type="text" name="txtCategoria" placeholder="Digite o nome da Categoria...">
+            <input type="submit" value="cadastrar">
+        </form>
+        
     </body>
 </html>

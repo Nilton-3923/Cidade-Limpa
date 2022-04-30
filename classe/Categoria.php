@@ -36,7 +36,7 @@
         }
 
         //Método de Mostrar as categorias cadastradas (SELECT)
-        public function listar($categoria){
+        public function listar(){
             $conexao = Conexao::pegarConexao();
             $query = ("SELECT * FROM tbCategoria");
 

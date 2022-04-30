@@ -19,28 +19,35 @@ function img3_(){
     img2.style.opacity="0"
     img3.style.opacity="1"
 }
-
-const delay = 1.5; // <=== CONTROLA O DELAY POR AQUI 
-const delayEmSegundos = delay * 1000
+const delay = 4;
+const delayEmSegundos = delay * 1000;
+let cont = 1;
 
 function carroussel(){
-    setTimeout(()=>{
+    if(cont === 1){
         img1_();
         setTimeout(()=>{
-            img2_();
-            setTimeout(()=>{
-                img3_();
-            },delayEmSegundos)
+            cont += 1
         },delayEmSegundos)
-    },delayEmSegundos)
-
-    return delayEmSegundos;
+    }
+    
+    if(cont === 2){
+        img2_();
+        setTimeout(()=>{
+            cont += 1
+        },delayEmSegundos)
+    }
+    
+    if(cont === 3){
+        img3_();
+        setTimeout(()=>{
+            cont = 1
+        },delayEmSegundos)
+    }
+    
 }
-
-const delayDoCarrossel = delayEmSegundos * 6; //AQUI O DELAY DO CARROSSEL
-
 
 setInterval(()=>{
     carroussel();
-},delayDoCarrossel)
+},5000)
 

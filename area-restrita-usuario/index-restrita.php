@@ -1,9 +1,10 @@
 <?php
+
     session_start();
-    error_reporting(0);
     include_once("../session/valida-sentinela.php");
     require_once("../classe/Conexao.php");
     require_once("../classe/Usuario.php");
+    require_once("../classe/Denuncia.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,11 +18,14 @@
     <?php
         $perfil = new Usuario();
         $listaPerfil = $perfil->perfil();
-        foreach($listaPerfil as $lista){
+        foreach($listaPerfil as $lista)
+        {
 
     ?>
-        <img class="usuario" src="../cadastro/<?php echo $lista['imgUsuario']; ?>" alt="">
-    <?php } ?>
+            <img class="usuario" src="../cadastro/<?php echo $lista['imgUsuario']; ?>" alt="">
+    <?php 
+        } 
+    ?>
     <style>
     .usuario{
         width: 40px;
@@ -52,7 +56,8 @@
     }
     #map{
         height:80vh;
-        width: 70vw
+        width: 70vw;
+        background:red; 
     }
     .img-alterar{
         width: 50px;
@@ -92,6 +97,14 @@
 
         <h2>DENUNCIAS FEITAS POR VOCÊ</h2>
         <?php
+            $pontos = new Denuncia();
+            $listaPontos = $pontos->mostrarPontosMapa();
+
+
+            foreach($listaPontos as $lista){
+                echo $lista['coordeDenuncia'];
+            }
+
             $usuario = new Usuario();
             $listaDeDenuncias = $usuario->denunciasFeita();
             foreach($listaDeDenuncias as $linha){
@@ -117,23 +130,6 @@
             }
         ?>
 
-        <div id="modal-perfil" class="modal-container">
-            <div class="modal">
-                <button class="fechar">x</button>
-                <h3 class="subtitulo">Alterar Perfil</h3>
-                <form action="../cadastro/categoria-update.php" method="post" enctype="multipart/form-data">
-                    <input type="hidden" class="input" name="idUsuario" value="<?php echo $_SESSION['idUsuario']; ?>">
-                    <input type="file" class="input-image" name="fotoUsuario">
-                    <input type="text" class="input" name="nomeUsuario" value="<?php echo $lista['nomeUsuario'];?>">
-                    <input type="text" class="input" disabled value="<?php echo $lista['emailUsuario'];?>">
-                    <input type="password" class="input" name="senhaUsuario" value="<?php echo $lista['senhaUsuario'];?>">
-                    <img class="img-alterar" src="../cadastro/<?php echo $lista['imgUsuario'];?>" alt="">
-        
-                    <input type="submit" class="button" value="alterar">
-                </form>
-
-            </div>
-        </div>
     </body>
     <script>
         function initMap(){
@@ -157,22 +153,19 @@
             //ADCIONANDO MARCADORES POR MEIO DE ARRAY 
             //Array dos marcadores
             var markers = [
-                {
-                    coords:{lat: -23.5648, lng:-46.6518},
-                    iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-                    content:'<h1 style="color:green">Denuncia de descarte de lixo irregular</h1>'
-                            +'<p>Av Paulista</p>'
-                },
-                {
-                    coords: {lat: -23.5124, lng:-46.4108},
-                    content:'<h1 style="color: blue">Denuncia de foco de dengue</h1>'
-                            +'<p>Rua Carrossel</p>'
-                },
-                {
-                    coords:{lat: -23.4929, lng:-46.4375},
-                    content:'<h1 style="color: blue">Denuncia de foco de dengue</h1>'
-                            +'<p>Av São Miguel Paulista</p>'
+                <?php 
+                foreach ($listaPontos as $lista){
+                    $titulo = $lista['tituloDenuncia'];
+                ?>
+                        {
+                            coords:{<?php echo $lista['coordeDenuncia'];?>},
+                            iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                            content:'<h2><?php echo $titulo; ?></h2>'
+                                    
+                        },
+                <?php
                 }
+                ?>
             ]
 
             // Laço de repetição para percorrer os marcadores

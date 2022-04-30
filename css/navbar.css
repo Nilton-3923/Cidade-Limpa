@@ -14,7 +14,7 @@ nav{
     color:white;
     text-decoration:none;
     font-weight:700;
-    font-size:25px;
+    font-size:2vw;
 }
 .navbar-parte-1{
     width:100%;
@@ -26,20 +26,23 @@ nav{
     transform: scale(1.35);
 }
 .navbar-parte-2{
+    
     width:100%;
+    gap:20px;
     display:flex;
     justify-content:center;
 }
 .navbar-parte-2 > a{
     transition:all .2s;
-    width:100%;
+    width:max-content;
+    padding:15px;
     display:flex;
     align-items: center;
     justify-content:center;
     text-decoration:none;
     text-align: center;
     color:#097005;
-    font-size:25px;
+    font-size:1.5vw;
 }
 .navbar-parte-2 > a:hover{
     background-color: #ffffff36;

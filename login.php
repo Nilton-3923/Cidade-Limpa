@@ -13,7 +13,7 @@
         <div class="carroussel">
             <div class="container-carroussel">
                 <div id="img3" class="flex-center img-carroussel">
-                    <img src="imagens/anuncio3.jpg" >
+                    <img src="imagens/anuncio3.png" >
                     <div class="flex-center frase-carroussel">
                         <h1>descarte o lixo no lugar correto</h1>
                     </div>

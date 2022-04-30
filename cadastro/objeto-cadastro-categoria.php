@@ -8,6 +8,6 @@
     $categoria->setCampoCategoria($_POST['txtCategoria']);
     echo $categoria->cadastrar($categoria);
 
-    header("Location: ../area-restrita-adm/cadastro-categoria.php");
+    header("Location: ../area-restrita-adm/index-adm-restrita.php");
 
 ?> 

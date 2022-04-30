@@ -28,15 +28,21 @@
             require_once("../classe/Categoria.php");
 
             $categoria = new Categoria();
-            $listaCat = $categoria->listar($categoria);
+            $listaCat = $categoria->listar();
         
             ?>
-            <select name="txtCategoria" id="">
-                <option value="" disabled selected>Selecione a Categoria</option>
-                <?php foreach($listaCat as $linha){ ?>
-                    <option value="<?php echo $linha['pk_idCategoria']; ?>"><?php echo ($linha['campoCategoria']);?></option>
-                    
-                <?php } ?>
+            <select name="txtCategoria">
+                <option disabled selected>Selecione a Categoria</option>
+                <?php 
+                foreach($listaCat as $linha)
+                { 
+                ?>
+                    <option value="<?php echo $linha['pk_idCategoria'];?>">
+                        <?php echo ($linha['campoCategoria']);?>
+                    </option>
+                <?php 
+                } 
+                ?>
             </select>
             
             <!--Endereços-->
@@ -67,6 +73,11 @@
                 echo date('Y/m/d');
                 ?>
             ">
+
+
+            
+
+
             <!--Descrição denuncia-->
             <!--Aqui tem que ser uma área para escrever-->
             <textarea name="txtDenuncia" id="denuncia" cols="25" rows="5" placeholder="Descrição"></textarea>

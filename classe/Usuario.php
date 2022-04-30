@@ -125,6 +125,7 @@
         public function denunciasFeita(){
             $conexao = Conexao::pegarConexao();
             
+           
             $id = $_SESSION['idUsuario'];
             $query = "SELECT imgDenuncia,nomeUsuario,imgUsuario,tituloDenuncia,descDenuncia,dataDenuncia,cepDenuncia FROM tbDenuncia
                       INNER JOIN tbUsuario ON tbDenuncia.fk_idUsuario = tbUsuario.pk_Usuario
@@ -132,6 +133,21 @@
                       INNER JOIN tbImgDenun ON tbDenuncia.fk_idImgDenun = tbImgDenun.pk_idImgDenun
                       WHERE pk_Usuario = $id";
 
+            $query = $conexao->query($query);
+
+            $query = $query->fetchAll();
+
+            return $query;
+        }
+        public function perfil(){
+            $conexao = Conexao::pegarConexao();
+
+            $id = $_SESSION['idUsuario'];
+
+            $query = "SELECT * FROM tbUsuario 
+                        INNER JOIN tbimgusuario
+                            ON tbUsuario.fk_idImgUsuario = tbimgusuario.pk_idImgUsuario
+                                WHERE pk_Usuario = $id";
             $query = $conexao->query($query);
 
             $query = $query->fetchAll();

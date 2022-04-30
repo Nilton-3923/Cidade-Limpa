@@ -1,3 +1,87 @@
 body{
     padding-top:90px;
 }
+li,ul{
+    list-style: none;
+}
+.opcao-filtro{
+    color:white;
+    text-decoration: none;
+}
+.body{
+    width:100vw;
+    height:100vh;
+    flex-direction: row;
+    
+    background:#064018;
+}
+.menu-lateral{
+    position:relative;
+    left:0;
+
+    background-color:red;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    background:transparent;
+    border-right:#ffffff 3px solid;
+    padding-top:90px;
+    width:250px;
+    height:100%;
+}
+
+.pesquisar-denuncia{
+    position:absolute;
+    top:190px;
+    left:0;
+    
+    display: flex;
+    justify-content: center;
+    padding-left:90px;
+    width:100%;
+    
+}
+.pesquisar-denuncia > input{
+    border:none;
+    outline:none;
+    font-size:2vw;
+    padding:15px;
+    background-color: #7CDB3B;
+    color:white;
+    border-radius:15px;
+    box-shadow:2px 2px 6px 3px rgba(0, 0, 0, 0.5);
+}
+.pesquisar-denuncia > input::placeholder{
+    color:white;
+}
+.pesquisar-denuncia > button{
+    border:none;
+    outline:none;
+    background:transparent;
+    font-size:2vw;
+    position:relative;
+    right:75px;
+}
+.denuncias{
+    display:grid;
+
+    background-color:red;
+    
+}
+.card{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    width:200px;
+    height:300px;
+    flex-direction: column;
+    color:black;
+    font-size:1.5vw;
+    background-color:white;
+}
+
+.user{
+    border-radius:50%;
+    width: 150px;
+}

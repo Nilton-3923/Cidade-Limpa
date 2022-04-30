@@ -15,6 +15,7 @@
     $denuncia->setRuaDenuncia($_POST['txtRuaDenuncia']);
     $denuncia->setCidadeDenuncia($_POST['txtCidadeDenuncia']);
     $denuncia->setUfDenuncia($_POST['txtUfDenuncia']);
+    $denuncia-> setNumero($_POST['txtNumeroDenuncia']);
     
     
     $denuncia->setDataDenuncia($_POST['txtDtDenuncia']);
@@ -23,9 +24,9 @@
     $denuncia->setIdCategoria($_POST['txtCategoria']);
 
      
-
     echo $denuncia->denunciar($denuncia);
 
+    echo $denuncia -> geolocalizacao(); 
 
-    header ("Location: ../area-restrita-usuario/index-restrita.php");
+    //header ("Location: ../area-restrita-usuario/index-restrita.php");
 ?>

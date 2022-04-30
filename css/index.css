@@ -23,17 +23,20 @@ body{
 .pesquisa > input[type=text]{
     outline:#9B9B9B solid 2px;
     border:none;
-    font-size:35px;
+    font-size:1.5vw;
+    width:500px;
     border-radius:40px;
     padding:20px 30px;
 }
 .pesquisa > button{
-    background:transparent;
+    background:#ffffff;
     border:none;
     outline:none;
     font-size:30px;
+    padding:0 15px;
+    border-radius:50%;
     position:relative;
-    right:6px;
+    right:75px;
     cursor: pointer;
 }
 .index-segunda-parte{
