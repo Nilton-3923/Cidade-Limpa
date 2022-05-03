@@ -14,7 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/navbar.css">
         <link rel="stylesheet" href="../css/reset.css">
-        <Link rel="stylesheet" href="css/index-restrita.css">
+        <Link rel="stylesheet" href="../css/index-restrita.css">
         <title>Document</title>
     </head>
     <?php
@@ -29,16 +29,30 @@
         } 
     ?>
     <body>
-        <a href="../session/logout-usuario.php">Sair</a><br><a href="cadastro-denuncia.php">Denunciar</a><br>
-        <?php include '../includes/navbar.php'?>
-        <div>
+    <nav>
+        <div class="navbar-parte-1">
+            <img class="logo" src="https://static.wixstatic.com/media/3cbee0_280ac02ce30f4cfba00d997e3c66b4a1~mv2.png/v1/fill/w_58,h_58,al_c,usm_0.66_1.00_0.01,enc_auto/3cbee0_280ac02ce30f4cfba00d997e3c66b4a1~mv2.png">
+        </div>
+        
+            <div class="navbar-logado">
+                <img class="foto-navbar circulo" src="../imagens/foto-de-perfil-vazia.jpg">
+                <div onClick="penis()" class="seta">
+                    <div class="linha-seta-1"></div>
+                    <div class="linha-seta-2"></div>
+                </div>
+                
+                <div id="navbarModal" class="navbar-modal">
+                    <a href="../session/logout-usuario.php">Sair</a>
+                    <a href="cadastro-denuncia.php">Denunciar</a>
+                </div>
+            </nav>
+            
+            <div class="mapa">
             <div id="map"></div>
         </div>
 
-
-
         <div>
-            <h2>O que é ppreciso para denunciar?</h2>
+            <h2>O que é preciso para denunciar?</h2>
             <ul>
                 <li>Endereço do local</li>
                 <li>Foto da denuncia</li>
@@ -154,6 +168,16 @@
             }
         }
 
+        var navbarModal = document.getElementById('navbarModal');
+
+        function penis(){
+            if(navbarModal.style.opacity === "0"){
+                
+                navbarModal.style.opacity = "1";
+            }else{
+                navbarModal.style.opacity = "0";
+            }
+        }
     </script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5opbRMRKjMKTKajH2CdyKJCIsqOdwdUI&callback=initMap"
