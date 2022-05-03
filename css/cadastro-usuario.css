@@ -99,7 +99,6 @@ input[type=text],input[type=password]{
     display:flex;
     flex-direction:column;
     margin-top:15px;
-    gap:15px;
 }
 .div1,.div2,.div3{
     display:flex;
@@ -184,7 +183,7 @@ input[type=text],input[type=password]{
     flex-direction:column ;
     gap:20px;
     z-index: 999;
-    transition:opacity .5s;
+    transition:opacity .25s;
     position:absolute;
     left:270px;
     background-color: #7CDB3B;

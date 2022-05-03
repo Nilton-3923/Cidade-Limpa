@@ -41,5 +41,5 @@ function hoverOff(){
         setTimeout(()=>{
             modalCep.style.display="none";
         },100)
-    },5000)
+    },2500)
 }
