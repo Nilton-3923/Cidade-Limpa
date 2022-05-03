@@ -10,7 +10,7 @@
     <body>
         <?php include 'includes/navbar.php' ?>
         <form class="cadastro" action="cadastro/objeto-cadastro-usuario.php" enctype="multipart/form-data" method="post">
-            <h1 class="titulo">Criar seu cadastro</h1>
+            <h1 class="titulo">Crie sua conta</h1>
             <div class="alinhamento-cadastro">
                 <div class="div1">
                     <div class="alinhamento-inputs">
