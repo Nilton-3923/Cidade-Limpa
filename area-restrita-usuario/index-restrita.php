@@ -7,12 +7,14 @@
     require_once("../classe/Denuncia.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <Link rel="stylesheet" href="css/modal.css">
+        <link rel="stylesheet" href="../css/navbar.css">
+        <link rel="stylesheet" href="../css/reset.css">
+        <Link rel="stylesheet" href="css/index-restrita.css">
         <title>Document</title>
     </head>
     <?php
@@ -26,58 +28,9 @@
     <?php 
         } 
     ?>
-    <style>
-    .usuario{
-        width: 40px;
-        height: 40px;
-        float: right;
-        border-radius: 50%;
-    }   
-    .card{
-        position: relative;
-        border: 1px solid black;
-        margin-right: 5px;
-
-    }
-    .user{
-        border-radius:50px;
-        margin: 10px;
-    }
-    .nome{
-        right: 140px;
-        position: absolute;
-        top: 0;
-    }
-    .data{
-        position: absolute;
-        right: 20px;
-        top: 40px;
-        font-size: 10px;
-    }
-    #map{
-        height:80vh;
-        width: 70vw;
-        background:red; 
-    }
-    .img-alterar{
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        top: 10px;
-        left: 40px;
-        border-radius: 50%;
-    }
-    .input-image{
-        position: absolute;
-        top: 25px;
-        left: 115px;
-    }
-
-
-    </style>
     <body>
         <a href="../session/logout-usuario.php">Sair</a><br><a href="cadastro-denuncia.php">Denunciar</a><br>
-        
+        <?php include '../includes/navbar.php'?>
         <div>
             <div id="map"></div>
         </div>

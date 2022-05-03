@@ -2,7 +2,7 @@
      require_once("classe/Conexao.php");
      require_once("classe/Denuncia.php");
 
-    error_reporting(0);
+    
     $pontos = new Denuncia();
     $listaPontos = $pontos->mostrarPontosMapa();
 
