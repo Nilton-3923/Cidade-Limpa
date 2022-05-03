@@ -82,11 +82,7 @@
             <div id="map"></div>
         </div>
 
-    <?php
-    
-    echo $_GET['idDenuncia'];
-    echo $_GET['coordenadas'];
-    ?>
+
 
         <div>
             <h2>O que é ppreciso para denunciar?</h2>
@@ -140,7 +136,7 @@
             // Opções para o mapa
             var options = {
                 zoom: 12,
-                center:{<?php echo $_GET['coordenadas'];?>},
+                center:{lat:-23.5489,lng:-46.6388},
                 styles:[{
                             "featureType": "poi",
                             "stylers": [{
@@ -159,33 +155,13 @@
             var markers = [
                 <?php 
                 foreach ($listaPontos as $lista){
-
-                    $idDenuncia = $lista['pk_idDenuncia'];
-
                     $titulo = $lista['tituloDenuncia'];
-                    $data = $lista['dataDenuncia'];
-                    $desc = $lista['descDenuncia'];
-                    $categoria = $lista['campoCategoria'];
-                    $img = $lista['imgDenuncia'];
-                    $coordenadas= $lista['coordeDenuncia'];
-
-                    if($categoria == 'Descarte de lixo'){     
-                        $cor = "#097005";
-                    }
-                    
-                    else{
-                        $cor ="blue";
-                    }
                 ?>
                         {
                             coords:{<?php echo $lista['coordeDenuncia'];?>},
-                            //iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-                            content:'<a style="text-decoration:none"href="index-restrita.php?idDenuncia=<?php echo $idDenuncia;?>&&coordenadas=<?php echo $coordenadas ;?>">'
-                                    +'<h2 style="color:<?php echo $cor; ?>"><?php echo $titulo; ?></h2>'
-                                    +'<span style="color:black"><?php echo $data;?></span>'
-                                    +'<p style="color:black"><?php echo $desc;?></p>'
-                                    +'<img style="height:150px; width:300px;"src="../cadastro/<?php echo $img;?>"></a>'
-                         },
+                            iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                            content:'<h2><?php echo $titulo; ?></h2>'          
+                        },
                 <?php
                 }
                 ?>

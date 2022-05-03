@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29-Abr-2022 às 20:19
+-- Tempo de geração: 20-Abr-2022 às 19:00
 -- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.0.13
+-- versão do PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -54,19 +54,6 @@ INSERT INTO `tbcategoria` (`pk_idCategoria`, `campoCategoria`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbchatbot`
---
-
-CREATE TABLE `tbchatbot` (
-  `pk_idChatBot` int(11) NOT NULL,
-  `textoChatBot` varchar(300) NOT NULL,
-  `fk_idUsuario` int(11) NOT NULL,
-  `fk_idEcoponto` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `tbdenuncia`
 --
 
@@ -77,38 +64,22 @@ CREATE TABLE `tbdenuncia` (
   `dataDenuncia` date NOT NULL,
   `ufDenuncia` varchar(2) NOT NULL,
   `bairroDenuncia` varchar(50) NOT NULL,
-  `cepDenuncia` varchar(8) NOT NULL,
-  `ruaDenuncia` varchar(50) NOT NULL,
-  `cidadeDenuncia` varchar(50) NOT NULL,
-  `coordeDenuncia` varchar(50) NOT NULL,
-  `fk_idImgDenun` int(11) NOT NULL,
-  `fk_idUsuario` int(11) NOT NULL,
-  `fk_idCategoria` int(11) NOT NULL
+  `cepDenuncia` varchar(8) DEFAULT NULL,
+  `ruaDenuncia` varchar(50) DEFAULT NULL,
+  `cidadeDenuncia` varchar(50) DEFAULT NULL,
+  `fk_idImgDenun` int(11) DEFAULT NULL,
+  `fk_idUsuario` int(11) DEFAULT NULL,
+  `fk_idCategoria` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `tbdenuncia`
 --
 
-INSERT INTO `tbdenuncia` (`pk_idDenuncia`, `tituloDenuncia`, `descDenuncia`, `dataDenuncia`, `ufDenuncia`, `bairroDenuncia`, `cepDenuncia`, `ruaDenuncia`, `cidadeDenuncia`, `coordeDenuncia`, `fk_idImgDenun`, `fk_idUsuario`, `fk_idCategoria`) VALUES
-(1, '', '', '0000-00-00', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', '', 9, 1, 9),
-(4, '', '', '2022-04-20', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', '', 12, 1, 12),
-(5, '', '', '2022-04-20', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', '', 13, 1, 13);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tbecoponto`
---
-
-CREATE TABLE `tbecoponto` (
-  `pk_idEcoponto` int(11) NOT NULL,
-  `ufEcoponto` varchar(2) NOT NULL,
-  `logradouroEcoponto` varchar(50) NOT NULL,
-  `bairroEcoponto` varchar(50) NOT NULL,
-  `cepEcoponto` varchar(9) NOT NULL,
-  `ruaEcoponto` int(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `tbdenuncia` (`pk_idDenuncia`, `tituloDenuncia`, `descDenuncia`, `dataDenuncia`, `ufDenuncia`, `bairroDenuncia`, `cepDenuncia`, `ruaDenuncia`, `cidadeDenuncia`, `fk_idImgDenun`, `fk_idUsuario`, `fk_idCategoria`) VALUES
+(1, '', '', '0000-00-00', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', 9, 1, 9),
+(4, '', '', '2022-04-20', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', 12, 1, 12),
+(5, '', '', '2022-04-20', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', 13, 1, 13);
 
 -- --------------------------------------------------------
 
@@ -210,14 +181,6 @@ ALTER TABLE `tbcategoria`
   ADD PRIMARY KEY (`pk_idCategoria`);
 
 --
--- Índices para tabela `tbchatbot`
---
-ALTER TABLE `tbchatbot`
-  ADD PRIMARY KEY (`pk_idChatBot`),
-  ADD KEY `fk_idUsuario` (`fk_idUsuario`),
-  ADD KEY `fk_idEcoponto` (`fk_idEcoponto`);
-
---
 -- Índices para tabela `tbdenuncia`
 --
 ALTER TABLE `tbdenuncia`
@@ -226,12 +189,6 @@ ALTER TABLE `tbdenuncia`
   ADD KEY `fk_idUsuario` (`fk_idUsuario`) USING BTREE,
   ADD KEY `fk_idCategoria` (`fk_idCategoria`) USING BTREE,
   ADD KEY `fk_idUsuario_2` (`fk_idUsuario`) USING BTREE;
-
---
--- Índices para tabela `tbecoponto`
---
-ALTER TABLE `tbecoponto`
-  ADD PRIMARY KEY (`pk_idEcoponto`);
 
 --
 -- Índices para tabela `tbimgdenun`
@@ -270,22 +227,10 @@ ALTER TABLE `tbcategoria`
   MODIFY `pk_idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT de tabela `tbchatbot`
---
-ALTER TABLE `tbchatbot`
-  MODIFY `pk_idChatBot` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de tabela `tbdenuncia`
 --
 ALTER TABLE `tbdenuncia`
   MODIFY `pk_idDenuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de tabela `tbecoponto`
---
-ALTER TABLE `tbecoponto`
-  MODIFY `pk_idEcoponto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tbimgdenun`
@@ -314,13 +259,6 @@ ALTER TABLE `tbusuario`
 --
 -- Restrições para despejos de tabelas
 --
-
---
--- Limitadores para a tabela `tbchatbot`
---
-ALTER TABLE `tbchatbot`
-  ADD CONSTRAINT `tbchatbot_ibfk_1` FOREIGN KEY (`fk_idUsuario`) REFERENCES `tbusuario` (`pk_Usuario`),
-  ADD CONSTRAINT `tbchatbot_ibfk_2` FOREIGN KEY (`fk_idEcoponto`) REFERENCES `tbecoponto` (`pk_idEcoponto`);
 
 --
 -- Limitadores para a tabela `tbdenuncia`
