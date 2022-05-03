@@ -139,20 +139,81 @@
 
             return $query;
         }
+
+        //Método de Vizualizar o perfil
         public function perfil(){
             $conexao = Conexao::pegarConexao();
 
             $id = $_SESSION['idUsuario'];
 
-            $query = "SELECT * FROM tbUsuario 
-                        INNER JOIN tbimgusuario
-                            ON tbUsuario.fk_idImgUsuario = tbimgusuario.pk_idImgUsuario
-                                WHERE pk_Usuario = $id";
+            $query = "SELECT nomeUsuario, emailUsuario, senhaUsuario, numTelUsuario, imgUsuario FROM tbusuario 
+                        INNER JOIN tbtelusuario
+                            ON tbtelusuario.fk_idUsuario = tbusuario.pk_Usuario
+                                INNER JOIN tbimgusuario
+                                    ON tbimgusuario.pk_idImgUsuario = tbusuario.fk_idImgUsuario
+                                    WHERE pk_Usuario = $id";
             $query = $conexao->query($query);
 
             $query = $query->fetchAll();
 
             return $query;
+        }
+
+
+        //Método de o próprio usuario deletar a conta (DELETE)
+        public function deletar(){
+            $conexao = Conexao::pegarConexao();
+
+            $id = $_SESSION['idUsuario'];
+
+            $deleteTel = $conexao->prepare("DELETE FROM tbTelUsuario
+                                        WHERE fk_idUsuario = $id");
+
+            $deleteTel->execute();
+
+            $deleteUsuario = $conexao->prepare("DELETE FROM tbUsuario
+                                        WHERE pk_Usuario = $id");
+
+            $deleteUsuario->execute();
+
+        }
+
+        //Método de Alterar Usuario
+        public function alterar($id, $nome, $tel, $senha, $idImg){
+            $conexao = Conexao::pegarConexao();
+
+            $alterarUsuario = $conexao->prepare("UPDATE tbUsuario 
+                                                    SET
+                                                    nomeUsuario = '$nome'
+                                                    ,senhaUsuario = '$senha'
+                                                    ,fk_idImgUsuario = '$idImg'
+                                                        WHERE pk_Usuario = '$id'");
+
+            $alterarUsuario->execute();
+
+            $alterarTel = $conexao->prepare("UPDATE tbTelUsuario
+                                                SET 
+                                                    numTelUsuario = '$tel'
+                                                    WHERE fk_idUsuario = '$id'");
+
+
+            $alterarTel->execute();
+
+            return "Update realizado";      
+        }
+
+
+        //Método de Alterar Imagem do Usuario
+        public function alterarImg($caminhoImagem){
+            $conexao = Conexao::pegarConexao();
+
+            $alterarFoto = $conexao->prepare("INSERT INTO tbImgusuario VALUES(null,'$caminhoImagem')");
+
+            $alterarFoto->execute();
+
+            $idImg = $conexao->lastInsertId();
+
+            return $idImg;
         }
     }
 
