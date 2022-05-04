@@ -134,7 +134,7 @@
             </div>
             
         <?php } ?>
-
+        <p id="mensagem"></p>
     </body>
     <script>
         function initMap(){
@@ -211,4 +211,5 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5opbRMRKjMKTKajH2CdyKJCIsqOdwdUI&callback=initMap"
     ></script>    
     <script src="../javascript/index-restrita.js"></script>
+    
 </html>
