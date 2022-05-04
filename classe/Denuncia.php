@@ -212,7 +212,7 @@
         
 
         //Método para Mostrar as Denúncias já feitas
-        public function mostrar(){
+        public function mostrarDenuncia(){
             $conexao = Conexao::pegarConexao();
 
             $query = "SELECT imgDenuncia,imgUsuario,nomeUsuario,tituloDenuncia,descDenuncia,dataDenuncia,ufDenuncia,bairroDenuncia,cepDenuncia,ruaDenuncia,cidadeDenuncia FROM tbDenuncia

@@ -46,9 +46,9 @@
                 <?php
                     require_once("classe/Denuncia.php");
                     require_once("classe/Conexao.php");
-    
+                    
                     $denuncia = new Denuncia();
-                    $listaDenuncia = $denuncia->mostrar();
+                    $listaDenuncia = $denuncia->mostrarDenuncia();
     
                     foreach ($listaDenuncia as $linha){
                 ?>
