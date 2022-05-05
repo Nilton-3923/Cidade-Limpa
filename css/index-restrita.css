@@ -104,6 +104,7 @@ body{
     font-size:1.5vw;
     color:white;
     text-decoration:none ;
+    cursor:pointer;
 }
 .btn-denunciar:hover{
     background-color: #0b6929;
@@ -307,4 +308,172 @@ body{
 }
 .icone{
     width:100px;
+}
+.ajuste-criar-denuncia{
+    transition:opacity .3s;
+    display:none;
+    opacity:0;
+
+    position:fixed;
+    top:0;
+    align-items: center;
+    justify-content: center;
+    z-index:1000;
+    background:rgba(0,0,0,0.3);
+    width:100%;
+    height:100%;
+}
+.apareceModalCriarDenuncia{
+    display:flex;
+    opacity:1;
+}
+.btn-cancelar-modalCriarDenuncia{
+    transition:background-color .3s;
+    position:absolute;
+    top:10px;
+    right:10px;
+    background-color: rgb(172, 39, 5);
+    color:white;
+    padding:5px;
+    font-size:1vw;
+    cursor:pointer;
+    border-radius:5px;
+    border:none;
+    outline:none;
+}
+.btn-cancelar-modalCriarDenuncia:hover{
+    background-color: rgb(219, 50, 8);
+}
+.titulo-criar-denuncia{
+    font-size: 2.5vw;
+}
+.criar-denuncia{
+    background-color:white;
+    outline:solid 5px #064018;
+    width:700px;
+    height:500px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:50px;
+    position:relative;
+}
+.desabilitado{
+    background-color:rgb(177, 177, 177);
+}
+.criar-denuncia > form{
+    display:flex;
+    flex-direction: row;
+    position:relative;
+    right:15px;
+}
+
+
+.rua-e-num{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:row;
+    gap:10px;
+}
+.rua-e-num > input[type=text]{
+    border:none;
+    font-size:1.1vw;
+    padding:0 15px;
+    border-radius:5px;
+    outline:solid 2px #064018;
+}
+.rua{
+    width:34%;
+}
+.num{
+    width:10%;
+    text-align: center;
+}
+.categ-reg-ft{
+    display:flex;
+    flex-direction: column;
+    height:100%;
+    gap:25px;
+    position: relative;
+    right:35px;
+
+}
+.categ-reg-ft > select{
+    border:none;
+    font-size:1.1vw;
+    padding:0 15px;
+    border-radius:5px;
+    outline:solid 2px #064018;
+}
+.cidade-uf{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:row;
+    gap:10px;
+}
+.cidade-uf > input[type=text]{
+    border:none;
+    font-size:1.1vw;
+    padding:0 15px;
+    border-radius:5px;
+    outline:solid 2px #064018;
+}
+.cidade{
+    width:34%;
+}
+.uf{
+    width:10%;
+    text-align: center;
+}
+.ajuste-para-correcao-inputs{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:row;
+    gap:10px;
+    width:100%;
+    
+}
+.ajuste-para-correcao-inputs > input[type=text]{
+    border:none;
+    font-size:1.1vw;
+    padding:0 15px;
+    border-radius:5px;
+    outline:solid 2px #064018;
+    width:30%;
+}
+.correcao-inputs{
+    padding:0 15px;
+    width:13%;
+    
+}
+.form-pt1{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    gap:20px;
+}
+.desc{
+    border:none;
+    font-size:1.1vw;
+    padding:0 15px;
+    border-radius:5px;
+    outline:solid 2px #064018;
+    resize:none;
+}
+.alteracao-btn-criar-denuncia{
+    background-color:rgb(182, 182, 182);
+    color:#064018;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    padding:5px 15px;
+    font-size:1.2vw;
+    border-radius:5px;
+}
+.alteracao-btn-criar-denuncia:hover{
+    background-color:rgb(207, 206, 206);
 }

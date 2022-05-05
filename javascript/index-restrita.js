@@ -15,3 +15,11 @@ function modalAlterarConta(){
     modalAlterarConta.classList.toggle('apareceModalAlterarConta');
     
 }
+
+var idmodalCriarDenuncia = document.getElementById('modalCriarDenuncia');
+function modalCriarDenuncia(){
+    idmodalCriarDenuncia.classList.add('apareceModalCriarDenuncia');
+}
+function cancelarModalCriarDenuncia(){
+    idmodalCriarDenuncia.classList.remove('apareceModalCriarDenuncia');
+}

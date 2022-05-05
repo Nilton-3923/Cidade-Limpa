@@ -45,7 +45,7 @@
             </nav>
             <div style="top:-170px;" id="navbarModal" class="navbar-modal">
                 <a href="../session/logout-usuario.php">Sair</a>
-                <p onClick="modalAlterarConta()"class="btn-alterar-conta">Alterar conta</p>
+                <a onClick="modalAlterarConta()"class="btn-alterar-conta">Alterar conta</a>
             </div>
             
             
@@ -61,7 +61,7 @@
                             <li>Foto da denuncia</li>
                             <li>Descrição sobre a situação do local</li>
                         </ul>
-                        <a class="btn-denunciar"href="cadastro-denuncia.php">Clique aqui para Denunciar</a>
+                        <p onClick="modalCriarDenuncia()"class="btn-denunciar">Clique aqui para Denunciar</p>
                     </div>
                 </div>
             </div>
@@ -142,7 +142,104 @@
             
         <?php } ?>
         <p id="mensagem"></p>
+        <div id="modalCriarDenuncia" class="ajuste-criar-denuncia">
+            <div class="criar-denuncia">
+                <p onClick="cancelarModalCriarDenuncia()"class="btn-cancelar-modalCriarDenuncia">Cancelar</p>
+                <h1 class="titulo-criar-denuncia">Denuncia</h1>
+                <span id="mensagem" style="opacity:0;color:red;display:none">*Endereço invalido</span>
+                <form action="../cadastro/objeto-cadastro-denuncia.php" method="post" enctype="multipart/form-data">
+                <div class="form-pt1">
+
+                    <!--Id do usuario-->
+                    <input type="hidden" name="txtIdUsuario" value="
+                    <?php 
+                            session_start();
+                            echo $_SESSION['idUsuario'];    
+                            ?>
+                    "> 
+                    <div class="ajuste-para-correcao-inputs">
+                        <!--Titulo denuncia-->
+                        <input type="text" name="txtTituloDenuncia" placeholder="Titúlo">
+                        <div class="correcao-inputs"></div>
+                    </div>
+                    
+                    <!--Categoria da denuncia-->
+                    <?php
+                    require_once("../classe/Conexao.php");
+                    require_once("../classe/Categoria.php");
+                    
+                    $categoria = new Categoria();
+                    $listaCat = $categoria->listar();
+                    
+                    ?>
+                    <div class="ajuste-para-correcao-inputs">
+                        <input type="text" id="cep" name="txtCepDenuncia" placeholder="CEP";>
+                        <div class="correcao-inputs"></div>
+                    </div>
+                    <div class="rua-e-num">
+                        <input class="rua desabilitado"type="text" id="rua" name="txtRuaDenuncia" placeholder="Rua" disabled >
+                        <input class="num" type="text" id="numero" name="txtNumeroDenuncia" placeholder="Nº">
+                    </div>
+                    <div class="ajuste-para-correcao-inputs">
+                        <input class="desabilitado"type="text" id="bairro" name="txtBairroDenuncia" placeholder="Bairro" disabled>
+                        <div class="correcao-inputs"></div>
+                    </div>
+                    <!--Endereços-->
+                    <div class="cidade-uf">
+                        <input class="cidade desabilitado"type="text" id="cidade" name="txtCidadeDenuncia" placeholder="Cidade"disabled >
+                        <input class="uf desabilitado"type="text" id="uf" name="txtUfDenuncia" placeholder="UF" disabled>
+                    </div>
+                    
+                    <!--Descrição denuncia-->
+                    <!--Aqui tem que ser uma área para escrever-->
+                    <textarea class="desc" name="txtDenuncia" id="denuncia" cols="23" rows="5" placeholder="Descrição"></textarea>
+                    <br>
+    
+                </div>
+                <!--Número da casa-->
+                <div class="categ-reg-ft">
+                    <select name="txtCategoria">
+                        <option disabled selected>Selecione a Categoria</option>
+                        <?php 
+                            foreach($listaCat as $linha)
+                            { 
+                                ?>
+                                <option value="<?php echo $linha['pk_idCategoria'];?>">
+                                    <?php echo ($linha['campoCategoria']);?>
+                                </option>
+                                <?php 
+                            } 
+                            ?>
+                        </select>
+                        <!--Região-->
+                        <select name="regiao" id="regiao">
+                            <option disabled selected>Regiões de São Paulo</option>
+                            <option value="Zona Leste">Zona Leste</option>
+                            <option value="Zona Norte">Zona Norte</option>
+                            <option value="Zona Sul">Zona Sul</option>
+                            <option value="Zona Oeste">Zona Oeste</option>
+                        </select><br>
+                        <!--Imagem denuncia-->
+                        <label>Selecione a Foto da Denuncia</label>
+                        <input type="file" name="fotoDenuncia"><br>
+                        <input class="btn-denunciar alteracao-btn-criar-denuncia"type="submit" value="Denunciar">
+                    </div>
+                    
+                    
+                    <!--Data denuncia-->
+                    <input type="hidden" id="data" name="txtDtDenuncia" 
+                    value="      
+                    <?php
+                        date_default_timezone_set('America/Sao_Paulo');
+                        echo date('Y/m/d');
+                        ?>
+                    ">
+                    
+                </form>
+            </div>
+        </div>
     </body>
+    <script src="../javascript/api-cep.js"></script>
     <script>
         function initMap(){
             // Opções para o mapa
