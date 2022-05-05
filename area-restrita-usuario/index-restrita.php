@@ -69,6 +69,8 @@
         <div class="divisao-pagina"></div>
 
         <h2 class="segundo-titulo">DENUNCIAS FEITAS POR VOCÊ</h2>
+        <div class="ajuste-denuncias">
+            <div class="denuncias">
         <?php
             $pontos = new Denuncia();
             $listaPontos = $pontos->mostrarPontosMapa();
@@ -82,26 +84,31 @@
             $listaDeDenuncias = $usuario->denunciasFeita();
             foreach($listaDeDenuncias as $linha){
         ?>
-            <div class="denuncias">
+            
                 <div class="card">
                     <div class="card-part1">
                         <img class="foto-usuario" src="../cadastro/<?php echo $linha['imgUsuario'] ?>" alt="" ><!-- Foto do Usuario -->
                         <h5><?php echo $linha['nomeUsuario'];?></h5><!--nome do Usuario -->
                     </div>
                     <div class="conteudo-card">
-                        <h5 class=""><?php echo $linha['tituloDenuncia'];?></h5><!--titulo da Denuncia -->
-                        
-                        <p class=""><?php echo $linha['dataDenuncia'];?></p><!--data da Denuncia -->
-    
-                        <h5 class=""><?php echo $linha['cepDenuncia'];?></h5><!--cep da Denuncia -->
-    
-                        <h5 class=""><?php echo $linha['descDenuncia'];?></h5><!--descrição da Denuncia -->
-                        <div class="img-denuncia">
-                            <img src="../cadastro/<?php echo $linha['imgDenuncia']; ?>" alt=""><!--Imagem da Denuncia -->
+                        <div class="titulo-e-data">
+                            <h5 class=""><?php echo $linha['tituloDenuncia'];?></h5><!--titulo da Denuncia -->
+                            <p class=""><?php echo $linha['dataDenuncia'];?></p><!--data da Denuncia -->
                         </div>
-                        
-                    </div>            
-            </div>
+                        <div class="div-cep">
+                            <h5 class="">CEP:<?php echo $linha['cepDenuncia'];?></h5><!--cep da Denuncia -->
+                            <div class="ajuste-cep"></div>
+                        </div>
+                        <div class="desc-e-img">
+                            <h5 class="">Descrição:<br><?php echo $linha['descDenuncia'];?></h5><!--descrição da Denuncia -->
+                            <div class="img-denuncia">
+                                <img src="../cadastro/<?php echo $linha['imgDenuncia']; ?>" alt=""><!--Imagem da Denuncia -->
+                            </div>  
+                        </div>
+                        <div class="divisao-card"></div>
+                        <img class="icone" src="../imagens/icone-agua.png" >
+                    </div>  
+                </div>          
         <?php
             }
 
@@ -111,8 +118,8 @@
             foreach($lista as $linha){
         ?>
             
-            
-           
+                </div>
+            </div>
             <div id="modalAlterarConta"class="ajuste-modal-alterar-conta">
                 <div class="modal-alterar-conta">
                     <form action="../CRUD/objeto-alterar-usuario.php" method="get" enctype="multipart/form-data">
@@ -159,14 +166,38 @@
             //Array dos marcadores
             var markers = [
                 <?php 
+
+                $pontos = new Denuncia();
+                $listaPontos = $pontos->mostrarPontosMapa();
+
                 foreach ($listaPontos as $lista){
+
+                    $idDenuncia = $lista['pk_idDenuncia'];
+
                     $titulo = $lista['tituloDenuncia'];
+                    $data = $lista['dataDenuncia'];
+                    $desc = $lista['descDenuncia'];
+                    $categoria = $lista['campoCategoria'];
+                    $img = $lista['imgDenuncia'];
+                    $coordenadas= $lista['coordeDenuncia'];
+
+                    if($categoria == 'Descarte de lixo'){     
+                        $cor = "#097005";
+                    }
+                    
+                    else{
+                        $cor ="blue";
+                    }
                 ?>
-                        ,{
+                        {
                             coords:{<?php echo $lista['coordeDenuncia'];?>},
-                            iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-                            content:'<h2><?php echo $titulo; ?></h2>'          
-                        },
+                            //iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                            content:'<a style="text-decoration:none"href="index-restrita.php?idDenuncia=<?php echo $idDenuncia;?>&&coordenadas=<?php echo $coordenadas ;?>">'
+                                    +'<h2 style="color:<?php echo $cor; ?>"><?php echo $titulo; ?></h2>'
+                                    +'<span style="color:black"><?php echo $data;?></span>'
+                                    +'<p style="color:black"><?php echo $desc;?></p>'
+                                    +'<img style="height:150px; width:300px;"src="../cadastro/<?php echo $img;?>"></a>'
+                         },
                 <?php
                 }
                 ?>

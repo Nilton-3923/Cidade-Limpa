@@ -2,7 +2,6 @@
 <?php
 class Conexao{
 	public static function pegarConexao(){
-		session_start();
 		$servidor="localhost";
 		$banco="bdcidadelimpa";
 		$usuario="root";

@@ -1,6 +1,7 @@
 <?php
-     require_once("classe/Conexao.php");
-     require_once("classe/Denuncia.php");
+    session_start();
+    require_once("classe/Conexao.php");
+    require_once("classe/Denuncia.php");
 
     
     $pontos = new Denuncia();
@@ -61,6 +62,9 @@
             var markers = [
                 <?php 
                 foreach ($listaPontos as $lista){
+
+                    $idDenuncia = $lista['pk_idDenuncia'];
+
                     $titulo = $lista['tituloDenuncia'];
                     $data = $lista['dataDenuncia'];
                     $desc = $lista['descDenuncia'];
@@ -77,11 +81,11 @@
                 ?>
                         {
                             coords:{<?php echo $lista['coordeDenuncia'];?>},
-                            iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-                            content:'<h2 style="color:<?php echo $cor; ?>"><?php echo $titulo; ?></h2>'
-                                    +'<span><?php echo $data;?></span>'
-                                    +'<p><?php echo $desc;?></p>'
-                                    +'<img style="height:150px; width:30px;"src="https://i.pinimg.com/originals/21/eb/c5/21ebc531e5eb9725a64a52cac62325e2.png">'
+                            //iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                            content:'<a style="text-decoration:none"href="denuncia-selecionada.php?idDenuncia=<?php echo $idDenuncia; ?>"><h2 style="color:<?php echo $cor; ?>"><?php echo $titulo; ?></h2>'
+                                    +'<span style="color:black"><?php echo $data;?></span>'
+                                    +'<p style="color:black"><?php echo $desc;?></p>'
+                                    +'<img style="height:150px; width:300px;"src="cadastro/<?php echo $img;?>"></a>'
                          },
                 <?php
                 }

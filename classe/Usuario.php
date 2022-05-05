@@ -111,7 +111,7 @@
             //Verificando os usuarios que tem esse parâmetros
             if($stmt->rowCount()>0){
                 $dados = $stmt->fetch();
-
+                session_start();
                 $_SESSION['idUsuario'] = $dados['pk_Usuario'];
 
                 return true;

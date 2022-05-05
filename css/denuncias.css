@@ -57,7 +57,6 @@ body{
     display: flex;
     justify-content: center;
    
-    
 }
 .pesquisar-denuncia > input{
     border:none;
@@ -82,11 +81,12 @@ body{
 }
 
 .card{
-
     display:flex;
     justify-content:center;
     align-items: center;
    
+    width:450px;
+    height:calc(100% + 50px);
     flex-direction: column;
     color:white;
     font-size:1.5vw;
@@ -94,23 +94,26 @@ body{
     outline:white 3px solid;
 }
 .card-section{
+    width:100%;
     display:flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     padding:20px;
-    gap:50px;
+    
 }
 .info-section{
+    width:100%;
     display:flex;
     align-items:center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
+    margin-bottom:15px;
+
 }
 .user{
     border-radius:50%;
     width: 100px;
 
-    
 }
 .ajuste-div-principal{
     display:flex;
@@ -124,8 +127,43 @@ body{
     display:grid;
     grid-template-columns: 1fr 1fr;
     gap:100px;
-    margin-bottom:50px;
+    margin-bottom:100px;
 }
 .-div-{
     background-color:white!important;
+}
+.body-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.divisao-card{
+    width:80%;
+    height:3px;
+    border-radius:15px;
+    background-color: white;
+    margin:25px 0px;
+}
+.div-cep{
+    width:80%;
+}
+.desc-e-img{
+    margin-top:15px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.desc-e-img > h5{
+    width:80%;
+    margin-bottom:15px;
+}
+.desc-e-img > img{
+    width: 350px;
+    height:250px;
+
+}
+.icone{
+    width:100px;
 }

@@ -233,7 +233,7 @@
         public function mostrarPontosMapa(){
             $conexao = Conexao :: pegarConexao();
 
-            $query = "SELECT coordeDenuncia, tituloDenuncia, descDenuncia, cepDenuncia, DATE_FORMAT(`dataDenuncia`,'%d/%m/%Y') as dataDenuncia, campoCategoria,imgDenuncia FROM tbDenuncia 
+            $query = "SELECT pk_idDenuncia, coordeDenuncia, tituloDenuncia, descDenuncia, cepDenuncia, DATE_FORMAT(`dataDenuncia`,'%d/%m/%Y') as dataDenuncia, campoCategoria,imgDenuncia FROM tbDenuncia 
                 INNER JOIN tbcategoria 
                     ON tbcategoria.pk_idCategoria = tbdenuncia.fk_idCategoria
                         INNER JOIN tbimgdenun

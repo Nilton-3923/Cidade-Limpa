@@ -64,12 +64,15 @@
                                 <h5 class=""><?php echo $linha['tituloDenuncia'];?></h5><!--titulo da Denuncia -->
                                 <p class="data"><?php echo $linha['dataDenuncia'];?></p><!--data da Denuncia -->
                             </div>
-            
-                            <h5 class=""><?php echo $linha['cepDenuncia'];?></h5><!--cep da Denuncia -->
-            
-                            <h5 class=""><?php echo $linha['descDenuncia'];?></h5><!--descrição da Denuncia -->
-            
-                            <img class="" src="cadastro/<?php echo $linha['imgDenuncia']; ?>" alt="" style="width:150px"><!--Imagem da Denuncia -->
+                            <div class="div-cep">
+                                <h5 class="">CEP: <?php echo $linha['cepDenuncia'];?></h5><!--cep da Denuncia -->
+                            </div>
+                            <div class="desc-e-img">
+                                <h5 class="">Descrição:<br><?php echo $linha['descDenuncia'];?></h5><!--descrição da Denuncia -->
+                                <img class="" src="cadastro/<?php echo $linha['imgDenuncia']; ?>" alt=""><!--Imagem da Denuncia -->
+                            </div>
+                            <div class="divisao-card"></div>
+                            <img class="icone"src="imagens/icone-agua.png">
                         </div>
                     </div>
                 
