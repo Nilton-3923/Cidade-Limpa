@@ -147,6 +147,7 @@
                 <p onClick="cancelarModalCriarDenuncia()"class="btn-cancelar-modalCriarDenuncia">Cancelar</p>
                 <h1 class="titulo-criar-denuncia">Denuncia</h1>
                 <span id="mensagem" style="opacity:0;color:red;display:none">*Endereço invalido</span>
+                
                 <form action="../cadastro/objeto-cadastro-denuncia.php" method="post" enctype="multipart/form-data">
                 <div class="form-pt1">
 
@@ -177,17 +178,17 @@
                         <div class="correcao-inputs"></div>
                     </div>
                     <div class="rua-e-num">
-                        <input class="rua desabilitado"type="text" id="rua" name="txtRuaDenuncia" placeholder="Rua" disabled >
+                        <input class="rua desabilitado"type="text" id="rua" name="txtRuaDenuncia" placeholder="Rua" >
                         <input class="num" type="text" id="numero" name="txtNumeroDenuncia" placeholder="Nº">
                     </div>
                     <div class="ajuste-para-correcao-inputs">
-                        <input class="desabilitado"type="text" id="bairro" name="txtBairroDenuncia" placeholder="Bairro" disabled>
+                        <input class="desabilitado"type="text" id="bairro" name="txtBairroDenuncia" placeholder="Bairro">
                         <div class="correcao-inputs"></div>
                     </div>
                     <!--Endereços-->
                     <div class="cidade-uf">
-                        <input class="cidade desabilitado"type="text" id="cidade" name="txtCidadeDenuncia" placeholder="Cidade"disabled >
-                        <input class="uf desabilitado"type="text" id="uf" name="txtUfDenuncia" placeholder="UF" disabled>
+                        <input class="cidade desabilitado"type="text" id="cidade" name="txtCidadeDenuncia" placeholder="Cidade" >
+                        <input class="uf desabilitado"type="text" id="uf" name="txtUfDenuncia" placeholder="UF" >
                     </div>
                     
                     <!--Descrição denuncia-->

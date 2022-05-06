@@ -26,7 +26,7 @@
      
     echo $denuncia->denunciar($denuncia);
 
-    echo $denuncia -> geolocalizacao(); 
+    header("Location:../area-restrita-usuario/index-restrita.php"); 
 
     //header ("Location: ../area-restrita-usuario/index-restrita.php");
 ?>
