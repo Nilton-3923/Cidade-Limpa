@@ -1,13 +1,8 @@
 <?php
     session_start();
+    error_reporting(0);
     require_once("classe/Conexao.php");
     require_once("classe/Denuncia.php");
-
-    
-    $pontos = new Denuncia();
-    $listaPontos = $pontos->mostrarPontosMapa();
-
-
 ?>
 
 
@@ -61,6 +56,10 @@
             //Array dos marcadores
             var markers = [
                 <?php 
+
+                $pontos = new Denuncia();
+                $listaPontos = $pontos->mostrarPontosMapa();
+
                 foreach ($listaPontos as $lista){
 
                     $idDenuncia = $lista['pk_idDenuncia'];
@@ -70,6 +69,7 @@
                     $desc = $lista['descDenuncia'];
                     $categoria = $lista['campoCategoria'];
                     $img = $lista['imgDenuncia'];
+                    $coordenadas= $lista['coordeDenuncia'];
 
                     if($categoria == 'Descarte de lixo'){     
                         $cor = "#097005";
@@ -82,7 +82,8 @@
                         {
                             coords:{<?php echo $lista['coordeDenuncia'];?>},
                             //iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-                            content:'<a style="text-decoration:none"href="denuncia-selecionada.php?idDenuncia=<?php echo $idDenuncia; ?>"><h2 style="color:<?php echo $cor; ?>"><?php echo $titulo; ?></h2>'
+                            content:'<a style="text-decoration:none"href="index-restrita.php?idDenuncia=<?php echo $idDenuncia;?>&&coordenadas=<?php echo $coordenadas ;?>">'
+                                    +'<h2 style="color:<?php echo $cor; ?>"><?php echo $titulo; ?></h2>'
                                     +'<span style="color:black"><?php echo $data;?></span>'
                                     +'<p style="color:black"><?php echo $desc;?></p>'
                                     +'<img style="height:150px; width:300px;"src="cadastro/<?php echo $img;?>"></a>'
@@ -90,7 +91,6 @@
                 <?php
                 }
                 ?>
-                
             ]
 
             // Laço de repetição para percorrer os marcadores
@@ -130,7 +130,7 @@
     </script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5opbRMRKjMKTKajH2CdyKJCIsqOdwdUI&callback=initMap"
-    ></script>
+    ></script>    
 
 </body>
 </html>

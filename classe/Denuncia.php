@@ -1,7 +1,6 @@
 <?php
     require_once("Conexao.php");
     require_once("Categoria.php");
-    require_once("Email.php");
 
     class Denuncia{
 
