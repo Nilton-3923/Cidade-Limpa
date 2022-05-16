@@ -263,7 +263,7 @@
         }
 
         //Método de Deletar Denuncia(DELETE)
-        public function deletarDenuncia($idDenuncia,$imagemDenuncia){
+        public function deletarDenuncia($idDenuncia){
             $conexao = Conexao::pegarConexao();
 
             $deleteDenuncia = $conexao->prepare("DELETE FROM tbDenuncia
@@ -275,7 +275,22 @@
         }
         
         //Método de Alterar Denuncia 
-        public function alterar($idDenuncia, $titulo, $desc, $caminhoImagem){
+        public function alterar($idDenuncia, $titulo, $desc){
+            $conexao = Conexao::pegarConexao();
+
+            $alterarDenuncia = $conexao->prepare("UPDATE tbDenuncia 
+                                                    SET
+                                                    tituloDenuncia = '$titulo'
+                                                    ,descDenuncia = '$desc'
+                                                        WHERE pk_idDenuncia = '$idDenuncia'");
+
+            $alterarDenuncia->execute();
+
+
+            return "Update realizado";      
+        }
+
+        public function alterarImg($idDenuncia, $titulo, $desc, $caminhoImagem){
             $conexao = Conexao::pegarConexao();
 
             $alterarDenuncia = $conexao->prepare("UPDATE tbDenuncia 
@@ -290,7 +305,6 @@
 
             return "Update realizado";      
         }
-
         //Método de pesquisa
         public function pesquisar($pesquisar){
             $conexao = Conexao::pegarConexao();

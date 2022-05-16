@@ -72,14 +72,7 @@
         <div class="ajuste-denuncias">
             <div class="denuncias">
         <?php
-            $pontos = new Denuncia();
-            $listaPontos = $pontos->mostrarPontosMapa();
-
-
-            foreach($listaPontos as $lista){
-                echo $lista['coordeDenuncia'];
-            }
-
+            
             $usuario = new Usuario();
             $listaDeDenuncias = $usuario->denunciasFeita();
             foreach($listaDeDenuncias as $linha){
@@ -109,13 +102,12 @@
                         <img class="icone" src="../imagens/icone-agua.png" >
 
                         <!-- Colocar esse form de Alteração da denuncia em um modal -->
-                        <form action="../CRUD/objeto-alterar-denuncia.php" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="pk_idImgDenun" value="<?php echo $linha['pk_idImgDenun'];?>"> 
+                        <form action="../cadastro/objeto-alterar-denuncia.php" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="pk_idDenuncia" value="<?php echo $linha['pk_idDenuncia'];?>">
                             <input type="text" name="tituloDenuncia" value="<?php echo $linha['tituloDenuncia']; ?>">
                             <input type="text" name="descDenuncia" value="<?php echo $linha['descDenuncia'] ?>">
                             <input type="file" name="imgDenuncia">
-                            <!--Deletar Denuncia--><a href="../CRUD/objeto-deletar-denuncia.php?pk_idDenuncia=<?php echo $linha['pk_idDenuncia'] ?>&pk_idImgDenun=<?php echo $linha['pk_idImgDenun'] ?>">deletar Denuncia</a>
+                            <!--Deletar Denuncia--><a href="../CRUD/objeto-deletar-denuncia.php?pk_idDenuncia=<?php echo $linha['pk_idDenuncia'];?>">deletar Denuncia</a>
                             <input type="submit" value="Salvar">
                         </form>
                     </div>  
