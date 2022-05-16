@@ -30,10 +30,10 @@
     
     $denuncia->setIdCategoria($_POST['txtCategoria']);
 
-     
+
     echo $denuncia->denunciar($denuncia);
+    
+    echo $denuncia->corpoEmail();
+    //header("Location:../area-restrita-usuario/index-restrita.php"); 
 
-    header("Location:../area-restrita-usuario/index-restrita.php"); 
-
-    //header ("Location: ../area-restrita-usuario/index-restrita.php");
 ?>

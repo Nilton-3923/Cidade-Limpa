@@ -1,8 +1,11 @@
 <?php
     require_once("Conexao.php");
     require_once("Categoria.php");
+    require_once("Email.php");
 
     class Denuncia{
+
+        
 
         private $idDenuncia;
 
@@ -119,6 +122,37 @@
         }
         public function setNumero($numero){
             $this -> numero = $numero; 
+        }
+
+
+        public function corpoEmail(){
+
+            $dataDenuncia = $this -> dataDenuncia;
+            $ruaDenuncia = $this -> ruaDenuncia;
+            $bairroDenuncia = $this -> bairroDenuncia;
+            $numero = $this -> numero; 
+            $descricao = $this -> descDenuncia; 
+            $imagemDenuncia = $this -> imagemDenuncia;
+            $idCategoria = $this->idCategoria;
+
+            if($idCategoria  == 1){
+                $categoria = "Descarte de lixo";
+            }else{
+                $categoria = "Casos de Dengue";
+            }
+
+            $corpoEmail = "Olá, somos a empresa SOFTONE desenvolvedora do projeto Cidade Limpa. Nosso projeto tem como objetivo auxiliar as pessoas com as denuncias de irregularidades na cidade de São Paulo.<br>
+            
+            Temos uma denuncia de $categoria feita na região de São Paulo, no dia $dataDenuncia, na $ruaDenuncia, $numero, $bairroDenuncia.
+            
+            <br><br>
+            Descrição feita pelos moradores: $descricao.
+            
+            <br><br>
+            Imagem do local: <br>
+            <img src='$imagemDenuncia' style='height:200px; width:200px;'>";
+
+            return $corpoEmail;
         }
 
 
@@ -271,6 +305,7 @@
             return $query;
         }
 
+        
 
     }
 ?>
