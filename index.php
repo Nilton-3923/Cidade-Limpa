@@ -70,7 +70,7 @@
                     $img = $lista['imgDenuncia'];
                     $coordenadas= $lista['coordeDenuncia'];
 
-                    if($categoria == 'Descarte de lixo'){     
+                    if($categoria == 'Descarte Irregular de Lixo'){     
                         $cor = "#097005";
                     }
                     
@@ -82,10 +82,10 @@
                             coords:{<?php echo $lista['coordeDenuncia'];?>},
                             //iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
                             content:'<a style="text-decoration:none"href="index-restrita.php?idDenuncia=<?php echo $idDenuncia;?>&&coordenadas=<?php echo $coordenadas ;?>">'
-                                    +'<h2 style="color:<?php echo $cor; ?>"><?php echo $titulo; ?></h2>'
+                                    +'<h2 style="color:<?php echo $cor; ?>; display: inline; margin-right:20px"><?php echo $categoria; ?></h2>'
                                     +'<span style="color:black"><?php echo $data;?></span>'
-                                    +'<p style="color:black"><?php echo $desc;?></p>'
-                                    +'<img style="height:150px; width:300px;"src="cadastro/<?php echo $img;?>"></a>'
+                                    +'<p style="color:black; margin-top:20px; margin-bottom:20px;"><?php echo $desc;?></p>'
+                                    +'<img style="height:150px; width:300px; margin-left:12px;"src="cadastro/<?php echo $img;?>"></a>'
                          },
                 <?php
                 }
