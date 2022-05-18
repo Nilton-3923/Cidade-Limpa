@@ -30,14 +30,14 @@
     <body>
         <nav>
             <div class="navbar-parte-1">
-                <img class="logo" src="https://static.wixstatic.com/media/3cbee0_280ac02ce30f4cfba00d997e3c66b4a1~mv2.png/v1/fill/w_58,h_58,al_c,usm_0.66_1.00_0.01,enc_auto/3cbee0_280ac02ce30f4cfba00d997e3c66b4a1~mv2.png">
+                <img class="logo" src="../imagens/logo.png">
             </div>
             
-            <div class="navbar-logado">
+            <div id="abre-modal" class="navbar-logado">
                 <div class="ajuste-div-foto">
                     <img class="foto-navbar ajuste-foto"src="../cadastro/<?php echo $lista['imgUsuario']; ?>">
                 </div>
-                <div id="seta" class="seta">
+                <div id="seta"class="seta">
                     <div class="linha-seta-1"></div>
                     <div class="linha-seta-2"></div>
                 </div>
@@ -79,6 +79,13 @@
         ?>
             
                 <div class="card">
+                    <div class="ajuste-tres-pontinhos">
+                        <div onClick="modalAlterarDenuncia()" class="tres-pontos">
+                            <div class="ponto"></div>
+                            <div class="ponto"></div>
+                            <div class="ponto"></div>
+                        </div>
+                    </div>
                     <div class="card-part1">
                         <img class="foto-usuario" src="../cadastro/<?php echo $linha['imgUsuario'] ?>" alt="" ><!-- Foto do Usuario -->
                         <h5><?php echo $linha['nomeUsuario'];?></h5><!--nome do Usuario -->
@@ -102,6 +109,18 @@
                         <img class="icone" src="../imagens/icone-agua.png" >
 
                         <!-- Colocar esse form de Alteração da denuncia em um modal -->
+<<<<<<< HEAD
+                        <div id="modalAlterarDenuncia" class="modal-alterar-denuncia">
+                            <form action="../CRUD/objeto-alterar-denuncia.php" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="pk_idDenuncia" value="<?php echo $linha['pk_idDenuncia'];?>">
+                                <input type="text" name="tituloDenuncia" value="<?php echo $linha['tituloDenuncia']; ?>">
+                                <input type="text" name="descDenuncia" value="<?php echo $linha['descDenuncia'] ?>">
+                                <input type="file" name="imgDenuncia">
+                                <!--Deletar Denuncia--><a href="../CRUD/objeto-deletar-denuncia.php?pk_idDenuncia=<?php echo $linha['pk_idDenuncia'];?>">deletar Denuncia</a>
+                                <input type="submit" value="Salvar">
+                            </form>
+                        </div>
+=======
                         <form action="../CRUD/objeto-alterar-denuncia.php" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="pk_idDenuncia" value="<?php echo $linha['pk_idDenuncia'];?>">
                             <input type="text" name="tituloDenuncia" class="inputSuaDenuncia" value="<?php echo $linha['tituloDenuncia']; ?>">
@@ -110,6 +129,7 @@
                             <!--Deletar Denuncia--><a class="deletarBotao" href="../CRUD/objeto-deletar-denuncia.php?pk_idDenuncia=<?php echo $linha['pk_idDenuncia'];?>">Deletar</a>
                             <input type="submit" class="salvarBotao" value="Salvar">
                         </form>
+>>>>>>> cdf6555ff2f947dd2c43e9d20e5fea1f43e1be55
                     </div>  
                 </div>          
         <?php

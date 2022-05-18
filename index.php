@@ -27,10 +27,7 @@
         <div id="map"></div>
     </section>
 
-    <section id="sobre" class="index-segunda-parte">
-        <h1>Sobre Nós</h1>
-        <p>Somos  a Cidade Limpa, Somos uma plataforma dedicada á denúncias de meio ambiente humanitário .</p>    
-    </section>
+
 
     <script>
         function initMap(){

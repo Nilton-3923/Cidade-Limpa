@@ -65,6 +65,8 @@ body{
 }
 .logo-login{
     width:150px;
+    transform:scale(6);
+    pointer-events: none;
 }
 .form-login{
     color:#464646;

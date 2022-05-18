@@ -138,6 +138,7 @@ body{
 
 }
 .card{
+    position:relative;
     display:flex;
     align-items: center;
     justify-content:center;
@@ -168,6 +169,7 @@ body{
     width:100%;
     font-size:1.5vw;
     color:white;
+    margin-bottom:25px;
 }
 .img-denuncia{
     display:flex;
@@ -477,6 +479,7 @@ body{
 .alteracao-btn-criar-denuncia:hover{
     background-color:rgb(207, 206, 206);
 }
+<<<<<<< Updated upstream
 
 
 .inputSuaDenuncia{
@@ -523,4 +526,46 @@ body{
 .deletarBotao:hover{
     background-color:rgb(143, 1, 1);
     transition: 0.55s;
+=======
+.ajuste-tres-pontinhos{
+    display:flex;
+    flex-direction: row;
+    justify-content: end;
+    width:90%;
+    margin-bottom:15px;
+}
+.tres-pontos{
+    display:flex;
+    flex-direction: column;
+    gap:2px;
+    cursor: pointer;
+    width:50px;
+    height:50px;
+    align-items: center;
+    justify-content: center;
+}
+.ponto{
+    width:10px;
+    height:10px;
+    background-color:#ffffff;
+    border-radius:50%;
+}
+.modal-alterar-denuncia{
+    display:none;
+
+    position:fixed;
+    top:0;
+    left:0;
+    background-color:rgba(0,0,0,0.3);
+    width:100vw;
+    height:100vh;
+    align-items: center;
+    justify-content: center;
+}
+.modal-alterar-denuncia > form{
+    background-color: red;
+}
+.movimento-seta{
+    transform: translateY(8px) rotateX(180deg);
+>>>>>>> Stashed changes
 }

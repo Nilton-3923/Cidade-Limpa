@@ -1,12 +1,15 @@
+var navbarModal = document.getElementById('navbarModal');
+var abreModal = document.getElementById('abre-modal');
 var seta = document.getElementById('seta');
-        var navbarModal = document.getElementById('navbarModal');
 
-        seta.onclick = ()=>{
+        abreModal.onclick = ()=>{
             if(navbarModal.style.top === "-170px"){
                 navbarModal.style.top = "90px";
+                seta.classList.toggle('movimento-seta');
             }else{
                 navbarModal.style.top = "-170px";
-            }
+                seta.classList.toggle('movimento-seta');
+            }   
         }
 
 function modalAlterarConta(){
@@ -22,4 +25,9 @@ function modalCriarDenuncia(){
 }
 function cancelarModalCriarDenuncia(){
     idmodalCriarDenuncia.classList.remove('apareceModalCriarDenuncia');
+}
+
+ 
+function modalAlterarDenuncia(){
+    
 }
