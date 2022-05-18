@@ -479,54 +479,7 @@ body{
 .alteracao-btn-criar-denuncia:hover{
     background-color:rgb(207, 206, 206);
 }
-<<<<<<< Updated upstream
 
-
-.inputSuaDenuncia{
-    margin: auto;    
-    border-radius: 4px;
-    padding: 5px;
-    margin-left: 10px;
-    border: 0.8px solid #000;
-}
-
-.inputFicheiro{
-    width: 70%;
-    margin:auto;
-    border-radius: 3px;
-    padding: 2px;
-    background-color: white;
-    color: #000;
-}
-.deletarBotao{
-    margin: auto;
-    text-decoration: none;
-    padding: 2px;
-    border-radius: 4px;
-    background-color: red;
-    color: rgb(241, 241, 241);
-    font-size: 15px;
-}
-
-.salvarBotao{
-    margin: auto;
-    padding: 2px;
-    border-radius: 4px;
-    background-color: rgb(46, 235, 146);
-    color: rgb(241, 241, 241);
-    font-size: 15px;
-    border: 0px solid;
-}
-
-.salvarBotao:hover{
-    background-color:rgb(27, 146, 90);
-    transition: 0.55s;
-}
-
-.deletarBotao:hover{
-    background-color:rgb(143, 1, 1);
-    transition: 0.55s;
-=======
 .ajuste-tres-pontinhos{
     display:flex;
     flex-direction: row;
@@ -567,5 +520,5 @@ body{
 }
 .movimento-seta{
     transform: translateY(8px) rotateX(180deg);
->>>>>>> Stashed changes
+
 }

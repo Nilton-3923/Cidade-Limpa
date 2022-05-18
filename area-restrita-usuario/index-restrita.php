@@ -109,7 +109,7 @@
                         <img class="icone" src="../imagens/icone-agua.png" >
 
                         <!-- Colocar esse form de Alteração da denuncia em um modal -->
-<<<<<<< HEAD
+
                         <div id="modalAlterarDenuncia" class="modal-alterar-denuncia">
                             <form action="../CRUD/objeto-alterar-denuncia.php" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="pk_idDenuncia" value="<?php echo $linha['pk_idDenuncia'];?>">
@@ -120,16 +120,7 @@
                                 <input type="submit" value="Salvar">
                             </form>
                         </div>
-=======
-                        <form action="../CRUD/objeto-alterar-denuncia.php" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="pk_idDenuncia" value="<?php echo $linha['pk_idDenuncia'];?>">
-                            <input type="text" name="tituloDenuncia" class="inputSuaDenuncia" value="<?php echo $linha['tituloDenuncia']; ?>">
-                            <input type="text" name="descDenuncia"  class="inputSuaDenuncia" value="<?php echo $linha['descDenuncia'] ?>">
-                            <input type="file" class="inputFicheiro" name="imgDenuncia">
-                            <!--Deletar Denuncia--><a class="deletarBotao" href="../CRUD/objeto-deletar-denuncia.php?pk_idDenuncia=<?php echo $linha['pk_idDenuncia'];?>">Deletar</a>
-                            <input type="submit" class="salvarBotao" value="Salvar">
-                        </form>
->>>>>>> cdf6555ff2f947dd2c43e9d20e5fea1f43e1be55
+
                     </div>  
                 </div>          
         <?php
