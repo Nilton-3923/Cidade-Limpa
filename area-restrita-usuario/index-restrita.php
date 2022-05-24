@@ -46,6 +46,7 @@
             <div style="top:-170px;" id="navbarModal" class="navbar-modal">
                 <a href="../session/logout-usuario.php">Sair</a>
                 <a onClick="modalAlterarConta()"class="btn-alterar-conta">Alterar conta</a>
+                <a onClick="ApareceModalAlterarDenuncia()"class="btn-alterar-conta">Alterar denuncias</a>
             </div>
             
             
@@ -112,12 +113,14 @@
 
                         <div id="modalAlterarDenuncia" class="modal-alterar-denuncia">
                             <form action="../CRUD/objeto-alterar-denuncia.php" method="post" enctype="multipart/form-data">
+                                <button class="cancelar" onClick="FechaModalAlterarDenuncia()">Cancelar</button>
                                 <input type="hidden" name="pk_idDenuncia" value="<?php echo $linha['pk_idDenuncia'];?>">
                                 <input type="text" name="tituloDenuncia" value="<?php echo $linha['tituloDenuncia']; ?>">
-                                <input type="text" name="descDenuncia" value="<?php echo $linha['descDenuncia'] ?>">
-                                <input type="file" name="imgDenuncia">
-                                <!--Deletar Denuncia--><a href="../CRUD/objeto-deletar-denuncia.php?pk_idDenuncia=<?php echo $linha['pk_idDenuncia'];?>">deletar Denuncia</a>
-                                <input type="submit" value="Salvar">
+                                <input name="descDenuncia" value="<?php echo $linha['descDenuncia'] ?>">
+                                <label style="display:flex; flex-direction:row; align-items:center; gap:20px;" for="foto"><img style="cursor:pointer;"src="../imagens/upl.png"> <p id="preview"style="font-size:0.9vw; color:black;">Enviar foto</p></label>
+                                <input id="foto"style="display:none;"type="file" name="imgDenuncia">
+                                <!--Deletar Denuncia--><a class="btn-del-denuncia"href="../CRUD/objeto-deletar-denuncia.php?pk_idDenuncia=<?php echo $linha['pk_idDenuncia'];?>">Deletar</a>
+                                <input class="btn-basico bg-verde" type="submit" value="Salvar">
                             </form>
                         </div>
 

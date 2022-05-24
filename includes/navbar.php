@@ -9,14 +9,14 @@
     <title>NavBar</title>
 </head>
 <body>
-    <nav>
+    <nav id="nav-bar">
         <div class="navbar-parte-1">
             <img class="logo" src="./imagens/logo.png">
         </div>
         <div class="navbar-parte-2">
-            <a href="index.php">HOME</a>
-            <a href="index.php#sobre">SOBRE</a>
-            <a href="denuncias.php">PORTAL DE DENÚNCIAS</a>
+            <a id="nav-links"href="index.php">HOME</a>
+            <a id="nav-links1"href="index.php#sobre">SOBRE</a>
+            <a id="nav-links2"href="denuncias.php">PORTAL DE DENÚNCIAS</a>
         </div>
         <div class="navbar-parte-3">
             <div class="navbar-deslogado">

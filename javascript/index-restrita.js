@@ -28,6 +28,9 @@ function cancelarModalCriarDenuncia(){
 }
 
  
-function modalAlterarDenuncia(){
-    
+function ApareceModalAlterarDenuncia(){
+    document.getElementById('modalAlterarDenuncia').style.display="flex";
+}
+function FechaModalAlterarDenuncia(){
+    document.getElementById('modalAlterarDenuncia').style.display="none";
 }

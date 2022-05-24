@@ -504,8 +504,7 @@ body{
     border-radius:50%;
 }
 .modal-alterar-denuncia{
-    display:none;
-
+    display: none;
     position:fixed;
     top:0;
     left:0;
@@ -516,9 +515,52 @@ body{
     justify-content: center;
 }
 .modal-alterar-denuncia > form{
-    background-color: red;
+    position:relative;
+    padding:15px;
+    background-color: #ffffff;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    gap:15px;
+}
+.modal-alterar-denuncia > form > input{
+    font-size: 1.2vw;
+
 }
 .movimento-seta{
     transform: translateY(8px) rotateX(180deg);
 
+}
+.bg-azul{
+    background-color: #27abb4;
+}
+.bg-verde{
+    background-color: #5ca32d;
+}
+.btn-basico{
+    color:white;
+    padding:5px;
+    font-size:1.1vw;
+    border-radius:20px;
+    cursor:pointer;
+    padding:2px 10px;
+    outline:none;
+    border:none;
+}
+.btn-basico:hover{
+    opacity:0.8;
+}
+.btn-del-denuncia{
+    background-color:red;
+    color:white;
+    padding:5px;
+    font-size:1.1vw;
+    border-radius:20px;
+    cursor:pointer;
+    padding:2px 10px;
+    text-decoration:none;
+}
+.btn-del-denuncia:hover{
+    opacity:0.8;
 }

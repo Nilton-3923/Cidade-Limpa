@@ -95,6 +95,13 @@
                 alert(string)
             }
             document.getElementById("meuElemento").click();
+
+            document.getElementById('nav-bar').style.background="#242F9B";
+            document.getElementById('nav-links').style.color="white";
+            document.getElementById('nav-links1').style.color="white";
+            document.getElementById('nav-links2').style.color="white";
+            
+            
         </script>
 </body>
 </html>
