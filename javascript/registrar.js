@@ -17,6 +17,7 @@ var Csenha = document.getElementById('Csenha')
 var mostrarSenha = document.getElementById('mostrarSenha');
 
 mostrarSenha.onclick = ()=>{
+    mostrarSenha.classList.toggle('ativo');
     if(senha.type === "password"){
         senha.type = "text";
         Csenha.type = "text";

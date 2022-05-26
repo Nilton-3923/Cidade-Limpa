@@ -7,31 +7,41 @@ body{
     width:100%;
     height:100vh;
 }
-.espaco{width:50%;}
+form{
+    margin-top:50px;
+}
 .titulo{
     text-align: center;
-    color:#ffffff;
+    color:#00442a;
     width:350px;
     font-size:2.5vw;
+    margin-bottom:10px;
 }
 .cadastro{
-    background:linear-gradient(to top,#14a341,#064018 30%);
+    background-color:#ffffff;
     background-size:cover;
     display:flex;
     align-items:center;
     width:100%;
     height:100%;
     flex-direction: column;
-    padding-top:45px;
 }
 .alinhamento-cadastro{
     padding:50px;
     display:flex;
     flex-direction: column;
     gap:50px;
+    background:linear-gradient(#4bb91d,#1aa83d);
+}
+.ajuste-alinhamento-cadastro{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap:50px;
+    height:100%;
 }
 label{
-    font-size:1.5vw;
+    font-size:1.2vw;
     color:#ffffff;
 }
 input[type=file]{
@@ -43,8 +53,6 @@ input[type=file]{
     justify-content: center;
     flex-direction:row;
     gap:15px;
-    position:relative;
-    bottom:40px;
 }
 .envia-foto{
     transition:background-color .3s;
@@ -84,15 +92,22 @@ input[type=file]{
     bottom:25px;
     gap:20px;
 }
-input[type=text],input[type=password]{
+.inputs-estilizados{
+    margin-top:6px;
+    transition:all .35s;
+    outline: none;
+    border:none;
     padding:0 15px;
     padding-bottom:2px;
     color:white;
-    background:transparent;
-    outline: none;
-    border:none;
-    border-bottom:solid 3px #7CDB3B;
+    background-color:rgba(0,0,0,0.1);
+    outline:rgba(0,0,0,0.1) thick solid;
+    border-bottom: #03220d4f solid 3px;
     font-size:1vw;
+}
+.inputs-estilizados:focus{
+    background-color:rgba(255,255,255,0.1);
+    outline:rgba(255,255,255,0.1) thick solid;
 }
 .alinhamento-inputs{
     position:relative;
@@ -102,18 +117,16 @@ input[type=text],input[type=password]{
 }
 .div1,.div2,.div3{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     gap:50px;
 }
 .div1{
     position:relative;
     top:50px;
+    
 }
 .div2{
-
-}
-.div3{
-
+    gap:0!important;
 }
 .ajuste-botao{
     width:100%;
@@ -141,6 +154,7 @@ input[type=text],input[type=password]{
     position:relative;
     display:flex;
     flex-direction: column;
+    margin-top:15px;
 }
 .seta-hover{
     display:flex;
@@ -149,26 +163,26 @@ input[type=text],input[type=password]{
     flex-direction: column;
 
     position:absolute;
-    top:0;
+    top:30px;
     right:0;
     color:white;
     font-size:1.5vw;
     font-weight:700;
     cursor:pointer;
-    width:50px;
-    height:50px;
+    width:30px;
+    height:30px;
     
 }
 .barra1{
-    width:20px;
-    height:4px;
+    width:10px;
+    height:2px;
     background-color:#7CDB3B;
     border-radius:50px;
-    transform: translateY(-8px) rotate(45deg);
+    transform: translateY(-4px) rotate(45deg);
 }
 .barra2{
-    width:20px;
-    height:4px;
+    width:10px;
+    height:2px;
     background-color:#7CDB3B;
     border-radius:50px;
     transform: rotate(-45deg);
@@ -205,17 +219,34 @@ input[type=text],input[type=password]{
     width:30px;
 }
 .div-cep > input[type=text],.ajuste-uf > input[type=text]{
+    border:none;
+    outline:none;
     font-size: 1.3vw;
     border-bottom: solid 3px #064018;
+    background-color:rgba(0,0,0,0.1);
+    outline:rgba(0,0,0,0.1) thick solid;
+
 }
 .mostrar-senha{
     content:url(../imagens/olho.png);
     position:absolute;
-    bottom:7px;
+    bottom:3px;
     right:7px;
     width:1.5vw;
     height:1.5vw;
     cursor:pointer;
     filter:invert(1);
+}
+.mostrar-senha.ativo{
+    filter:invert(0);
+
+}
+.div-central{
+    width:3px;
+    height:100%;
+    background-color:rgba(255,255,255,0.5);
+    border-radius:10px;
+    position:relative;
+    top:10%;
 }
 
