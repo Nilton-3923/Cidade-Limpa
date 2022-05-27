@@ -82,11 +82,11 @@ body{
     height:400px;
 }
 label[for="login"]{
-    margin-left:5px;
+    
     font-size:15px;
 }
 label[for="senha"]{
-    margin-left:5px;
+   
     font-size:15px;
 }
 .label{
@@ -98,22 +98,19 @@ label[for="senha"]{
     justify-content: space-between;
     height:150px;
 }
-.alinhamento-form > input[type=text],.alinhamento-form > input[type=password]{
+.ajuste-btn-login{
+    width:100%;
     display:flex;
-    font-size:1.5vw;
-    padding:5px;
-    outline:none;
-    border:none;
-    border-radius: 0;
-    background:transparent;
-    border-bottom:#464646 2px solid;
+    align-items: center;
+    justify-content: center;
 }
-.alinhamento-form > input[type=submit]{
+.btn-login{
+    width:max-content;
     margin:25px 0;
     transition: background-color .2s;
     cursor:pointer;
     font-size:1.5vw;
-    padding:10px;
+    padding:10px 35px;
     outline:none;
     border:none;
     border-radius:20px;
@@ -122,7 +119,7 @@ label[for="senha"]{
     color:rgb(0, 52, 119);
     background-color: #35BDF2;
 }
-.alinhamento-form > input[type=submit]:hover{
+.btn-login:hover{
     color:white;
     background-color:#35bcf2d8;
 }
@@ -154,4 +151,279 @@ label[for="senha"]{
     height:2px;
     border-radius:20px;
     background-color:#46464688;
+}
+/* -----------------------------------------------------CSS REGISTRAR----------------------------------------------------- */
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top:90px;
+    width:100%;
+    height:100vh;
+}
+form{
+    margin-top:50px;
+}
+.titulo{
+    text-align: center;
+    color:#00442a;
+    width:350px;
+    font-size:2.5vw;
+    margin-bottom:10px;
+}
+.cadastro{
+    background-size:cover;
+    display:flex;
+    align-items:center;
+    width:100%;
+    height:70%;
+    flex-direction: column;
+}
+.alinhamento-cadastro{
+    display:none;
+    padding:50px;
+    flex-direction: column;
+    gap:50px;
+    background:linear-gradient(#4bb91d,#1aa83d);
+    height:100%;
+}
+.ajuste-alinhamento-cadastro{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap:50px;
+    height:100%;
+}
+label{
+    font-size:1.2vw;
+    color:#ffffff;
+}
+input[type=file]{
+    display:none;
+}
+.alinhamento-foto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:row;
+    gap:15px;
+}
+.envia-foto{
+    transition:background-color .3s;
+    transition:transform .3s;
+    border:none;
+    outline:none;
+    border-radius:0;
+    color:#064018;
+    background-color: #7CDB3B;
+    cursor:pointer;
+    padding:10px;
+    width:max-content;
+    font-size:1vw;
+}
+
+.envia-foto:hover{
+    color:#073b17;
+    background-color: #599c2c;
+    transform: scale(1.03);
+}
+#nomeImagem{
+    color:#ffffff;
+    font-size:1vw;
+
+}
+#preview{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    overflow: hidden;
+}
+.alinhamento-preview{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+    bottom:25px;
+    gap:20px;
+}
+.inputs-estilizados{
+    margin-top:6px;
+    transition:all .35s;
+    outline: none;
+    border:none;
+    padding:0 15px;
+    padding-bottom:2px;
+    color:white;
+    background-color:rgba(0,0,0,0.1);
+    outline:rgba(0,0,0,0.1) thick solid;
+    border-bottom: #03220d4f solid 3px;
+    font-size:1vw;
+}
+.inputs-estilizados:focus{
+    background-color:rgba(255,255,255,0.1);
+    outline:rgba(255,255,255,0.1) thick solid;
+}
+.alinhamento-inputs{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    margin-top:15px;
+}
+.div1,.div2,.div3{
+    display:flex;
+    flex-direction: column;
+    gap:50px;
+}
+.div1{
+    position:relative;
+    top:50px;
+    
+}
+.div2{
+    gap:0!important;
+}
+.ajuste-botao{
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+.btn-cadastrar{
+    width:max-content;
+    border:none;
+    outline:none;
+    color:#064018;
+    background-color:#7CDB3B;
+    padding: 10px 25px;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:1.5vw;
+}
+.btn-cadastrar:hover{
+    color:#04200d;
+    background-color:#559729;
+}
+.alinhamento-cep{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    margin-top:15px;
+}
+.seta-hover{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+
+    position:absolute;
+    top:30px;
+    right:0;
+    color:white;
+    font-size:1.5vw;
+    font-weight:700;
+    cursor:pointer;
+    width:30px;
+    height:30px;
+    
+}
+.barra1{
+    width:10px;
+    height:2px;
+    background-color:#7CDB3B;
+    border-radius:50px;
+    transform: translateY(-4px) rotate(45deg);
+}
+.barra2{
+    width:10px;
+    height:2px;
+    background-color:#7CDB3B;
+    border-radius:50px;
+    transform: rotate(-45deg);
+}
+.div-cep > label{
+    color:#03220d;
+}
+.modal-cep{
+    display:none;
+    opacity:0;
+    
+    flex-direction:column ;
+    gap:20px;
+    z-index: 999;
+    transition:opacity .25s;
+    position:absolute;
+    right:0px;
+    background-color: #7CDB3B;
+    border:solid 5px #03220d;
+    border-radius:20px;
+    padding:15px;
+}
+.div-cep{
+    display:flex;
+    flex-direction: column;
+}
+.ajuste-uf{
+    gap:25px;
+    display: flex;
+    flex-direction: row;
+}
+#uf{
+    margin-top:25px;
+    width:30px;
+}
+.div-cep > input[type=text],.ajuste-uf > input[type=text]{
+    margin-top:6px;
+    border:none;
+    outline:none;
+    font-size: 1.3vw;
+    border-bottom: solid 3px #064018;
+    background-color:rgba(0,0,0,0.1);
+    outline:rgba(0,0,0,0.1) thick solid;
+
+}
+.mostrar-senha{
+    content:url(../imagens/olho.png);
+    position:absolute;
+    bottom:3px;
+    right:7px;
+    width:1.5vw;
+    height:1.5vw;
+    cursor:pointer;
+    filter:invert(1);
+}
+.mostrar-senha.ativo{
+    filter:invert(0);
+
+}
+.div-central{
+    width:3px;
+    height:70%;
+    background-color:rgba(255,255,255,0.5);
+    border-radius:10px;
+    position:relative;
+    top:10%;
+}
+
+
+
+
+
+/*--------------------------------------CSS DOS DOIS -------------------------------------------------------------*/
+
+.div-login{
+    display:none;
+    background:linear-gradient(#4bb91d,#1aa83d);
+    position: relative;
+    font-size:18px;
+    width:65%;
+    height:100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.apareceParaTrocar{
+    display:flex!important;
 }

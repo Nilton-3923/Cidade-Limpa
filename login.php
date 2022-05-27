@@ -34,21 +34,113 @@
             </div>
               
         </div>
-        <div class="login">
-            <img class="logo-login" src="./imagens/logo.png">
-            <form class="form-login" action="session/session-usuario.php" method="post">
-                <div class="alinhamento-form">
-                    <label for="login"><p class="label">Login</p></label>
-                    <input autocomplete="off" id="login" aria-describedby="inputGroupPrepend" required type="text" name="emailUsuario">
-                    <label for="senha"><p class="label">Senha</p></label>
-                    <input id="senha" aria-describedby="inputGroupPrepend" required type="password" name="senhaUsuario">
-                    <input type="submit" value="Entrar">
+        <div class="login"><!-- <<<--- DIV GRANDE QUE CONTEM LOGIN E CADASTRO -->
+
+            <div id="divLogin" class="div-login apareceParaTrocar">
+                <img class="logo-login" src="./imagens/logo.png">
+                <form class="form-login" action="session/session-usuario.php" method="post">
+                    <div class="alinhamento-form">
+                        <label for="login"><p class="label">Login</p></label>
+                        <input class="inputs-estilizados"autocomplete="off" id="login" aria-describedby="inputGroupPrepend" required type="text" name="emailUsuario">
+                        <label for="senha"><p class="label">Senha</p></label>
+                        <input class="inputs-estilizados" id="senha" aria-describedby="inputGroupPrepend" required type="password" name="senhaUsuario">
+                        <div class="ajuste-btn-login">
+                            <input class="btn-login"type="submit" value="Entrar">
+                        </div>
+                    </div>
+                </form>
+                <div class="divisao-registrar">ou</div>
+                <p onClick="trocarLoginParaRegistro();" class="pergunta">não tem uma conta? <a style="color:blue;"href="#">registre-se</a></p>
+            </div>
+
+
+
+            <!----------------------------------------------------------------------------------------------------->
+
+
+
+            <div id="divRegistrar" class="alinhamento-cadastro">
+                <form class="cadastro" action="cadastro/objeto-cadastro-usuario.php" enctype="multipart/form-data" method="post">
+                <h1 class="titulo">Crie sua conta</h1>
+                <div class="ajuste-alinhamento-cadastro">
+                    <div class="div1">
+                        <div class="alinhamento-inputs">
+                            <label>nome</label>
+                            <input class="inputs-estilizados" autocomplete="off" aria-describedby="inputGroupPrepend" required type="text" name="txtNome">
+                            <div class="alinhamento-inputs">
+                                <label>Email</label>
+                                <input class="inputs-estilizados" autocomplete="off" type="text"  aria-describedby="inputGroupPrepend" required name="txtEmail">
+                            </div>
+                            <div class="alinhamento-inputs">
+                                <label>senha</label>
+                                <input class="inputs-estilizados" id="senha" aria-describedby="inputGroupPrepend" required type="password" name="txtSenha">
+                                <div id="mostrarSenha"class="mostrar-senha"></div>
+                            </div>
+                            <div class="alinhamento-inputs">
+                                <label>Confirmar senha</label>
+                                <input class="inputs-estilizados" id="Csenha"type="password" aria-describedby="inputGroupPrepend" required name="txtSenha">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-central"></div>
+                    <div class="div2">
+                        
+                            <div class="alinhamento-foto">
+                                <div class="alinhamento-preview">
+                                    <img id="preview" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="">
+                                    <label for="foto">
+                                        <p class="envia-foto">Escolher Foto de perfil</p>
+                                    </label>
+                                </div>
+                                <input id="foto" type="file"   name="fotoUsuario">
+                            </div>
+                            <div class="alinhamento-inputs">
+                                <label>Telefone</label>
+                                <input class="inputs-estilizados" autocomplete="off"  aria-describedby="inputGroupPrepend" required type="text" name="telefone">
+                            </div>
+                            <div class="alinhamento-cep">
+                                <label>CEP</label>
+                                <input class="inputs-estilizados" autocomplete="off" type="text" aria-describedby="inputGroupPrepend" required name="txtCep" id="cep">
+                                
+                                <div onmouseout="hoverOff()" onmouseover="hover()" class="seta-hover">
+                                    <div class="barra1"></div>
+                                    <div class="barra2"></div>
+                                </div>
+                            </div>
+                            <div id="modalCep" class="modal-cep">
+                                <div class="div-cep">
+                                    <label for="rua">Rua</label>
+                                    <input  type="text" id="rua" disabled>
+                                </div>
+                                <div class="div-cep">
+                                    <label for="bairro">Bairro</label>
+                                    <input type="text" id="bairro" disabled>
+                                </div>
+                                <div class="div-cep">
+                                    <label for="cidade">Cidade</label>
+                                    <div class="ajuste-uf">
+                                        <input type="text" id="cidade" disabled>
+                                        <input type="text" id="uf" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                    
                 </div>
-            </form>
-            <div class="divisao-registrar">ou</div>
-            <p class="pergunta">não tem uma conta? <a href="cadastro-usuario.php">registre-se</a></p>
+                <div class="ajuste-botao">
+                    <input class="btn-login" value="cadastrar"type="submit">
+                </div>
+                <div class="divisao-registrar">ou</div>
+                <p onClick="trocarLoginParaRegistro();" class="pergunta">já tem uma conta? <a style="color:blue;"href="#">Login</a></p>
+            </div>
+
+        </form>
+        
+        <p id="mensagem"></p>
         </div>
     </div>
+    <script src="javascript/api-cep.js"></script>
     <script src="javascript/login.js"></script>
 </body>
 </html>
