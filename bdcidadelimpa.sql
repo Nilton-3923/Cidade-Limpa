@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Maio-2022 às 19:09
+-- Tempo de geração: 27-Maio-2022 às 21:03
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.0.13
 
@@ -93,7 +93,7 @@ INSERT INTO `tbdenuncia` (`pk_idDenuncia`, `tituloDenuncia`, `descDenuncia`, `im
 CREATE TABLE `tbecoponto` (
   `pk_idEcoponto` int(11) NOT NULL,
   `ufEcoponto` varchar(2) NOT NULL,
-  `logradouroEcoponto` varchar(50) NOT NULL,
+  `cidadeEcoponto` varchar(50) NOT NULL,
   `bairroEcoponto` varchar(50) NOT NULL,
   `cepEcoponto` varchar(9) NOT NULL,
   `ruaEcoponto` varchar(100) NOT NULL,
