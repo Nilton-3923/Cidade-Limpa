@@ -42,8 +42,11 @@
                     <div class="alinhamento-form">
                         <label for="login"><p class="label">Login</p></label>
                         <input class="inputs-estilizados"autocomplete="off" id="login" aria-describedby="inputGroupPrepend" required type="text" name="emailUsuario">
-                        <label for="senha"><p class="label">Senha</p></label>
-                        <input class="inputs-estilizados" id="senha" aria-describedby="inputGroupPrepend" required type="password" name="senhaUsuario">
+                        <div class="alinhamento-inputs">
+                            <label for="senha"><p class="label">Senha</p></label>
+                            <input class="inputs-estilizados" id="senhaLogin" aria-describedby="inputGroupPrepend" required type="password" name="senhaUsuario">
+                            <div  onclick="mostrarSenha()" id="mostrarSenhaLogin"class="mostrar-senha-login"></div>
+                        </div>
                         <div class="ajuste-btn-login">
                             <input class="btn-login"type="submit" value="Entrar">
                         </div>
@@ -74,7 +77,7 @@
                             <div class="alinhamento-inputs">
                                 <label>senha</label>
                                 <input class="inputs-estilizados" id="senha" aria-describedby="inputGroupPrepend" required type="password" name="txtSenha">
-                                <div id="mostrarSenha"class="mostrar-senha"></div>
+                                <div  onclick="mostrarSenha()" id="mostrarSenhaCadastro"class="mostrar-senha-cadastro"></div>
                             </div>
                             <div class="alinhamento-inputs">
                                 <label>Confirmar senha</label>

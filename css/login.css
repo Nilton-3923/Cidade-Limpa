@@ -383,7 +383,7 @@ input[type=file]{
     outline:rgba(0,0,0,0.1) thick solid;
 
 }
-.mostrar-senha{
+.mostrar-senha-cadastro{
     content:url(../imagens/olho.png);
     position:absolute;
     bottom:3px;
@@ -393,9 +393,21 @@ input[type=file]{
     cursor:pointer;
     filter:invert(1);
 }
-.mostrar-senha.ativo{
+.mostrar-senha-cadastro.ativo{
     filter:invert(0);
-
+}
+.mostrar-senha-login{
+    content:url(../imagens/olho.png);
+    position:absolute;
+    bottom:1px;
+    right:10px;
+    width:1.5vw;
+    height:1.5vw;
+    cursor:pointer;
+    filter:invert(1);
+}
+.mostrar-senha-login.ativo{
+    filter:invert(0);
 }
 .div-central{
     width:3px;

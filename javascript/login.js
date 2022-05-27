@@ -74,13 +74,22 @@ imagem.addEventListener("change",()=>{
     preview.src = reader.result;
     }
 })
-
+var senhaLogin = document.getElementById('senhaLogin');
 var senha = document.getElementById('senha');
 var Csenha = document.getElementById('Csenha')
-var mostrarSenha = document.getElementById('mostrarSenha');
+var mostrarSenhaCadastro = document.getElementById('mostrarSenhaCadastro');
+var mostrarSenhaLogin = document.getElementById('mostrarSenhaLogin');
 
-mostrarSenha.onclick = ()=>{
-    mostrarSenha.classList.toggle('ativo');
+function mostrarSenha(){
+    mostrarSenhaCadastro.classList.toggle('ativo');
+    mostrarSenhaLogin.classList.toggle('ativo');
+    
+    if(senhaLogin.type === "password"){
+        senhaLogin.type = "text";
+    }else{
+        senhaLogin.type = "password";
+    }
+
     if(senha.type === "password"){
         senha.type = "text";
         Csenha.type = "text";
