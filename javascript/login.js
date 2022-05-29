@@ -1,10 +1,21 @@
 var divRegistrar = document.getElementById('divRegistrar');
 var divLogin = document.getElementById('divLogin');
+var btnEscolherRegistro = document.getElementById('btnEscolherRegistro');
+var btnEscolherLogin = document.getElementById('btnEscolherLogin');
 
 function trocarLoginParaRegistro(){
-    divRegistrar.classList.toggle('apareceParaTrocar');
-    divLogin.classList.toggle('apareceParaTrocar');
+    divLogin.classList.remove('apareceParaTrocar');
+    divRegistrar.classList.add('apareceParaTrocar');
 
+    btnEscolherRegistro.classList.add('escolhido');
+    btnEscolherLogin.classList.remove('escolhido');
+}
+function trocarRegistroParaLogin(){
+    divLogin.classList.add('apareceParaTrocar');
+    divRegistrar.classList.remove('apareceParaTrocar');
+
+    btnEscolherRegistro.classList.remove('escolhido');
+    btnEscolherLogin.classList.add('escolhido');
 }
 
 
@@ -54,10 +65,12 @@ function carroussel(){
     }
     
 }
-
-setInterval(()=>{
-    carroussel();
-},5000)
+carroussel();
+setTimeout(()=>{
+    setInterval(()=>{
+        carroussel();
+    },5000)
+},100)
 
 /* ----------------------------------JAVASCRIPT DO CADASTRO-------------------------*/
 

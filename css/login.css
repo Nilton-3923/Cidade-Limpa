@@ -1,3 +1,6 @@
+:root{
+    --verde-gradient:linear-gradient(#4bb91d,#1aa83d);
+}
 body{
     
     background-color:#ebe9e9!important;
@@ -55,13 +58,13 @@ body{
     position: relative;
     z-index:15;
     font-size:18px;
-    background-color:#ffffff;
+    background:var(--verde-gradient);
     width:45%;
     height:100%;
     display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding-top:45px;
 }
 .logo-login{
     width:350px;
@@ -76,7 +79,7 @@ body{
     
 
     width:350px;
-    height:400px;
+    height:315px;
 }
 label[for="login"]{
     
@@ -100,10 +103,10 @@ label[for="senha"]{
     display:flex;
     align-items: center;
     justify-content: center;
+    margin:25px 0;
 }
 .btn-login{
     width:max-content;
-    margin:25px 0;
     transition: background-color .2s;
     cursor:pointer;
     font-size:1.5vw;
@@ -179,12 +182,10 @@ body{
 }
 .alinhamento-cadastro{
     display:none;
-    padding-top:100px;
     flex-direction: column;
     gap:50px;
-    background:linear-gradient(#4bb91d,#1aa83d);
     width:100%;
-    height:100%;
+    height:80%;
 }
 .ajuste-alinhamento-cadastro{
     display:flex;
@@ -286,6 +287,8 @@ input[type=file]{
     display:flex;
     align-items: center;
     justify-content:center;
+    position:relative;
+    top:50px;
 }
 .btn-cadastrar{
     width:max-content;
@@ -423,14 +426,12 @@ input[type=file]{
 
 .div-login{
     display:none;
-    background:linear-gradient(#4bb91d,#1aa83d);
     position: relative;
     font-size:18px;
     width:100%;
-    height:100%;
+    height:80%;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .apareceParaTrocar{
@@ -442,4 +443,37 @@ input[type=file]{
 }
 .link-alternar:hover{
     color:rgb(0, 247, 255);
+}
+/*---------------------------------- CSS DA NAVBAR ALERAR LOGIN/CADASTRO -----------------------------------------*/
+
+.navbar-loginCadastro{
+    background-color: transparent;
+    width:100%;
+    height:100px;
+    display:flex;
+    margin-bottom:25px;
+
+}
+.btn-escolher-alterar{
+    background-color:#7CDB3B;
+    font-size:1.5vw;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    color:#ffffff;
+}
+.btn-escolher-alterar:hover{
+    background-color: #00000021;
+}
+.btn-escolher-alterar.escolhido{
+    background-color:transparent;
+}
+.display-center{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+    width:100%;
 }
