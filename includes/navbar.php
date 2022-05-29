@@ -11,7 +11,9 @@
 <body>
     <nav id="nav-bar">
         <div class="navbar-parte-1">
-            <img class="logo" src="./imagens/logo.png">
+            <div class="ajuste-logo">
+                <img class="logo" src="./imagens/logo.png">
+            </div>
         </div>
         <div class="navbar-parte-2">
             <a id="nav-links"href="index.php">HOME</a>
@@ -20,7 +22,9 @@
         </div>
         <div class="navbar-parte-3">
             <div class="navbar-deslogado">
-                <a class="link-login" href="login.php">Login</a>
+                <div class="ajuste-link-login">
+                    <a class="link-login" href="login.php">Login</a>
+                </div>
             </div>
             <div class="navbar-logado">
                 <img class="foto-navbar circulo" src="imagens/foto-de-perfil-vazia.jpg">

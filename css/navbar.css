@@ -21,12 +21,16 @@ nav{
     display: flex;
     justify-content:start;
     
+    
+}
+.ajuste-logo{
+    display:flex;
+    justify-content: flex-end;
+    width:50%;
+    
 }
 .logo{
-    width:500px;
-    position:relative;
-    
-    bottom:10px;
+    width:175px;
 }
 .navbar-parte-2{
     
@@ -51,12 +55,11 @@ nav{
     background-color: #ffffff36;
 }
 .navbar-parte-3{
-    
     width:100%;
     display: flex;
     justify-content:end;
-    padding-right:70px;
 }
+
 .foto-navbar{
     width:50px;
 }
@@ -87,4 +90,16 @@ nav{
     height:4px;
     border-radius:2px;
     background-color:white;
+}
+.navbar-deslogado{
+    display:flex;
+    width:100%;
+    justify-content:end;
+    
+}
+.ajuste-link-login{
+    display:flex;
+    width:25%;
+    justify-content:start;
+    
 }

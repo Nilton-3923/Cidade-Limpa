@@ -53,7 +53,7 @@
                     </div>
                 </form>
                 <div class="divisao-registrar">ou</div>
-                <p onClick="trocarLoginParaRegistro();" class="pergunta">não tem uma conta? <a style="color:blue;"href="#">registre-se</a></p>
+                <p onClick="trocarLoginParaRegistro();" class="pergunta">não tem uma conta? <a class="link-alternar" href="#">registre-se</a></p>
             </div>
 
 
@@ -135,7 +135,7 @@
                     <input class="btn-login" value="cadastrar"type="submit">
                 </div>
                 <div class="divisao-registrar">ou</div>
-                <p onClick="trocarLoginParaRegistro();" class="pergunta">já tem uma conta? <a style="color:blue;"href="#">Login</a></p>
+                <p onClick="trocarLoginParaRegistro();" class="pergunta">já tem uma conta? <a class="link-alternar"href="#">Login</a></p>
             </div>
 
         </form>
