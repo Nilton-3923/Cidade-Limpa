@@ -1,18 +1,19 @@
-var divRegistrar = document.getElementById('divRegistrar');
-var divLogin = document.getElementById('divLogin');
+var divRegistrar = document.getElementById('divRegistrar');//INULTILIZADO
+var divLogin = document.getElementById('divLogin');//INULTILIZADO
+var movimentacaoLoginEcadastro = document.getElementById('movimentacaoLoginEcadastro');
+var widthDoLoginComCorrecao = divLogin.clientWidth + 200;
+
 var btnEscolherRegistro = document.getElementById('btnEscolherRegistro');
 var btnEscolherLogin = document.getElementById('btnEscolherLogin');
 
 function trocarLoginParaRegistro(){
-    divLogin.classList.remove('apareceParaTrocar');
-    divRegistrar.classList.add('apareceParaTrocar');
+    movimentacaoLoginEcadastro.style.transform="translateX(-"+ widthDoLoginComCorrecao +"px)";//movimento
 
     btnEscolherRegistro.classList.add('escolhido');
     btnEscolherLogin.classList.remove('escolhido');
 }
 function trocarRegistroParaLogin(){
-    divLogin.classList.add('apareceParaTrocar');
-    divRegistrar.classList.remove('apareceParaTrocar');
+    movimentacaoLoginEcadastro.style.transform="translateX(0px)";//movimento
 
     btnEscolherRegistro.classList.remove('escolhido');
     btnEscolherLogin.classList.add('escolhido');

@@ -128,5 +128,6 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5opbRMRKjMKTKajH2CdyKJCIsqOdwdUI&callback=initMap"
     ></script>    
 
+    <?php include 'includes/footer.php'?>
 </body>
 </html>

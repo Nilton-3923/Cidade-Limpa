@@ -1,8 +1,10 @@
 :root{
-    --verde-gradient:linear-gradient(#4bb91d,#1aa83d);
+    --gradient:#EEEEEE;
+    --cor-fonte-btn:#000000;
+    --cor-btn:#eeeeee;
+    --cor-btn-escuro:#c5c5c5;
 }
 body{
-    
     background-color:#ebe9e9!important;
     width:100vw;
     height:100vh;
@@ -12,8 +14,9 @@ body{
 .conteudo{
     display: flex;
     position:absolute;
-    width:100%;
+    width:80%;
     height:100%;
+    box-shadow:rgba(0,0,0,0.3) 0px 0px 10px 5px;
 }
 
 
@@ -58,7 +61,7 @@ body{
     position: relative;
     z-index:15;
     font-size:18px;
-    background:var(--verde-gradient);
+    background:var(--gradient);
     width:45%;
     height:100%;
     display:flex;
@@ -90,6 +93,7 @@ label[for="senha"]{
     font-size:15px;
 }
 .label{
+    color:var(--cor-fonte-btn);
     font-size:1.5vw;
 }
 .alinhamento-form{
@@ -167,10 +171,10 @@ body{
 
 .titulo{
     text-align: center;
-    color:#00442a;
+    color:#000000;
     width:350px;
     font-size:2.5vw;
-    margin-bottom:10px;
+    margin-bottom:40px;
 }
 .cadastro{
     background-size:cover;
@@ -181,11 +185,14 @@ body{
     flex-direction: column;
 }
 .alinhamento-cadastro{
-    display:none;
+    display:flex;
     flex-direction: column;
     gap:50px;
     width:100%;
     height:80%;
+}
+.ajuste-cor-fonte{
+    color:var(--cor-fonte-btn);
 }
 .ajuste-alinhamento-cadastro{
     display:flex;
@@ -214,8 +221,8 @@ input[type=file]{
     border:none;
     outline:none;
     border-radius:0;
-    color:#064018;
-    background-color: #7CDB3B;
+    color:#000000;
+    background-color: #35BDF2;
     cursor:pointer;
     padding:10px;
     width:max-content;
@@ -223,8 +230,8 @@ input[type=file]{
 }
 
 .envia-foto:hover{
-    color:#073b17;
-    background-color: #599c2c;
+    color:#FFFFFF;
+    background-color: #35bcf2d8;
     transform: scale(1.03);
 }
 #nomeImagem{
@@ -237,6 +244,7 @@ input[type=file]{
     height:100px;
     border-radius:50%;
     overflow: hidden;
+    outline:rgba(0,0,0,0.3) solid 3px;
 }
 .alinhamento-preview{
     display: flex;
@@ -254,14 +262,14 @@ input[type=file]{
     padding:0 15px;
     padding-bottom:2px;
     color:white;
-    background-color:rgba(0,0,0,0.1);
-    outline:rgba(0,0,0,0.1) thick solid;
+    background-color:rgba(255,255,255,0.1);
+    outline:rgba(255,255,255,0.1) thick solid;
     border-bottom: #03220d4f solid 3px;
     font-size:1vw;
 }
 .inputs-estilizados:focus{
-    background-color:rgba(255,255,255,0.1);
-    outline:rgba(255,255,255,0.1) thick solid;
+    background-color:rgba(0,0,0,0.1);
+    outline:rgba(0,0,0,0.1) thick solid;
 }
 .alinhamento-inputs{
     position:relative;
@@ -331,19 +339,19 @@ input[type=file]{
 .barra1{
     width:10px;
     height:2px;
-    background-color:#7CDB3B;
+    background-color:var(--cor-fonte-btn);
     border-radius:50px;
     transform: translateY(-4px) rotate(45deg);
 }
 .barra2{
     width:10px;
     height:2px;
-    background-color:#7CDB3B;
+    background-color:var(--cor-fonte-btn);
     border-radius:50px;
     transform: rotate(-45deg);
 }
 .div-cep > label{
-    color:#03220d;
+    color:var(--cor-fonte-btn);
 }
 .modal-cep{
     display:none;
@@ -354,10 +362,11 @@ input[type=file]{
     z-index: 999;
     transition:opacity .25s;
     position:absolute;
+    bottom:50px;
     right:0px;
-    background-color: #7CDB3B;
-    border:solid 5px #03220d;
-    border-radius:20px;
+    background-color: var(--cor-btn);
+    border:var(--cor-btn-escuro) solid 3px;
+    border-radius:10px;
     padding:15px;
 }
 .div-cep{
@@ -378,7 +387,7 @@ input[type=file]{
     border:none;
     outline:none;
     font-size: 1.3vw;
-    border-bottom: solid 3px #064018;
+    border-bottom: solid 3px var(--cor-btn-escuro);
     background-color:rgba(0,0,0,0.1);
     outline:rgba(0,0,0,0.1) thick solid;
 
@@ -391,7 +400,7 @@ input[type=file]{
     width:1.5vw;
     height:1.5vw;
     cursor:pointer;
-    filter:invert(1);
+    filter:invert(0.5);
 }
 .mostrar-senha-cadastro.ativo{
     filter:invert(0);
@@ -404,7 +413,7 @@ input[type=file]{
     width:1.5vw;
     height:1.5vw;
     cursor:pointer;
-    filter:invert(1);
+    filter:invert(0.5);
 }
 .mostrar-senha-login.ativo{
     filter:invert(0);
@@ -425,24 +434,14 @@ input[type=file]{
 /*--------------------------------------CSS DOS DOIS -------------------------------------------------------------*/
 
 .div-login{
-    display:none;
+    display:flex;
+
     position: relative;
     font-size:18px;
     width:100%;
     height:80%;
     flex-direction: column;
     align-items: center;
-}
-
-.apareceParaTrocar{
-    display:flex!important;
-}
-.link-alternar{
-    cursor:pointer;
-    color:rgb(255, 0, 149);
-}
-.link-alternar:hover{
-    color:rgb(0, 247, 255);
 }
 /*---------------------------------- CSS DA NAVBAR ALERAR LOGIN/CADASTRO -----------------------------------------*/
 
@@ -455,14 +454,14 @@ input[type=file]{
 
 }
 .btn-escolher-alterar{
-    background-color:#7CDB3B;
+    background-color:var(--cor-btn-escuro);
     font-size:1.5vw;
     width:100%;
     display:flex;
     align-items: center;
     justify-content: center;
     cursor:pointer;
-    color:#ffffff;
+    color:var(--cor-fonte-btn);
 }
 .btn-escolher-alterar:hover{
     background-color: #00000021;
@@ -476,4 +475,20 @@ input[type=file]{
     justify-content: center;
     height:100%;
     width:100%;
+}
+.login-e-cadastro{
+    overflow: hidden;
+    width:100%;
+    height:100%;
+    
+}
+.movimentacao-login-e-cadastro{
+    margin-top: 25px;
+    width:100%;
+    transition:all 0.3s;
+    display:-webkit-inline-box;
+}
+.div-d-separamento-200px{
+    width:200px;
+    height:10px;
 }
