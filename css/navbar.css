@@ -2,7 +2,7 @@ nav{
     display:flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: #7CDB3B;
+    background-color: #478C5C;
     height:90px;
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
     width:100vw;
@@ -48,7 +48,7 @@ nav{
     justify-content:center;
     text-decoration:none;
     text-align: center;
-    color:#097005;
+    color:#ffffff;
     font-size:1.5vw;
 }
 .navbar-parte-2 > a:hover{
