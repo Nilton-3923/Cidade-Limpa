@@ -46,7 +46,7 @@ body{
 .frase-carroussel{
     position:absolute;
     bottom:0;
-    background-color:#064018;
+    background-color:var(--cor-navbar);
     border-radius:20px 20px 0 0;
     padding:50px;
     width:550px;

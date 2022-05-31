@@ -1,8 +1,11 @@
+:root{
+    --cor-navbar:blue;
+}
 nav{
     display:flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: #478C5C;
+    background-color: var(--cor-navbar);
     height:90px;
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
     width:100vw;
