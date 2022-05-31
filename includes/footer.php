@@ -9,7 +9,16 @@
 </head>
 <body>
     <div class="footer">
-        
+        <div class="softone">
+            <p class="s">S</p>
+            <div class="div-1-hex">
+                <div class="hexagono"></div>
+            </div>
+            <div class="div-2-hex">
+                <div class="hexagono"></div>
+                <div class="hexagono"></div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

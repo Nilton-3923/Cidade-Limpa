@@ -1,5 +1,5 @@
 :root{
-    --cor-navbar:blue;
+    --cor-navbar:rgb(43, 43, 43);
 }
 nav{
     display:flex;
