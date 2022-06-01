@@ -38,21 +38,22 @@ body{
 }
 #img1 > img, #img2 > img, #img3 > img{
     width:100%;
-    height:100%;
+    height:75%;
 }
-.imagem-carroussel{
-    position:relative;
+.img-carroussel{
+    display:flex;
+    flex-direction: column;
 }
 .frase-carroussel{
-    position:absolute;
-    bottom:0;
+    
     background-color:var(--cor-navbar);
     box-sizing: border-box;
     width:100%;
-    height:225px;
+    height:25%;
     text-align: center;
     font-size:20px;
     color:#ffffff;
+    padding:0 25px;
 }
 
 
@@ -260,7 +261,7 @@ input[type=file]{
     border:none;
     padding:0 15px;
     padding-bottom:2px;
-    color:white;
+    color:var(--cor-fonte-btn);
     background-color:rgba(255,255,255,0.1);
     outline:rgba(255,255,255,0.1) thick solid;
     border-bottom: #03220d4f solid 3px;

@@ -1,24 +1,14 @@
 
-.footer{
-    position: relative;
-    bottom:0;
-    width:100%;
-    height:45vh;
-    background-color:#1d301a;
-}
-.softone{
-    display:flex;
-    gap:5px;
-}
-.s{
-    font-size:23px;
-    color:white;
-    font-weight:700;
-}
-.hexagono{
-    position:relative;
-    background-color: red;
-    width:50px;
-    height:50px;
-    clip-path:polygon(0 25%,50% 0,100% 25%,100% 75%,50% 100%,0 75%);
-}
+.footer{position: relative;bottom:0;width:100%;height:20vh;background-color:#ebebeb;display: flex;align-items: center;justify-content: center;flex-direction:column;gap:20px;}
+.icone-footer{width:35px;cursor:pointer;transition:transform .35s;}
+.icone-footer:hover{transform:scale(1.2);}
+.div-1,.div-2,.div-3{display:flex;flex-direction: row;align-items: center;justify-content: center;width:100%;gap:20px;}
+.link{color:#000000;text-decoration: none;transition:all .35s;font-weight:700;}
+.link:hover{color:#0079be;}
+.div-2{}
+.div-3{}
+/*
+---------------------------------------------------------------------------
+*/
+
+
