@@ -9,32 +9,7 @@
 </head>
 <body>
 <?php include 'includes/navbar.php'?>
-<section class="body">
-        <div class="menu-lateral">
-            <h2>Filtrar por:</h2>
-
-
-            <div class="links">
-                <h2>REGIÃO</h2>
-                <a href="#">Zona Leste</a>
-                <a href="#">Zona Norte</a>
-                <a href="#" >Zona Oeste</a>
-                <a href="#">Zona Sul</a>
-            </div>
-            <div class="-div-"></div>
-            <div class="links">
-                <h2>CATEGORIA</h2>
-                <a href="#">Todas</a>
-                <a href="#" id="meuElemento" onclick="funcao('<?php echo $categoria; ?>')">Descarte de lixo</a>
-                <a href="#">Foco de dengue</a>
-            </div>
-            <div class="-div-"></div>
-            <div class="links">
-                <h2>DATA</h2>
-                <a href="#">Mais recentes</a>
-                <a href="#">Mais antigas</a>
-            </div>
-        </div>
+<div class="body">
         <?php
             require_once("classe/Denuncia.php");
             require_once("classe/Conexao.php");
@@ -42,10 +17,7 @@
         ?>
 
         <div class="ajuste-div-principal">
-                <form class="pesquisar-denuncia" action="" method="POST">
-                    <input autocomplete="off" type="text" name="pesquisar" placeholder="Pesquisar denuncia">
-                    <input class="style-da-lupa"type="submit" value="🔍">
-                </form>
+        
             <div class="div-principal">
                 <?php
                    if(!isset($_POST['pesquisar'])){
@@ -61,26 +33,35 @@
                 ?>
                 
                     <div class="card">
-                        <div class="info-section">
-                            <h5 class=""><?php echo $linha['tituloDenuncia'];?></h5><!--titulo da Denuncia -->
-                            <p class="data"><?php echo $linha['dataDenuncia'];?></p><!--data da Denuncia -->
-                        </div>
-                        <div class="desc-e-img">
-                            <img class="" src="cadastro/<?php echo $linha['imgDenuncia']; ?>" alt=""><!--Imagem da Denuncia -->
-                            <h5 class="">Descrição:<br><?php echo $linha['descDenuncia'];?></h5><!--descrição da Denuncia -->
-                        </div>
-                        <div class="user-e-nome">
-                            <img class="user" src="cadastro/<?php echo $linha['imgUsuario']; ?>" alt=""><!--imagem do Usuario -->
-                            <h5 class="nome"><?php echo $linha['nomeUsuario'];?></h5><!--nome do Usuario -->
-                        </div>
-
-                        <!--<div class="body-card">
-                            <div class="div-cep">
-                                <h5 class="">CEP: <?php echo $linha['cepDenuncia'];?></h5> 
+                        <img class="img-denuncia" src="cadastro/<?php echo $linha['imgDenuncia']; ?>" alt=""><!--Imagem da Denuncia -->
+                        <div class="div-card">
+                            <div class="card-div-1">
+                                <div class="titulo-data">
+                                    <h5 class="titulo-denuncia"><?php echo $linha['tituloDenuncia'];?></h5><!--titulo da Denuncia -->
+                                </div>
+                                <div class="user-nome">
+                                    <div class="correcao-user">
+                                        <img class="user" src="cadastro/<?php echo $linha['imgUsuario']; ?>" alt=""><!--imagem do Usuario -->
+                                    </div>
+                                    <h5 class="nome"><?php echo $linha['nomeUsuario'];?></h5><!--nome do Usuario -->
+                                    <p class="data"><?php echo $linha['dataDenuncia'];?></p><!--data da Denuncia -->
+                                </div>
                             </div>
-                            <div class="divisao-card"></div>
-                            <img class="icone"src="imagens/icone-agua.png">
-                        </div>-->
+                            
+                            
+                            <h5 class="descricao"><br><?php echo $linha['descDenuncia'];?></h5><!--descrição da Denuncia -->
+                            
+                            
+    
+                            <!--<div class="body-card">
+                                <div class="div-cep">
+                                    <h5 class="">CEP: <?php echo $linha['cepDenuncia'];?></h5> 
+                                </div>
+                                <div class="divisao-card"></div>
+                                <img class="icone"src="imagens/icone-agua.png">
+                            </div>-->
+                        </div>
+                        
                     
                     </div>
                 
@@ -88,19 +69,46 @@
                 <?php
                         }
                 ?>
-        </div>
+                
+            </div>
+            <div class="menu-lateral">
+                <form class="pesquisar-denuncia" action="" method="POST">
+                    <input autocomplete="off" type="text" name="pesquisar" placeholder="Pesquisar denuncia">
+                    <input class="style-da-lupa"type="submit" value="🔍">
+                </form>
+                <h2>Filtrar por:</h2>
+    
+    
+                <div class="links">
+                    <h2>REGIÃO</h2>
+                    <a href="#">Zona Leste</a>
+                    <a href="#">Zona Norte</a>
+                    <a href="#" >Zona Oeste</a>
+                    <a href="#">Zona Sul</a>
+                </div>
+                <div class="-div-"></div>
+                <div class="links">
+                    <h2>CATEGORIA</h2>
+                    <a href="#">Todas</a>
+                    <a href="#" id="meuElemento" onclick="funcao('<?php echo $categoria; ?>')">Descarte de lixo</a>
+                    <a href="#">Foco de dengue</a>
+                </div>
+                <div class="-div-"></div>
+                <div class="links">
+                    <h2>DATA</h2>
+                    <a href="#">Mais recentes</a>
+                    <a href="#">Mais antigas</a>
+                </div>
+            </div>
     </div>
-    </section>
+</div>
         <script>
             function funcao(string) {
                 alert(string)
             }
             document.getElementById("meuElemento").click();
 
-            document.getElementById('nav-bar').classList.add('navbar-denuncias');
-            document.getElementById('nav-links').style.color="white";
-            document.getElementById('nav-links1').style.color="white";
-            document.getElementById('nav-links2').style.color="white";
+            
             
             
         </script>
