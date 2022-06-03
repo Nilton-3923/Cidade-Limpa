@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/reset.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <title>Login</title>
 </head>
 <body class="flex-center">
-    <?php include 'includes/navbar.php'?>
-    <div class="conteudo">
+    <div class="conteudo flex-center">
         <div class="carroussel">
             <div class="container-carroussel">
                 <div id="img3" class="flex-center img-carroussel">
@@ -45,7 +46,6 @@
                     <p>Cadastro</p>
                 </div>
             </div>
-
             <div class="login-e-cadastro">
                 <div id="movimentacaoLoginEcadastro"class="movimentacao-login-e-cadastro" style="transform:translateX(0px);">
                     <div id="divLogin" class="div-login">
@@ -73,25 +73,25 @@
         
         
                     <div id="divRegistrar" class="alinhamento-cadastro">
+                        
                         <form class="cadastro" action="cadastro/objeto-cadastro-usuario.php" enctype="multipart/form-data" method="post">
-                        <h1 class="titulo">Crie sua conta</h1>
                         <div class="ajuste-alinhamento-cadastro">
                             <div class="div1">
                                 <div class="alinhamento-inputs">
                                     <label class="ajuste-cor-fonte">nome</label>
-                                    <input class="inputs-estilizados" autocomplete="off" aria-describedby="inputGroupPrepend" required type="text" name="txtNome">
+                                    <input class="inputs-estilizados-cadastro" autocomplete="off" aria-describedby="inputGroupPrepend" required type="text" name="txtNome">
                                     <div class="alinhamento-inputs">
                                         <label class="ajuste-cor-fonte">Email</label>
-                                        <input class="inputs-estilizados" autocomplete="off" type="text"  aria-describedby="inputGroupPrepend" required name="txtEmail">
+                                        <input class="inputs-estilizados-cadastro" autocomplete="off" type="text"  aria-describedby="inputGroupPrepend" required name="txtEmail">
                                     </div>
                                     <div class="alinhamento-inputs">
                                         <label class="ajuste-cor-fonte">senha</label>
-                                        <input class="inputs-estilizados" id="senha" aria-describedby="inputGroupPrepend" required type="password" name="txtSenha">
+                                        <input class="inputs-estilizados-cadastro" id="senha" aria-describedby="inputGroupPrepend" required type="password" name="txtSenha">
                                         <div  onclick="mostrarSenha()" id="mostrarSenhaCadastro"class="mostrar-senha-cadastro"></div>
                                     </div>
                                     <div class="alinhamento-inputs">
                                         <label class="ajuste-cor-fonte">Confirmar senha</label>
-                                        <input class="inputs-estilizados" id="Csenha"type="password" aria-describedby="inputGroupPrepend" required name="txtSenha">
+                                        <input class="inputs-estilizados-cadastro" id="Csenha"type="password" aria-describedby="inputGroupPrepend" required name="txtSenha">
                                     </div>
                                 </div>
                             </div>
@@ -109,11 +109,11 @@
                                     </div>
                                     <div class="alinhamento-inputs">
                                         <label class="ajuste-cor-fonte">Telefone</label>
-                                        <input class="inputs-estilizados" autocomplete="off"  aria-describedby="inputGroupPrepend" required type="text" name="telefone">
+                                        <input class="inputs-estilizados-cadastro" autocomplete="off"  aria-describedby="inputGroupPrepend" required type="text" name="telefone">
                                     </div>
                                     <div class="alinhamento-cep">
                                         <label class="ajuste-cor-fonte">CEP</label>
-                                        <input class="inputs-estilizados" autocomplete="off" type="text" aria-describedby="inputGroupPrepend" required name="txtCep" id="cep">
+                                        <input class="inputs-estilizados-cadastro" autocomplete="off" type="text" aria-describedby="inputGroupPrepend" required name="txtCep" id="cep">
                                         
                                         <div onmouseout="hoverOff()" onmouseover="hover()" class="seta-hover">
                                             <div class="barra1"></div>
@@ -137,13 +137,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                
+                                    <div class="ajuste-botao">
+                                        <input class="btn-cadastrar" value="cadastrar" type="submit">
+                                    </div>
                             </div>
                             
                         </div>
-                        <div class="ajuste-botao">
-                            <input class="btn-login" value="cadastrar" type="submit">
-                        </div>
+                        
                     </div>
         
                     </form>
