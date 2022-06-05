@@ -243,7 +243,6 @@ input[type=file]{
     gap:20px;
 }
 .inputs-estilizados{
-    margin-top:6px;
     transition:all .35s;
     outline: none;
     border:none;
@@ -253,14 +252,13 @@ input[type=file]{
     background-color:rgba(255,255,255,0.1);
     outline:rgba(255,255,255,0.1) thick solid;
     border-bottom: #03220d4f solid 3px;
-    font-size:0.8vw;
+    font-size:1vw;
 }
 .inputs-estilizados:focus{
     background-color:rgba(0,0,0,0.1);
     outline:rgba(0,0,0,0.1) thick solid;
 }
 .inputs-estilizados-cadastro{
-    margin-top:6px;
     transition:all .35s;
     outline: none;
     border:none;
@@ -270,7 +268,7 @@ input[type=file]{
     background-color:rgba(255,255,255,0.1);
     outline:rgba(255,255,255,0.1) thick solid;
     border-bottom: #03220d4f solid 3px;
-    font-size:0.8vw;
+    font-size:1vw;
 }
 .inputs-estilizados-cadastro:focus{
     background-color:rgba(0,0,0,0.1);
@@ -331,7 +329,7 @@ input[type=file]{
     flex-direction: column;
 
     position:absolute;
-    top:1vw;
+    top:2vw;
     right:0;
     color:white;
     font-size:1.5vw;
@@ -456,8 +454,7 @@ input[type=file]{
     width:100%;
     height:75px;
     display:flex;
-    position:absolute;
-    top:0;
+    
 
 }
 .btn-escolher-alterar{
@@ -511,7 +508,7 @@ input[type=file]{
         gap:5vw;
     }
     .logo-login{
-        width:25vw;
+        width:20vw;
     }
     #preview{
         width: 8vw;

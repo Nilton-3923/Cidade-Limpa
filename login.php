@@ -53,10 +53,10 @@
                         <img class="logo-login" src="./imagens/logo.png">
                         <form class="form-login" action="session/session-usuario.php" method="post">
                             <div class="alinhamento-form">
-                                <label for="login"><p class="label">Login</p></label>
+                                <label for="login" class="label">Login</label>
                                 <input class="inputs-estilizados"autocomplete="off" id="login" aria-describedby="inputGroupPrepend" required type="text" name="emailUsuario">
                                 <div class="alinhamento-inputs">
-                                    <label for="senha"><p class="label">Senha</p></label>
+                                    <label for="senha" class="label">Senha</label>
                                     <input class="inputs-estilizados" id="senhaLogin" aria-describedby="inputGroupPrepend" required type="password" name="senhaUsuario">
                                     <div  onclick="mostrarSenha()" id="mostrarSenhaLogin"class="mostrar-senha-login"></div>
                                 </div>
@@ -79,19 +79,19 @@
                         <div class="ajuste-alinhamento-cadastro">
                             <div class="div1">
                                 <div class="alinhamento-inputs">
-                                    <label class="ajuste-cor-fonte">nome</label>
+                                    <label class="ajuste-cor-fonte">Nome</label>
                                     <input class="inputs-estilizados-cadastro" autocomplete="off" aria-describedby="inputGroupPrepend" required type="text" name="txtNome">
                                     <div class="alinhamento-inputs">
                                         <label class="ajuste-cor-fonte">Email</label>
                                         <input class="inputs-estilizados-cadastro" autocomplete="off" type="text"  aria-describedby="inputGroupPrepend" required name="txtEmail">
                                     </div>
                                     <div class="alinhamento-inputs">
-                                        <label class="ajuste-cor-fonte">senha</label>
+                                        <label class="ajuste-cor-fonte">Senha</label>
                                         <input class="inputs-estilizados-cadastro" id="senha" aria-describedby="inputGroupPrepend" required type="password" name="txtSenha">
                                         <div  onclick="mostrarSenha()" id="mostrarSenhaCadastro"class="mostrar-senha-cadastro"></div>
                                     </div>
                                     <div class="alinhamento-inputs">
-                                        <label class="ajuste-cor-fonte">Confirmar senha</label>
+                                        <label class="ajuste-cor-fonte">Confirmar Senha</label>
                                         <input class="inputs-estilizados-cadastro" id="Csenha"type="password" aria-describedby="inputGroupPrepend" required name="txtSenha">
                                     </div>
                                 </div>
