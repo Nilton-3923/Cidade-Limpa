@@ -33,7 +33,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background:url('../imagens/bg-denuncias.jpg');
+    background:#464646;
 
 }
 .menu-lateral{
