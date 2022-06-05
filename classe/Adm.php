@@ -71,6 +71,16 @@
             return $contar;
         }
 
+        public function contarTotalDenuncias(){
+            $conexao = Conexao::pegarConexao();
+
+            $consulta = "SELECT COUNT(pk_idDenuncia) qntDenuncia FROM tbDenuncia";
+            $consulta = $conexao->query($consulta);
+
+            $consulta = $consulta->fetchAll();
+            return $consulta;
+        }
+
 
 
     }
