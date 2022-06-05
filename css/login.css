@@ -14,8 +14,8 @@ body{
 .conteudo{
     display: flex;
     position:absolute;
-    width:65%;
-    height:35vw;
+    width:80%;
+    height:40vw;
     box-shadow:rgba(0,0,0,0.3) 0px 0px 5px 2px;
 }
 
@@ -34,7 +34,7 @@ body{
     position:absolute;
     transition:opacity 1.5s;
     width:100%;
-    height:35vw;
+    height:40vw;
 }
 #img1 > img, #img2 > img, #img3 > img{
     width:100%;
