@@ -107,12 +107,12 @@ body{
 
 .card{
     display:flex;
-    flex-direction: row;
-    width:500px;
+    flex-direction: column;
     color:var(--cor-da-fonte-cards);
     font-size:1vw;
     background:var(--background-cards);
     position:relative;
+    width: 200px;
 }
 .descricao{
     
@@ -148,7 +148,6 @@ body{
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    width:300px;
     background-color:#dfdfdf;
     box-sizing: border-box;
     padding:0 15px;
@@ -184,7 +183,7 @@ body{
     display:flex;
     justify-content: center;
     flex-direction: row;
-    width:50%;
+    width:60%;
     height:85vh;
     gap:25px;    
     background-color: #c9c9c9;
@@ -192,8 +191,8 @@ body{
     box-shadow: #0000008e 0px 0px 50vw 50vw;
 }
 .div-principal{
-    display:flex;
-    flex-direction: column;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
     gap:25px;
 }
 .-div-{
