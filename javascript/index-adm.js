@@ -1,3 +1,19 @@
+/**************JS  DO LUQUINHAS************************************************** */ 
+
+
+const barraLateral = document.getElementById('barraLateral');
+const links = document.getElementById('links');
+
+function abrirBarraLateral(){
+	if(barraLateral.style.width==="500px"){
+		barraLateral.style.width="100px";
+		links.style.opacity="0";
+	}else{
+		barraLateral.style.width="500px";
+		links.style.opacity="1";
+	}
+}
+
 // SIDEBAR DROPDOWN
 const allDropdown = document.querySelectorAll('#sidebar .side-dropdown');
 const sidebar = document.getElementById('sidebar');

@@ -4,6 +4,9 @@
     --cor-btn:#eeeeee;
     --cor-btn-escuro:#c5c5c5;
 }
+p{
+    margin-bottom:0 !important;
+}
 body{
     background-color:#ebe9e9!important;
     width:100vw;

@@ -37,8 +37,15 @@ li {
 	list-style: none;
 }
 
-
-
+.full-screen{
+	width:100%;
+	height:100%;
+}
+.center{
+	display:flex;
+	align-items: center;
+	justify-content:center;
+}
 
 
 
@@ -199,15 +206,9 @@ li {
 
 /* CONTENT */
 #content {
-	position: relative;
-	width: calc(100% - 260px);
-	left: 260px;
 	transition: all .3s ease;
 }
-#sidebar.hide + #content {
-	width: calc(100% - 60px);
-	left: 60px;
-}
+
 /* NAVBAR */
 nav {
 	background: var(--light);
@@ -590,4 +591,77 @@ main .btn-send:hover {
 	nav .divider {
 		display: none;
 	}
+}
+/*********CSS DO LUQUINHAS************************************************************************************************************/
+.flex-row{
+	display:flex;
+	flex-direction: row;
+}
+
+
+.barra-lateral{
+	box-sizing: border-box;
+	background-color:#9c9c9c;
+	position:relative;
+	transition:width .5s;
+	width:100px;
+	height:100vh;
+	align-items:flex-start;
+	padding-top:25px;
+	overflow: hidden;
+
+}
+
+
+.ajuste-btn-barra-lateral{
+	display:flex;
+	justify-content: center;
+	width:100px;
+	position:absolute;
+	left:0;
+}
+.btn-barra-lateral{
+	cursor:pointer;
+	display:flex;
+	flex-direction: column;
+	gap:5px;
+}	
+.one{
+	background:#fff;
+	width:30px;
+	height:3px;
+	border-radius:20px;
+}
+.two{
+	background:#fff;
+	width:30px;
+	height:3px;
+	border-radius:20px;
+}
+.three{
+	background:#fff;
+	width:30px;
+	height:3px;
+	border-radius:20px;
+}
+
+.links{
+	transition:all.35s;
+	opacity:0;
+
+	padding-top: 150px;
+	display:flex;
+	flex-direction: column;
+	gap:10px;
+}
+.links > a{
+	transition:all.35s;
+	font-size:1.3VW;
+	padding:10px;
+	text-decoration: none;
+	color:#ffffff;
+}
+.links > a:hover{
+	background-color:#ffffff86;
+	color:#000000;
 }

@@ -4,15 +4,15 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" href="../css/index-adm.css">
-	<title>AdminSite</title>
+	<title>Admin</title>
 </head>
-	<body>
+	<body class="center full-screen">
 
 	<?php
 		require_once("../classe/Conexao.php");
@@ -165,6 +165,7 @@
             </script>
 			
 		<!-- SIDEBAR -->
+		<!--
 		<section id="sidebar">
 			<a href="#" class="brand"><i class='bx bxs-smile icon'></i> AdminSite</a>
 			<ul class="side-menu">
@@ -194,20 +195,33 @@
 				</li>
 			</ul>
 		</section>
+		-->
 		<!-- SIDEBAR -->
 
 		<!-- NAVBAR -->
-		<section id="content">
-	
+		<section class="flex-row" id="content">
+		
+			<div id="barraLateral" class="barra-lateral center">
+				<div class="ajuste-btn-barra-lateral">
+					<div onClick="abrirBarraLateral()" class="btn-barra-lateral">
+						<div class="one"></div>
+						<div class="two"></div>
+						<div class="three"></div>
+					</div>
+				</div>
+
+				<div id="links"class="links">
+					<a href="#">LINK</a>
+					<a href="#">LINK</a>
+					<a href="#">LINK</a>
+					<a href="#">SAIR</a>
+				</div>
+			</div>
 
 			<!-- MAIN -->
 			<main>
-				<h1 class="title">Dashboard</h1>
-				<ul class="breadcrumbs">
-					<li><a href="#">Home</a></li>
-					<li class="divider">/</li>
-					<li><a href="#" class="active">Dashboard</a></li>
-				</ul>
+
+				<h1 class="title">Gráficos</h1>
 				<div class="info-data">
 
 				<!--CARD TOTAL DE USUARIOS-->
