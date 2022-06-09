@@ -23,7 +23,7 @@
         <div class="navbar-parte-3">
             <div class="navbar-deslogado">
                 <div class="ajuste-link-login">
-                    <a class="link-login" href="login.php">Login</a>
+                    <a class="link-login" href="novo-login.php">Login</a>
                 </div>
             </div>
             <div class="navbar-logado">

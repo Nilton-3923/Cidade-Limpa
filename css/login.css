@@ -19,7 +19,7 @@ body{
     position:absolute;
     width:80%;
     height:40vw;
-    box-shadow:rgba(0,0,0,0.3) 0px 0px 5px 2px;
+    box-shadow:rgba(0,0,0,0.3) 0px 0px 50px 25px;
 }
 
 
@@ -384,10 +384,7 @@ input[type=file]{
     display: flex;
     flex-direction: row;
 }
-#uf{
-    margin-top:25px;
-    width:30px;
-}
+
 .div-cep > input[type=text],.ajuste-uf > input[type=text]{
     margin-top:6px;
     border:none;

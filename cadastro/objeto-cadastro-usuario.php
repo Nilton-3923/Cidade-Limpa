@@ -5,9 +5,10 @@
 
     //Criação de um objeto Usuario
 
-    $email = $_POST['txtEmail'];
-    $senha = $_POST['txtSenha'];
+   echo $email = $_POST['txtEmail'];
+   echo $senha = $_POST['txtSenha'];
 
+    /*
     $usuario = new Usuario();
 
     if($usuario->verificar($email,$senha) === true){//Verificar se o usuario já existe
@@ -32,6 +33,7 @@
         header("Location: ../login.php");
 
     }
+    */
     
 
 ?>
