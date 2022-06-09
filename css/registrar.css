@@ -56,6 +56,7 @@ body {
 	cursor: pointer;
 	padding: 10px 5px;
 	margin: 10px 5px;
+	border-radius: 20px;
 }
 #msform .action-button:hover, #msform .action-button:focus {
 	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
@@ -125,3 +126,44 @@ body {
 	background: #27AE60;
 	color: white;
 }
+/*ENVIAR IMG*/
+.preview{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.form-input {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	width:350px;
+	padding:20px;
+	background:#fff;
+	
+}
+.form-input img {
+	width:100%;
+	display:none;
+	margin-bottom:30px;
+}
+.form-input input {
+	display:none;
+  }
+  
+  .form-input label {
+	display:block;
+	width:max-content;
+	height:45px;
+	padding:0 10px;
+	line-height:50px;
+	text-align:center;
+	background:#1172c2;
+	color:#fff;
+	font-size:15px;
+	font-family:"Open Sans",sans-serif;
+	text-transform:Uppercase;
+	font-weight:600;
+	border-radius:5px;
+	cursor:pointer;
+  }

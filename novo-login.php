@@ -18,23 +18,23 @@
             <form id="msform" action="cadastro/objeto-cadastro-usuario.php" method="POST">
             <!-- progressbar -->
             <ul id="progressbar">
-                <li class="active">Account Setup</li>
-                <li>Social Profiles</li>
-                <li>Personal Details</li>
+                <li class="active">Informações da conta</li>
+                <li>Localização</li>
+                <li>Foto de perfil</li>
             </ul>
            
            
             <!-- fieldsets -->
             <fieldset>
-                <h2 class="fs-title">Create your account</h2>
-                <h3 class="fs-subtitle">This is step 1</h3>
+                <h2 class="fs-title">Registrar conta</h2>
+                <h3 class="fs-subtitle">Primeiro passo</h3>
                 <input type="text" name="txtEmail" placeholder="Email" />
                 <input type="text" name="telefone" placeholder="Telefone" />
 
                 <input type="text" name="txtNome" placeholder="Nome" />
-                <input type="password" name="txtSenha"  placeholder="Password" />
-                <input type="password" name="cpass"  placeholder="Confirm Password" />
-                <input type="button" name="next" class="next action-button" value="Next" />
+                <input type="password" name="txtSenha"  placeholder="Senha" />
+                <input type="password" name="cpass"  placeholder="Confirmar Senha" />
+                <input type="button" name="next" class="next action-button" value="Próximo" />
             </fieldset>
 
             <fieldset class="aba">
@@ -46,25 +46,24 @@
                 <input type="text" name="cidade" placeholder="Cidade" id="cidade" disabled/>
                 <input type="text" name="uf" placeholder="UF"         id="uf" disabled/>
             
-                <input type="button" name="previous" class="previous action-button" value="Previous" />
-                <input type="button" name="next" class="next action-button" value="Next" />
+                <input type="button" name="previous" class="previous action-button" value="Voltar" />
+                <input type="button" name="next" class="next action-button" value="Próximo" />
               
             </fieldset>
 
             <fieldset>
                 <h2 class="fs-title">Foto do Usuário</h2>
                 <h3 class="fs-subtitle">Escolha sua foto de perfil</h3>
-                <div class="alinhamento-foto">
-                    <div class="alinhamento-preview">
-                        <img id="preview" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="">
-                            <label for="foto">
-                                <p class="envia-foto">Escolher Foto de perfil</p>
-                            </label>
-                        </div>
-                    <input id="foto" type="file"   name="fotoUsuario">
-                </div>    
                 
-                <input type="button" name="previous" class="previous action-button" value="Previous" />
+                <div class="form-input">
+                    <div class="preview">
+                        <img id="file-ip-1-preview">
+                        <label for="file-ip-1">Escolher Imagem</label>
+                        <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
+                    </div>
+                </div>
+                
+                <input type="button" name="previous" class="previous action-button" value="Voltar" />
                 <input type="submit" value="Cadastrar" class="action-button">
             </fieldset>
             
@@ -74,12 +73,11 @@
 
         </div>
         <div class="form-container sign-in-container">
-            <form action="#">
-                <h1>Login</h1>
-                
-                <span>Ou entre com sua conta</span>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+            <form action="session/session-usuario.php" method="post">
+                <h1 style="margin-bottom:45px;">Login</h1>
+            
+                <input placeholder="Email" autocomplete="off" id="login" aria-describedby="inputGroupPrepend" required type="text" name="emailUsuario">
+                <input placeholder="Senha" id="senhaLogin" aria-describedby="inputGroupPrepend" required type="password" name="senhaUsuario">
                 <a href="#">Esqueceu sua senha?</a>
                 <button>login</button>
             </form>
@@ -87,14 +85,14 @@
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
-                    <h1>Bem vindo de volta!</h1>
-                    <p>Ajude a transformar são paulo em um lugar melhor!</p>
-                    <button class="ghost" id="signIn">Sign In</button>
+                    <h1>Registre-se agora mesmo!</h1>
+                    <p>E ajude a transformar são paulo em um lugar melhor!</p>
+                    <button class="ghost" id="signIn">Login</button>
                 </div>
                 <div class="overlay-panel overlay-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Enter your personal details and start journey with us</p>
-                    <button class="ghost" id="signUp">Sign Up</button>
+                    <h1>Bem vindo de volta!</h1>
+                    <p>Faça o login para fazer uma denuncia.</p>
+                    <button class="ghost" id="signUp">Registrar</button>
                 </div>
             </div>
         </div>
@@ -106,7 +104,6 @@
     <script src="./javascript/registrar.js"></script>
     <script src="./javascript/novo-login.js"></script>
     <script src="javascript/api-cep.js"></script>
-    <script src="./javascript/login.js"></script>
 
     </body>
 </html>
