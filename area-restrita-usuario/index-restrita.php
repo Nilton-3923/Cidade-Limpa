@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="../css/navbar.css">
         <link rel="stylesheet" href="../css/reset.css">
         <Link rel="stylesheet" href="../css/index-restrita.css">
+        <link rel="stylesheet" href="../css/input-foto.css">
         <title>Document</title>
     </head>
     <?php
@@ -78,39 +79,24 @@
             $listaDeDenuncias = $usuario->denunciasFeita();
             foreach($listaDeDenuncias as $linha){
         ?>
-            
-                <div class="card">
-                    <div class="ajuste-tres-pontinhos">
-                        <div onClick="modalAlterarDenuncia()" class="tres-pontos">
-                            <div class="ponto"></div>
-                            <div class="ponto"></div>
-                            <div class="ponto"></div>
+                    <div>
+                        <div id="container">
+                            <a class="card-link" href="#">
+                                <article class="blog-card">
+                                        <img class="post-image" src="../cadastro/<?php echo $linha['imgDenuncia']; ?>" /><!--Imagem da Denuncia -->
+                                    <div class="article-details">
+                                        <h4 class="post-category">cep: <?php echo $linha['cepDenuncia'];?></h4><!--cep da Denuncia -->
+                                        <h3 class="post-title"><?php echo $linha['tituloDenuncia'];?></h3><!--Titulo da denuncia-->
+                                        <p class="post-description"><?php echo $linha['descDenuncia'];?></p><!--descrição da Denuncia -->
+                                        <p class="post-author"><?php echo $linha['nomeUsuario'];?></p>
+                                    </div>
+                                </article>
+                            </a>
                         </div>
-                    </div>
-                    <div class="card-part1">
-                        <img class="foto-usuario" src="../cadastro/<?php echo $linha['imgUsuario'] ?>" alt="" ><!-- Foto do Usuario -->
-                        <h5><?php echo $linha['nomeUsuario'];?></h5><!--nome do Usuario -->
-                    </div>
-                    <div class="conteudo-card">
-                        <div class="titulo-e-data">
-                            <h5 class=""><?php echo $linha['tituloDenuncia'];?></h5><!--titulo da Denuncia -->
-                            <p class=""><?php echo $linha['dataDenuncia'];?></p><!--data da Denuncia -->
-                        </div>
-                        <div class="div-cep">
-                            <h5 class="">CEP:<?php echo $linha['cepDenuncia'];?></h5><!--cep da Denuncia -->
-                            <div class="ajuste-cep"></div>
-                        </div>
-                        <div class="desc-e-img">
-                            <h5 class="">Descrição:<br><?php echo $linha['descDenuncia'];?></h5><!--descrição da Denuncia -->
-                            <div class="img-denuncia">
-                                <img src="../cadastro/<?php echo $linha['imgDenuncia']; ?>" alt=""><!--Imagem da Denuncia -->
-                            </div>  
-                        </div>
-                        <div class="divisao-card"></div>
-                        <img class="icone" src="../imagens/icone-agua.png" >
+
 
                         <!-- Colocar esse form de Alteração da denuncia em um modal -->
-
+                        
                         <div id="modalAlterarDenuncia" class="modal-alterar-denuncia">
                             <form action="../CRUD/objeto-alterar-denuncia.php" method="post" enctype="multipart/form-data">
                                 <button class="cancelar" onClick="FechaModalAlterarDenuncia()">Cancelar</button>
@@ -122,10 +108,8 @@
                                 <!--Deletar Denuncia--><a class="btn-del-denuncia"href="../CRUD/objeto-deletar-denuncia.php?pk_idDenuncia=<?php echo $linha['pk_idDenuncia'];?>">Deletar</a>
                                 <input class="btn-basico bg-verde" type="submit" value="Salvar">
                             </form>
-                        </div>
-
-                    </div>  
-                </div>          
+                        </div>          
+                    </div>
         <?php
             }
 
@@ -140,7 +124,13 @@
             <div id="modalAlterarConta"class="ajuste-modal-alterar-conta">
                 <div class="modal-alterar-conta">
                     <form action="../CRUD/objeto-alterar-usuario.php" method="post" enctype="multipart/form-data" class="alterar">
-                        <input type="file" name="fotoUsuario">
+                            <div class="form-input">
+                                <div class="preview">
+                                    <img id="file-ip-1-preview">
+                                    <label for="file-ip-1">Escolher Imagem</label>
+                                    <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
+                                </div>
+                            </div>
                         <input type="hidden" name="pk_Usuario" value="<?php echo $_SESSION['idUsuario'];?>" >
                         <input type="text" name="nomeUsuario" value="<?php echo $linha['nomeUsuario'];?>" ><!--NOME USUARIO -->
                         <input class="input-desabilitado" type="text" name="emailUsuario" disabled value="<?php echo $linha['emailUsuario'];?>" ><!--TELEFONE USUARIO -->
@@ -357,5 +347,6 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5opbRMRKjMKTKajH2CdyKJCIsqOdwdUI&callback=initMap"
     ></script>    
     <script src="../javascript/index-restrita.js"></script>
+    <script src="../javascript/input-foto.js"></script>
     
 </html>
