@@ -85,10 +85,10 @@
                                 <article class="blog-card">
                                         <img class="post-image" src="../cadastro/<?php echo $linha['imgDenuncia']; ?>" /><!--Imagem da Denuncia -->
                                     <div class="article-details">
-                                        <h4 class="post-category">cep: <?php echo $linha['cepDenuncia'];?></h4><!--cep da Denuncia -->
                                         <h3 class="post-title"><?php echo $linha['tituloDenuncia'];?></h3><!--Titulo da denuncia-->
                                         <p class="post-description"><?php echo $linha['descDenuncia'];?></p><!--descrição da Denuncia -->
                                         <p class="post-author"><?php echo $linha['nomeUsuario'];?></p>
+                                        <h4 class="post-category">cep: <?php echo $linha['cepDenuncia'];?></h4><!--cep da Denuncia -->
                                     </div>
                                 </article>
                             </a>

@@ -48,12 +48,12 @@ body{
     background-color:rgba(255, 255, 255, 0.3);
 }
 .ajuste-foto{
-    width:70px;
-    height:70px;
+    width:50px;
+    height:50px;
 }
 .ajuste-div-foto{
-    width:70px;
-    height:70px;
+    width:50px;
+    height:50px;
     border-radius:50%;
     overflow: hidden;
 }
@@ -576,7 +576,6 @@ main {
   font-family: 'Roboto', sans-serif;
   color: #777;
   background: #eedfcc;
-  font-size: 16px;
   min-height: 100vh;
   line-height: 1.6;
   align-items: center;
@@ -625,7 +624,7 @@ main {
 .post-category {
   display: inline-block;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: 3px;
@@ -636,7 +635,7 @@ main {
 
 .post-title {
   transition: color 0.3s ease;
-  font-size: 17;
+  font-size: 30px;
   line-height: 1.4;
   color: #121212;
   font-weight: 700;

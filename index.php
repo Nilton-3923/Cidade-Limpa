@@ -127,7 +127,14 @@
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5opbRMRKjMKTKajH2CdyKJCIsqOdwdUI&callback=initMap"
     ></script>    
+    <script>
+        var home = document.getElementById('nav-links');
+        var sobre = document.getElementById('nav-links1');
+        var portalDeDenuncias = document.getElementById('nav-links2');
 
+        home.classList.add('navLinkAtivado');
+        
+    </script>
     <?php include 'includes/footer.php'?>
 </body>
 </html>

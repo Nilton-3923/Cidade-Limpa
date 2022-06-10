@@ -112,5 +112,13 @@
             
             
         </script>
+        <script>
+        var home = document.getElementById('nav-links');
+        var sobre = document.getElementById('nav-links1');
+        var portalDeDenuncias = document.getElementById('nav-links2');
+
+        portalDeDenuncias.classList.add('navLinkAtivado');
+        
+    </script>
 </body>
 </html>

@@ -5,9 +5,8 @@ nav{
     display:flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: var(--cor-navbar);
-    height:90px;
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    background-color: rgb(77, 104, 112);
+    height:65px;
     width:100vw;
     position:absolute;
     top:0;
@@ -33,12 +32,11 @@ nav{
     
 }
 .logo{
-    width:175px;
+    width:125px;
 }
 .navbar-parte-2{
-    
     width:100%;
-    gap:20px;
+    height:100%;
     display:flex;
     justify-content:center;
 }
@@ -52,10 +50,10 @@ nav{
     text-decoration:none;
     text-align: center;
     color:#ffffff;
-    font-size:1.5vw;
+    font-size:20px;
 }
 .navbar-parte-2 > a:hover{
-    background-color: #ffffff36;
+    background-color: rgba(0,0,0,0.4);
 }
 .navbar-parte-3{
     width:100%;
@@ -105,4 +103,12 @@ nav{
     width:25%;
     justify-content:start;
     
+}
+
+.navLinkAtivado{
+    background-color:rgba(0,0,0,0.8);
+    transition:all 0.35s;
+}
+.navLinkAtivado:hover{
+    background-color:rgba(0,0,0,0.4)!important;
 }

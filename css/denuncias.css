@@ -25,11 +25,11 @@
     background:#424242;
 }
 body{
-    padding-top:90px;
+    padding-top:65px;
 }
 .body{
     width:100vw;
-    height:90vh;
+    height:93vh;
     display: flex;
     align-items: center;
     justify-content: center;
