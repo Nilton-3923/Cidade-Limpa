@@ -20,10 +20,6 @@
 
     <section class="index-primeira-parte">
         <!--Adicionando o maps-->
-        <div class="pesquisa">
-            <input type="text" placeholder="Localizar Denuncias" name id="">
-            <button>🔍</button>
-        </div>
         <div id="map"></div>
     </section>
 
@@ -134,7 +130,9 @@
 
         home.classList.add('navLinkAtivado');
         
+        document.getElementById('pesquisa').style.display="flex"
     </script>
+   
     <?php include 'includes/footer.php'?>
 </body>
 </html>

@@ -21,7 +21,11 @@
             <a id="nav-links2"href="denuncias.php">PORTAL DE DENÚNCIAS</a>
         </div>
         <div class="navbar-parte-3">
-            <div class="navbar-deslogado">
+            <div id="navbarDeslogado" class="navbar-deslogado">
+                <div id="pesquisa" style="display:none;"class="pesquisa">
+                    <input type="text" placeholder="Localizar Denuncias" name id="">
+                    <button>🔍</button>
+                </div>
                 <div class="ajuste-link-login">
                     <a class="link-login" href="novo-login.php">Login</a>
                 </div>

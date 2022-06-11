@@ -33,7 +33,9 @@
                 ?>
                 
                     <div class="card">
-                        <img class="img-denuncia" src="cadastro/<?php echo $linha['imgDenuncia']; ?>" alt=""><!--Imagem da Denuncia -->
+                        <div class="trava-img">
+                            <img class="img-denuncia" src="cadastro/<?php echo $linha['imgDenuncia']; ?>" alt=""><!--Imagem da Denuncia -->
+                        </div>
                         <div class="div-card">
                             <div class="card-div-1">
                                 <div class="titulo-data">
@@ -119,6 +121,9 @@
 
         portalDeDenuncias.classList.add('navLinkAtivado');
         
+    </script>
+    <script>
+        document.getElementById('navbarDeslogado').style.justifyContent="end"
     </script>
 </body>
 </html>

@@ -1,11 +1,11 @@
 :root{
-    --cor-navbar:rgb(43, 43, 43);
+    --cor-navbar:rgb(77, 104, 112);
 }
 nav{
     display:flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: rgb(77, 104, 112);
+    background-color:var(--cor-navbar);
     height:65px;
     width:100vw;
     position:absolute;
@@ -35,7 +35,7 @@ nav{
     width:125px;
 }
 .navbar-parte-2{
-    width:100%;
+    width:80%;
     height:100%;
     display:flex;
     justify-content:center;
@@ -95,7 +95,8 @@ nav{
 .navbar-deslogado{
     display:flex;
     width:100%;
-    justify-content:end;
+    align-items: center;
+    justify-content:space-around;
     
 }
 .ajuste-link-login{

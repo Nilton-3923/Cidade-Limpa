@@ -4,7 +4,7 @@ var seta = document.getElementById('seta');
 
         abreModal.onclick = ()=>{
             if(navbarModal.style.top === "-170px"){
-                navbarModal.style.top = "90px";
+                navbarModal.style.top = "65px";
                 seta.classList.toggle('movimento-seta');
             }else{
                 navbarModal.style.top = "-170px";

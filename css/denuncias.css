@@ -113,6 +113,7 @@ body{
     background:var(--background-cards);
     position:relative;
     width: 200px;
+    height:350px;
 }
 .descricao{
     
@@ -135,13 +136,18 @@ body{
     flex-direction: column;
 }
 .titulo-denuncia{
-    font-size:1.5vw;
+    font-size:24px;
     color: #045ca3;
     text-transform: capitalize;
 }
 .img-denuncia{
     width:200px;
     height:200px;
+}
+.trava-img{
+    box-sizing: border-box;
+    height:200px;
+    width:200px;
 }
 .div-card{
     display:flex;
@@ -150,7 +156,10 @@ body{
     flex-direction: column;
     background-color:#dfdfdf;
     box-sizing: border-box;
-    padding:0 15px;
+    padding-bottom:15px;
+    padding-left:15px;
+    padding-top:10px;
+    height:100%;
 
 }
 .nome{

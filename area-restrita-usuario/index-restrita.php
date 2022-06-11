@@ -31,7 +31,11 @@
     <body>
         <nav>
             <div class="navbar-parte-1">
-                <img class="logo" src="../imagens/logo.png">
+                <div class="ajuste-logonav-1">
+                    <div class="ajuste-logonav-2">
+                        <img class="logo" src="../imagens/logo.png">
+                    </div>
+                </div>
             </div>
             
             <div id="abre-modal" class="navbar-logado">
@@ -227,12 +231,28 @@
                             <option value="Zona Oeste">Zona Oeste</option>
                         </select><br>
                         <!--Imagem denuncia-->
-                            <label>Selecione a Foto da Denuncia</label>
-                            <input type="file" name="fotoDenuncia" class="file"><br>
-                            <input class="btn-denunciar alteracao-btn-criar-denuncia"type="submit" value="Denunciar">
+                            
+                        <div style="width:100%;"class="form-input">
+                            <div class="preview">
+                                <img id="file-ip-1-preview-2">
+                                <label for="file-ip-1-2">Escolher Imagem</label>
+                                <input type="file" id="file-ip-1-2" accept="image/*" onchange="showPreview2(event);">
+                            </div>
+                        </div>
+
+                        <input class="btn-denunciar alteracao-btn-criar-denuncia"type="submit" value="Denunciar">
                         
                     </div>
-                    
+                    <script>
+                        function showPreview2(event){
+                            if(event.target.files.length > 0){
+                            var src2 = URL.createObjectURL(event.target.files[0]);
+                            var preview2 = document.getElementById("file-ip-1-preview-2");
+                            preview2.src = src2;
+                            preview2.style.display = "block";
+                            }
+                        }
+                    </script>
                     
                     <!--Data denuncia-->
                     <input type="hidden" id="data" name="txtDtDenuncia" 

@@ -1,7 +1,7 @@
 <?php
     
     if($_SESSION['emailAdm'] != 'adm' || $_SESSION['senhaAdm'] != '123'){
-        header("Location: ../login.php");
+        header("Location: ../novo-login.php");
         exit();
     }
 ?>
