@@ -120,6 +120,8 @@
         var portalDeDenuncias = document.getElementById('nav-links2');
 
         portalDeDenuncias.classList.add('navLinkAtivado');
+
+        document.getElementById('mobilelinks2').classList.add('navLinkAtivado')
         
     </script>
     <script>

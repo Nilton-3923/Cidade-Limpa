@@ -30,6 +30,7 @@ body{
 }
 .pesquisa{
     display: flex;
+    position:relative;
 }
 .pesquisa > input[type=text]{
     transition:box-shadow 0.2s;
@@ -50,15 +51,24 @@ body{
     border:none;
     outline:none;
     font-size:24px;
-    padding:0 15px;
+    padding:0 10px;
     border-radius:50%;
-    position:relative;
-    right:75px;
+    position:absolute;
+    right:8px;
+    bottom:5px;
     cursor: pointer;
 }
 
 /*------------------------------------------------------*/
 
-@media only screen and (max-width:600px){
-    
+@media (max-width:720px){
+    .pesquisa > input[type=text]{
+        font-size:12px;
+        width:185px;
+        border-radius:2px;
+        padding:8px 10px;
+    }
+    .pesquisa > button{
+        font-size:14px;
+    }
 }

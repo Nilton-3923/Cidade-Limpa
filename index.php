@@ -129,6 +129,8 @@
         var portalDeDenuncias = document.getElementById('nav-links2');
 
         home.classList.add('navLinkAtivado');
+
+        document.getElementById('mobilelinks').classList.add('navLinkAtivado')
         
         document.getElementById('pesquisa').style.display="flex"
     </script>

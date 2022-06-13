@@ -618,14 +618,6 @@ main {
   /* for rounded corners */
 }
 
-.card-link:hover .post-title {
-  color: #e04f62;
-}
-
-.card-link:hover .post-image {
-  opacity: 0.9;
-}
-
 .post-image {
   transition: opacity 0.3s ease;
   width: 300px;
