@@ -236,7 +236,7 @@
                             <div class="preview">
                                 <img id="file-ip-1-preview-2">
                                 <label for="file-ip-1-2">Escolher Imagem</label>
-                                <input type="file" id="file-ip-1-2" accept="image/*" onchange="showPreview2(event);">
+                                <input type="file" id="file-ip-1-2" accept="image/*" name="fotoDenuncia" onchange="showPreview2(event);">
                             </div>
                         </div>
 
