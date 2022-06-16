@@ -41,13 +41,13 @@
 					$cor = '#ff6d2a';
 			}
 			else if($listaCat['campoCategoria'] == 'Descarte Irregular de Lixo'){
-					$cor = '#4040ff';
+					$cor = '#016064';
 			}
 			else if($listaCat['campoCategoria'] == 'EcoPontos'){
 					$cor = '#29d629';
 			}
 			else if($listaCat['campoCategoria'] == 'Casos de Dengue'){
-					$cor = '#F2CB05';
+					$cor = '#757c88';
 			}else{
 				$cor = '#599bd4';
 			}
@@ -125,19 +125,19 @@
                     <?php foreach($zona as $zonas){
                         //Verificar Cores
                         if($zonas[1] == "Zona Leste"){
-                            $corZona = '#5344A9';
+                            $corZona = '#3944bc';
                         }
                         else if($zonas[1] == "Zona Norte"){
-                            $corZona = '#330000';
+                            $corZona = '#59788e';
                         }
                         else if($zonas[1] == "Zona Oeste"){
-                            $corZona = '#336666';
+                            $corZona = '#016064';
                         }
                         else if($zonas[1 == "Zona Sul"]){
-                            $corZona = '#0099cc';
+                            $corZona = '#151e3d';
                         }
                         else{
-                            $corZona = "#8000b0";
+                            $corZona = "#52b2bf";
                         }
                         ?>
                     ["<?php echo $zonas[1]; ?>", <?php echo $zonas[0]; ?>, "<?php echo $corZona ?>"],
@@ -316,12 +316,12 @@
 							<div class="menu">
 								<i class='bx bx-dots-horizontal-rounded icon'></i>
 								<ul class="menu-link">
-									<li><a href="pdf/grafico1.php">PDF</a></li>
+									<li><a href="pdfs/pdf-grafico1.php">PDF</a></li>
 								</ul>
 							</div>
 						</div>
 						<div class="chart">
-							<div id="grafico1" style="width: 500px; height: 300px;"></div>
+							<div id="grafico1" style="width: 550px; height: 300px;"></div>
 						</div>
 					</div>
 			
@@ -331,7 +331,7 @@
 							<div class="menu">
 								<i class='bx bx-dots-horizontal-rounded icon'></i>
 								<ul class="menu-link">
-									<li><a href="pdf/grafico1.php">PDF</a></li>
+									<li><a href="pdfs/pdf-grafico2.php">PDF</a></li>
 								</ul>
 							</div>
 						</div>	
@@ -354,12 +354,12 @@
 							<div class="menu">
 								<i class='bx bx-dots-horizontal-rounded icon'></i>
 								<ul class="menu-link">
-									<li><a href="pdf/grafico1.php">PDF</a></li>
+									<li><a href="pdfs/pdf-grafico3.php">PDF</a></li>
 								</ul>
 							</div>
 						</div>
 						<div class="chart">
-							<div id="grafico2" style="width: 500px; height: 300px;"></div>
+							<div id="grafico2" style="width: 550px; height: 300px;"></div>
 						</div>
 					</div>
 					<div class="content-data">

@@ -9,6 +9,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/index-adm.css">
 	<title>AdminSite</title>
 </head>
@@ -65,9 +67,9 @@
             $tables = $adm->tabelaCategoria();
         ?>
 
-        <table border="1" class="table" style="width:300px">
+        <table border="1" class="table table-striped table-hover" style="width:300px">
         <H1>TABELA DE CATEGORIAS</H1>
-
+        <a href="pdfs/pdf-table-categoria.php">Vizualizar Pdf</a>
         <tr>
             <th>id</th>
             <th>Categoria</th>
@@ -86,6 +88,7 @@
         ?>
 
         </table>
+      
         
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 		<script src="../javascript/index-adm.js"></script>
