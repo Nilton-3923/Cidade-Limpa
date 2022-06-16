@@ -162,7 +162,7 @@ input {
 }
 
 .overlay {
-	background: linear-gradient(to right, rgb(43, 43, 43), rgb(102, 102, 102));
+	background: linear-gradient(to top,rgba(1, 39, 10, 0.726),transparent),url(./imagens/mapa.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -249,4 +249,7 @@ footer i {
 footer a {
     color: #3c97bf;
     text-decoration: none;
+}
+.login-mobile{
+	display:none;
 }

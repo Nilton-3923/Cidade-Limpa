@@ -27,16 +27,16 @@
                     header("Location: ../area-restrita-usuario/index-restrita.php");
                     
                 }else{
-                    header("Location: ../login.php");
+                    header("Location: ../novo-login.php");
                 }
     
             }else{
-                header("Location: ../login.php");
+                header("Location: ../novo-login.php");
             } 
         }
 
     }else{
-                header("Location: ../login.php");
+                header("Location: ../novo-login.php");
     }
 
 ?>

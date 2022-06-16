@@ -21,7 +21,16 @@
             <a id="nav-links2"href="denuncias.php">PORTAL DE DENÚNCIAS</a>
         </div>
         <div class="navbar-parte-3">
-            <div class="navbar-deslogado">
+            <div id="navbarDeslogado" class="navbar-deslogado">
+                <div id="pesquisa" style="display:none;"class="pesquisa">
+                    <input type="text" placeholder="Localizar Denuncias" name id="">
+                    <button>🔍</button>
+                </div>
+                <div id="menuMobile"class="menu-mobile">
+                    <div id="one"class="one"></div>
+                    <div style="opacity:1;"id="two"class="two"></div>
+                    <div id="three"class="three"></div>
+                </div>
                 <div class="ajuste-link-login">
                     <a class="link-login" href="novo-login.php">Login</a>
                 </div>
@@ -35,3 +44,34 @@
             </div>
         </div>
     </nav>
+    <div style="top:-100px;" id="menuMobileLateral"class="menu-mobile-lateral">
+        <a class="mobile-links"id="mobilelinks"href="index.php">HOME</a>
+        <a class="mobile-links"id="mobilelinks1"href="index.php#sobre">SOBRE</a>
+        <a class="mobile-links"id="mobilelinks2"href="denuncias.php">PORTAL DE DENÚNCIAS</a>
+        <a class="mobile-links"id="mobilelinks3"href="novo-login.php">Login</a>
+    </div>
+    <script>
+        document.getElementById('menuMobile').addEventListener('click',()=>{
+            if(document.getElementById('two').style.opacity === "1"){
+
+                document.getElementById('one').style.transform="rotate(45deg) translateY(6px)";
+                document.getElementById('two').style.opacity="0";
+                document.getElementById('three').style.transform="rotate(-45deg) translateY(-9px) translateX(2px)";
+
+                abreMenuLateral();
+            }else{
+                document.getElementById('one').style.transform="rotate(0deg)";
+                document.getElementById('two').style.opacity="1";
+                document.getElementById('three').style.transform="rotate(0deg)";
+
+                fechaMenuLateral()
+            }
+
+            function abreMenuLateral(){
+                document.getElementById('menuMobileLateral').style.top="65px";
+            }
+            function fechaMenuLateral(){
+                document.getElementById('menuMobileLateral').style.top="-100px";
+            }
+        })
+    </script>

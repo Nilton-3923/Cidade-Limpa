@@ -25,11 +25,11 @@
     background:#424242;
 }
 body{
-    padding-top:90px;
+    padding-top:65px;
 }
 .body{
     width:100vw;
-    height:90vh;
+    height:93vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,7 +95,7 @@ body{
     border:none;
     outline:none;
     background:#ffffff;
-    font-size:0.8vw;
+    font-size:25px;
     width:100%;
     height:100%;
     cursor:pointer;
@@ -113,6 +113,7 @@ body{
     background:var(--background-cards);
     position:relative;
     width: 200px;
+    height:350px;
 }
 .descricao{
     
@@ -135,13 +136,18 @@ body{
     flex-direction: column;
 }
 .titulo-denuncia{
-    font-size:1.5vw;
+    font-size:24px;
     color: #045ca3;
     text-transform: capitalize;
 }
 .img-denuncia{
     width:200px;
     height:200px;
+}
+.trava-img{
+    box-sizing: border-box;
+    height:200px;
+    width:200px;
 }
 .div-card{
     display:flex;
@@ -150,7 +156,10 @@ body{
     flex-direction: column;
     background-color:#dfdfdf;
     box-sizing: border-box;
-    padding:0 15px;
+    padding-bottom:15px;
+    padding-left:15px;
+    padding-top:10px;
+    height:100%;
 
 }
 .nome{
@@ -221,4 +230,122 @@ body{
 }
 .icone{
     width:100px;
+}
+
+.sumirNoPc{
+    display:none;
+}
+.sumirNoMobile{
+    display:flex;
+}
+/*  MACAQUISSE PRA AJUSTAR O POSICIONAMENTO DO MENU HAMBURGER  */
+@media (max-width:720px){
+    ::-webkit-scrollbar {
+        width:0px;
+    }
+
+    .body{
+        height:100%;
+    }
+    .sumirNoMobile{
+        display:none;
+    }
+    .sumirNoPc{
+        display:flex;
+    }
+    .navbar-deslogado{
+        width: 20% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+    .navbar-parte-3{
+        justify-content: end !important;
+    }
+
+    /*AJUSTE DA DIV DAS DENUNCIAS*/
+
+    .ajuste-div-principal{
+        padding-top: 0;
+        height:100%;
+        width:100%;
+        flex-direction: column-reverse;
+    }
+    .div-principal{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .data{
+        font-size:15px;
+    }
+    .nome{
+        font-size:15px;
+    }
+    .descricao{
+        font-size:15px;
+    }
+    /*AJUSTE MENU LATERAL*/
+
+    .menu-lateral{
+        padding-top:0px;
+        width:100%;
+        height:100%;
+        background:transparent;
+        gap:0;
+    }
+
+    .div-pesquisar-mobile{
+        background-color:var(--cor-navbar);
+        display:flex;
+        justify-content: center;
+        flex-direction: row;
+        gap:5px;
+        width:100%;
+        padding:10px 0;
+    }
+    .pesquisar-denuncia{
+        width:50%;
+    }
+    .pesquisar-denuncia > input[type="text"]{
+        font-size: 15px;
+    }
+    .style-da-lupa{
+        font-size: 15px;
+        width:10%;
+    }
+    .links > a{
+        font-size: 15px;
+    }
+    h2{
+        font-size:20px;
+    }
+    .btn-filtrar{
+        color:#fff;
+        font-size:20px;
+        text-align: center;
+        padding:0 5px;
+        background-color:rgba(255, 255, 255, 0.329);
+    }
+    .btn-filtrar:active{
+        opacity:0.5;
+    }
+    .menu-lateral-mobile{
+        position:absolute;
+        top:110px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        gap:5px;
+        background-color: var(--cor-navbar);
+        transition:all .5s;
+        width:100%;
+        padding:0;
+        height:0%;
+        overflow:hidden ;
+    }
+    .heightCemPorcento{
+        height:100%;
+        padding:0 10px;
+    }
+    
 }

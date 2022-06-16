@@ -53,6 +53,7 @@
             return $consulta;
 
         }
+    
         //Método de contar todos os Úsuarios
         public function contarUsers(){
             $conexao = Conexao::pegarConexao();
@@ -64,28 +65,15 @@
             $query = $query->fetchAll();
             return $query;
         }
-        //Método de Contar Úsuarios
-        public function contarUsersAtivos(){
-            $conexao = Conexao::pegarConexao();
-            $data = getDate();
-            $mes = $data['mon'];
-            $ano = $data['year'];
-            $mesPassado = $data['mon']-1;
-            $contar = "SELECT COUNT(DISTINCT pk_Usuario),dataDenuncia FROM tbUsuario
-                        INNER JOIN tbDenuncia ON tbUsuario.pk_Usuario = tbDenuncia.fk_idUsuario
-                        WHERE month(dataDenuncia)=$mes AND year(dataDenuncia)=$ano OR month(dataDenuncia)=$mesPassado AND year(dataDenuncia)=$ano";
 
-            $contar = $conexao->query($contar);
 
-            $contar = $contar->fetchAll();
-
-            return $contar;
-        }
-
-        public function exibi(){
+        //Método dados user
+        public function ultimosUsers(){
             $conexao =Conexao::pegarConexao();
 
-            $user = "SELECT * FROM tbUsuario";
+            $user = "SELECT * FROM tbUsuario
+                    ORDER BY pk_Usuario DESC
+                     LIMIT 0,5";
 
             $user = $conexao->query($user);
 
@@ -94,7 +82,70 @@
             return $user;
         }
 
+        //tabela Denuncia
+        public function tabelaDenuncia($limitar){
+            $conexao = Conexao::pegarConexao();
 
+            $query = "SELECT * FROM tbDenuncia
+                      INNER JOIN tbUsuario ON tbDenuncia.fk_idUsuario = tbUsuario.pk_usuario
+                      INNER JOIN tbCategoria ON tbDenuncia.fk_idCategoria = tbCategoria.pk_idCategoria
+
+                      LIMIT 0,$limitar";
+
+            $query = $conexao->query($query);
+
+            $query = $query->fetchAll();
+            return $query;
+        }
+
+        //Tabela Usuario
+        public function tabelaUsuario($limitar){
+            $conexao = Conexao::pegarConexao();
+
+            $query = "SELECT * FROM tbUsuario
+                      LIMIT 0,$limitar";
+
+            $query = $conexao->query($query);
+
+            $query = $query->fetchAll();
+            return $query;
+        }
+        
+        //Tabela Categoria
+        public function tabelaCategoria(){
+            $conexao = Conexao::pegarConexao();
+
+            $query = "SELECT * FROM tbCategoria";
+
+            $query = $conexao->query($query);
+
+            $query = $query->fetchAll();
+            return $query;
+        }
+
+        //Tabela Ecoponto
+        public function tabelaEcopontoContar(){
+            $conexao = Conexao::pegarConexao();
+        
+            $query = "SELECT COUNT(pk_idEcoPonto) FROM tbEcoponto";
+        
+            $query = $conexao->query($query);
+        
+            $query = $query->fetchAll();
+            return $query;
+        }
+
+        public function tabelaEcoponto($limitar){
+            $conexao = Conexao::pegarConexao();
+        
+            $query = "SELECT * FROM tbEcoponto
+                      LIMIT 0,$limitar";
+        
+            $query = $conexao->query($query);
+        
+            $query = $query->fetchAll();
+            return $query;
+        }
 
     }
 ?>

@@ -1,3 +1,18 @@
+::-webkit-scrollbar {
+    width:10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #7c7c7c;
+    border-radius:100vw;
+    cursor:pointer;
+}
+::-webkit-scrollbar-thumb:hover{
+    background:#424242;
+}
+
 body{
     padding-top:90px;
 }
@@ -36,10 +51,11 @@ body{
     z-index:0;
     height:200px;
     padding:25px 50px;
-    background-color:#064018;
+    background-color:var(--cor-navbar);
+    z-index:998;
 }
 .navbar-modal > a{
-    font-size:1.2vw;
+    font-size:24px;
     padding:5px;
     color:white;
     text-decoration: none;   
@@ -48,12 +64,12 @@ body{
     background-color:rgba(255, 255, 255, 0.3);
 }
 .ajuste-foto{
-    width:70px;
-    height:70px;
+    width:50px;
+    height:50px;
 }
 .ajuste-div-foto{
-    width:70px;
-    height:70px;
+    width:50px;
+    height:50px;
     border-radius:50%;
     overflow: hidden;
 }
@@ -576,7 +592,6 @@ main {
   font-family: 'Roboto', sans-serif;
   color: #777;
   background: #eedfcc;
-  font-size: 16px;
   min-height: 100vh;
   line-height: 1.6;
   align-items: center;
@@ -603,17 +618,9 @@ main {
   /* for rounded corners */
 }
 
-.card-link:hover .post-title {
-  color: #e04f62;
-}
-
-.card-link:hover .post-image {
-  opacity: 0.9;
-}
-
 .post-image {
   transition: opacity 0.3s ease;
-  width: 40%;
+  width: 300px;
   height: 280px;
   object-fit: cover;
 }
@@ -625,10 +632,9 @@ main {
 .post-category {
   display: inline-block;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: 3px;
   margin: 0 0 12px 0;
   padding: 0 0 4px 0;
   border-bottom: 2px solid #ebebeb;
@@ -636,7 +642,7 @@ main {
 
 .post-title {
   transition: color 0.3s ease;
-  font-size: 17;
+  font-size: 30px;
   line-height: 1.4;
   color: #121212;
   font-weight: 700;
@@ -663,4 +669,19 @@ main {
   .blog-card {
     flex-wrap: wrap;
   }
+}
+
+/*AJUSTE PARA O LOGO DA NAVBAR LOGADO*/
+
+.ajuste-logonav-1{
+    display:flex;
+    width:50%;
+    justify-content:end;
+    
+}
+.ajuste-logonav-2{
+    display:flex;
+    width:80%;
+    justify-content: start;
+    
 }
