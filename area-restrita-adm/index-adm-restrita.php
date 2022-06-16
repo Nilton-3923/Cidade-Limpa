@@ -368,7 +368,7 @@
 							<div class="menu">
 								<i class='bx bx-dots-horizontal-rounded icon'></i>
 								<ul class="menu-link">
-									<li><a href="pdf/grafico1.php">PDF</a></li>
+									<li><a href="pdfs/pdf-grafico4.php">PDF</a></li>
 								</ul>
 							</div>
 						</div>
