@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Jun-2022 às 03:10
--- Versão do servidor: 10.4.20-MariaDB
--- versão do PHP: 8.0.9
+-- Tempo de geração: 16-Jun-2022 às 19:56
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,34 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `bdcidadelimpa`
 --
-
-DELIMITER $$
---
--- Procedimentos
---
-CREATE DEFINER=`root`@`localhost` PROCEDURE `pr_denunciaFeita` (IN `pk_idDenuncia` INT, IN `imgDenuncia` VARCHAR(150), IN `nomeUsuario` VARCHAR(150), IN `imgUsuario` VARCHAR(500), IN `tituloDenuncia` VARCHAR(30), IN `descDenuncia` VARCHAR(255), IN `dataDenuncia` DATE, IN `cepDenuncia` VARCHAR(8), IN `fk_idUsuario` INT, IN `pk_Usuario` INT)  SELECT pk_idDenuncia, imgDenuncia,nomeUsuario,imgUsuario,tituloDenuncia,descDenuncia,dataDenuncia,cepDenuncia FROM tbDenuncia
-                      INNER JOIN tbUsuario ON tbDenuncia.fk_idUsuario = tbUsuario.pk_Usuario
-                      WHERE pk_Usuario = pk_Usuario$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `pr_loginUsuario` (IN `emailUsuario` VARCHAR(150), IN `senhaUsuario` VARCHAR(150))  SELECT * FROM tbusuario WHERE emailUsuario = emailUsuario AND senhaUsuario = senhaUsuario$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `pr_mostrarDenuncia` (IN `imgDenuncia` VARCHAR(500), IN `imgUsuario` VARCHAR(500), IN `nomeUsuario` VARCHAR(150), IN `tituloDenuncia` VARCHAR(30), IN `descDenuncia` VARCHAR(255), IN `dataDenuncia` DATE, IN `ufDenuncia` VARCHAR(2), IN `bairroDenuncia` VARCHAR(50), IN `cepDenuncia` VARCHAR(8), IN `ruaDenuncia` VARCHAR(50), IN `cidadeDenuncia` VARCHAR(50), IN `fk_idUsuario` INT, IN `pk_Usuario` INT)  SELECT imgDenuncia,imgUsuario,nomeUsuario,tituloDenuncia,descDenuncia,dataDenuncia,ufDenuncia,bairroDenuncia,cepDenuncia,ruaDenuncia,cidadeDenuncia FROM tbDenuncia
-INNER JOIN tbUsuario ON tbDenuncia.fk_idUsuario = tbUsuario.pk_Usuario$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `pr_mostrarpontosmapa` (IN `coordeDenuncia` VARCHAR(50), IN `tituloDenuncia` VARCHAR(30), IN `descDenuncia` VARCHAR(255), IN `cepDenuncia` VARCHAR(8), IN `dataDenuncia` DATE, IN `campoCategoria` VARCHAR(100), IN `imgDenuncia` VARCHAR(500), IN `pk_idCategoria` INT, IN `fk_idCategoria` INT)  SELECT coordeDenuncia, tituloDenuncia, descDenuncia, cepDenuncia, DATE_FORMAT(`dataDenuncia`,'%d/%m/%Y') as dataDenuncia, campoCategoria,imgDenuncia FROM tbDenuncia 
-                INNER JOIN tbcategoria 
-                    ON tbcategoria.pk_idCategoria = tbdenuncia.fk_idCategoria$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `pr_pesquisardenuncia` (IN `tituloDenuncia` VARCHAR(30), IN `descDenuncia` VARCHAR(255), IN `dataDenuncia` DATE, IN `nomeUsuario` VARCHAR(150), IN `imgUsuario` VARCHAR(500), IN `cepDenuncia` VARCHAR(8), IN `imgDenuncia` VARCHAR(500), IN `pk_Usuario` INT, IN `fk_idUsuario` INT)  SELECT tituloDenuncia,descDenuncia,dataDenuncia,nomeUsuario,imgUsuario,cepDenuncia,imgDenuncia FROM tbDenuncia
-                      INNER JOIN tbUsuario ON tbUsuario.pk_Usuario = tbDenuncia.fk_idUsuario
-                      WHERE tituloDenuncia LIKE '%$pesquisar%' OR descDenuncia LIKE '%$pesquisar%' OR nomeUsuario LIKE '%$pesquisar%'$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `pr_visualizarPerf` (IN `nomeUsuario` VARCHAR(150), IN `emailUsuario` VARCHAR(150), IN `senhaUsuario` VARCHAR(150), IN `numTelUsuario` VARCHAR(11), IN `imgUsuario` VARCHAR(500), IN `fk_idUsuario` INT, IN `pk_Usuario` INT)  SELECT nomeUsuario, emailUsuario, senhaUsuario, numTelUsuario, imgUsuario FROM tbusuario 
-                        INNER JOIN tbtelusuario
-                            ON tbtelusuario.fk_idUsuario = tbusuario.pk_Usuario
-                                    WHERE pk_Usuario = pk_Usuario$$
-
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -65,13 +37,6 @@ CREATE TABLE `tbadm` (
   `denunciaReslvAdm` int(11) NOT NULL,
   `imagemAdm` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `tbadm`
---
-
-INSERT INTO `tbadm` (`pk_idAdm`, `nomeAdm`, `sobrenomeAdm`, `emailAdm`, `cep`, `senhaAdm`, `denunciaReslvAdm`, `imagemAdm`) VALUES
-(1, 'Adm', 'Adm', 'Adm@gmail.com', '10022555', '123', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -133,13 +98,8 @@ CREATE TABLE `tbdenuncia` (
 --
 
 INSERT INTO `tbdenuncia` (`pk_idDenuncia`, `tituloDenuncia`, `descDenuncia`, `imgDenuncia`, `dataDenuncia`, `ufDenuncia`, `bairroDenuncia`, `cepDenuncia`, `ruaDenuncia`, `cidadeDenuncia`, `coordeDenuncia`, `zonaDenuncia`, `fk_idUsuario`, `fk_idCategoria`) VALUES
-(1, 'Lixo ', 'Lixo', 'imgDenuncia/Lixo.jpg', '2022-03-13', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5544783, lng: -46.7843427', 'Zona Leste', 6, 1),
-(2, 'Lixo Zona Norte', 'Lixo está incomodando moradores da região', 'imgDenuncia/lixo-ramos.jpg', '2022-05-13', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5544783, lng: -46.7843427', 'Zona Norte', 6, 1),
-(5, 'Lixo Tiête', 'Texto', 'imgDenuncia/Dengue1.jpg', '2022-06-03', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Norte', 1, 2),
-(6, 'Lixo Tiête', 'Texto', 'imgDenuncia/Dengue1.jpg', '2022-06-03', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Sul', 1, 2),
-(7, 'Lixo Tiête', 'Texto', 'imgDenuncia/Dengue1.jpg', '2022-06-03', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Sul', 1, 2),
-(8, 'Lixo Tiête', 'Texto', 'imgDenuncia/Dengue1.jpg', '2022-06-03', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Sul', 1, 2),
-(9, 'Lixo Tiête', 'Texto', 'imgDenuncia/Dengue1.jpg', '2022-06-03', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Oeste', 1, 2);
+(1, 'Lixo ', 'Lixo', 'imgDenuncia/Lixo.jpg', '2022-05-13', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5544783, lng: -46.7843427', '', 6, 1),
+(2, 'Lixo Zona Norte', 'Lixo está incomodando moradores da região', 'imgDenuncia/lixo-ramos.jpg', '2022-05-13', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5544783, lng: -46.7843427', '', 6, 1);
 
 -- --------------------------------------------------------
 
@@ -261,7 +221,7 @@ ALTER TABLE `tbusuario`
 -- AUTO_INCREMENT de tabela `tbadm`
 --
 ALTER TABLE `tbadm`
-  MODIFY `pk_idAdm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pk_idAdm` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tbcategoria`
@@ -279,7 +239,7 @@ ALTER TABLE `tbchatbot`
 -- AUTO_INCREMENT de tabela `tbdenuncia`
 --
 ALTER TABLE `tbdenuncia`
-  MODIFY `pk_idDenuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `pk_idDenuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tbecoponto`
