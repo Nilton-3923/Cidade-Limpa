@@ -32,7 +32,7 @@ $(".next").click(function(){
       });
 			next_fs.css({'left': left, 'opacity': opacity});
 		}, 
-		duration: 800, 
+		duration: 1200, 
 		complete: function(){
 			current_fs.hide();
 			animating = false;

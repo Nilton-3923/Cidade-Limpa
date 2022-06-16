@@ -74,37 +74,45 @@
                 
             </div>
             <div class="menu-lateral">
-                <form class="pesquisar-denuncia" action="" method="POST">
-                    <input autocomplete="off" type="text" name="pesquisar" placeholder="Pesquisar denuncia">
-                    <input class="style-da-lupa"type="submit" value="🔍">
-                </form>
-                <h2>Filtrar por:</h2>
-    
-    
-                <div class="links">
-                    <h2>REGIÃO</h2>
-                    <a href="#">Zona Leste</a>
-                    <a href="#">Zona Norte</a>
-                    <a href="#" >Zona Oeste</a>
-                    <a href="#">Zona Sul</a>
+                <div class="div-pesquisar-mobile">
+                    <form class="pesquisar-denuncia" action="" method="POST">
+                        <input autocomplete="off" type="text" name="pesquisar" placeholder="Pesquisar denuncia">
+                        <input class="style-da-lupa"type="submit" value="🔍">
+                    </form>
+                    <div id="btnFiltrar" class="btn-filtrar sumirNoPc">Filtrar</div>
                 </div>
-                <div class="-div-"></div>
-                <div class="links">
-                    <h2>CATEGORIA</h2>
-                    <a href="#">Todas</a>
-                    <a href="#" id="meuElemento" onclick="funcao('<?php echo $categoria; ?>')">Descarte de lixo</a>
-                    <a href="#">Foco de dengue</a>
-                </div>
-                <div class="-div-"></div>
-                <div class="links">
-                    <h2>DATA</h2>
-                    <a href="#">Mais recentes</a>
-                    <a href="#">Mais antigas</a>
+                <div id="menuLateralMobile"class="menu-lateral-mobile">
+                    <h2 class="sumirNoMobile">Filtrar por:</h2>
+                    <div class="links">
+                        <h2>REGIÃO</h2>
+                        <a href="#">Zona Leste</a>
+                        <a href="#">Zona Norte</a>
+                        <a href="#" >Zona Oeste</a>
+                        <a href="#">Zona Sul</a>
+                    </div>
+                    <div class="-div-"></div>
+                    <div class="links">
+                        <h2>CATEGORIA</h2>
+                        <a href="#">Todas</a>
+                        <a href="#" id="meuElemento" onclick="funcao('<?php echo $categoria; ?>')">Descarte de lixo</a>
+                        <a href="#">Foco de dengue</a>
+                    </div>
+                    <div class="-div-"></div>
+                    <div class="links">
+                        <h2>DATA</h2>
+                        <a href="#">Mais recentes</a>
+                        <a href="#">Mais antigas</a>
+                    </div>
                 </div>
             </div>
     </div>
 </div>
         <script>
+
+            document.getElementById('btnFiltrar').addEventListener('click',()=>{   
+                document.getElementById('menuLateralMobile').classList.toggle('heightCemPorcento');          
+            })
+
             function funcao(string) {
                 alert(string)
             }

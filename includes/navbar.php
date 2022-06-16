@@ -44,10 +44,11 @@
             </div>
         </div>
     </nav>
-    <div style="top:-65px;" id="menuMobileLateral"class="menu-mobile-lateral">
+    <div style="top:-100px;" id="menuMobileLateral"class="menu-mobile-lateral">
         <a class="mobile-links"id="mobilelinks"href="index.php">HOME</a>
         <a class="mobile-links"id="mobilelinks1"href="index.php#sobre">SOBRE</a>
         <a class="mobile-links"id="mobilelinks2"href="denuncias.php">PORTAL DE DENÚNCIAS</a>
+        <a class="mobile-links"id="mobilelinks3"href="novo-login.php">Login</a>
     </div>
     <script>
         document.getElementById('menuMobile').addEventListener('click',()=>{
@@ -70,7 +71,7 @@
                 document.getElementById('menuMobileLateral').style.top="65px";
             }
             function fechaMenuLateral(){
-                document.getElementById('menuMobileLateral').style.top="-65px";
+                document.getElementById('menuMobileLateral').style.top="-100px";
             }
         })
     </script>
