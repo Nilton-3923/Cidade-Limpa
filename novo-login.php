@@ -47,7 +47,7 @@
             <fieldset class="aba">
                 <h2 class="fs-title">Localização do Usuário</h2>
                 <h3 class="fs-subtitle">Digite seu Cep, para localizar-mos</h3>
-                <input type="text" name="txtCep" aria-describedby="inputGroupPrepend" required placeholder="CEP" id="cep">
+                <input type="text" name="txtCep" aria-describedby="inputGroupPrepend" required placeholder="CEP" id="cep" maxlength="9">
                 <input type="text" name="rua"  placeholder="Rua"       id="rua"  disabled/>
                 <input type="text" name="bairro" placeholder="Bairro" id="bairro" disabled/>
                 <input type="text" name="cidade" placeholder="Cidade" id="cidade" disabled/>
@@ -110,6 +110,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="./javascript/registrar.js"></script>
+    <script src="./javascript/mascara.js"></script>
     <script src="./javascript/novo-login.js"></script>
     <script src="javascript/api-cep.js"></script>
 
