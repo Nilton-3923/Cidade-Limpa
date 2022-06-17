@@ -6,7 +6,6 @@
 }
 
 body {
-	padding-top:25px;
 	background: #f6f5f7;
 	display: flex;
 	justify-content: center;
@@ -268,7 +267,4 @@ footer a {
 }
 .voltar:hover{
 	color:rgb(129, 218, 253);
-}
-.some-no-login{
-	opacity:0;
 }

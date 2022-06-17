@@ -12,17 +12,15 @@
     <nav id="nav-bar">
         <div class="navbar-parte-1">
             <div class="ajuste-logo">
-                <a href="./index.php">
-                    <img class="logo" src="./imagens/logo.png">
-                </a>
+                <img class="logo" src="./imagens/logo.png">
             </div>
         </div>
-        <div class="navbar-parte-2 some-no-login">
+        <div class="navbar-parte-2">
             <a id="nav-links"href="index.php">HOME</a>
             <a id="nav-links1"href="index.php#sobre">SOBRE</a>
             <a id="nav-links2"href="denuncias.php">PORTAL DE DENÚNCIAS</a>
         </div>
-        <div class="navbar-parte-3 some-no-login">
+        <div class="navbar-parte-3">
             <div id="navbarDeslogado" class="navbar-deslogado">
                 <div id="pesquisa" style="display:none;"class="pesquisa">
                     <input type="text" placeholder="Localizar Denuncias" name id="">

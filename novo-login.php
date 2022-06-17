@@ -16,7 +16,9 @@
 </head>
 
 <body>
-    <?php include 'includes/navbar.php'?>
+    <div class="nav-bar-login">
+        <h1><a class="voltar" href="./index.php"><img style="width:125px;"src="./imagens/logo.png" alt="VOLTAR"></a></h1>
+    </div>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <!-- multistep form -->
