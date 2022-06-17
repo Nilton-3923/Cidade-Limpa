@@ -21,9 +21,9 @@
             <form id="msform" action="cadastro/objeto-cadastro-usuario.php" method="POST">
             <!-- progressbar -->
             <ul id="progressbar">
-                <li class="active">Informações da conta</li>
-                <li>Localização</li>
-                <li>Foto de perfil</li>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
             </ul>
            
            

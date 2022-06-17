@@ -76,6 +76,8 @@ body {
 }
 /*progressbar*/
 #progressbar {
+	display:flex;
+	gap:25px;
 	margin-bottom: 30px;
 	overflow: hidden;
     position:absolute;
@@ -87,7 +89,7 @@ body {
 	list-style-type: none;
 	color: rgb(3, 3, 3);
 	text-transform: uppercase;
-	font-size: 15px;
+	font-size: 13px;
 	width: 32%;
 	float: left;
 	position: relative;
@@ -126,4 +128,8 @@ body {
 	background: #27AE60;
 	color: white;
 }
-
+@media(max-width:1400px){
+	.container{
+		transform:scale(0.8);
+	}
+}
