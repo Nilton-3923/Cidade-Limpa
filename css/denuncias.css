@@ -50,6 +50,13 @@ body{
     text-align:center;
    
 }
+.menu-lateral-mobile{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:10px;
+}
 .links{
     display:flex;
     flex-direction: column;

@@ -48,7 +48,7 @@
         <a class="mobile-links"id="mobilelinks"href="index.php">HOME</a>
         <a class="mobile-links"id="mobilelinks1"href="index.php#sobre">SOBRE</a>
         <a class="mobile-links"id="mobilelinks2"href="denuncias.php">PORTAL DE DENÚNCIAS</a>
-        <a class="mobile-links"id="mobilelinks3"href="novo-login.php">Login</a>
+        <a class="mobile-links"id="mobilelinks3"href="login-novo-novo.php">Login</a>
     </div>
     <script>
         document.getElementById('menuMobile').addEventListener('click',()=>{
