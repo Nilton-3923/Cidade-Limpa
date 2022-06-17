@@ -147,14 +147,14 @@
         
             <!-- Email input -->
             <div class="form-outline mb-4">
-                <input type="email" id="loginName" class="form-control" />
-                <label class="form-label" for="loginName">Email or username</label>
+                <input type="text" id="loginName" class="form-control" />
+                <label class="form-label" for="loginName">Email</label>
             </div>
         
             <!-- Password input -->
             <div class="form-outline mb-4">
                 <input type="password" id="loginPassword" class="form-control" />
-                <label class="form-label" for="loginPassword">Password</label>
+                <label class="form-label" for="loginPassword">Senha</label>
             </div>
         
             <!-- 2 column grid layout -->
@@ -238,7 +238,7 @@
                         })
                     </script>
 
-                    <input type="submit" value="Cadastrar">
+                    <input class="btn btn-primary btn-block mb-4" type="submit" value="Cadastrar">
                 </form>
             </div>
         </div>
