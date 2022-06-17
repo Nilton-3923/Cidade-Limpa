@@ -210,7 +210,7 @@
                         </div>
                         <section class="section-cep-do-luquinhas">
                             <div class="form-outline mb-4">
-                                <input type="text" name="txtCep" aria-describedby="inputGroupPrepend" required id="cep" class="form-control" >
+                                <input type="text" name="txtCep" aria-describedby="inputGroupPrepend" required id="cep" class="form-control" maxlength="9">
                                 <label class="form-label" for="cep">CEP</label>
                             </div>
                             <div id="modalCepDoLuquinhas"class="modal-cep-do-luquinhas">
@@ -248,6 +248,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="./javascript/mascara.js"></script>
     <script src="./javascript/input-foto.js"></script>
     <script src="./javascript/registrar.js"></script>
     <script src="./javascript/api-cep.js"></script>

@@ -6,8 +6,22 @@
 
     $ecoponto = new Ecoponto();
 
+    $mostrar = $ecoponto ->ecopontosSemGeolocalizacao();
     
+    foreach($mostrar as $row){
+        $id = $row[0];
+        
+        $selecao = $ecoponto-> selecionarEcopontoParametro($id);
+    
+        foreach($selecao as $linha){
+            $localizacao = $ecoponto->geolocalizacaoExcel($linha[8], $linha[5], $linha[3],$linha[2], $linha[1]);
+            $ecoponto->alterarLocalizacao($localizacao, $linha[0]);
+        }
 
+        
+    }
+
+    $pontosEcoponto = $ecoponto->mostrarEcoponto();
 
 ?>
 <!DOCTYPE html>
@@ -17,6 +31,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" href="../css/index-adm.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/cadastro-ecoponto.css">
 	<title>AdminSite</title>
 </head>
 
@@ -50,7 +67,7 @@
 		</section>
 		<!-- SIDEBAR -->
 
-		<!-- NAVBAR -->
+		<!-- CONTEUDO -->
 		<section id="content">
 			<!-- NAVBAR -->
 			<nav>
@@ -66,51 +83,154 @@
 				</div>
 			</nav>
 
-        <form action="../cadastro/objeto-cadastro-ecoponto.php" method="post">
-
-            <input type="text" placeholder="CEP" id="cep" name="cep">
-            <input type="text" placeholder="Bairro" id="bairro" name="bairro">
-            <input type="text" placeholder="Rua" id="rua" name="rua">
-            <input type="text" placeholder="Cidade" id="cidade" name="cidade">
-            <input type="text" placeholder="Uf" id="uf" name="uf">
-            <input type="text" placeholder="Número" name="numero">
-            <select name="regiao" id="regiao">
-                <option disabled selected>Regiões de São Paulo</option>
-                <option value="Zona Leste">Zona Leste</option>
-                <option value="Zona Norte">Zona Norte</option>
-                <option value="Zona Sul">Zona Sul</option>
-                <option value="Zona Oeste">Zona Oeste</option>
-            </select><br>
-
-            <input type="submit" value="Cadastrar">
-
-
-        </form>
-        <h1>cadastro em lote</h1>
-        <form action="../cadastro/cadastro-xml-ecopontos.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="arquivo">
-            <input type="submit">
-        </form>
-
-        <?php
-        $mostrar = $ecoponto ->ecopontosSemGeolocalizacao();
+            <div class="cadastro-ecoponto">
+                
+                <h1>Cadastrar Ecoponto</h1>
+                <form action="../cadastro/objeto-cadastro-ecoponto.php" method="post" class="">
         
-        foreach($mostrar as $row){
-            $id = $row[0];
+                    <div class="form-floating">
+                        <input type="text" placeholder="CEP" id="cep" name="cep" class="form-control  input-normal" maxlength="9">
+                        <label for="floatingInput">CEP</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="text" placeholder="Bairro" id="bairro" name="bairro" class="form-control input-normal">
+                        <label for="floatingInput">Bairro</label>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="text" placeholder="Rua" id="rua" name="rua" class="form-control input-normal">
+                        <label for="floatingInput">Rua</label>
+                    </div>
+
+                    <div class="box-flex">
+                        <div class="form-floating">
+                            <input type="text" placeholder="Cidade" id="cidade" name="cidade" class="form-control input-normal">
+                            <label for="floatingInput">Cidade</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" placeholder="Uf" id="uf" name="uf" class="form-control input-menor input-inline">
+                            <label for="floatingInput">UF</label>
+                        </div>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="text" placeholder="Número" name="numero" class="form-control input-menor">
+                        <label for="floatingInput">Número</label>
+                    </div>
+
+                    <select name="regiao" id="regiao" class="form-select input-normal" aria-label="Default select example">
+                        <option disabled selected>Regiões de São Paulo</option>
+                        <option value="Zona Leste">Zona Leste</option>
+                        <option value="Zona Norte">Zona Norte</option>
+                        <option value="Zona Sul">Zona Sul</option>
+                        <option value="Zona Oeste">Zona Oeste</option>
+                    </select><br>
+        
+                    <input type="submit" value="Cadastrar">
+                </form>
+            </div>
             
-            $selecao = $ecoponto-> selecionarEcopontoParametro($id);
-        
-            foreach($selecao as $linha){
-                $localizacao = $ecoponto->geolocalizacaoExcel($linha[8], $linha[5], $linha[3],$linha[2], $linha[1]);
-                $ecoponto->alterarLocalizacao($localizacao, $linha[0]);
+            <div class="">
+                <h2>Cadastrar com uma planilha Excel</h2>
+                <form action="../cadastro/cadastro-xml-ecopontos.php" method="post" enctype="multipart/form-data">
+                    <input type="file" name="arquivo" class="form-control input-normal">
+                    <input type="submit">
+                </form>
+                
+            </div>
+
+            <div>
+                <h2>Mapa com os Ecopontos</h2>
+                <div id="map" style="width: 70%; height: 500px;"></div>
+            </div>
+
+            <span id="mensagem"></span>
+        </section>
+
+
+        <script>
+            function initMap(){
+                // Opções para o mapa
+                var options = {
+                    zoom: 12,
+                    center:{lat:-23.5489,lng:-46.6388},
+                    styles:[{
+                                "featureType": "poi",
+                                "stylers": [{
+                                    "visibility": "off"
+                                }],
+                                
+
+                            }]
+                }
+                // New Map
+                var map = new
+                google.maps.Map(document.getElementById('map'),options);
+
+                //ADCIONANDO MARCADORES POR MEIO DE ARRAY 
+                //Array dos marcadores
+
+                var markers = [
+                   
+                    <?php
+                    foreach ($pontosEcoponto as $row){
+                        $bairro = $row['bairroEcoponto'];
+                        $rua = $row['ruaEcoponto'];
+                        $numero = $row['numeroEcoponto'];
+                        $regiao = $row['zonaEcoponto'];
+                    ?>
+                        {
+                        coords:{<?php echo $row['coordeEcoponto'];?>},
+                        content:'<h2 style="color: green">Ecoponto <?php echo $bairro; ?></h2>'
+                                +'<h3><?php echo "$rua, $numero"; ?></h3>'
+                                +'<h3 style="font-weight: normal"><?php echo $regiao; ?></h3>',
+                        iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+                        },    
+                <?php
+                    }
+                    ?>
+                ]
+
+                // Laço de repetição para percorrer os marcadores
+                for(var i = 0; i < markers.length; i++){
+                    // Add marcadores 
+                    addMarker(markers[i]);
+                }
+
+                // Add Marker Function
+                function addMarker(props){
+                    var marker = new google.maps.Marker({
+                            position:props.coords,
+                            map: map,
+                            icon:props.iconImage
+                            
+                            
+                    });
+
+                    //Checando se o marcador está customizado
+                    if(props.iconImage){
+                        //Adicionando um icon
+                        marker.setIcon(props.iconImage);
+                    }
+
+                    //Checando o content
+                    if(props.content){
+                        var infoWindow = new google.maps.InfoWindow({
+                        content:props.content
+                    });
+
+                    marker.addListener('click', function(){
+                        infoWindow.open(map,marker);
+                    });
+                    }
+                }
             }
 
-            
-        }
-        
-        ?>
-
-        <span id="mensagem"></span>
+        </script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5opbRMRKjMKTKajH2CdyKJCIsqOdwdUI&callback=initMap"
+        ></script>  
+        <script src="../javascript/mascara.js"></script>
         <script src="../javascript/api-cep.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 		<script src="../javascript/index-adm.js"></script>

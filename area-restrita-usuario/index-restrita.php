@@ -209,7 +209,7 @@
                     <!--Categoria da denuncia-->
 
                     <div class="ajuste-para-correcao-inputs">
-                        <input type="text" id="cep" name="txtCepDenuncia" aria-describedby="inputGroupPrepend" required placeholder="CEP";>   
+                        <input type="text" id="cep" name="txtCepDenuncia" aria-describedby="inputGroupPrepend" required placeholder="CEP" maxlength="9">   
                         <div class="correcao-inputs"></div>
                     </div>
                     <div class="rua-e-num">
@@ -384,6 +384,7 @@
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5opbRMRKjMKTKajH2CdyKJCIsqOdwdUI&callback=initMap"
     ></script>    
+    <script src="../javascript/mascara.js"></script>
     <script src="../javascript/index-restrita.js"></script>
     <script src="../javascript/input-foto.js"></script>
     
