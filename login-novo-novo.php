@@ -184,7 +184,7 @@
                             <img style="display:block;"src="./imagens/foto-de-perfil-vazia.jpg" class="ajuste-img-preview" id="file-ip-1-preview">
                             <label for="file-ip-1">Escolher Imagem</label>
                             <!---  ATENÇÃOOOOOOOOOOOOOOOOOOO BACK END FILHO DA PUTA ARRUMA ISSO AQUI CARALHO  ------------->
-                            <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);"><!--COLOCAR O "NAME" DESSE INPUT PRA COMEÇAR A FUNCIONAR-->
+                            <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);" name="fotoUsuario"><!--COLOCAR O "NAME" DESSE INPUT PRA COMEÇAR A FUNCIONAR-->
                         </div>
                     </div>
                     <div class="ajuste-form-cadastro">

@@ -19,8 +19,16 @@
   
   while($row = $stmt->fetch(PDO::FETCH_BOTH)){
 
-    $endereco = "$row[3], $row[2], $row[7] - $row[1]";
+    $endereco = "$row[3] - $row[], $row[5] - $row[8], $row[2], $row[7] - $row[1]";
     $denuncia .= "<td>".$row[0]."</td><td>".$endereco."</td><tr>";
+           
+  }
+
+  $stmt = $pdo -> prepare("SELECT COUNT(pk_idEcoponto) FROM tbEcoponto");       
+  $stmt ->execute();
+  
+  while($row = $stmt->fetch(PDO::FETCH_BOTH)){
+    $num = $row[0];
            
   }
 
@@ -38,38 +46,46 @@
   $dompdf->load_html(
     "
     <style>
-    th{
-      background-color:#d3d3d3;
-    }
+
+      table, th, td {
+        border: 1px solid black;
+      }
       th{
-        color:white ;
-        border-bottom: 3px solid grey;
-        padding:  20px;
+        color:black ;
+        padding: 15px;
+        font-size: 1rem;
       }
       td{
         font-size:15px;
-        border-bottom: 1px solid black;
-        border-left:1px solid black;
-        padding:20px;
+        padding:8px;
       } 
       table{
-      margin:auto;
-      text-align:center;
-      border:1px solid black;
-      font-size: 2em; color: black;
+        margin:auto;
+        text-align:center;
+        font-size: 2em; 
+        border-collapse: collapse;
+      }
+      tr:nth-child(even){
+        background-color: #DEF2B3;
       }
       h1{
         text-align:center;
       }
-      
-    
+      .header{
+        margin-bottom: 50px;
+      }
     </style>
+
+    <div class='header'>
+      <p>Cidade Limpa - pdf Tabela Ecopontos</p>
+      <p>Número total de Ecopontos cadastrados: ".$num." </p>
+    </div>
     <h1>Tabela de Ecopontos</h1>
     <table>
    
             <tr>
-              <th>Id</th>
-              <th>Endereco</th>
+              <th>Código</th>
+              <th>Localização Ecoponto</th>
             </tr>
             <tr>
                 ".         
