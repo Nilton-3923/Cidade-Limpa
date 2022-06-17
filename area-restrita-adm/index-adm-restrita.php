@@ -363,7 +363,7 @@
 					</div>
 					<div class="content-data">
 						<div class="head">
-							<h3>Denúnicias por Zona</h3>
+							<h3>Denúnicias feitas por Regiões</h3>
 							<div class="menu">
 								<i class='bx bx-dots-horizontal-rounded icon'></i>
 								<ul class="menu-link">

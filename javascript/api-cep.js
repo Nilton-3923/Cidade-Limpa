@@ -14,8 +14,8 @@ const preencherFormulario = (endereco) =>{
     document.getElementById('uf').value = endereco.uf;
 }
 
-const isNumber = (numero) =>  /^[0-9]+$/.test(numero);
-const cepValido = (cep) => cep.length == 8 && isNumber(cep);
+
+const cepValido = (cep) => cep.length == 9;
 
 
 const mensagem = document.getElementById('mensagem');

@@ -25,7 +25,8 @@
     $denuncia-> setNumero($_POST['txtNumeroDenuncia']);
     $denuncia->setZonaDenuncia($_POST['regiao']);
     
-    $denuncia->setDataDenuncia($_POST['txtDtDenuncia']);
+    date_default_timezone_set('America/Sao_Paulo');
+    $denuncia->setDataDenuncia(date('d/m/Y'));
     $denuncia->setIdUsuario($_POST['txtIdUsuario']);
     
     $denuncia->setIdCategoria($_POST['txtCategoria']);
@@ -33,7 +34,7 @@
 
     echo $denuncia->denunciar($denuncia);
     
-    echo $denuncia->corpoEmail();
-    //header("Location:../area-restrita-usuario/index-restrita.php"); 
+    
+    header("Location:../area-restrita-usuario/index-restrita.php");
 
 ?>

@@ -5,7 +5,14 @@
     require_once("../classe/Conexao.php");
     require_once("../classe/Usuario.php");
     require_once("../classe/Denuncia.php");
+
+    require_once("../classe/Categoria.php");
+                                                
+    $categoria = new Categoria();
+    
+    $listaCat = $categoria->listar();
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -109,11 +116,7 @@
                                         <input type="text" name="txtCategoria" value="<?php echo @$_GET['fk_idCategoria']; ?>">
                                         <select name="txtCategoria" id="">
                                             <?php 
-                                                require_once("../classe/Conexao.php");
-                                                require_once("../classe/Categoria.php");
-                                                
-                                                $categoria = new Categoria();
-                                                $listaCat = $categoria->listar();
+                                           
                                                 foreach($listaCat as $catAlterar){
                                                     if(@$_GET['fk_idCategoria']==$catAlterar[0]){
                                                         $sel = "selected";	
@@ -275,15 +278,8 @@
                             }
                         }
                     </script>
-                    
-                    <!--Data denuncia-->
-                    <input type="hidden" id="data" name="txtDtDenuncia" 
-                    value="      
-                    <?php
-                        date_default_timezone_set('America/Sao_Paulo');
-                        echo date('Y/m/d');
-                        ?>
-                    ">
+                 
+                   
                     
                 </form>
             </div>
