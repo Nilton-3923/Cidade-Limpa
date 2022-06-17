@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/novo-login.css">
     <link rel="stylesheet" href="./css/registrar.css">
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/navbar.css">
     
 
     
@@ -15,9 +16,7 @@
 </head>
 
 <body>
-    <div class="nav-bar-login">
-        <h1><a class="voltar" href="./index.php">VOLTAR</a></h1>
-    </div>
+    <?php include 'includes/navbar.php'?>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <!-- multistep form -->
