@@ -60,11 +60,12 @@
                 
                 <div class="form-input">
                     <div class="preview">
-                        <img id="file-ip-1-preview">
+                        <img style="display:block;width:200px;height:200px;background:linear-gradient(#c4c4c4,#8a8a8a);" id="file-ip-1-preview">
                         <label for="file-ip-1">Escolher Imagem</label>
                         <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);"><!--COLOCAR O "NAME" DESSE INPUT PRA COMEÇAR A FUNCIONAR-->
                     </div>
                 </div>
+                <script src="./javascript/input-foto.js"></script>
                 
                 <input type="button" name="previous" class="previous action-button" value="Voltar" />
                 <input type="submit" value="Cadastrar" class="action-button">
