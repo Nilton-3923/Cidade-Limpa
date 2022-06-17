@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/novo-login.css">
     <link rel="stylesheet" href="./css/registrar.css">
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/navbar.css">
     
 
     
@@ -15,15 +16,18 @@
 </head>
 
 <body>
+    <div class="nav-bar-login">
+        <h1><a class="voltar" href="./index.php"><img style="width:125px;"src="./imagens/logo.png" alt="VOLTAR"></a></h1>
+    </div>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <!-- multistep form -->
             <form id="msform" action="cadastro/objeto-cadastro-usuario.php" method="POST">
             <!-- progressbar -->
             <ul id="progressbar">
-                <li class="active">Informações da conta</li>
-                <li>Localização</li>
-                <li>Foto de perfil</li>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
             </ul>
            
            
@@ -60,11 +64,12 @@
                 
                 <div class="form-input">
                     <div class="preview">
-                        <img id="file-ip-1-preview">
+                        <img style="display:block;width:200px;height:200px;background:linear-gradient(#c4c4c4,#8a8a8a);" id="file-ip-1-preview">
                         <label for="file-ip-1">Escolher Imagem</label>
                         <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);"><!--COLOCAR O "NAME" DESSE INPUT PRA COMEÇAR A FUNCIONAR-->
                     </div>
                 </div>
+                <script src="./javascript/input-foto.js"></script>
                 
                 <input type="button" name="previous" class="previous action-button" value="Voltar" />
                 <input type="submit" value="Cadastrar" class="action-button">
