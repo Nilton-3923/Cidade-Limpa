@@ -120,8 +120,8 @@
                     logradouroEcoponto,#2
                     bairroEcoponto,#3
                     cepEcoponto,#4
-                    ruaEcoponto,#5
-                    coordeEcoponto,#6
+                    ruaEcoponto,#5 
+                    coordeEcoponto, #6
                     zonaEcoponto,#7
                     numeroEcoponto#8
                     )
@@ -145,34 +145,73 @@
         
 
         //Método para Mostrar as Denúncias já feitas
-        public function mostrar(){
+        public function mostrarEcoponto(){
             $conexao = Conexao::pegarConexao();
 
-            $query = "SELECT img,imgUsuario,nomeUsuario,titulo,desc,data,uf,bairro,cep,rua,cidade FROM tb
-                      INNER JOIN tbUsuario ON tb.fk_idUsuario = tbUsuario.pk_Usuario";
+            $query = "SELECT * FROM tbEcoponto";
+                      
 
             $query = $conexao->query($query);
 
             $query = $query->fetchAll();
 
             return $query;
-
-
 
         }
 
-        public function mostrarPontosMapa(){
-            $conexao = Conexao :: pegarConexao();
+        public function ecopontosSemGeolocalizacao(){
+            $conexao = Conexao::pegarConexao();
 
-            $query = "SELECT coorde, titulo, desc, cep, DATE_FORMAT(`data`,'%d/%m/%Y') as data, campoCategoria,img FROM tb 
-                INNER JOIN tbcategoria 
-                    ON tbcategoria.pk_idCategoria = tb.fk_idCategoria       
-            ";
+            $query = "SELECT pk_idEcoponto FROM tbEcoponto
+                        WHERE coordeEcoponto = ''";
 
             $query = $conexao->query($query);
             $query = $query->fetchAll();
 
             return $query;
+        }
+
+        public function selecionarEcopontoParametro($id){
+            $conexao = Conexao::pegarConexao();
+
+            $query = "SELECT * FROM tbEcoponto
+                        WHERE pk_idEcoponto = $id";
+
+            $query = $conexao->query($query);
+            $query = $query->fetchAll();
+
+            return $query;
+        }
+
+        public function geolocalizacaoExcel($numero, $rua, $bairro,$cidade, $uf){
+         
+         
+            $enderecoJunto = "$numero $rua, $bairro, $cidade - $uf"; 
+
+            $addr = str_replace(" ", "+","$enderecoJunto");
+
+            $address = utf8_encode($addr);
+    
+            $url = "https://maps.googleapis.com/maps/api/geocode/json?address=$address&key=AIzaSyAo1uIjwfM3QBcwPKKDVuXv0z8eJlQGcYE";
+        
+            $json = file_get_contents($url);
+            $data = json_decode($json);
+    
+            $lat = $data->results[0]->geometry->location->lat;
+            $long = $data->results[0]->geometry->location->lng;
+
+            return $localizacao = "lat: $lat, lng: $long"; 
+    
+        }
+
+        public function alterarLocalizacao($coorde, $id){
+            $conexao = Conexao::pegarConexao();
+
+            $update = $conexao->prepare("UPDATE tbEcoponto
+                                            SET coordeEcoponto = '$coorde'
+                                                WHERE pk_idEcoponto = $id");
+            $update->execute();
+
         }
 
     }

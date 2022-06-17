@@ -3,6 +3,9 @@
     error_reporting(0);
     require_once("classe/Conexao.php");
     require_once("classe/Denuncia.php");
+    require_once("classe/Ecoponto.php");
+
+
 ?>
 
 
@@ -47,12 +50,6 @@
             //ADCIONANDO MARCADORES POR MEIO DE ARRAY 
             //Array dos marcadores
 
-            const image =  {
-
-            }
-
-
-
             var markers = [
                 <?php 
 
@@ -85,18 +82,29 @@
                                     +'<h2 style="color:<?php echo $cor; ?>; display: inline; margin-right:20px"><?php echo $categoria; ?></h2>'
                                     +'<span style="color:black"><?php echo $data;?></span>'
                                     +'<p style="color:black; margin-top:20px; margin-bottom:20px;"><?php echo $desc;?></p>'
-                                    +'<img style="height:150px; width:300px; margin-left:12px;"src="cadastro/<?php echo $img;?>"></a>', 
-                                    
+                                    +'<img style="height:150px; width:300px; margin-left:12px;"src="cadastro/<?php echo $img;?>"></a>',     
                             iconImage: {
-                                path: google.maps.SymbolPath.CIRCLE,
                                 scale: 3,
                             }
-
-                    
-                            
-                            
                          },
                 <?php
+                }
+                $ecoponto = new Ecoponto;
+                $pontosEcoponto = $ecoponto->mostrarEcoponto();
+                foreach ($pontosEcoponto as $row){
+                    $bairro = $row['bairroEcoponto'];
+                    $rua = $row['ruaEcoponto'];
+                    $numero = $row['numeroEcoponto'];
+                    $regiao = $row['zonaEcoponto'];
+                ?>
+                    {
+                    coords:{<?php echo $row['coordeEcoponto'];?>},
+                    content:'<h2 style="color: green">Ecoponto <?php echo $bairro; ?></h2>'
+                            +'<h3><?php echo "$rua, $numero"; ?></h3>'
+                            +'<h3 style="font-weight: normal"><?php echo $regiao; ?></h3>',
+                    iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+                    },    
+               <?php
                 }
                 ?>
             ]

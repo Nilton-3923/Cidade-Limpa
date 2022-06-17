@@ -35,7 +35,7 @@
                             <a href="#"><i class='bx bxs-notepad icon' ></i> Formulários <i class='bx bx-chevron-right icon-right' ></i></a>
                             <ul class="side-dropdown">
                                 <li><a href="cadastro-categoria.php">Cadastrar Categoria</a></li>
-                                <li><a href="#">Cadastrar EcoPonto</a></li>
+                                <li><a href="cadastro-ecoponto.php">Cadastrar EcoPonto</a></li>
                             </ul>
                         </li>
                     </ul>
