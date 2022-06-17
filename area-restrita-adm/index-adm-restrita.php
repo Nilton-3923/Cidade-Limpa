@@ -177,7 +177,6 @@
 					<ul class="side-dropdown">
 						<li><a href="tabela-denuncia.php">Tabela Denúncias</a></li>
 						<li><a href="tabela-usuario.php">Tabela Usuários</a></li>
-						<li><a href="tabela-categoria.php">Tabela Categorias</a></li>
 						<li><a href="tabela-ecopontos.php">Tabela Ecopontos</a></li>
 					</ul>
 				</li>
@@ -368,7 +367,7 @@
 							<div class="menu">
 								<i class='bx bx-dots-horizontal-rounded icon'></i>
 								<ul class="menu-link">
-									<li><a href="pdfs/pdf-grafico4.php">PDF</a></li>
+									<li><a href="pdf/grafico1.php">PDF</a></li>
 								</ul>
 							</div>
 						</div>

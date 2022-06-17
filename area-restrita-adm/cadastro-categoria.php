@@ -27,7 +27,6 @@
                             <ul class="side-dropdown">
                                 <li><a href="tabela-denuncia.php">Tabela Denúncias</a></li>
                                 <li><a href="tabela-usuario.php">Tabela Usuários</a></li>
-                                <li><a href="tabela-categoria.php">Tabela Categorias</a></li>
                                 <li><a href="tabela-ecopontos.php">Tabela Ecopontos</a></li>
                             </ul>
                         </li>
@@ -59,10 +58,43 @@
 				</div>
 			</nav>
 
-        <form action="../cadastro/objeto-cadastro-categoria.php" method="post"> 
-            <input type="text" name="txtCategoria" placeholder="Digite o nome da Categoria...">
+        <form action="../CRUD/objeto-salvar-categoria.php" method="post"> 
+            <input type="hidden" name="pk_idCategoria" value="<?php echo @$_GET['pk_idCategoria'];?>">
+            <input type="text" value="<?php echo @$_GET['campoCategoria']; ?>" name="txtCategoria" placeholder="Digite o nome da Categoria...">
             <input type="submit" value="cadastrar">
         </form>
+        <?php 
+
+            require_once("../classe/Adm.php");
+            $adm = new Adm();
+            $tables = $adm->tabelaCategoria();
+            ?>
+
+            <table border="1" class="table table-striped table-hover" style="width:300px">
+            <H1>TABELA DE CATEGORIAS</H1>
+            <a href="pdfs/pdf-table-categoria.php">Vizualizar Pdf</a>
+            <tr>
+            <th>id</th>
+            <th>Categoria</th>
+            <th>Excluir</th>
+            <th>Alterar</th>
+
+            </tr>
+            <?php 
+                foreach($tables as $dados){
+            ?>
+            <tr>
+
+                <td><?php echo $dados['pk_idCategoria']; ?></td>
+                <td><?php echo $dados['campoCategoria']; ?></td>      
+                <td><a href="../CRUD/objeto-deletar-categoria.php?pk_idCategoria=<?php echo $dados['pk_idCategoria'];?>">Deletar</a></td>
+                <td><a href="?pk_idCategoria=<?php echo $dados['pk_idCategoria'];?>&campoCategoria=<?php echo $dados['campoCategoria']; ?>">Alterar</a></td>
+            </tr>
+            <?php
+            }
+            ?>
+
+            </table>
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 		<script src="../javascript/index-adm.js"></script>
     </body>

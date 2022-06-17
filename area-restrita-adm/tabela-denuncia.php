@@ -29,7 +29,6 @@
                             <ul class="side-dropdown">
                                 <li><a href="tabela-denuncia.php">Tabela Denúncias</a></li>
                                 <li><a href="tabela-usuario.php">Tabela Usuários</a></li>
-                                <li><a href="tabela-categoria.php">Tabela Categorias</a></li>
                                 <li><a href="tabela-ecopontos.php">Tabela Ecopontos</a></li>
                             </ul>
                         </li>

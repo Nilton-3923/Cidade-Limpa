@@ -9,8 +9,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/index-adm.css">
 	<title>AdminSite</title>
 </head>
@@ -29,7 +27,6 @@
                             <ul class="side-dropdown">
                                 <li><a href="tabela-denuncia.php">Tabela Denúncias</a></li>
                                 <li><a href="tabela-usuario.php">Tabela Usuários</a></li>
-                                <li><a href="tabela-categoria.php">Tabela Categorias</a></li>
                                 <li><a href="tabela-ecopontos.php">Tabela Ecopontos</a></li>
                             </ul>
                         </li>
@@ -60,21 +57,29 @@
 					</ul>
 				</div>
 			</nav>
+
+        <form action="../CRUD/objeto-salvar-categoria.php" method="post"> 
+            <input type="hidden" name="pk_idCategoria" value="<?php echo @$_GET['pk_idCategoria'];?>">
+            <input type="text" value="<?php echo @$_GET['campoCategoria']; ?>" name="txtCategoria" placeholder="Digite o nome da Categoria...">
+            <input type="submit" value="cadastrar">
+        </form>
         <?php 
 
             require_once("../classe/Adm.php");
             $adm = new Adm();
             $tables = $adm->tabelaCategoria();
-        ?>
+            ?>
 
-        <table border="1" class="table table-striped table-hover" style="width:300px">
-        <H1>TABELA DE CATEGORIAS</H1>
-        <a href="pdfs/pdf-table-categoria.php">Vizualizar Pdf</a>
-        <tr>
+            <table border="1" class="table table-striped table-hover" style="width:300px">
+            <H1>TABELA DE CATEGORIAS</H1>
+            <a href="pdfs/pdf-table-categoria.php">Vizualizar Pdf</a>
+            <tr>
             <th>id</th>
             <th>Categoria</th>
+            <th>Excluir</th>
+            <th>Alterar</th>
 
-        </tr>
+            </tr>
             <?php 
                 foreach($tables as $dados){
             ?>
@@ -82,14 +87,14 @@
 
                 <td><?php echo $dados['pk_idCategoria']; ?></td>
                 <td><?php echo $dados['campoCategoria']; ?></td>      
+                <td><a href="../CRUD/objeto-deletar-categoria.php?pk_idCategoria=<?php echo $dados['pk_idCategoria'];?>">Deletar</a></td>
+                <td><a href="?pk_idCategoria=<?php echo $dados['pk_idCategoria'];?>&campoCategoria=<?php echo $dados['campoCategoria']; ?>">Alterar</a></td>
             </tr>
             <?php
             }
-        ?>
+            ?>
 
-        </table>
-      
-        
+            </table>
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 		<script src="../javascript/index-adm.js"></script>
     </body>
