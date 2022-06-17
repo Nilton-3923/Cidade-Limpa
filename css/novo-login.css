@@ -12,6 +12,7 @@ body {
 	align-items: center;
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
+	margin:0;
 }
 
 h1 {
@@ -250,4 +251,20 @@ footer a {
 }
 .login-mobile{
 	display:none;
+}
+
+.nav-bar-login{
+	width:100%;
+	height:65px;
+    background:rgb(77, 104, 112);
+    display:flex;
+	justify-content: start;
+    padding-left:25px;
+}
+.voltar{
+	transition:color .3s;
+	color:#fff;
+}
+.voltar:hover{
+	color:rgb(129, 218, 253);
 }

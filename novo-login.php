@@ -15,6 +15,9 @@
 </head>
 
 <body>
+    <div class="nav-bar-login">
+        <h1><a class="voltar" href="./index.php">VOLTAR</a></h1>
+    </div>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <!-- multistep form -->
