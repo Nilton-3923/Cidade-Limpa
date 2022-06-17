@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16-Jun-2022 às 19:56
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 8.1.6
+-- Tempo de geração: 17-Jun-2022 às 04:15
+-- Versão do servidor: 10.4.22-MariaDB
+-- versão do PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,6 +37,13 @@ CREATE TABLE `tbadm` (
   `denunciaReslvAdm` int(11) NOT NULL,
   `imagemAdm` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tbadm`
+--
+
+INSERT INTO `tbadm` (`pk_idAdm`, `nomeAdm`, `sobrenomeAdm`, `emailAdm`, `cep`, `senhaAdm`, `denunciaReslvAdm`, `imagemAdm`) VALUES
+(1, 'Adm', 'Adm', 'Adm@gmail.com', '10022555', '123', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -98,8 +105,14 @@ CREATE TABLE `tbdenuncia` (
 --
 
 INSERT INTO `tbdenuncia` (`pk_idDenuncia`, `tituloDenuncia`, `descDenuncia`, `imgDenuncia`, `dataDenuncia`, `ufDenuncia`, `bairroDenuncia`, `cepDenuncia`, `ruaDenuncia`, `cidadeDenuncia`, `coordeDenuncia`, `zonaDenuncia`, `fk_idUsuario`, `fk_idCategoria`) VALUES
-(1, 'Lixo ', 'Lixo', 'imgDenuncia/Lixo.jpg', '2022-05-13', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5544783, lng: -46.7843427', '', 6, 1),
-(2, 'Lixo Zona Norte', 'Lixo está incomodando moradores da região', 'imgDenuncia/lixo-ramos.jpg', '2022-05-13', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5544783, lng: -46.7843427', '', 6, 1);
+(1, 'Lixo ', 'Lixo', 'imgDenuncia/Lixo.jpg', '2022-03-13', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5544783, lng: -46.7843427', 'Zona Leste', 6, 1),
+(2, 'Lixo Zona Norte', 'Lixo está incomodando moradores da região', 'imgDenuncia/lixo-ramos.jpg', '2022-05-13', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5544783, lng: -46.7843427', 'Zona Norte', 6, 1),
+(5, 'Lixo Tiête', 'Texto', 'imgDenuncia/Dengue1.jpg', '2022-06-03', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Norte', 1, 2),
+(6, 'Lixo Tiête', 'Texto', 'imgDenuncia/Dengue1.jpg', '2022-06-03', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Sul', 1, 2),
+(7, 'Lixo Tiête', 'Texto', 'imgDenuncia/Dengue1.jpg', '2022-06-03', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Sul', 1, 2),
+(8, 'Lixo Tiête', 'Texto', 'imgDenuncia/Dengue1.jpg', '2022-06-03', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Sul', 1, 2),
+(9, 'Lixo Tiête', 'Texto', 'imgDenuncia/Dengue1.jpg', '2022-06-03', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Oeste', 1, 2),
+(10, 'Descarte de lixo', 'Muito lixo', 'imgDenuncia/Koala.jpg', '2022-06-09', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', 'lat: -23.5115478, lng: -46.4110822', 'Zona Leste', 6, 1);
 
 -- --------------------------------------------------------
 
@@ -115,8 +128,23 @@ CREATE TABLE `tbecoponto` (
   `cepEcoponto` varchar(9) NOT NULL,
   `ruaEcoponto` varchar(100) NOT NULL,
   `coordeEcoponto` varchar(50) NOT NULL,
-  `zonaEcoponto` varchar(15) NOT NULL
+  `zonaEcoponto` varchar(15) NOT NULL,
+  `numeroEcoponto` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tbecoponto`
+--
+
+INSERT INTO `tbecoponto` (`pk_idEcoponto`, `ufEcoponto`, `logradouroEcoponto`, `bairroEcoponto`, `cepEcoponto`, `ruaEcoponto`, `coordeEcoponto`, `zonaEcoponto`, `numeroEcoponto`) VALUES
+(1, 'SP', 'São Paulo', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'lat: -23.5115478, lng: -46.4110822', 'Zona Leste', '264'),
+(2, 'SP', 'São Paulo', 'São João Clímaco', '04240050', 'Rua Vicente Gaspar', 'lat: -23.6177114, lng: -46.5874794', 'Zona Norte', ''),
+(3, 'SP', 'São Paulo', 'Jardim Indaiá', '08141130', 'Rua Antônio Leme da Guerra', 'lat: -23.5157698, lng: -46.3975747', 'Zona Norte', ''),
+(4, 'SP', 'São Paulo', 'Vila Buenos Aires', '03624090', 'Rua Diário de São Paulo', 'lat: -23.5143774, lng: -46.5169547', 'Zona Oeste', ''),
+(5, 'SP', 'São Paulo', 'Vila Mariana', '04015030', 'Rua Nakaya', 'lat: -23.5862992, lng: -46.6451601', 'Zona Norte', '1'),
+(6, 'SP', 'São Paulo', 'Jardim Reimberg', '04845200', 'Rua Alba Valdez', 'lat: -23.750614, lng: -46.6964036', 'Zona Leste', ''),
+(7, 'SP', 'São Paulo', 'Jardim Russo', '05205050', 'Rua Campo do Olival', 'lat: -23.407705, lng: -46.7656429', 'Zona Leste', '55'),
+(8, 'SP', 'São Paulo', 'Vila Joaniza', '04404140', 'Rua Bemaventurança', 'lat: -23.6746855, lng: -46.6598304', 'Zona Sul', '55');
 
 -- --------------------------------------------------------
 
@@ -159,7 +187,8 @@ CREATE TABLE `tbusuario` (
 
 INSERT INTO `tbusuario` (`pk_Usuario`, `nomeUsuario`, `emailUsuario`, `senhaUsuario`, `cepUsuario`, `imgUsuario`) VALUES
 (1, 'Gui', 'gui@gmail.com', '123', '01548000', 'imgUsuario/leno-brego.jpg'),
-(6, '', 'nilton@gmail.com', '123', '', 'imgUsuario/');
+(6, '', 'nilton@gmail.com', '123', '', 'imgUsuario/'),
+(7, 'Nycolas', 'nyco@gmail.com', '123', '08152130', NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -221,7 +250,7 @@ ALTER TABLE `tbusuario`
 -- AUTO_INCREMENT de tabela `tbadm`
 --
 ALTER TABLE `tbadm`
-  MODIFY `pk_idAdm` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pk_idAdm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `tbcategoria`
@@ -239,13 +268,13 @@ ALTER TABLE `tbchatbot`
 -- AUTO_INCREMENT de tabela `tbdenuncia`
 --
 ALTER TABLE `tbdenuncia`
-  MODIFY `pk_idDenuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `pk_idDenuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `tbecoponto`
 --
 ALTER TABLE `tbecoponto`
-  MODIFY `pk_idEcoponto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pk_idEcoponto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `tbtelusuario`
@@ -257,7 +286,7 @@ ALTER TABLE `tbtelusuario`
 -- AUTO_INCREMENT de tabela `tbusuario`
 --
 ALTER TABLE `tbusuario`
-  MODIFY `pk_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `pk_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restrições para despejos de tabelas

@@ -12,8 +12,6 @@ body {
 	align-items: center;
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
-	height: 100vh;
-	margin: -20px 0 50px;
 }
 
 h1 {
@@ -162,7 +160,7 @@ input {
 }
 
 .overlay {
-	background: linear-gradient(to top,rgba(1, 39, 10, 0.726),transparent),url(./imagens/mapa.jpg);
+	background: linear-gradient(to top,rgba(0, 0, 0, 0.8),transparent),url(../imagens/cidade.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
