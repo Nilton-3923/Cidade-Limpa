@@ -98,6 +98,21 @@
         height:var(--tamanho-da-foto)!important;
         border-radius:50%!important;
     }
+    .nav-bar-login{
+	width:100%;
+	height:65px;
+    background:rgb(77, 104, 112);
+    display:flex;
+	justify-content: start;
+    padding-left:25px;
+    }
+    .voltar{
+        transition:color .3s;
+        color:#fff;
+    }
+    .voltar:hover{
+        color:rgb(129, 218, 253);
+    }
 @media(max-width:720px){
     .login-responsivo{
         height:100%;
@@ -107,6 +122,9 @@
 </style>
 <!--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
 <body>
+    <div class="nav-bar-login">
+        <h1><a class="voltar" href="./index.php"><img style="width:125px;"src="./imagens/logo.png" alt="VOLTAR"></a></h1>
+    </div>
     <div class="login-responsivo">
             <!-- Pills navs -->
         <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
@@ -129,14 +147,14 @@
         
             <!-- Email input -->
             <div class="form-outline mb-4">
-                <input type="email" id="loginName" class="form-control" />
-                <label class="form-label" for="loginName">Email or username</label>
+                <input type="text" id="loginName" class="form-control" />
+                <label class="form-label" for="loginName">Email</label>
             </div>
         
             <!-- Password input -->
             <div class="form-outline mb-4">
                 <input type="password" id="loginPassword" class="form-control" />
-                <label class="form-label" for="loginPassword">Password</label>
+                <label class="form-label" for="loginPassword">Senha</label>
             </div>
         
             <!-- 2 column grid layout -->
@@ -144,14 +162,14 @@
                 <div class="col-md-6 d-flex justify-content-center">
                 <!-- Checkbox -->
                 <div class="form-check mb-3 mb-md-0">
-                    <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
-                    <label class="form-check-label" for="loginCheck"> Remember me </label>
+                    <input class="form-check-input" type="checkbox" value="" id="loginCheck"/>
+                    <label class="form-check-label" for="loginCheck">Mostrar senha </label>
                 </div>
                 </div>
             </div>
         
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+            <button type="submit" class="btn btn-primary btn-block mb-4">Entrar</button>
         
             <!-- Register buttons -->
             </form>
@@ -220,7 +238,7 @@
                         })
                     </script>
 
-                    <input type="submit" value="Cadastrar">
+                    <input class="btn btn-primary btn-block mb-4" type="submit" value="Cadastrar">
                 </form>
             </div>
         </div>

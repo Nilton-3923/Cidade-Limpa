@@ -50,6 +50,13 @@ body{
     text-align:center;
    
 }
+.menu-lateral-mobile{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:10px;
+}
 .links{
     display:flex;
     flex-direction: column;
@@ -81,6 +88,7 @@ body{
     background:#ffffff;
 }
 .pesquisar-denuncia > input[type="text"]{
+    width:145px;
     border:none;
     outline:none;
     font-size:15px;
@@ -317,7 +325,7 @@ body{
     }
     .style-da-lupa{
         font-size: 15px;
-        width:10%;
+        width:100%;
     }
     .links > a{
         font-size: 15px;
@@ -352,7 +360,7 @@ body{
     }
     .heightCemPorcento{
         height:100%;
-        padding-top:50px;
+        padding-top:0px;
     }
     
 }
