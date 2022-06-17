@@ -143,8 +143,9 @@
             
            
             $id = $_SESSION['idUsuario'];
-            $query = "SELECT pk_idDenuncia, imgDenuncia,nomeUsuario,imgUsuario,tituloDenuncia,descDenuncia,dataDenuncia,cepDenuncia FROM tbDenuncia
+            $query = "SELECT pk_idDenuncia, imgDenuncia,nomeUsuario,imgUsuario,tituloDenuncia,descDenuncia,dataDenuncia,cepDenuncia,fk_idCategoria, campoCategoria FROM tbDenuncia
                       INNER JOIN tbUsuario ON tbDenuncia.fk_idUsuario = tbUsuario.pk_Usuario
+                      INNER JOIN tbCategoria ON tbDenuncia.fk_idCategoria = tbCategoria.pk_idCategoria
                       WHERE pk_Usuario = $id";
 
             $query = $conexao->query($query);

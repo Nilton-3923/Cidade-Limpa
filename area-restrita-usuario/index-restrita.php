@@ -16,6 +16,11 @@
         <link rel="stylesheet" href="../css/reset.css">
         <Link rel="stylesheet" href="../css/index-restrita.css">
         <link rel="stylesheet" href="../css/input-foto.css">
+        <link rel="stylesheet" href="../css/alterar-modal.css">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>  
         <title>Document</title>
     </head>
     <?php
@@ -85,8 +90,8 @@
         ?>
                     <div>
                         <div id="container">
-                            <a class="card-link" href="#">
-                                <article class="blog-card">
+                            <a class="card-link" href="?pk_idDenuncia=<?php echo $linha[0] ?>&tituloDenuncia=<?php echo $linha['tituloDenuncia']; ?>&descDenuncia=<?php echo $linha['descDenuncia']; ?>&fk_idCategoria=<?php echo $linha['fk_idCategoria']; ?>">
+                                <article class="blog-card" >
                                         <img class="post-image" src="../cadastro/<?php echo $linha['imgDenuncia']; ?>" /><!--Imagem da Denuncia -->
                                     <div class="article-details">
                                         <h3 class="post-title"><?php echo $linha['tituloDenuncia'];?></h3><!--Titulo da denuncia-->
@@ -94,25 +99,49 @@
                                         <p class="post-author"><?php echo $linha['nomeUsuario'];?></p>
                                         <h4 class="post-category">cep: <?php echo $linha['cepDenuncia'];?></h4><!--cep da Denuncia -->
                                     </div>
+
                                 </article>
-                            </a>
+                                </a>
+                                    <form action="../CRUD/objeto-alterar-denuncia.php" method="post" enctype="multipart/form-data">
+                                        <input type="text" name="pk_idDenuncia" value="<?php echo @$_GET['pk_idDenuncia'];?>">
+                                        <input type="text" name="tituloDenuncia" value="<?php echo @$_GET['tituloDenuncia']; ?>">
+                                        <input type="text" name="descDenuncia" value="<?php echo @$_GET['descDenuncia']; ?>">
+                                        <input type="text" name="txtCategoria" value="<?php echo @$_GET['fk_idCategoria']; ?>">
+                                        <select name="txtCategoria" id="">
+                                            <?php 
+                                                require_once("../classe/Conexao.php");
+                                                require_once("../classe/Categoria.php");
+                                                
+                                                $categoria = new Categoria();
+                                                $listaCat = $categoria->listar();
+                                                foreach($listaCat as $catAlterar){
+                                                    if(@$_GET['fk_idCategoria']==$catAlterar[0]){
+                                                        $sel = "selected";	
+                                                    }
+                                                    else{
+                                                        $sel = " ";	
+                                                    }
+                                            ?>
+                                            <option value="<?php echo $catAlterar['pk_idCategoria'];?>" <?php echo $sel; ?>><?php echo $catAlterar['campoCategoria']; ?></option>
+                                            <?php } ?>
+                                        </select>
+                                        <input type="file" name="imgDenuncia">
+                                        <input type="submit">
+                                    </form>
+                                    
                         </div>
-
-
-                        <!-- Colocar esse form de Alteração da denuncia em um modal -->
                         
                         <div id="modalAlterarDenuncia" class="modal-alterar-denuncia">
                             <form action="../CRUD/objeto-alterar-denuncia.php" method="post" enctype="multipart/form-data">
                                 <button class="cancelar" onClick="FechaModalAlterarDenuncia()">Cancelar</button>
-                                <input type="hidden" name="pk_idDenuncia" value="<?php echo $linha['pk_idDenuncia'];?>">
-                                <input type="text" name="tituloDenuncia" value="<?php echo $linha['tituloDenuncia']; ?>">
-                                <input name="descDenuncia" value="<?php echo $linha['descDenuncia'] ?>">
+                                <input type="hidden" name="pk_idDenuncia" value="<?php // echo $linha['pk_idDenuncia'];?>">
+                                <input type="text" name="tituloDenuncia" value="<?php //echo $linha['tituloDenuncia']; ?>">
+                                <input name="descDenuncia" value="<?php //echo $linha['descDenuncia'] ?>">
                                 <label style="display:flex; flex-direction:row; align-items:center; gap:20px;" for="foto"><img style="cursor:pointer;"src="../imagens/upl.png"> <p id="preview"style="font-size:0.9vw; color:black;">Enviar foto</p></label>
-                                <input id="foto"style="display:none;"type="file" name="imgDenuncia">
+                                <input id="foto"style="display:none;"type="file" name="imgDenuncia">-->
                                 <!--Deletar Denuncia--><a class="btn-del-denuncia"href="../CRUD/objeto-deletar-denuncia.php?pk_idDenuncia=<?php echo $linha['pk_idDenuncia'];?>">Deletar</a>
                                 <input class="btn-basico bg-verde" type="submit" value="Salvar">
-                            </form>
-                        </div>          
+                              
                     </div>
         <?php
             }
@@ -175,14 +204,7 @@
                     </div>
                     
                     <!--Categoria da denuncia-->
-                    <?php
-                    require_once("../classe/Conexao.php");
-                    require_once("../classe/Categoria.php");
-                    
-                    $categoria = new Categoria();
-                    $listaCat = $categoria->listar();
-                    
-                    ?>
+
                     <div class="ajuste-para-correcao-inputs">
                         <input type="text" id="cep" name="txtCepDenuncia" aria-describedby="inputGroupPrepend" required placeholder="CEP";>   
                         <div class="correcao-inputs"></div>

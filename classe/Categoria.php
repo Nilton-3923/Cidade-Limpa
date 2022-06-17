@@ -25,12 +25,12 @@
         }
 
         //Método de Inserção (INSERT)
-        public function cadastrar($categoria){
+        public function cadastrar($campoCategoria){
             $conexao = Conexao::pegarConexao();
 
             $stmt = $conexao->prepare("INSERT INTO tbCategoria (campoCategoria) 
                                        VALUES(?)");
-            $stmt->bindValue(1,$categoria->getCampoCategoria());
+            $stmt->bindValue(1,$campoCategoria->getCampoCategoria());
 
             $stmt->execute();       
         }
@@ -45,6 +45,39 @@
             $query = $query->fetchAll();
 
             return $query;
+        }
+         //Método de Deletar Categoria(DELETE)
+         public function deletarCategoria($idCategoria){
+            $conexao = Conexao::pegarConexao();
+
+            $deletarDenuncia = $conexao->prepare("DELETE FROM tbDenuncia
+                                                    WHERE fk_idCategoria = $idCategoria");
+
+            $deletarDenuncia->execute();
+
+            $deleteCategoria = $conexao->prepare("DELETE FROM tbCategoria
+                                                WHERE pk_idCategoria = $idCategoria");
+
+            $deleteCategoria->execute();
+
+            
+
+            return 'deletado';
+        }
+
+         //Método de Alterar Categoria
+         public function alterar($idCategoria, $campoCategoria){
+            $conexao = Conexao::pegarConexao();
+
+            $alterarCategoria = $conexao->prepare("UPDATE tbCategoria
+                                                    SET
+                                                    campoCategoria = '$campoCategoria'
+                                                        WHERE pk_idCategoria = '$idCategoria'");
+
+            $alterarCategoria->execute();
+
+
+            return "Update realizado";      
         }
     }
 
