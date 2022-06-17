@@ -36,7 +36,7 @@
                 <h2 class="fs-title">Registrar conta</h2>
                 <h3 class="fs-subtitle">Primeiro passo</h3>
                 <input type="text" name="txtEmail" placeholder="Email" />
-                <input type="text" name="telefone" placeholder="Telefone" />
+                <input type="text" name="telefone" placeholder="Telefone" id="telefone" maxlength="15"/>
 
                 <input type="text" name="txtNome" placeholder="Nome" />
                 <input type="password" name="txtSenha"  placeholder="Senha" />

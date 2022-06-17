@@ -175,7 +175,7 @@
                             <label class="form-label" for="email">Endereço de Email</label>
                         </div>
                         <div class="form-outline mb-4">
-                            <input type="text" name="telefone" id="telefone" class="form-control"/>
+                            <input type="text" name="telefone" id="telefone" class="form-control" maxlength="15"/>
                             <label class="form-label" for="Telefone">Telefone</label>
                         </div>
                         <div class="form-outline mb-4">
