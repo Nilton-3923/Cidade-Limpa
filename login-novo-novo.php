@@ -113,6 +113,18 @@
     .voltar:hover{
         color:rgb(129, 218, 253);
     }
+    .nav-pills .nav-link.active,.btn-primary{
+        background-color:#27AE60;
+    }
+    .btn-primary{
+        border-radius:20px;
+    }
+    .ajuste-div-login{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:red;
+    }
 @media(max-width:720px){
     .login-responsivo{
         height:100%;
@@ -134,7 +146,7 @@
         </li>
         <li class="nav-item" role="presentation">
             <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab"
-            aria-controls="pills-register" aria-selected="false">Register</a>
+            aria-controls="pills-register" aria-selected="false">Registrar</a>
         </li>
         </ul>
         <!-- Pills navs -->
@@ -161,15 +173,17 @@
             <div class="row mb-4">
                 <div class="col-md-6 d-flex justify-content-center">
                 <!-- Checkbox -->
-                <div class="form-check mb-3 mb-md-0">
-                    <input class="form-check-input" type="checkbox" value="" id="loginCheck"/>
-                    <label class="form-check-label" for="loginCheck">Mostrar senha </label>
+                <div class="ajuste-div-login">
+                        <div class="form-check mb-3 mb-md-0">
+                            <input class="form-check-input" type="checkbox" value="" id="loginCheck"/>
+                            <label class="form-check-label" for="loginCheck">Mostrar senha </label>
+                        </div>
+                        </div>
+                    </div>
+                
+                    <!-- Submit button -->
+                    <button style="width:max-content;" type="submit" class="btn btn-primary btn-block mb-4">Entrar</button>
                 </div>
-                </div>
-            </div>
-        
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Entrar</button>
         
             <!-- Register buttons -->
             </form>
@@ -208,7 +222,7 @@
                             <input type="password" name="cpass" id="csenha" class="form-control"/>
                             <label class="form-label" for="csenha">Confirmar Senha</label>
                         </div>
-                        <section class="section-cep-do-luquinhas">
+                        <section class="form-outline mb-4">
                             <div class="form-outline mb-4">
                                 <input type="text" name="txtCep" aria-describedby="inputGroupPrepend" required id="cep" class="form-control" maxlength="9">
                                 <label class="form-label" for="cep">CEP</label>
@@ -238,7 +252,7 @@
                         })
                     </script>
 
-                    <input class="btn btn-primary btn-block mb-4" type="submit" value="Cadastrar">
+                    <input style="width:max-content;"class="btn btn-primary btn-block mb-4" type="submit" value="Cadastrar">
                 </form>
             </div>
         </div>
