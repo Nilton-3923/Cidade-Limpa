@@ -30,10 +30,10 @@
         display:flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap:wrap;
         width:100vw;
         height:100vh;
-        background-color: #c4c4c4;
     }
     .login-responsivo{
         background-color: #fff;
@@ -123,7 +123,14 @@
         display:flex;
         justify-content:center;
         align-items:center;
-        background:red;
+        flex-direction:column;
+        width:100%;
+        gap:10px;
+    }
+    .ajuste-mostrar-senha{
+        width:100%;
+        display:flex;
+        align-items:start;
     }
 @media(max-width:720px){
     .login-responsivo{
@@ -174,15 +181,25 @@
                 <div class="col-md-6 d-flex justify-content-center">
                 <!-- Checkbox -->
                 <div class="ajuste-div-login">
-                        <div class="form-check mb-3 mb-md-0">
+                        <div class="form-check mb-3 mb-md-0 ajuste-mostrar-senha">
                             <input class="form-check-input" type="checkbox" value="" id="loginCheck"/>
-                            <label class="form-check-label" for="loginCheck">Mostrar senha </label>
+                            <label class="form-check-label" for="loginCheck">Mostrar senha</label>
                         </div>
+                        <!--SCRIPT PARA MOSTRAR A SENHA/ESCONDER-->
+                        <script>
+                            document.getElementById('loginCheck').addEventListener('click',()=>{
+                                if(document.getElementById('loginCheck').checked){
+                                    document.getElementById('loginPassword').type = 'text';
+                                }else{
+                                    document.getElementById('loginPassword').type = 'password';
+                                }
+                            })
+                        </script>
+                        <!-- Submit button -->
+                        <button style="width:max-content;" type="submit" class="btn btn-primary btn-block mb-4">Entrar</button>
                         </div>
                     </div>
                 
-                    <!-- Submit button -->
-                    <button style="width:max-content;" type="submit" class="btn btn-primary btn-block mb-4">Entrar</button>
                 </div>
         
             <!-- Register buttons -->
