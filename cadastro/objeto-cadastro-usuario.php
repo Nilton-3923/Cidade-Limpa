@@ -27,7 +27,7 @@
         $usuario->setImgUsuario($caminhoImagem);
         
         echo $usuario->cadastrar($usuario,$tel);
-        header("Location: ../login.php");
+        header("Location: ../index.php");
 
     }
     
