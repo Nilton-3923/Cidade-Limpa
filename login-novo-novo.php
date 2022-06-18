@@ -34,6 +34,7 @@
         flex-wrap:wrap;
         width:100vw;
         height:100vh;
+        padding-top:65px;
     }
     .login-responsivo{
         background-color: #fff;
@@ -99,12 +100,14 @@
         border-radius:50%!important;
     }
     .nav-bar-login{
-	width:100%;
-	height:65px;
-    background:rgb(77, 104, 112);
-    display:flex;
-	justify-content: start;
-    padding-left:25px;
+        position:absolute;
+        top:0;
+        width:100%;
+        height:65px;
+        background:rgb(77, 104, 112);
+        display:flex;
+        justify-content: start;
+        padding-left:25px;
     }
     .voltar{
         transition:color .3s;
