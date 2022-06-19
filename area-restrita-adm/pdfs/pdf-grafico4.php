@@ -14,7 +14,7 @@
 	$pdo = new PDO("mysql:host=$servidor;dbname=$banco",$usuario,$senha);
 
   $zona = "";
-  $stmt = $pdo -> prepare("SELECT COUNT(pk_idDenuncia),zonaDenuncia FROM tbdenuncia
+  $stmt = $pdo -> prepare("SELECT zonaDenuncia, COUNT(pk_idDenuncia) FROM tbdenuncia
                             GROUP BY zonaDenuncia
                             ORDER BY COUNT(pk_idDenuncia) DESC");       
   $stmt ->execute();
@@ -40,38 +40,46 @@
   $dompdf->load_html(
     "
     <style>
-    th{
-      background-color:#d3d3d3;
-    }
+
+      table, th, td {
+        border: 1px solid black;
+      }
       th{
-        color:white ;
-        border-bottom: 3px solid grey;
-        padding:  20px;
+        color:black ;
+        padding: 15px;
+        font-size: 1rem;
       }
       td{
         font-size:15px;
-        border-bottom: 1px solid black;
-        border-left:1px solid black;
-        padding:20px;
+        padding:8px;
       } 
       table{
-      margin:auto;
-      text-align:center;
-      border:1px solid black;
-      font-size: 2em; color: black;
+        margin:auto;
+        text-align:center;
+        font-size: 2em; 
+        border-collapse: collapse;
+        
+      }
+      tr:nth-child(even){
+        background-color: #DEF2B3;
       }
       h1{
         text-align:center;
       }
-      
-    
+      .header{
+        margin-bottom: 50px;
+      }
     </style>
-    <h1>Denúncias por Zona</h1>
+
+    <div class='header'>
+      <p>Cidade Limpa - pdf FeedBack de denúncias </p>
+    </div>
+    <h1>Tabela de denúncias por regiões</h1>
     <table>
    
             <tr>
-              <th>Zona</th>
-              <th>Contagem</th>
+              <th>Regiões de São Paulo</th>
+              <th>Contagem de denúncias</th>
             </tr>
 
             <tr>

@@ -64,6 +64,7 @@
                     <span>X</span>
                 </div>
             </div>
+            
         <?php
         }
         

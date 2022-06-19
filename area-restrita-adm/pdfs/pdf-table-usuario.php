@@ -14,7 +14,7 @@
 	$pdo = new PDO("mysql:host=$servidor;dbname=$banco",$usuario,$senha);
 
   $usuario = "";
-  $stmt = $pdo -> prepare("select * from tbUsuario");       
+  $stmt = $pdo -> prepare("SELECT * FROM tbUsuario");       
   $stmt ->execute();
   
   while($row = $stmt->fetch(PDO::FETCH_BOTH)){
@@ -26,6 +26,18 @@
   
   while($row = $stmt->fetch(PDO::FETCH_BOTH)){
     $num = $row[0];
+           
+  }
+
+  $ultimosUsuarios = "";
+  $stmt = $pdo -> prepare("SELECT * FROM tbUsuario
+                            ORDER BY pk_Usuario DESC
+                            LIMIT 0,5");       
+  $stmt ->execute();
+  
+  while($row = $stmt->fetch(PDO::FETCH_BOTH)){
+
+    $ultimosUsuarios .= "<td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[4]."</td><tr>";  
            
   }
 
@@ -82,21 +94,34 @@
     </div>
     <h1>Tabela de Usuários</h1>
     <table>
-   
-            <tr>
-              <th>Código</th>
-              <th>Nome</th>
-              <th>Email</th>
-              <th>Cep</th>
-            </tr>
-            <tr>
-                ".         
-                     $usuario
-                ."
-             
-            </tr>
-            
-          </table>"
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Localização - CEP</th>
+      </tr>
+      <tr>
+          ".         
+            $usuario
+          ."
+      </tr>
+    </table>
+
+    <h1>Últimos usuários cadastrados</h1> 
+    <table>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Localização - CEP</th>
+      </tr>
+      <tr>
+          ".         
+            $ultimosUsuarios
+          ."
+      </tr>
+    </table>
+"
   );
 
   $dompdf->setPaper('A4', 'portrait'); //landscape	

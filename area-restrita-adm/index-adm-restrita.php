@@ -312,7 +312,7 @@
 				<div class="data">
 					<div class="content-data">
 						<div class="head">
-							<h3>Denúncias por Categoria</h3>
+							<h3>Quantidade de denúnicias feitas por Categoria</h3>
 							<div class="menu">
 								<i class='bx bx-dots-horizontal-rounded icon'></i>
 								<ul class="menu-link">
@@ -331,7 +331,7 @@
 							<div class="menu">
 								<i class='bx bx-dots-horizontal-rounded icon'></i>
 								<ul class="menu-link">
-									<li><a href="pdfs/pdf-grafico2.php">PDF</a></li>
+									<li><a href="pdfs/pdf-table-usuario.php">PDF</a></li>
 								</ul>
 							</div>
 						</div>	
@@ -364,11 +364,11 @@
 					</div>
 					<div class="content-data">
 						<div class="head">
-							<h3>Denúnicias feitas por Regiões</h3>
+							<h3>Quantidade de denúnicias feitas por regiões</h3>
 							<div class="menu">
 								<i class='bx bx-dots-horizontal-rounded icon'></i>
 								<ul class="menu-link">
-									<li><a href="pdf/grafico1.php">PDF</a></li>
+									<li><a href="pdfs/pdf-grafico4.php">PDF</a></li>
 								</ul>
 							</div>
 						</div>
