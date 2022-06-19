@@ -55,21 +55,17 @@
             $_SESSION['msgDenunciaCriada'] = FALSE; 
 
         ?>
-        <div class="modal fade" id="aviso" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel"><?php echo $msg; ?></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <?php echo $msg; ?>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-                </div>
-                </div>
-            </div>
+        <div class="toast" role="alert" id="aviso" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <img src="../imagens/reciclagem.png" style="width:20px;"  class="rounded me-2" alt="...">
+            <strong class="me-auto">AVISO</strong>
+            <?php date_default_timezone_set('America/Sao_Paulo'); ?>
+            <small><?php echo date('d/m/Y');?> às <?php echo date('H:i:s'); ?></small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Olá <?php echo $_SESSION['nomeUsuario']; ?> <?php echo $msg; ?>
+        </div>
         </div>
         <!-- jquery -->
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -78,7 +74,7 @@
         <!-- chamada da função -->
         <script type="text/javascript">
         $(window).load(function() {
-            $('#aviso').modal('show');
+            $('#aviso').toast('show');
         });
         </script>
 
