@@ -161,7 +161,7 @@ input {
 }
 
 .overlay {
-	background: linear-gradient(to top,rgba(0, 0, 0, 0.8),transparent),url(../imagens/cidade.jpg);
+	background: linear-gradient(to bottom,rgb(77, 104, 112),#0db466);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;

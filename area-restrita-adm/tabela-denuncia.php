@@ -76,7 +76,7 @@
         ?>
  
                 <table border="1" class="table table-striped table-hover" style="width: 300px;">
-                <H1>TABELA DE DENÚNCIAS</H1>
+                <h1>TABELA DE DENÚNCIAS</h1>
                 <!-- Form Para Limitar Denúncias -->
                 <form action="" method="post">
                     <select name="limite" id="">

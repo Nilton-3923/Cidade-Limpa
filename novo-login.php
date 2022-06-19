@@ -129,7 +129,7 @@
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
                     <h1>Registre-se agora mesmo!</h1>
-                    <p>E ajude a transformar são paulo em um lugar melhor!</p>
+                    <p>E ajude a transformar São Paulo em um lugar melhor!</p>
                     <button class="ghost" id="signIn">Login</button>
                 </div>
                 <div class="overlay-panel overlay-right">
