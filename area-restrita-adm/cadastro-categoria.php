@@ -11,6 +11,8 @@
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/index-adm.css">
+    <link rel="stylesheet" href="../css/cadastro-ecoponto.css">
+
 	<title>Categoria - Cidade Limpa</title>
     <link rel="shortcut icon" href="../imagens/reciclagem.png" type="image/x-icon">
 </head>
@@ -60,43 +62,45 @@
 				</div>
 			</nav>
 
-        <form action="../CRUD/objeto-salvar-categoria.php" method="post"> 
-            <input type="hidden" name="pk_idCategoria" value="<?php echo @$_GET['pk_idCategoria'];?>">
-            <input type="text" value="<?php echo @$_GET['campoCategoria']; ?>" name="txtCategoria" placeholder="Digite o nome da Categoria...">
-            <input type="submit" value="cadastrar">
-        </form>
-        <?php 
+            <h2>Cadastrar nova Categoria</h2>
+            <form action="../CRUD/objeto-salvar-categoria.php" method="post"> 
+                <input type="hidden" name="pk_idCategoria" value="<?php echo @$_GET['pk_idCategoria'];?>" >
+                <div class="form-floating">
+                    <input type="text" value="<?php echo @$_GET['campoCategoria']; ?>" name="txtCategoria" placeholder="Digite o nome da Categoria..." class="form-control input-normal">
+                    <label for="floatingInput">Categoria</label>
+                </div>
+                    <input type="submit" value="cadastrar">
+            </form>
+            <?php 
 
             require_once("../classe/Adm.php");
             $adm = new Adm();
             $tables = $adm->tabelaCategoria();
             ?>
 
-            <table border="1" class="table table-striped table-hover" style="width:300px">
-            <H1>TABELA DE CATEGORIAS</H1>
-            <a href="pdfs/pdf-table-categoria.php">Vizualizar Pdf</a>
-            <tr>
-            <th>id</th>
-            <th>Categoria</th>
-            <th>Excluir</th>
-            <th>Alterar</th>
-
-            </tr>
-            <?php 
+            <h1>TABELA DE CATEGORIAS</h1>
+            <a href="pdfs/pdf-table-categoria.php">Vizualizar PDF</a>
+            <table class="table table-striped table-hover" style="width:60%; margin: auto;">
+                <tr>
+                    <th>id</th>
+                    <th>Categoria</th>
+                    <th>Excluir</th>
+                    <th>Alterar</th>
+                </tr>
+                <?php 
                 foreach($tables as $dados){
-            ?>
-            <tr>
-
-                <td><?php echo $dados['pk_idCategoria']; ?></td>
-                <td><?php echo $dados['campoCategoria']; ?></td>      
-                <td><a href="../CRUD/objeto-deletar-categoria.php?pk_idCategoria=<?php echo $dados['pk_idCategoria'];?>">Deletar</a></td>
-                <td><a href="?pk_idCategoria=<?php echo $dados['pk_idCategoria'];?>&campoCategoria=<?php echo $dados['campoCategoria']; ?>">Alterar</a></td>
-            </tr>
-            <?php
-            }
-            ?>
-
+                ?>
+                    <tr>
+                        <td><?php echo $dados['pk_idCategoria']; ?></td>
+                        <td><?php echo $dados['campoCategoria']; ?></td>      
+                        <td><a href="../CRUD/objeto-deletar-categoria.php?pk_idCategoria=<?php echo $dados['pk_idCategoria'];?>">Deletar</a></td>
+                        <td><a href="?pk_idCategoria=<?php echo $dados['pk_idCategoria'];?>&campoCategoria=<?php echo $dados['campoCategoria']; ?>">Alterar</a></td>
+                    </tr>
+                <?php
+                }
+                ?>
             </table>
+        </section>
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 		<script src="../javascript/index-adm.js"></script>
     </body>

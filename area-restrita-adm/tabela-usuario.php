@@ -11,6 +11,7 @@
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/index-adm.css">
+    <link rel="stylesheet" href="../css/adm-formatacao.css">
 	<title>Tabela - Cidade Limpa</title>
     <link rel="shortcut icon" href="../imagens/reciclagem.png" type="image/x-icon">
 </head>
@@ -74,43 +75,43 @@
             $tables = $adm->tabelaUsuario($limitar);
         ?>
 
-        <table border="1" class="table table-striped table-hover" style="width:300px">
-        <H1>TABELA DE USUÁRIOS</H1>
-        <!-- Form Para Limitar Denúncias -->
-        <form action="" method="post">
-            <select name="limite" id="">
-                <option selected value="">Limitar Tabela</option>
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="20">20</option>
-                <option value="<?php echo $u[0]; ?>">Tudo</option>
-                <input type="submit" value="Limitar">
-            </select>
-            
-        </form>
-        <a href="pdfs/pdf-table-usuario.php">Vizualizar Pdf</a>
-        <tr>
-            <th>id</th>
-            <th>Foto</th>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>Cep</th>
-        </tr>
-            <?php 
-                foreach($tables as $dados){
-            ?>
+        <div>
+            <h1>TABELA DE USUÁRIOS</h1>
+            <!-- Form Para Limitar Denúncias -->
+            <form action="" method="post">
+                <select name="limite" id="" class="select-normal form-select form-select-sm"  aria-label=".form-select-sm example">
+                    <option selected value="">Limitar Tabela</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="<?php echo $u[0]; ?>">Tudo</option>
+                    <input type="submit" value="Limitar">
+                </select>
+            </form>
+            <a href="pdfs/pdf-table-usuario.php">Vizualizar Pdf</a>
+        </div>
+
+
+        <table class="table table-striped table-hover">
             <tr>
-
-                <td><?php echo $dados['pk_Usuario']; ?></td>
-                <td><img src="../cadastro/<?php echo $dados['imgUsuario']; ?>" alt="" style="width:150px"></td>
-                <td><?php echo $dados['nomeUsuario']; ?></td>
-                <td><?php echo $dados['emailUsuario']; ?></td>   
-                <td><?php echo $dados['cepUsuario']; ?></td>           
+                <th>id</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Cep</th>
             </tr>
-            <?php
-            }
-        ?>
+                <?php 
+                    foreach($tables as $dados){
+                ?>
+                <tr>
 
+                    <td><?php echo $dados['pk_Usuario']; ?></td>
+                    <td><?php echo $dados['nomeUsuario']; ?></td>
+                    <td><?php echo $dados['emailUsuario']; ?></td>   
+                    <td><?php echo $dados['cepUsuario']; ?></td>           
+                </tr>
+                <?php
+                }
+            ?>
         </table>
         
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>

@@ -11,6 +11,7 @@
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/index-adm.css">
+    <link rel="stylesheet" href="../css/adm-formatacao.css">
 	<title>Tabela - Cidade Limpa</title>
     <link rel="shortcut icon" href="../imagens/reciclagem.png" type="image/x-icon">
 </head>
@@ -74,44 +75,47 @@
             $tables = $adm->tabelaEcoponto($limitar);
         ?>
 
-        <table border="1" class="table table-striped table-hover" style="width:300px">
-        <H1>TABELA DE ECOPONTOS</H1>
-        <!-- Form Para Limitar Denúncias -->
-        <form action="" method="post">
-            <select name="limite" id="">
-                <option selected value="">Limitar Tabela</option>
-                <option value="1">5</option>
-                <option value="2">10</option>
-                <option value="20">20</option>
-                <option value="<?php echo $eco[0]; ?>">Tudo</option>
-                <input type="submit" value="Limitar">
-            </select>
-        </form>
-        <a href="pdfs/pdf-table-ecoponto.php">Vizualizar Pdf</a>
-        <tr>
-            <th>id</th>
-            <th>Uf</th>
-            <th>Logradouro</th>
-            <th>Bairro</th>
-            <th>Cep</th>
-            <th>Zona</th>
-        </tr>
-            <?php 
-                foreach($tables as $dados){
-            ?>
+        <div>
+            <h1>TABELA DE ECOPONTOS</h1>
+            <!-- Form Para Limitar Denúncias -->
+            <form action="" method="post">
+                <select name="limite" id="" class="select-normal form-select form-select-sm"  aria-label=".form-select-sm example">
+                    <option selected value="">Limitar Tabela</option>
+                    <option value="1">5</option>
+                    <option value="2">10</option>
+                    <option value="20">20</option>
+                    <option value="<?php echo $eco[0]; ?>">Tudo</option>
+                    <input type="submit" value="Limitar">
+                </select>
+            </form>
+            <a href="pdfs/pdf-table-ecoponto.php">Vizualizar Pdf</a>
+        </div>
+
+
+        <table class="table table-striped table-hover">
             <tr>
-
-                <td><?php echo $dados['pk_idEcoponto']; ?></td>
-                <td><?php echo $dados['ufEcoponto']; ?></td>
-                <td><?php echo $dados['logradouroEcoponto']; ?></td>   
-                <td><?php echo $dados['bairroEcoponto']; ?></td> 
-                <td><?php echo $dados['cepEcoponto']; ?></td> 
-                <td><?php echo $dados['zonaEcoponto']; ?></td>           
+                <th>id</th>
+                <th>Uf</th>
+                <th>Logradouro</th>
+                <th>Bairro</th>
+                <th>Cep</th>
+                <th>Zona</th>
             </tr>
-            <?php
-            }
-        ?>
+                <?php 
+                    foreach($tables as $dados){
+                ?>
+                <tr>
 
+                    <td><?php echo $dados['pk_idEcoponto']; ?></td>
+                    <td><?php echo $dados['ufEcoponto']; ?></td>
+                    <td><?php echo $dados['logradouroEcoponto']; ?></td>   
+                    <td><?php echo $dados['bairroEcoponto']; ?></td> 
+                    <td><?php echo $dados['cepEcoponto']; ?></td> 
+                    <td><?php echo $dados['zonaEcoponto']; ?></td>           
+                </tr>
+                <?php
+                }
+            ?>
         </table>
         
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>

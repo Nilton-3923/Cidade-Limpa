@@ -133,8 +133,9 @@
                     <button class="ghost" id="signIn">Login</button>
                 </div>
                 <div class="overlay-panel overlay-right">
+                    <img src="imagens/logo.png" alt="" style="width:400px; margin: 0 auto 25px;">
                     <h1>Bem vindo de volta!</h1>
-                    <p>Faça o login para fazer uma denuncia.</p>
+                    <p>Faça o login para poder fazer sua denúncia.</p>
                     <button class="ghost" id="signUp">Registrar</button>
                 </div>
             </div>
