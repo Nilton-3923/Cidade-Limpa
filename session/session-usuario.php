@@ -28,15 +28,18 @@
                     
                 }else{
                     header("Location: ../novo-login.php");
+                    $_SESSION['verificarLogin'] = TRUE; 
                 }
     
             }else{
                 header("Location: ../novo-login.php");
+                $_SESSION['verificarLogin'] = TRUE;
             } 
         }
 
     }else{
                 header("Location: ../novo-login.php");
+                $_SESSION['verificarLogin'] = TRUE;
     }
 
 ?>

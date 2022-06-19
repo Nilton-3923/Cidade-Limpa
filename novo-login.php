@@ -1,3 +1,9 @@
+<?php 
+    error_reporting(0);
+    session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,9 +20,39 @@
 </head>
 
 <body>
+
+
+
     <div class="nav-bar-login">
         <h1><a class="voltar" href="./index.php"><img style="width:125px;"src="./imagens/logo.png" alt="VOLTAR"></a></h1>
     </div>
+
+    <!-------------------VERIFICAÇÃO PARA A CRIAÇÃO DA MODAL DE NOTIFICAÇÃO (VERFICAÇÃO DO LOGIN)------------------------------------------>
+        <?php
+            if($_SESSION['verificarLogin']){
+
+                #Variavél de mensagem
+                $msgLogin = "Email ou senha inválidos";
+                $_SESSION['verificarLogin'] = FALSE; 
+            }
+            //Criar a modal dentro do IF
+        ?>
+
+
+
+    <!-------------------VERIFICAÇÃO PARA A CRIAÇÃO DA MODAL DE NOTIFICAÇÃO (VERFICAÇÃO DO CADASTRO)------------------------------------------>
+    <?php
+            if($_SESSION['verificarCadastro']){
+
+                #Variavél de mensagem
+                $msgCadastro = "Úsuario já cadastrado, insira um email novo";
+                $_SESSION['verificarCadastro'] = FALSE; 
+            }
+            //Criar a modal dentro do IF
+        ?>
+
+
+
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <!-- multistep form -->
@@ -27,6 +63,7 @@
                 <li></li>
                 <li></li>
             </ul>
+        
            
            
             <!-- fieldsets -->

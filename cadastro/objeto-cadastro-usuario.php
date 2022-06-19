@@ -11,6 +11,10 @@
 
     if($usuario->verificar($email,$senha) === true){//Verificar se o usuario já existe
         header("Location: ../novo-login.php");
+        session_start(); 
+
+        $_SESSION['verificarCadastro'] = TRUE;
+        
     }
     else{ 
         $nomeImagem = $_FILES['fotoUsuario']['name'];
