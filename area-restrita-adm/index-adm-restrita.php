@@ -4,13 +4,14 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" href="../css/index-adm.css">
 	<title>Dashboard - Cidade Limpa</title>
+    <link rel="shortcut icon" href="../imagens/reciclagem.png" type="image/x-icon">
 </head>
 	<body>
 
@@ -166,7 +167,7 @@
 			
 		<!-- SIDEBAR -->
 		<section id="sidebar">
-			<a href="index-adm-restrita.php" class="brand"><i class='bx bxs-smile icon'></i>Cidade Limpa</a>
+			<a href="index-adm-restrita.php" class="brand"><i class='bx bxs-map icon'></i>Cidade Limpa</a>
 			<ul class="side-menu">
 				<li><a href="index-adm-restrita.php" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
 				<li class="divider" data-text="Principal">Principal</li>

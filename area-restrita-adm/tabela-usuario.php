@@ -4,20 +4,21 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/index-adm.css">
-	<title>AdminSite</title>
+	<title>Tabela - Cidade Limpa</title>
+    <link rel="shortcut icon" href="../imagens/reciclagem.png" type="image/x-icon">
 </head>
 
 	<body>
         <!-- SIDEBAR -->
         <section id="sidebar">
-                <a href="index-adm-restrita.php" class="brand"><i class='bx bxs-smile icon'></i> Bem Vindo Adm</a>
+            <a href="index-adm-restrita.php" class="brand"><i class='bx bxs-map icon'></i>Cidade Limpa</a>
                     <ul class="side-menu">
                         <li><a href="index-adm-restrita.php" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
                         <li class="divider" data-text="Principal">Principal</li>
@@ -35,7 +36,7 @@
                             <a href="#"><i class='bx bxs-notepad icon' ></i> Formulários <i class='bx bx-chevron-right icon-right' ></i></a>
                             <ul class="side-dropdown">
                                 <li><a href="cadastro-categoria.php">Cadastrar Categoria</a></li>
-                                <li><a href="#">Cadastrar EcoPonto</a></li>
+                                <li><a href="cadastro-ecoponto.php">Cadastrar EcoPonto</a></li>
                             </ul>
                         </li>
                     </ul>

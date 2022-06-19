@@ -9,10 +9,8 @@
     <link rel="stylesheet" href="./css/registrar.css">
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/navbar.css">
-    
-
-    
     <title>Login</title>
+    <link rel="shortcut icon" href="imagens/reciclagem.png" type="image/x-icon">
 </head>
 
 <body>

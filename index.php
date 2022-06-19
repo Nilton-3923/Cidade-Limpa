@@ -17,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
     <title>Cidade Limpa</title>
+    <link rel="shortcut icon" href="imagens/reciclagem.png" type="image/x-icon">
 </head>
 <body>
     <?php include 'includes/navbar.php'?>
