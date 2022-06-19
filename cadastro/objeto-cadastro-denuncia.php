@@ -3,6 +3,8 @@
     require_once("../classe/Denuncia.php");
     require_once("../classe/Categoria.php");
 
+    session_start();
+
     //Criação de um Objeto Denuncia
     //Cadastro da Foto da Denuncia
     $nomeImagem = $_FILES['fotoDenuncia']['name'];
@@ -34,6 +36,7 @@
 
     echo $denuncia->denunciar($denuncia);
     
+    $_SESSION['msgDenunciaCriada'] = TRUE; 
     
     header("Location:../area-restrita-usuario/index-restrita.php");
 

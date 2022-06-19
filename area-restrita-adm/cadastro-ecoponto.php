@@ -132,6 +132,7 @@
             
             <div class="">
                 <h2>Cadastrar com uma planilha Excel</h2>
+                <p>* É necessário que a planilha tenha sido salva como .xml</p>
                 <form action="../cadastro/cadastro-xml-ecopontos.php" method="post" enctype="multipart/form-data">
                     <input type="file" name="arquivo" class="form-control input-normal">
                     <input type="submit">
@@ -181,9 +182,9 @@
                     ?>
                         {
                         coords:{<?php echo $row['coordeEcoponto'];?>},
-                        content:'<h2 style="color: green">Ecoponto <?php echo $bairro; ?></h2>'
-                                +'<h3><?php echo "$rua, $numero"; ?></h3>'
-                                +'<h3 style="font-weight: normal"><?php echo $regiao; ?></h3>',
+                        content:'<h2 style="color: green; font-size:20px" >Ecoponto <?php echo $bairro; ?></h2>'
+                                +'<h3 style="font-size:15px"><?php echo "$rua, $numero"; ?></h3>'
+                                +'<h3 style="font-weight: normal; font-size:15px"><?php echo $regiao; ?></h3>',
                         iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
                         },    
                 <?php

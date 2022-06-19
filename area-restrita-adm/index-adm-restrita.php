@@ -110,9 +110,9 @@
 				</script>
 		
 
-<!-- FIM DO SEGUNDO PARAGRAFO -->
-<!-- *****************GRÁFICO-3 POR ZONA********************** -->
-<?php 
+			<!-- FIM DO SEGUNDO PARAGRAFO -->
+			<!-- *****************GRÁFICO-3 POR ZONA********************** -->
+			<?php 
                 $zona = $adm->filtrozona();
             ?>
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

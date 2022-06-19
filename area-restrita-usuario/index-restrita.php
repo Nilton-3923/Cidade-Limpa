@@ -41,7 +41,33 @@
     <?php 
         } 
         ?>
+
+
     <body>
+
+        <!--------------------------------MODAL DE MENSAGEM QUANDO A DENUNCIA É REALIZADA------------------------------------------------------------------------>
+        <?php 
+        if($_SESSION['msgDenunciaCriada']){
+            $msg = "Denuncia feita com sucesso";
+
+            $_SESSION['msgDenunciaCriada'] = FALSE; 
+
+        ?>
+            <div>
+                <div>
+                    <!--IMG DO SINAL DE CONFERE-->
+                </div>
+                <h3>Sucesso</h3>
+                <p><?php echo $msg; ?></p>
+                <div>
+                    <span>X</span>
+                </div>
+            </div>
+        <?php
+        }
+        
+        ?>
+
         <nav>
             <div class="navbar-parte-1">
                 <div class="ajuste-logonav-1">
@@ -211,12 +237,7 @@
                 <div class="form-pt1">
 
                     <!--Id do usuario-->
-                    <input type="hidden" name="txtIdUsuario" value="
-                    <?php 
-                            session_start();
-                            echo $_SESSION['idUsuario'];    
-                            ?>
-                    "> 
+                    <input type="hidden" name="txtIdUsuario" value="<?php echo $_SESSION['idUsuario']; ?>"> 
                     <div class="ajuste-para-correcao-inputs">
                         <!--Titulo denuncia-->
                         <input type="text" name="txtTituloDenuncia" aria-describedby="inputGroupPrepend" required placeholder="Titúlo">
@@ -352,11 +373,10 @@
                         {
                             coords:{<?php echo $lista['coordeDenuncia'];?>},
                             //iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-                            content:'<a style="text-decoration:none"href="index-restrita.php?idDenuncia=<?php echo $idDenuncia;?>&&coordenadas=<?php echo $coordenadas ;?>">'
-                                    +'<h2 style="color:<?php echo $cor; ?>; display: inline; margin-right:20px"><?php echo $categoria; ?></h2>'
-                                    +'<span style="color:black"><?php echo $data;?></span>'
+                            content:'<h3 style="color:<?php echo $cor; ?>; display: inline; margin-right:20px"><?php echo $categoria; ?></h3>'
+                                    +'<span style="color:black"><?php echo $data; ?></span>'
                                     +'<p style="color:black; margin-top:20px; margin-bottom:20px;"><?php echo $desc;?></p>'
-                                    +'<img style="height:150px; width:300px; margin-left:12px;"src="../cadastro/<?php echo $img;?>"></a>'
+                                    +'<img style="height:150px; width:300px; margin-left:12px;"src="../cadastro/<?php echo $img;?>">'
                          },
                 <?php
                 }
