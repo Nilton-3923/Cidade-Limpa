@@ -14,7 +14,7 @@
 
         //Métodos Getters 
         public function getImgUsuario(){
-            return $this->imgUsuario;
+            return $this->imgUsuario; 
         }
         public function getIdUsuario(){
             return $this->idUsuario;
@@ -129,7 +129,7 @@
                 $dados = $stmt->fetch();
 
                 $_SESSION['idUsuario'] = $dados['pk_Usuario'];
-
+                $_SESSION['nomeUsuario'] = $dados['nomeUsuario'];
                 return true;
             }
             else{
