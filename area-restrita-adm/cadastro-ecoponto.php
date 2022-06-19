@@ -1,5 +1,6 @@
 <?php
     session_start();
+    error_reporting(0);
     include_once("../session/valida-sentinela-adm.php");
     require_once("../classe/Conexao.php");
     require_once("../classe/Ecoponto.php");
@@ -83,6 +84,75 @@
 					</ul>
 				</div>
 			</nav>
+
+
+            <!-----------MODAL DE ALERTA DO CADASTRO DO ECOPONTO-------------------------------------------------------->
+            
+            <?php
+            /*
+            SE COLOCAR A SESSION COMO TRUE NÃO É NECESSÁRIO FICAR CADASTRANDO PARA VERIFICAR O ESTILO NA MODAL
+            $_SESSION['verificarCadastroEcoponto'] = TRUE; 
+
+            */
+            if($_SESSION['verificarCadastroEcoponto']){
+                //VARIAVEL DA MENASGEM
+                echo $msg = "Ecoponto cadastrado com SUCESSO!";
+
+                $_SESSION['verificarCadastroEcoponto'] = FALSE; 
+            ?>
+                <div>
+
+                </div>
+            <?php
+            }
+            ?>
+
+            
+            <!-----------MODAL DE ALERTA DO CADASTRO DO ECOPONTO XML - DANDO CERTO-------------------------------------------------------->   
+            <?php
+
+            /*
+            SE COLOCAR A SESSION COMO TRUE NÃO É NECESSÁRIO FICAR CADASTRANDO PARA VERIFICAR O ESTILO NA MODAL
+            $_SESSION['verificarXml-True'] = TRUE; 
+
+            */
+            if($_SESSION['verificarXml-True']){
+                //VARIAVEL DA MENASGEM
+                echo $msg = "Planilha dos Ecopontos cadastrada com SUCESSO!";
+
+                $_SESSION['verificarXml-True'] = FALSE; 
+            ?>
+                <div>
+
+                </div>
+            <?php
+            }
+            ?>
+
+
+
+            <!-----------MODAL DE ALERTA DO CADASTRO DO ECOPONTO XML - DANDO ERRO-------------------------------------------------------->
+            <?php
+            /*
+            SE COLOCAR A SESSION COMO TRUE NÃO É NECESSÁRIO FICAR CADASTRANDO PARA VERIFICAR O ESTILO NA MODAL
+            $_SESSION['verificarXml-False'] = TRUE; 
+            */
+            if($_SESSION['verificarXml-False']){
+                //VARIAVEL DA MENASGEM
+                echo $msg = "Não foi possíve efetuar o cadastro!";
+
+                $_SESSION['verificarXml-False'] = FALSE; 
+            ?>
+                <div>
+
+                </div>
+            <?php
+            }
+            ?>
+
+
+
+
 
             <div class="cadastro-ecoponto">
                 

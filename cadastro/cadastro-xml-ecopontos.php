@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     require_once("../classe/Ecoponto.php");
     require_once("../classe/Ecoponto.php");
     print_r($_FILES['arquivo']['tmp_name']);
@@ -41,7 +42,13 @@
             $ecoponto->setNumeroEcoponto($num);
     
             echo $ecoponto->cadastroEcoponto($ecoponto);
+            $_SESSION['verificarXml-True'] = TRUE;
         }
         header("Location: ../area-restrita-adm/index-adm-restrita.php");
+        }
+        else{
+            $_SESSION['verificarXml-False'] = TRUE;
+            header("Location: ../area-restrita-adm/index-adm-restrita.php");
+
         }
 ?>

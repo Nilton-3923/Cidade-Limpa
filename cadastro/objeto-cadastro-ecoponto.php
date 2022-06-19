@@ -1,4 +1,6 @@
 <?php
+
+    session_start();
     include_once("../classe/Conexao.php");
     include_once("../classe/Ecoponto.php");
 
@@ -16,6 +18,8 @@
 
     echo $ecoponto->cadastroEcoponto($ecoponto);
 
-    header("Location: ../area-restrita-adm/index-adm-restrita.php");
+    $_SESSION['verificarCadastroEcoponto'] = TRUE; 
+
+    header("Location: ../area-restrita-adm/cadastro-ecoponto.php");
 
 ?> 
