@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Jun-2022 às 04:15
+-- Tempo de geração: 20-Jun-2022 às 07:04
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -43,7 +43,7 @@ CREATE TABLE `tbadm` (
 --
 
 INSERT INTO `tbadm` (`pk_idAdm`, `nomeAdm`, `sobrenomeAdm`, `emailAdm`, `cep`, `senhaAdm`, `denunciaReslvAdm`, `imagemAdm`) VALUES
-(1, 'Adm', 'Adm', 'Adm@gmail.com', '10022555', '123', 1, NULL);
+(1, 'Adm', 'Adm', 'Adm@gmail.com', '10022555', '123', 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -88,10 +88,10 @@ CREATE TABLE `tbdenuncia` (
   `tituloDenuncia` varchar(30) NOT NULL,
   `descDenuncia` varchar(255) NOT NULL,
   `imgDenuncia` varchar(500) NOT NULL,
-  `dataDenuncia` date NOT NULL,
+  `dataDenuncia` varchar(13) NOT NULL,
   `ufDenuncia` varchar(2) NOT NULL,
   `bairroDenuncia` varchar(50) NOT NULL,
-  `cepDenuncia` varchar(8) NOT NULL,
+  `cepDenuncia` varchar(10) NOT NULL,
   `ruaDenuncia` varchar(50) NOT NULL,
   `cidadeDenuncia` varchar(50) NOT NULL,
   `coordeDenuncia` varchar(50) NOT NULL,
@@ -105,14 +105,9 @@ CREATE TABLE `tbdenuncia` (
 --
 
 INSERT INTO `tbdenuncia` (`pk_idDenuncia`, `tituloDenuncia`, `descDenuncia`, `imgDenuncia`, `dataDenuncia`, `ufDenuncia`, `bairroDenuncia`, `cepDenuncia`, `ruaDenuncia`, `cidadeDenuncia`, `coordeDenuncia`, `zonaDenuncia`, `fk_idUsuario`, `fk_idCategoria`) VALUES
-(1, 'Lixo ', 'Lixo', 'imgDenuncia/Lixo.jpg', '2022-03-13', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5544783, lng: -46.7843427', 'Zona Leste', 6, 1),
-(2, 'Lixo Zona Norte', 'Lixo está incomodando moradores da região', 'imgDenuncia/lixo-ramos.jpg', '2022-05-13', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5544783, lng: -46.7843427', 'Zona Norte', 6, 1),
-(5, 'Lixo Tiête', 'Texto', 'imgDenuncia/Dengue1.jpg', '2022-06-03', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Norte', 1, 2),
-(6, 'Lixo Tiête', 'Texto', 'imgDenuncia/Dengue1.jpg', '2022-06-03', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Sul', 1, 2),
-(7, 'Lixo Tiête', 'Texto', 'imgDenuncia/Dengue1.jpg', '2022-06-03', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Sul', 1, 2),
-(8, 'Lixo Tiête', 'Texto', 'imgDenuncia/Dengue1.jpg', '2022-06-03', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Sul', 1, 2),
-(9, 'Lixo Tiête', 'Texto', 'imgDenuncia/Dengue1.jpg', '2022-06-03', 'SP', 'Bela Vista', '06060220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Oeste', 1, 2),
-(10, 'Descarte de lixo', 'Muito lixo', 'imgDenuncia/Koala.jpg', '2022-06-09', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', 'lat: -23.5115478, lng: -46.4110822', 'Zona Leste', 6, 1);
+(19, 'Descarte de lixo', 'Muito lixo', 'imgDenuncia/', '18/06/2022', 'SP', 'Jardim Silva Teles', '08160-00', 'Rua Aricanga', 'São Paulo', 'lat: -23.4958356, lng: -46.411385', 'Zona Leste', 6, 1),
+(21, 'a', 'asdasdsdsad', 'imgDenuncia/', '18/06/2022', 'SP', 'Jardim Nélia', '08142-68', 'Rua Inês Sabino', 'São Paulo', 'lat: -23.5557714, lng: -46.6395571', 'Zona Leste', 6, 1),
+(22, 'Nossa que legal', 'asdasads', 'imgDenuncia/', '19/06/2022', 'SP', 'Jardim Silva Teles', '08160-000', 'Rua Aricanga', 'São Paulo', 'lat: -23.4977645, lng: -46.4113728', 'Zona Leste', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -144,7 +139,13 @@ INSERT INTO `tbecoponto` (`pk_idEcoponto`, `ufEcoponto`, `logradouroEcoponto`, `
 (5, 'SP', 'São Paulo', 'Vila Mariana', '04015030', 'Rua Nakaya', 'lat: -23.5862992, lng: -46.6451601', 'Zona Norte', '1'),
 (6, 'SP', 'São Paulo', 'Jardim Reimberg', '04845200', 'Rua Alba Valdez', 'lat: -23.750614, lng: -46.6964036', 'Zona Leste', ''),
 (7, 'SP', 'São Paulo', 'Jardim Russo', '05205050', 'Rua Campo do Olival', 'lat: -23.407705, lng: -46.7656429', 'Zona Leste', '55'),
-(8, 'SP', 'São Paulo', 'Vila Joaniza', '04404140', 'Rua Bemaventurança', 'lat: -23.6746855, lng: -46.6598304', 'Zona Sul', '55');
+(8, 'SP', 'São Paulo', 'Vila Joaniza', '04404140', 'Rua Bemaventurança', 'lat: -23.6746855, lng: -46.6598304', 'Zona Sul', '55'),
+(9, 'SP', 'São Paulo', 'Jardim Nossa Senhora do Rosário', '7918120', 'Rua Deputado Doutor Aldo Lupo', 'lat: -23.5557714, lng: -46.6395571', 'Leste', '200'),
+(10, 'SP', 'São Paulo', 'Cidade Vista Verde', '12223400', 'Rua Caraíbas', 'lat: -23.1818597, lng: -45.8300832', 'Norte', '400'),
+(11, 'SP', 'São Paulo', 'Jardim Nossa Senhora do Rosário', '7918120', 'Rua Deputado Doutor Aldo Lupo', 'lat: -23.5557714, lng: -46.6395571', 'Leste', '200'),
+(12, 'SP', '', 'Jardim Bartira', '08152-130', 'Rua Carrossel', 'lat: -23.5115478, lng: -46.4110822', 'Zona Norte', '264'),
+(13, 'SP', 'São Paulo', 'Jardim Centenário', '08430-330', 'Rua José Florêncio Gomes', 'lat: -23.4712454, lng: -46.6687234', 'Zona Leste', '16'),
+(14, 'SP', 'São Paulo', 'Jardim Bartira', '08152-130', 'Rua Carrossel', 'lat: -23.5115478, lng: -46.4110822', 'Zona Leste', '264');
 
 -- --------------------------------------------------------
 
@@ -268,13 +269,13 @@ ALTER TABLE `tbchatbot`
 -- AUTO_INCREMENT de tabela `tbdenuncia`
 --
 ALTER TABLE `tbdenuncia`
-  MODIFY `pk_idDenuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `pk_idDenuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `tbecoponto`
 --
 ALTER TABLE `tbecoponto`
-  MODIFY `pk_idEcoponto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `pk_idEcoponto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `tbtelusuario`
