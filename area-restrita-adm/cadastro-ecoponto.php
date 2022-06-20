@@ -31,10 +31,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	<link rel="stylesheet" href="../css/index-adm.css">
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="../css/index-adm.css">
     <link rel="stylesheet" href="../css/cadastro-ecoponto.css">
+    
 	<title>Ecoponto - Cidade Limpa</title>
     <link rel="shortcut icon" href="../imagens/reciclagem.png" type="image/x-icon">
 </head>
@@ -84,8 +85,9 @@
 					</ul>
 				</div>
 			</nav>
+            
 
-
+        
             <!-----------MODAL DE ALERTA DO CADASTRO DO ECOPONTO-------------------------------------------------------->
             
             <?php
@@ -302,9 +304,14 @@
         <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5opbRMRKjMKTKajH2CdyKJCIsqOdwdUI&callback=initMap"
         ></script>  
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+ 
+
         <script src="../javascript/mascara.js"></script>
         <script src="../javascript/api-cep.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 		<script src="../javascript/index-adm.js"></script>
     </body>
 </html>
