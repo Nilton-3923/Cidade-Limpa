@@ -10,11 +10,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    
+    
     <link rel="stylesheet" href="./css/input-foto.css">
     <link rel="stylesheet" href="./css/novo-login.css">
     <link rel="stylesheet" href="./css/registrar.css">
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/navbar.css">
+    
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/toast.css">
+
     <title>Login</title>
     <link rel="shortcut icon" href="imagens/reciclagem.png" type="image/x-icon">
 </head>
@@ -24,16 +41,31 @@
 
 
     <div class="nav-bar-login">
-        <h1><a class="voltar" href="./index.php"><img style="width:125px;"src="./imagens/logo.png" alt="VOLTAR"></a></h1>
+        <h1><a class="voltar" href="./index.php"><img style="width:125px; position: absolute; top: 0;"src="./imagens/logo.png" alt="VOLTAR"></a></h1>
     </div>
 
     <!-------------------VERIFICAÇÃO PARA A CRIAÇÃO DA MODAL DE NOTIFICAÇÃO (VERFICAÇÃO DO LOGIN)------------------------------------------>
         <?php
+            //$_SESSION['verificarLogin'] = TRUE;
             if($_SESSION['verificarLogin']){
 
                 #Variavél de mensagem
-                $msgLogin = "Email ou senha inválidos";
+                $msg = "Email ou senha inválidos";
                 $_SESSION['verificarLogin'] = FALSE; 
+
+        ?>
+            <div class="container-post">
+                <div class="wrapper-warning">
+                    <div class="card">
+                        <div class="icon"><i class="fas fa-exclamation-circle"></i></div>
+                        <div class="subject">
+                            <h3 class="titulo">ERRO!</h3>
+                            <p class="paragrafo"><?php echo $msg; ?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php
             }
             //Criar a modal dentro do IF
         ?>
@@ -42,11 +74,53 @@
 
     <!-------------------VERIFICAÇÃO PARA A CRIAÇÃO DA MODAL DE NOTIFICAÇÃO (VERFICAÇÃO DO CADASTRO)------------------------------------------>
     <?php
+        //$_SESSION['verificarCadastro'] = TRUE;
             if($_SESSION['verificarCadastro']){
 
                 #Variavél de mensagem
-                $msgCadastro = "Úsuario já cadastrado, insira um email novo";
+                echo $msg = "Usuário já cadastrado";
                 $_SESSION['verificarCadastro'] = FALSE; 
+
+            ?>
+                <div class="container-post">
+                    <div class="wrapper-warning">
+                        <div class="card">
+                            <div class="icon"><i class="fas fa-exclamation-circle"></i></div>
+                            <div class="subject">
+                                <h3 class="titulo">ERRO!</h3>
+                                <p class="paragrafo"><?php echo $msg; ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            }
+            //Criar a modal dentro do IF
+        ?>
+
+        <!-------------------VERIFICAÇÃO PARA A CRIAÇÃO DA MODAL DE NOTIFICAÇÃO (VERFICAÇÃO DO CADASTRO SUCESSO)------------------------------------------>
+        <?php
+            //$_SESSION['verificarCadastroSucesso'] = TRUE;
+            if($_SESSION['verificarCadastroSucesso']){
+
+                #Variavél de mensagem
+                $msg = "Usuário cadastrado com SUCESSO!";
+                $_SESSION['verificarCadastroSucesso'] = FALSE; 
+
+        ?>
+            <div class="container-post">
+                    <div class="wrapper-success">
+                        <div class="card">
+                        <div class="icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="subject">
+                            <h3 class="titulo">Sucesso!</h3>
+                            <p class="paragrafo"><?php echo $msg; ?></p>
+                        </div>
+                        <div class="icon-times"><i onClick="fecharToast()" class="fas fa-times"></i></div>
+                        </div>
+                    </div>
+                </div>
+        <?php
             }
             //Criar a modal dentro do IF
         ?>
@@ -145,6 +219,9 @@
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    
+    <script src="./javascript/toast.js"></script>
+
     <script src="./javascript/registrar.js"></script>
     <script src="./javascript/mascara.js"></script>
     <script src="./javascript/novo-login.js"></script>

@@ -32,9 +32,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
 
 	<link rel="stylesheet" href="../css/index-adm.css">
     <link rel="stylesheet" href="../css/cadastro-ecoponto.css">
+    <link rel="stylesheet" href="../css/toast.css">
     
 	<title>Ecoponto - Cidade Limpa</title>
     <link rel="shortcut icon" href="../imagens/reciclagem.png" type="image/x-icon">
@@ -94,16 +105,25 @@
             /*
             SE COLOCAR A SESSION COMO TRUE NÃO É NECESSÁRIO FICAR CADASTRANDO PARA VERIFICAR O ESTILO NA MODAL
             $_SESSION['verificarCadastroEcoponto'] = TRUE; 
-
             */
+
             if($_SESSION['verificarCadastroEcoponto']){
                 //VARIAVEL DA MENASGEM
-                echo $msg = "Ecoponto cadastrado com SUCESSO!";
+                $msg = "Ecoponto cadastrado com SUCESSO!";
 
                 $_SESSION['verificarCadastroEcoponto'] = FALSE; 
             ?>
-                <div>
-
+                <div class="container-post">
+                    <div class="wrapper-success">
+                        <div class="card">
+                        <div class="icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="subject">
+                            <h3 class="titulo">Sucesso!</h3>
+                            <p class="paragrafo"><?php echo $msg; ?></p>
+                        </div>
+                        <div class="icon-times"><i onClick="fecharToast()" class="fas fa-times"></i></div>
+                        </div>
+                    </div>
                 </div>
             <?php
             }
@@ -115,18 +135,28 @@
 
             /*
             SE COLOCAR A SESSION COMO TRUE NÃO É NECESSÁRIO FICAR CADASTRANDO PARA VERIFICAR O ESTILO NA MODAL
+            
             $_SESSION['verificarXml-True'] = TRUE; 
-
             */
             if($_SESSION['verificarXml-True']){
                 //VARIAVEL DA MENASGEM
-                echo $msg = "Planilha dos Ecopontos cadastrada com SUCESSO!";
+                $msg = "Ecopontos cadastrados com SUCESSO!";
 
                 $_SESSION['verificarXml-True'] = FALSE; 
             ?>
-                <div>
-
+                <div class="container-post">
+                    <div class="wrapper-success">
+                        <div class="card">
+                        <div class="icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="subject">
+                            <h3 class="titulo">Sucesso!</h3>
+                            <p class="paragrafo"><?php echo $msg; ?></p>
+                        </div>
+                        <div class="icon-times"><i onClick="fecharToast()" class="fas fa-times"></i></div>
+                        </div>
+                    </div>
                 </div>
+                
             <?php
             }
             ?>
@@ -141,12 +171,21 @@
             */
             if($_SESSION['verificarXml-False']){
                 //VARIAVEL DA MENASGEM
-                echo $msg = "Não foi possíve efetuar o cadastro!";
+                 $msg = "Não foi possíve efetuar o cadastro!";
 
                 $_SESSION['verificarXml-False'] = FALSE; 
             ?>
-                <div>
-
+                <div class="container-post">
+                    <div class="wrapper-warning">
+                        <div class="card">
+                            <div class="icon"><i class="fas fa-exclamation-circle"></i></div>
+                            <div class="subject">
+                                <h3 class="titulo">ERRO!</h3>
+                                <p class="paragrafo"><?php echo $msg; ?></p>
+                            </div>
+                            <div class="icon-times"><i class="fas fa-times"></i></div>
+                        </div>
+                    </div>
                 </div>
             <?php
             }
@@ -154,7 +193,7 @@
 
 
 
-
+        
 
             <div class="cadastro-ecoponto">
                 
@@ -309,6 +348,8 @@
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
  
+
+        <script src="../javascript/toast.js"></script>
 
         <script src="../javascript/mascara.js"></script>
         <script src="../javascript/api-cep.js"></script>

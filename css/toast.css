@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+.container-post{
+    position: absolute;
+    z-index: 999;
+    font-family: 'Open Sans', sans-serif;
+    top: 0;
+    right: 0;
+}
+
+.display-none {
+    display: none;
+}
+
+.titulo{
+    font-size: 1.5rem;
+}
+.paragrafo{
+    font-size: 1rem;
+}
+
+/* success */
+.wrapper-success {
+margin: 120px;
+}
+.wrapper-success .card {
+width: 500px;
+height: 100px;
+background-color: #fff;
+padding: 20px;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+border-left: 5px solid #49d761;
+border-radius: 3px;
+box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+position: absolute;
+right: 0;
+top: 70px;
+
+}
+.wrapper-success .card .subject {
+margin-right: 180px;
+}
+.wrapper-success .card .subject p {
+color: #909092;
+width: 150%;
+}
+.wrapper-success .card .icon {
+font-size: 28px;
+margin-right: 20px;
+color: #49d761;
+}
+.wrapper-success .card .icon-times {
+font-size: 28px;
+color: #c3c2c7;
+cursor: pointer;
+}
+/* success */
+/* info */
+.wrapper-info {
+margin: 120px;
+}
+.wrapper-info .card {
+width: 720px;
+height: 120px;
+background-color: #fff;
+padding: 10px 20px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+border-left: 5px solid #3286e9;
+border-radius: 3px;
+box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.wrapper-info .card .subject {
+margin-right: 180px;
+}
+.wrapper-info .card .subject p {
+color: #909092;
+}
+.wrapper-info .card .icon {
+font-size: 28px;
+color: #3286e9;
+}
+.wrapper-info .card .icon-times {
+font-size: 28px;
+color: #c3c2c7;
+cursor: pointer;
+}
+/* info */
+/* warning */
+.wrapper-warning {
+margin: 120px;
+}
+.wrapper-warning .card {
+    width: 500px;
+    height: 100px;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-left: 5px solid #F3333A;
+    border-radius: 3px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    
+    position: absolute;
+    right: 0;
+    top: 70px;
+}
+.wrapper-warning .card .subject {
+margin-right: 180px;
+}
+.wrapper-warning .card .subject p {
+color: #909092;
+}
+.wrapper-warning .card .icon {
+font-size: 28px;
+margin-right: 20px;
+color: #F3333A;
+}
+.wrapper-warning .card .icon-times {
+font-size: 28px;
+color: #c3c2c7;
+cursor: pointer;
+}
+/* warning */

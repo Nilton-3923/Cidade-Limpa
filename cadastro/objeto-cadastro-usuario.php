@@ -1,6 +1,7 @@
 <?php
     include_once("../Classe/Usuario.php");
     include_once("../Classe/Conexao.php");
+    session_start(); 
 
 
     //Criação de um objeto Usuario
@@ -11,7 +12,6 @@
 
     if($usuario->verificar($email,$senha) === true){//Verificar se o usuario já existe
         header("Location: ../novo-login.php");
-        session_start(); 
 
         $_SESSION['verificarCadastro'] = TRUE;
         
@@ -32,7 +32,11 @@
         $usuario->setImgUsuario($caminhoImagem);
         
         echo $usuario->cadastrar($usuario,$tel);
+        $_SESSION['verificarCadastroSucesso'] = TRUE;
+
+
         header("Location: ../index.php");
+
 
     }
     

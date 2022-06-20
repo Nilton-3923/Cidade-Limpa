@@ -7,24 +7,26 @@
 
 body {
 	background: #f6f5f7;
+	margin:0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	font-family: 'Montserrat', sans-serif;
-	margin:0;
 }
+.container {
+	font-family: 'Montserrat', sans-serif;
 
-h1 {
+}
+.container h1 {
 	font-weight: bold;
 	margin: 0;
 }
 
-h2 {
+.container h2 {
 	text-align: center;
 }
 
-p {
+.container p {
 	font-size: 14px;
 	font-weight: 100;
 	line-height: 20px;
@@ -32,18 +34,18 @@ p {
 	margin: 20px 0 30px;
 }
 
-span {
+.container span {
 	font-size: 12px;
 }
 
-a {
+.container a {
 	color: #333;
 	font-size: 14px;
 	text-decoration: none;
 	margin: 15px 0;
 }
 
-button {
+.container button {
 	border-radius: 20px;
 	border: 1px solid #27AE60;
 	background-color: #27AE60;
@@ -57,20 +59,20 @@ button {
 	cursor:pointer;
 }
 
-button:active {
+.container button:active {
 	transform: scale(0.95);
 }
 
-button:focus {
+.container button:focus {
 	outline: none;
 }
 
-button.ghost {
+.container button.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
 	margin-top:45px;
 }
-form {
+.container form {
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
@@ -81,7 +83,7 @@ form {
 	text-align: center;
 }
 
-input {
+.container input {
 	background-color: #eee;
 	border: none;
 	padding: 12px 15px;
@@ -234,7 +236,7 @@ footer {
     left: 0;
     right: 0;
     text-align: center;
-    z-index: 999;
+    z-index: 9;
 }
 
 footer p {
