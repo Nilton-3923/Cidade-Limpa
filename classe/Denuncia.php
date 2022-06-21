@@ -325,7 +325,7 @@
 
             $query = "SELECT tituloDenuncia,descDenuncia,dataDenuncia,nomeUsuario,imgUsuario,cepDenuncia,imgDenuncia FROM tbDenuncia
                       INNER JOIN tbUsuario ON tbUsuario.pk_Usuario = tbDenuncia.fk_idUsuario
-                      WHERE tituloDenuncia LIKE '%$pesquisar%' OR descDenuncia LIKE '%$pesquisar%' OR nomeUsuario LIKE '%$pesquisar%'";
+                      WHERE tituloDenuncia LIKE '%$pesquisar%' OR descDenuncia LIKE '%$pesquisar%' OR nomeUsuario LIKE '%$pesquisar%' OR zonaDenuncia LIKE'%$pesquisar%'";
 
             $query = $conexao->query($query);
             $query = $query->fetchAll();
