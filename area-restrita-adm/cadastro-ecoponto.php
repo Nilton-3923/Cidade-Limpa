@@ -242,7 +242,7 @@
                 </form>
             </div>
             
-            <div class="">
+            <div class="cadastro-excel">
                 <h2>Cadastrar com uma planilha Excel</h2>
                 <p>* É necessário que a planilha tenha sido salva como .xml</p>
                 <form action="../cadastro/cadastro-xml-ecopontos.php" method="post" enctype="multipart/form-data">
