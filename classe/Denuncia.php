@@ -332,5 +332,15 @@
             return $query;
         }
 
+        public function denunciaRegiao($regiao){
+            $conexao = Conexao::pegarConexao();
+
+            $query = "SELECT * FROM tbDenuncia
+                      WHERE zonaDenuncia LIKE '%$regiao%'";
+
+            $query = $conexao->query($query);
+            $query = $query->fetchAll();
+            return $query;
+        }
     }
 ?>
