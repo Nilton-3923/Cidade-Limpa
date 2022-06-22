@@ -5,3 +5,10 @@
     width: 98%;
     margin: auto;
 }
+
+.tr{
+}
+
+.table:hover{
+    cursor: pointer;
+}

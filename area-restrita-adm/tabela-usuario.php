@@ -26,18 +26,29 @@
                         <li><a href="index-adm-restrita.php"><i class='bx bxs-chart icon' ></i> Gráficos</a></li>
                         <li class="divider" data-text="Tabelas e Formulários">Tabelas e Formulários</li> 
                         <li>
-                            <a href="#"><i class='bx bx-table icon' ></i> Tabelas <i class='bx bx-chevron-right icon-right' ></i></a>
+                            <a href="#"><i class='bx bx-message-x icon' ></i> Denúncias <i class='bx bx-chevron-right icon-right' ></i></a>
                             <ul class="side-dropdown">
                                 <li><a href="tabela-denuncia.php">Tabela Denúncias</a></li>
-                                <li><a href="tabela-usuario.php">Tabela Usuários</a></li>
-                                <li><a href="tabela-ecopontos.php">Tabela Ecopontos</a></li>
+            
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class='bx bxs-notepad icon' ></i> Formulários <i class='bx bx-chevron-right icon-right' ></i></a>
+                            <a href="#"><i class='bx bx-user icon' ></i> Usuário <i class='bx bx-chevron-right icon-right' ></i></a>
+                            <ul class="side-dropdown">
+                                <li><a href="tabela-usuario.php">Tabela Usuários</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class='bx bxs-notepad icon' ></i> Ecopontos <i class='bx bx-chevron-right icon-right' ></i></a>
+                            <ul class="side-dropdown">
+                                <li><a href="tabela-ecopontos.php">Tabela Ecopontos</a></li>
+                                <li><a href="./cadastro-ecoponto.php">Cadastrar EcoPonto</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class='bx bxs-spreadsheet icon' ></i> Categoria <i class='bx bx-chevron-right icon-right' ></i></a>
                             <ul class="side-dropdown">
                                 <li><a href="cadastro-categoria.php">Cadastrar Categoria</a></li>
-                                <li><a href="cadastro-ecoponto.php">Cadastrar EcoPonto</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -94,7 +105,7 @@
 
         <table class="table table-striped table-hover">
             <tr>
-                <th>id</th>
+                <th>Código</th>
                 <th>Nome</th>
                 <th>E-mail</th>
                 <th>Cep</th>

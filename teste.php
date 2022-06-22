@@ -4,6 +4,9 @@
     require_once("classe/Denuncia.php");
     require_once("classe/Ecoponto.php");
 
+    #TUDO QUE TIVER HASHTAG TEM QUE ADICIONAR NA INDEX
+
+    #
     //Verificando se a SESSION está vazia, então ele pré determina um valor 
     if(empty($_SESSION['coordenada'])){
         echo $coordenada = "lat:-23.5489,lng:-46.6388";   
@@ -12,7 +15,7 @@
     else {
         $coordenada = $_SESSION['coordenada'];
     }
-
+    #
 
 ?>
 
@@ -30,11 +33,13 @@
 <body>
 
     <section class="index-primeira-parte">
-        <!--Adicionando o maps-->
+        <!--#### Pesquisar localização-->
         <form action="objetos/objeto-pesquisar-mapa.php" method="POST">
             <input type="text" name="pesquisa">
             <input type="submit" value="Pesquisar">
         </form>
+
+        <!--Adicionando o maps-->
         <div id="map"></div>
     </section>
 
@@ -42,7 +47,7 @@
 
     <script>
         function initMap(){
-            // Opções para o mapa
+            // Opções para o mapa ###################
             var options = {
                 zoom: 16,
                 center:{<?php echo $coordenada; ?>},
@@ -54,7 +59,7 @@
                             
 
                         }]
-            }
+            }//######
             // New Map
             var map = new
             google.maps.Map(document.getElementById('map'),options);

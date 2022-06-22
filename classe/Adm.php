@@ -160,7 +160,6 @@
         }
 
         public function pesquisarCep($cep){
-
             
             $cep  = preg_replace('/[^0-9]/','', $cep);
             
@@ -185,9 +184,6 @@
             }else{
                 return "erro";
             }
-
-            
-
         }
 
         public function validacaoEndereco($endereco){

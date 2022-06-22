@@ -9,7 +9,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" href="../css/index-adm.css">
+	<link rel="stylesheet" href="../css/adm-formatacao.css">
+
 	<title>Dashboard - Cidade Limpa</title>
     <link rel="shortcut icon" href="../imagens/reciclagem.png" type="image/x-icon">
 </head>
@@ -173,21 +177,36 @@
 				<li class="divider" data-text="Principal">Principal</li>
 				<li><a href="index-adm-restrita.php"><i class='bx bxs-chart icon' ></i> Gráficos</a></li>
 				<li class="divider" data-text="Tabelas e Formulários">Tabelas e Formulários</li> 
+
+
 				<li>
-					<a href="#"><i class='bx bx-table icon' ></i> Tabelas <i class='bx bx-chevron-right icon-right' ></i></a>
+					<a href="#"><i class='bx bx-message-x icon' ></i> Denúncias <i class='bx bx-chevron-right icon-right' ></i></a>
 					<ul class="side-dropdown">
 						<li><a href="tabela-denuncia.php">Tabela Denúncias</a></li>
-						<li><a href="tabela-usuario.php">Tabela Usuários</a></li>
-						<li><a href="tabela-ecopontos.php">Tabela Ecopontos</a></li>
+	
 					</ul>
 				</li>
 				<li>
-					<a href="#"><i class='bx bxs-notepad icon' ></i> Formulários <i class='bx bx-chevron-right icon-right' ></i></a>
+					<a href="#"><i class='bx bx-user icon' ></i> Usuário <i class='bx bx-chevron-right icon-right' ></i></a>
 					<ul class="side-dropdown">
-						<li><a href="cadastro-categoria.php">Cadastrar Categoria</a></li>
+						<li><a href="tabela-usuario.php">Tabela Usuários</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#"><i class='bx bxs-notepad icon' ></i> Ecopontos <i class='bx bx-chevron-right icon-right' ></i></a>
+					<ul class="side-dropdown">
+						<li><a href="tabela-ecopontos.php">Tabela Ecopontos</a></li>
 						<li><a href="./cadastro-ecoponto.php">Cadastrar EcoPonto</a></li>
 					</ul>
 				</li>
+				<li>
+					<a href="#"><i class='bx bxs-spreadsheet icon' ></i> Categoria <i class='bx bx-chevron-right icon-right' ></i></a>
+					<ul class="side-dropdown">
+						<li><a href="cadastro-categoria.php">Cadastrar Categoria</a></li>
+					</ul>
+				</li>
+
+
 			</ul>
 
 		</section>
@@ -327,7 +346,7 @@
 			
 					<div class="content-data">
 						<div class="head">
-							<h3>Últimos Usuários</h3>
+							<h3>Últimos Usuários cadastrados</h3>
 							<div class="menu">
 								<i class='bx bx-dots-horizontal-rounded icon'></i>
 								<ul class="menu-link">
@@ -335,17 +354,32 @@
 								</ul>
 							</div>
 						</div>	
-						<ul>
+
+						<table class="table table-striped table-hover">
+							<tr class="tr">
+								<th>Nome</th>
+								<th>Email</th>
+								<th>CEP</th>
+							</tr>
+							<tr>
 								<?php
 									$ultimosUsers = $adm->ultimosUsers();
-										foreach($ultimosUsers as $ultimos){
-									?>
-									<li><?php echo $ultimos['emailUsuario']; ?></li>
+									foreach($ultimosUsers as $ultimos){
+								?>
+								<tr>
+									<td><?php echo $ultimos['nomeUsuario']; ?></td>
+									<td><?php echo $ultimos['emailUsuario']; ?></td>
+									<td><?php echo $ultimos['cepUsuario']; ?></td>
+								</tr>
 
-									<?php
-										}
-									?>
-						</ul>
+								<?php
+									}
+								?>
+
+							</tr>
+						</table>
+						
+						
 						
 					</div>
 					<div class="content-data">
