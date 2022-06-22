@@ -311,6 +311,17 @@
 
             return "Update realizado";      
         }
+        public function denunciaResolvida($idDenuncia){
+            $conexao = Conexao::pegarConexao();
+
+            $alterarDenuncia = $conexao->prepare("UPDATE tbDenuncia 
+                                                    SET
+                                                        statusDenuncia = 'Resolvida'
+                                                        WHERE pk_idDenuncia = '$idDenuncia'");
+
+            $alterarDenuncia->execute();
+        }
+
 
         public function alterarImg($idDenuncia, $titulo, $desc, $caminhoImagem,$idCategoria){
             $conexao = Conexao::pegarConexao();
