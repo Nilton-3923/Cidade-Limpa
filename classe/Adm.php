@@ -159,5 +159,63 @@
             return $query;
         }
 
+        public function pesquisarCep($cep){
+
+            
+            $cep  = preg_replace('/[^0-9]/','', $cep);
+            
+            if (preg_match('/^[0-9]{5}-?[0-9]{3}$/', $cep)){
+                $url = "https://viacep.com.br/ws/$cep/json/";
+                
+                $json = file_get_contents($url);
+                $data = json_decode($json);
+    
+                $logradouro = $data -> logradouro;
+                $bairro = $data -> bairro;
+                $localidade = $data -> localidade;
+                $uf = $data -> uf;
+    
+                $enderecoJunto = "$logradouro, $bairro, $localidade - $uf";
+
+                $addr = str_replace(" ", "+","$enderecoJunto");
+
+                $address = utf8_encode($addr);
+
+                return $address;
+            }else{
+                return "erro";
+            }
+
+            
+
+        }
+
+        public function validacaoEndereco($endereco){
+            $endereco .=", São Paulo - SP";
+            $addr = str_replace(" ", "+","$endereco");
+
+            return $addr;
+        }
+
+        public function pesquisarMapa($localizacao){
+            
+            $url = "https://maps.googleapis.com/maps/api/geocode/json?address=$localizacao&key=AIzaSyAo1uIjwfM3QBcwPKKDVuXv0z8eJlQGcYE";
+        
+            $json = file_get_contents($url);
+            $data = json_decode($json);
+    
+            $lat = $data->results[0]->geometry->location->lat;
+            $long = $data->results[0]->geometry->location->lng;
+
+            $coordenada = "lat: $lat, lng: $long"; 
+
+            if (empty($coordenada)){
+                return "erro";
+            }else {
+                return $coordenada; 
+            }
+    
+        }
+
     }
 ?>
