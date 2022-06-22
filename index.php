@@ -22,6 +22,7 @@
 <body>
     <?php include 'includes/navbar.php'?>
     <div class="bem-vindo">
+        <img src="./imagens/logo.png">
         <h1>BEM-VINDO AO CIDADE LIMPA!</h1>
     </div>
     <div id="sobre" class="apresentacao-cidade-limpa">

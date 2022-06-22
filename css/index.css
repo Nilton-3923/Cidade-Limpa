@@ -14,7 +14,7 @@
 }
 
 body{
-    background-color:white!important;
+    background-color:black!important;
     padding-top:65px;
 }
 .index-primeira-parte{
@@ -66,11 +66,15 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
-    background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(../imagens/cidade.jpg);
-    overflow:hidden;
+    flex-direction: column;
+    background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(../imagens/bem-vindo.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
+    backdrop-filter: blur(8px);
+    gap:5%;
 }
 .bem-vindo > h1{
-    font-size: 150px;
+    font-size: 100px;
     color:#fff;
 }
 .apresentacao-cidade-limpa{
