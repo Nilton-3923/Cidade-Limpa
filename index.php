@@ -35,6 +35,43 @@
         </div>
     </div>
     <section class="index-primeira-parte">
+        <div id="modalLegenda"class="modal-legenda">
+            <div id="puxa"class="puxa-legenda">
+                <div id="bl1"class="barralegenda1"></div>
+                <div id="bl2"class="barralegenda2"></div>
+            </div>
+            <div class="legenda">
+                <h1>Legenda</h1>
+                <div style="background:#fff;" class="-div-"></div>
+                <div class="div-legenda">
+                    <img class="marcador"src="./imagens/marcador.png">
+                    <p>- marcador padrão</p>
+                </div>
+                <div class="div-legenda">
+                    <img class="marcador"src="./imagens/marcador.png">
+                    <p>- marcador padrão</p>
+                </div>
+                <div class="div-legenda">
+                    <img class="marcador"src="./imagens/marcador.png">
+                    <p>- marcador padrão</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.getElementById('puxa').addEventListener('click',()=>{
+                document.getElementById('modalLegenda').classList.toggle("legendaPuxada");
+                document.getElementById('bl1').classList.toggle("blAtivado");
+                document.getElementById('bl2').classList.toggle("blAtivado");               
+            })
+        </script>
+        <div class="map-nav">
+            <div class="ajuste-pesquisa">
+                <div class="pesquisa">
+                    <input type="text" placeholder="Localizar Denuncias">
+                    <button>🔍</button>
+                </div>
+            </div>
+        </div>
         <!--Adicionando o maps-->
         <div id="map"></div>
     </section>
@@ -171,7 +208,6 @@
 
         document.getElementById('mobilelinks').classList.add('navLinkAtivado')
         
-        document.getElementById('pesquisa').style.display="flex"
     </script>
    
     <?php include 'includes/footer.php'?>

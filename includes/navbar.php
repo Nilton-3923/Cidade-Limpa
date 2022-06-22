@@ -22,10 +22,6 @@
         </div>
         <div class="navbar-parte-3">
             <div id="navbarDeslogado" class="navbar-deslogado">
-                <div id="pesquisa" style="display:none;"class="pesquisa">
-                    <input type="text" placeholder="Localizar Denuncias" name id="">
-                    <button>🔍</button>
-                </div>
                 <div id="menuMobile"class="menu-mobile">
                     <div id="one"class="one"></div>
                     <div style="opacity:1;"id="two"class="two"></div>

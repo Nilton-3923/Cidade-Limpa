@@ -12,7 +12,9 @@
 ::-webkit-scrollbar-thumb:hover{
     background:#424242;
 }
-
+:root{
+    --cor-legenda:blue;
+}
 body{
     background-color:black!important;
     padding-top:65px;
@@ -29,37 +31,6 @@ body{
     width:100%;
     height:100%;
 }
-.pesquisa{
-    display: flex;
-    position:relative;
-}
-.pesquisa > input[type=text]{
-    transition:box-shadow 0.2s;
-    box-shadow: 0 0 0 3px rgba(77, 104, 112, 0),0 0 0 4px rgba(255, 255, 255, 0);
-
-    outline:#9B9B9B solid 1px;
-    border:none;
-    font-size:15px;
-    width:250px;
-    border-radius:5px;
-    padding:10px 15px;
-}
-.pesquisa > input[type=text]:focus{
-    box-shadow: 0 0 0 3px rgb(77, 104, 112),0 0 0 4px rgb(255, 255, 255);
-}
-.pesquisa > button{
-    background:#ffffff;
-    border:none;
-    outline:none;
-    font-size:24px;
-    padding:0 10px;
-    border-radius:50%;
-    position:absolute;
-    right:8px;
-    bottom:5px;
-    cursor: pointer;
-}
-
 .bem-vindo{
     width:100%;
     height:90vh;
@@ -104,6 +75,125 @@ body{
 }
 .txt-apresentacao > span > h1{font-size:40px;}
 .txt-apresentacao > span > p{font-size:25px;}
+.legendaPuxada{
+    transform:translateX(0%)!important;
+}
+.barralegenda1,.barralegenda2{
+    transition:all 0.5s;
+    width:15px;
+    height:3px;
+    background-color:#fff;
+    border-radius:5px;
+}
+.barralegenda1{
+    transform:rotate(45deg) translateY(0px);
+}
+.barralegenda2{
+    transform:rotate(-45deg) translateY(0px);
+}
+.barralegenda1.blAtivado{
+    transform: rotate(45deg) translateY(5px);
+    width:30px;
+}
+.barralegenda2.blAtivado{
+    transform:rotate(-45deg) translateY(-6px);
+    width:30px;
+}
+.modal-legenda{
+    transition:transform 0.5s;
+    display:flex;
+    flex-direction:row-reverse;
+    position:absolute;
+    left:0;
+    z-index:999;
+    transform:translateX(-85%);
+}
+.puxa-legenda{
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    cursor:pointer;
+    background-color:var(--cor-legenda);
+    width:50px;
+    height:50px;
+    border-radius: 0 100% 100% 0;
+    gap:5px;
+}
+.legenda{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:10px;
+    padding:10px;
+    background-color: var(--cor-legenda);
+}
+.legenda > h1{
+    color:#fff;
+    letter-spacing:1px;
+    font-size:30px;
+}
+.div-legenda{
+    display:flex;
+    flex-direction: row;
+}
+.div-legenda > img{
+    width:30px;
+}
+.div-legenda > p{
+    color:#fff;
+    font-size: 24px;
+}
+.map-nav{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    top:0;
+    width:100%;
+    height:65px;
+    z-index:999;
+    background-color: var(--cor-navbar);
+}
+.ajuste-pesquisa{
+    width:80%;
+    display:flex;
+    justify-content:end;
+
+}
+.pesquisa{
+    display: flex;
+    position:relative;
+}
+.pesquisa > input[type=text]{
+    transition:box-shadow 0.2s;
+    box-shadow: 0 0 0 3px rgba(77, 104, 112, 0),0 0 0 4px rgba(255, 255, 255, 0);
+
+    outline:#9B9B9B solid 1px;
+    border:none;
+    font-size:15px;
+    width:250px;
+    border-radius:5px;
+    padding:10px 15px;
+}
+.pesquisa > input[type=text]:focus{
+    box-shadow: 0 0 0 3px rgb(77, 104, 112),0 0 0 4px rgb(255, 255, 255);
+}
+.pesquisa > button{
+    background:#ffffff;
+    border:none;
+    outline:none;
+    font-size:24px;
+    padding:0 10px;
+    border-radius:50%;
+    position:absolute;
+    right:8px;
+    bottom:5px;
+    cursor: pointer;
+}
+
 /*------------------------------------------------------*/
 
 @media (max-width:720px){
