@@ -22,6 +22,7 @@ body{
     display:flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     position:relative;
 }
 #map{
@@ -59,6 +60,46 @@ body{
     cursor: pointer;
 }
 
+.bem-vindo{
+    width:100%;
+    height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(../imagens/cidade.jpg);
+    overflow:hidden;
+}
+.bem-vindo > h1{
+    font-size: 150px;
+    color:#fff;
+}
+.apresentacao-cidade-limpa{
+    width:100%;
+    height:60vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgb(43, 78, 88);
+}
+.img-apresentacao{
+    width:35%;
+}
+.txt-apresentacao{
+    width:45%;
+    height:40%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-sizing: border-box;
+}
+.txt-apresentacao > span {
+    color:rgb(255, 255, 255);
+    display:flex;
+    width:70%;
+    flex-direction:column;
+}
+.txt-apresentacao > span > h1{font-size:40px;}
+.txt-apresentacao > span > p{font-size:25px;}
 /*------------------------------------------------------*/
 
 @media (max-width:720px){

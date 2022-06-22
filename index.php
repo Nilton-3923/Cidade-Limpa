@@ -21,7 +21,18 @@
 </head>
 <body>
     <?php include 'includes/navbar.php'?>
-
+    <div class="bem-vindo">
+        <h1>BEM-VINDO AO CIDADE LIMPA!</h1>
+    </div>
+    <div id="sobre" class="apresentacao-cidade-limpa">
+        <img class="img-apresentacao" src="./imagens/img-apresentacao.png">
+        <div class="txt-apresentacao">
+            <span>
+                <h1>O que é o Cidade Limpa?</h1>
+                <p>é um projeto criado para facilitar a denuncia de descarte irregular de lixo nas ruas.se você encontrar lixo acumulado perto de sua casa, basta tirar uma foto e fazer uma denuncia no nosso site, a denuncia será enviada para o governo que irá cuidar da limpeza do local.</p>
+            </span>
+        </div>
+    </div>
     <section class="index-primeira-parte">
         <!--Adicionando o maps-->
         <div id="map"></div>
