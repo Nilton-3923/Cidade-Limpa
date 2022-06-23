@@ -27,7 +27,7 @@ body{
 
 }
 .titulo-pagina{
-    font-size:3.5vw;
+    font-size:60px;
 }
 
 #map{
@@ -84,7 +84,7 @@ body{
     justify-content: center;
     flex-direction: column;
     gap:15px;
-    font-size:1.5vw;
+    font-size:25px;
     width:30%;
     border-radius:20px;
     outline:thick solid #064018;
@@ -92,8 +92,7 @@ body{
     padding:15px;
 }
 .info-denuncia > h2{
-    position:absolute;
-    top:20px;
+    
     text-align: center;
     color:#064018;
 }
@@ -117,7 +116,7 @@ body{
     background-color: #064018;
     border-radius:20px;
     padding:20px;
-    font-size:1.5vw;
+    font-size:25px;
     color:white;
     text-decoration:none ;
     cursor:pointer;
@@ -658,21 +657,6 @@ main {
   padding: 17px 0 0 0;
   border-top: 1px solid #ebebeb;
 }
-
-@media (max-width: 700px) {
-  #container {
-    width: 330px;
-  }
-
-  .post-image {
-    width: 100%;
-  }
-
-  .blog-card {
-    flex-wrap: wrap;
-  }
-}
-
 /*AJUSTE PARA O LOGO DA NAVBAR LOGADO*/
 
 .ajuste-logonav-1{
@@ -686,4 +670,49 @@ main {
     width:80%;
     justify-content: start;
     
+}
+
+@media (max-width: 720px) {
+    .navbar-logado{
+        margin-right: 0;
+        width: 50%;
+        justify-content: end;
+    }
+    .navbar-parte-1{
+        width:50%;
+    }
+    #container {
+        width: 330px;
+    }
+
+    .post-image {
+        width: 100%;
+    }
+
+    .blog-card {
+        flex-wrap: wrap;
+    }
+
+    .titulo-pagina{
+        font-size:45px;
+    }
+    .ajuste-info-e-mapa{
+        flex-direction: column-reverse;
+        align-items: center;
+        gap:35px;
+    }
+    .div-info{
+        width:100%;
+    }
+    .info-denuncia{
+        width:90%;
+    }
+    .div-principal{
+        padding:0;
+    }
+    #map{
+        width:100vw;
+        height:90vh;
+        border-radius:0;
+    }
 }
