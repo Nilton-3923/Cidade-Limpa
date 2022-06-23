@@ -362,8 +362,8 @@ body{
 }
 .criar-denuncia{
     background-color:white;
-    width:40%;
-    height:70%;
+    width:720px;
+    height:600px;
     display:flex;
     align-items: center;
     justify-content: center;
