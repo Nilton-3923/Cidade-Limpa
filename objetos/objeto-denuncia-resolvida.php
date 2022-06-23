@@ -3,9 +3,12 @@
 
     $resolvida = new Usuario();
 
-    foreach($_POST['id'] as $id){
-        $resolvida->denunciaRealizada($id);
+    if (!empty($_POST['id'])){
+        foreach($_POST['id'] as $id){
+            //$resolvida->denunciaRealizada($id);
+    
+            echo $id;
+        }
     }
-
 
 ?>

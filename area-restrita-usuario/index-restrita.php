@@ -82,13 +82,51 @@
 
         <?php
         }
-        
         ?>
 
-        <nav>
-
+        <!-----------------MODAL PARA CONFIRMAR AS DENÚNCIAS------------------------------------->
+        <div class="modal-denuncia-resolvida" id="modal-denuncia-resolvida" style="display:none"> 
+        <h3>Estamos verificando se algumas denúncias que você fez já foram realizadas</h3>
+        <form action="../objetos/objeto-denuncia-resolvida.php" method="POST">
+        <input type="submit" value="Denúncia resolvida">
         
-            
+            <table>
+            <tr>
+                <th>Categoria</th>
+                <th>Data</th>
+                <th>Rua</th>
+                <th>Bairro</th>
+                <th>Verificar</th>
+            </tr>
+            <?php
+            $listarTabela = $perfil->verificarAdmTabela();
+            foreach($listarTabela as $row){ ?>
+                <tr>
+                    <td><?php echo $row['campoCategoria']; ?></td>
+                    <td><?php echo $row['dataDenuncia']; ?></td>
+                    <td><?php echo $row['ruaDenuncia']; ?></td>
+                    <td><?php echo $row['bairroDenuncia']; ?></td>
+                    <td>
+        
+                        <input  type="checkbox"
+                                name="id[]"
+                                value="<?php echo $row['pk_idDenuncia']; ?>"
+                                style="width:50px; height:50px"
+                                id="checkbox"
+                        >
+                    </td>
+                </tr>
+            <?php
+            }
+            ?>
+        
+            </table>
+        </form>
+    </div>
+
+
+        <!------------------------------------------------------>
+        <nav>
             <div class="navbar-parte-1">
                 <div class="ajuste-logonav-1">
                     <div class="ajuste-logonav-2">
@@ -96,7 +134,8 @@
                     </div>
                 </div>
             </div>
-            <div class="notificacao">
+            <!------------NOTIFICAÇÃO DO ADM------------------------------------------>
+            <div class="notificacao" onClick="abrirModal()">
                 <?php
                     $listar = $perfil->verificarAdm();
                     foreach($listar as $row){ 
@@ -115,6 +154,7 @@
                     } 
                 ?>
             </div>
+            <!------------------------------------------------------>
             <div id="abre-modal" class="navbar-logado">
                 <div class="ajuste-div-foto">
                     <img class="foto-navbar ajuste-foto"src="../cadastro/<?php echo $lista['imgUsuario']; ?>">
@@ -177,6 +217,7 @@
                         
             </div>   
         </div>
+        
         <div class="modal fade" id="exampleModalToggle<?php echo $linha[0]; ?>" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -505,6 +546,8 @@
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5opbRMRKjMKTKajH2CdyKJCIsqOdwdUI&callback=initMap"
     ></script>    
+    <script src="../javascript/modal-notificacao.js"></script>
+
     <script src="../javascript/mascara.js"></script>
     <script src="../javascript/index-restrita.js"></script>
     <script src="../javascript/input-foto.js"></script>
