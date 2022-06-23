@@ -136,18 +136,23 @@
             </div>
             <!------------NOTIFICAÇÃO DO ADM------------------------------------------>
             <div class="notificacao" data-bs-toggle="modal" data-bs-target="#modalMsg">
-
-                <div class="mensagem" onClick="">
-                    <img src="../imagens/Talk.png" class="icon-mensagem">
-                    <div class="circulo-notificacao">
-                        <?php
+                <?php
                     $listar = $perfil->verificarAdm();
                     foreach($listar as $row){ 
-                       echo $row[0]; 
-                    } 
-                    ?>
+                        if (empty($row[0])){
+                            $row[0] = 0;
+                        }
+                ?>
+                    
+                    <div class="mensagem" onClick="">
+                        <img src="../imagens/Talk.png" class="icon-mensagem">
+                        <div class="circulo-notificacao">
+                            <?php echo $row[0]; ?>
+                        </div>
                     </div>
-                </div>
+                <?php  
+                    } 
+                ?>
             </div>
             <!------------------------------------------------------>
             <div id="abre-modal" class="navbar-logado">
@@ -162,9 +167,50 @@
             </nav>
             <div style="top:-170px;" id="navbarModal" class="navbar-modal">
                 <a href="../session/logout-usuario.php">Sair</a>
-                <a onClick="modalAlterarConta()"class="btn-alterar-conta">Alterar conta</a>
+                <a data-bs-toggle="modal" data-bs-target="#modalAlterarConta" class="btn-alterar-conta">Alterar conta</a>
+                <a onClick="ApareceModalAlterarDenuncia()"class="btn-alterar-conta">Alterar denuncias</a>
             </div>
-            
+            <div class="modal fade" id="modalAlterarConta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <img src="../imagens/logo.png" class="logo-update" alt="">
+                    <h5 class="alterar-label">Alterar Conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <form action="../CRUD/objeto-alterar-usuario.php" method="post" enctype="multipart/form-data" >
+                    <div class="form-floating">
+                        <input type="hidden" class="form-control  name="pk_Usuario" value="<?php echo $_SESSION['idUsuario'];?>" >
+                    </div>
+                    <div class="form-floating" style="margin:3px;">
+                        <input type="text" class="form-control" placeholder="Nome" name="nomeUsuario" value="<?php echo $lista['nomeUsuario'];?>" ><!--NOME USUARIO -->
+                        <label for="floatingInput">Nome</label>
+                    </div>
+                    <div class="form-floating" style="margin:3px;">
+                        <input class="form-control input-desabilitado" type="text" name="emailUsuario" disabled value="<?php echo $lista['emailUsuario'];?>" ><!--TELEFONE USUARIO -->
+                        <label for="floatingInput">Email</label>
+                    </div>
+                    <div class="form-floating" style="margin:3px;">
+                        <input type="text" class="form-control" name="senhaUsuario" value="<?php echo $lista['senhaUsuario'];?>" ><!--SENHA USUARIO -->
+                        <label for="floatingInput">Senha</label>
+                    </div>
+                    <div class="form-floating" style="margin:3px;">
+                        <input type="text" class="form-control" name="numTelUsuario" value="<?php echo $lista['numTelUsuario'];?>" ><!--TELEFONE USUARIO -->
+                        <label for="floatingInput">Número</label>
+                    </div>
+                    <div class="form-floating" style="margin:3px;">
+                        <input type="submit" class="btn btn-primary" value="Salvar">
+                    </div>
+                </form>
+                </div>
+                <div class="modal-footer">
+                    <!-- Botao de deletar denuncia--><div data-bs-toggle="modal" class="btn btn-danger" data-bs-target="#modalDeletarConta" class="abrir-modal-confirmacao-deletar-conta">Deletar</div>
+                </div>
+                </div>
+                
+            </div>
+            </div>
             
             <div class="div-principal">
             <h1 class="titulo-pagina">Criar Denuncia</h1>
@@ -311,7 +357,7 @@
                             <input class="form-control" type="file" name="imgDenuncia">
                         </div>   
                         <button type="button" class="btn-del-den" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $linha[0]; ?>">
-                                Denúncia Resolvida
+                                Deletar
                         </button>
                         <input type="submit" class="btn-update-den" value="Salvar">
                     </form>
@@ -327,15 +373,15 @@
                 <div class="modal-content">
                 <div class="modal-header">
                         <img src="../imagens/logo.png" class="logo-update" alt="">
-                        <h5 class="alterar-label">Confirmando denúncia</h5>
+                        <h5 class="alterar-label">Tem Certeza disso?</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                   Tem cer de que essa denúncia foi resolvida?
+                   Certeza disso?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn-del-den" data-bs-dismiss="modal">Cancelar</button>
-                    <a class="btn-update-den"href="../CRUD/objeto-deletar-denuncia.php?pk_idDenuncia=<?php echo $linha['pk_idDenuncia'];?>">Sim, Tenho.</a>
+                    <a class="btn-update-den"href="../CRUD/objeto-deletar-denuncia.php?pk_idDenuncia=<?php echo $linha['pk_idDenuncia'];?>">Deletar</a>
                 </div>
                 </div>
             </div>
@@ -379,8 +425,6 @@
                     </form>
                 </div>
             </div>
-
-            
             
         <?php } ?>
         <!-- MODAL PARA CONFIMAR EM DELETAR CONTA ***************************************************-->
@@ -410,42 +454,41 @@
                 <span id="mensagem" style="opacity:0;color:red;display:none">*Endereço invalido</span>
                 
                 <form action="../cadastro/objeto-cadastro-denuncia.php" method="post" enctype="multipart/form-data">
-                <div class="ajuste-form">
-                    <div class="form-pt1">
-                        <!--Id do usuario-->
-                        <input type="hidden" name="txtIdUsuario" value="<?php echo $_SESSION['idUsuario']; ?>"> 
-                        <div class="ajuste-para-correcao-inputs">
-                            <!--Titulo denuncia-->
-                            <input type="text" name="txtTituloDenuncia" aria-describedby="inputGroupPrepend" required placeholder="Titúlo">
-                            <div class="correcao-inputs"></div>
-                        </div>
-                        
-                        <!--Categoria da denuncia-->
-                        <div class="ajuste-para-correcao-inputs">
-                            <input type="text" id="cep" name="txtCepDenuncia" aria-describedby="inputGroupPrepend" required placeholder="CEP" maxlength="9">   
-                            <div class="correcao-inputs"></div>
-                        </div>
-                        <div class="ajuste-para-correcao-inputs">
-                            <input class="rua config-input desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="rua" name="txtRuaDenuncia" placeholder="Rua" >
-                        </div>
-                        <div class="ajuste-para-correcao-inputs">
-                            <input class="desabilitado"type="text" id="bairro" aria-describedby="inputGroupPrepend" required name="txtBairroDenuncia" placeholder="Bairro">
-                            <div class="correcao-inputs"></div>
-                        </div>
-                        <!--Endereços-->
-                        <div class="ajuste-para-correcao-inputs">
-                            <input class="cidade config-input desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="cidade" name="txtCidadeDenuncia" placeholder="Cidade" >
-                        </div>
-                        <!--Descrição denuncia-->
-                        <!--Aqui tem que ser uma área para escrever-->
-                        <textarea class="desc" name="txtDenuncia" id="denuncia" cols="23" rows="5" placeholder="Descrição"></textarea>
-                        
-                        
+                <div class="form-pt1">
+
+                    <!--Id do usuario-->
+                    <input type="hidden" name="txtIdUsuario" value="<?php echo $_SESSION['idUsuario']; ?>"> 
+                    <div class="ajuste-para-correcao-inputs">
+                        <!--Titulo denuncia-->
+                        <input type="text" name="txtTituloDenuncia" aria-describedby="inputGroupPrepend" required placeholder="Titúlo">
+                        <div class="correcao-inputs"></div>
                     </div>
-                    <div class="ajuste-inputs-2dg">
-                        <input class="num config-input" type="text" id="numero" aria-describedby="inputGroupPrepend" required name="txtNumeroDenuncia" placeholder="Nº">   
-                        <input class="uf config-input desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="uf" name="txtUfDenuncia" placeholder="UF" >
+                    
+                    <!--Categoria da denuncia-->
+
+                    <div class="ajuste-para-correcao-inputs">
+                        <input type="text" id="cep" name="txtCepDenuncia" aria-describedby="inputGroupPrepend" required placeholder="CEP" maxlength="9">   
+                        <div class="correcao-inputs"></div>
                     </div>
+                    <div class="rua-e-num">
+                        <input class="rua desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="rua" name="txtRuaDenuncia" placeholder="Rua" >
+                        <input class="num" type="text" id="numero" aria-describedby="inputGroupPrepend" required name="txtNumeroDenuncia" placeholder="Nº">   
+                    </div>
+                    <div class="ajuste-para-correcao-inputs">
+                        <input class="desabilitado"type="text" id="bairro" aria-describedby="inputGroupPrepend" required name="txtBairroDenuncia" placeholder="Bairro">
+                        <div class="correcao-inputs"></div>
+                    </div>
+                    <!--Endereços-->
+                    <div class="cidade-uf">
+                        <input class="cidade desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="cidade" name="txtCidadeDenuncia" placeholder="Cidade" >
+                        <input class="uf desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="uf" name="txtUfDenuncia" placeholder="UF" >
+                    </div>
+                    
+                    <!--Descrição denuncia-->
+                    <!--Aqui tem que ser uma área para escrever-->
+                    <textarea class="desc" name="txtDenuncia" id="denuncia" cols="23" rows="5" placeholder="Descrição"></textarea>
+                    <br>
+    
                 </div>
                 <!--Número da casa-->
                 <div class="categ-reg-ft">
@@ -474,7 +517,7 @@
                             
                         <div style="width:100%;"class="form-input">
                             <div class="preview">
-                                <img src="../imagens/sair-adm.png"class="img-preview" id="file-ip-1-preview-2">
+                                <img id="file-ip-1-preview-2">
                                 <label for="file-ip-1-2">Escolher Imagem</label>
                                 <input type="file" id="file-ip-1-2" accept="image/*" name="fotoDenuncia" onchange="showPreview2(event);">
                             </div>
