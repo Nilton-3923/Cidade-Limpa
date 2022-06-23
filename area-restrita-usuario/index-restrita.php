@@ -128,7 +128,7 @@
         </div>
         <div class="divisao-pagina"></div>
 
-        <h2 class="segundo-titulo">DENUNCIAS FEITAS POR VOCÊ</h2>
+        <h1 class="segundo-titulo">DENUNCIAS FEITAS POR VOCÊ</h1>
         <div class="ajuste-denuncias">
             <div class="denuncias">
         <?php
