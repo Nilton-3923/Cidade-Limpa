@@ -44,7 +44,7 @@
             echo $ecoponto->cadastroEcoponto($ecoponto);
             $_SESSION['verificarXml-True'] = TRUE;
         }
-        header("Location: ../area-restrita-adm/index-adm-restrita.php");
+        header("Location: ../area-restrita-adm/cadastro-ecoponto.php");
         }
         else{
             $_SESSION['verificarXml-False'] = TRUE;
