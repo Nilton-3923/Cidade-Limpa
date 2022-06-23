@@ -42,7 +42,8 @@
         <div class="txt-apresentacao">
             <span>
                 <h1>O que é o Cidade Limpa?</h1>
-                <p>É um projeto criado para facilitar a denuncia de descarte irregular de lixo nas ruas. se você encontrar lixo acumulado perto de sua casa, basta tirar uma foto e fazer uma denuncia no nosso site, a denuncia será enviada para o governo que irá cuidar da limpeza do local.</p>
+                <p>Cidade Limpa é um projeto criado para auxiliar na busca de ecopontos e ampliar as formas de denúnciar descarte irregular de lixo.</p>
+                <p>Se você encontrar lixo acumulado perto de sua casa, basta tirar uma foto e fazer sua denuncia em nossa plataforma site.</p>
             </span>
         </div>
     </div>
