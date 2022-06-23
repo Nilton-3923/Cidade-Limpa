@@ -361,9 +361,10 @@ body{
     font-size: 50px;
 }
 .criar-denuncia{
+    padding:100px;
     background-color:white;
-    width:40%;
-    height:70%;
+    width:820px;
+    height:650px;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -466,7 +467,7 @@ body{
     outline: none;
     cursor: pointer;
     padding:5px 15px;
-    font-size:1.2vw;
+    font-size:25px;
     border-radius:5px;
 }
 .alteracao-btn-criar-denuncia:hover{
@@ -720,6 +721,7 @@ main {
     .criar-denuncia > form{
         flex-direction: column; 
         right:0;
+        gap:25px;
     }
     .ajuste-para-correcao-inputs > input[type=text]{
         font-size:15px;
@@ -743,5 +745,18 @@ main {
         font-size: 15px;
         width:80%;
     }
-
+    .form-pt1{
+        align-items:start;
+    }
+    .config-input{
+        font-size: 15px;
+    }
+    .ajuste-form{
+        align-items:center;
+        position:relative;
+        left:45px;
+    }
+    .ajuste-inputs-2dg{
+        bottom:3px;
+    }
 }
