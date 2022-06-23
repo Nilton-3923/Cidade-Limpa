@@ -255,7 +255,7 @@
             <div class="cadastro-excel">
                 <h2>Cadastrar com uma planilha Excel</h2>
                 <p>* É necessário que a planilha tenha sido salva como .xml</p>
-                <a href="">Download do EXCEL(Exemplo)</a>
+                <a href="xml/formato-cadastro.xml" download="Formato-cadastro">Download do EXCEL(Exemplo)</a>
                 <form action="../cadastro/cadastro-xml-ecopontos.php" method="post" enctype="multipart/form-data">
                     <input type="file" name="arquivo" class="form-control input-normal">
                     <input type="submit" class="btn btn-secondary" value="Cadastrar">
