@@ -716,6 +716,7 @@ main {
         height:100%;
         flex-wrap: wrap;
         flex-direction: row;
+        overflow: scroll;
 
     }
     .criar-denuncia > form{
