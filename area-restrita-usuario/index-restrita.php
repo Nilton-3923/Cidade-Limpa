@@ -136,23 +136,18 @@
             </div>
             <!------------NOTIFICAÇÃO DO ADM------------------------------------------>
             <div class="notificacao" data-bs-toggle="modal" data-bs-target="#modalMsg">
-                <?php
+
+                <div class="mensagem" onClick="">
+                    <img src="../imagens/Talk.png" class="icon-mensagem">
+                    <div class="circulo-notificacao">
+                        <?php
                     $listar = $perfil->verificarAdm();
                     foreach($listar as $row){ 
-                        if (empty($row[0])){
-                            $row[0] = 0;
-                        }
-                ?>
-                    
-                    <div class="mensagem" onClick="">
-                        <img src="../imagens/Talk.png" class="icon-mensagem">
-                        <div class="circulo-notificacao">
-                            <?php echo $row[0]; ?>
-                        </div>
-                    </div>
-                <?php  
+                       echo $row[0]; 
                     } 
-                ?>
+                    ?>
+                    </div>
+                </div>
             </div>
             <!------------------------------------------------------>
             <div id="abre-modal" class="navbar-logado">
@@ -316,7 +311,7 @@
                             <input class="form-control" type="file" name="imgDenuncia">
                         </div>   
                         <button type="button" class="btn-del-den" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $linha[0]; ?>">
-                                Deletar
+                                Denúncia Resolvida
                         </button>
                         <input type="submit" class="btn-update-den" value="Salvar">
                     </form>
@@ -332,15 +327,15 @@
                 <div class="modal-content">
                 <div class="modal-header">
                         <img src="../imagens/logo.png" class="logo-update" alt="">
-                        <h5 class="alterar-label">Tem Certeza disso?</h5>
+                        <h5 class="alterar-label">Confirmando denúncia</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                   Certeza disso?
+                   Tem cer de que essa denúncia foi resolvida?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn-del-den" data-bs-dismiss="modal">Cancelar</button>
-                    <a class="btn-update-den"href="../CRUD/objeto-deletar-denuncia.php?pk_idDenuncia=<?php echo $linha['pk_idDenuncia'];?>">Deletar</a>
+                    <a class="btn-update-den"href="../CRUD/objeto-deletar-denuncia.php?pk_idDenuncia=<?php echo $linha['pk_idDenuncia'];?>">Sim, Tenho.</a>
                 </div>
                 </div>
             </div>
