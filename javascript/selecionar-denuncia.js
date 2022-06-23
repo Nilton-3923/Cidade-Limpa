@@ -6,7 +6,7 @@ const tabelaResolvida = document.getElementById('resolvida');
 const select = document.getElementById('select');
 
 function selecionados(){
-     let valor  = select.options[select.selectedIndex].value;;
+     let valor  = select.options[select.selectedIndex].value;
 
      if (valor == 0){
         tabelaTudo.style.display = "block"

@@ -2,6 +2,9 @@
     session_start();
     include_once("../session/valida-sentinela-adm.php");
     error_reporting(0);
+
+    require_once("../classe/Adm.php");
+    $adm = new Adm();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -79,259 +82,173 @@
             
         <div>
             <h1>TABELA DE DENÚNCIAS</h1>
-
-            
-
         </div>
-        <form action="" method="post" > 
-            <select name="txtRegiao" class="form-select form-select-sm" style="width: 400px; margin:5px;" aria-label=".form-select-sm example">
-                <option value="todas" selected>Todas</option>
-                <option value="Zona Norte">Zona Norte</option>
-                <option value="Zona Sul">Zona Sul</option>
-                <option value="Zona Leste">Zona Leste</option>
-                <option value="Zona Oeste">Zona Oeste</option>
+            <select name="txtRegiao" class="form-select form-select-sm" style="width: 400px; margin:5px;" aria-label=".form-select-sm example" id="selectRegiao" onChange="selecionarRegiao()">
+                <option value="0">Todas</option>
+                <option value="1">Zona Norte</option>
+                <option value="2">Zona Sul</option>
+                <option value="3">Zona Leste</option>
+                <option value="4">Zona Oeste</option>
             </select>
             <div>
-                <input class="btn btn-secondary" style="margin: 5px;" type="submit" value="Fitrar">
                 <a href="pdfs/pdf-table-denuncia.php" class="btn btn-secondary">Vizualizar Pdf</a>
             </div>
            
-            <br>
-            <br>
-        </form>
-        <?php
-        if(!isset($_POST['txtRegiao'])){ ?>
-            <h5>Zona Norte</h5>
-            <table class="table table-striped table-hover">
-                <tr>
-                    <th>id</th>
-                    <th>Zona</th>
-                    <th>Titulo</th>
-                    <th>Data</th>
-                    <th>Uf</th>
-                    <th>Bairro</th>
-                    <th>Cep</th>
-                    <th>Rua</th>
-                    <th>Cidade</th>
-                    <th>Zona</th>
-                    <th>Categoria</th>
-                    <th>Usuario</th>
 
-                </tr>
-                    <?php 
-                        require_once("../classe/Adm.php");
-                        $adm = new Adm();
-                        $regiao = "Zona Norte";
-                        $tables1 = $adm->denunciaRegiao($regiao);
-                        foreach($tables1 as $dados1){
-                    ?>
+            <div id="norte" style="display:none">
+                <h5>Zona Norte</h5>
+                <table class="table table-striped table-hover">
                     <tr>
-                        <td><?php echo $dados1['pk_idDenuncia']; ?></td>
-                        <td><?php echo $dados1['zonaDenuncia']; ?></td>
-                        <td><?php echo $dados1['tituloDenuncia']; ?></td>
-                        <td><?php echo $dados1['dataDenuncia']; ?></td>
-                        <td><?php echo $dados1['ufDenuncia']; ?></td>
-                        <td><?php echo $dados1['bairroDenuncia']; ?></td>
-                        <td><?php echo $dados1['cepDenuncia']; ?></td>
-                        <td><?php echo $dados1['ruaDenuncia']; ?></td>
-                        <td><?php echo $dados1['cidadeDenuncia']; ?></td>
-                        <td><?php echo $dados1['zonaDenuncia']; ?></td>
-                        <td><?php echo $dados1['campoCategoria']; ?></td>
-                        <td><?php echo $dados1['emailUsuario']; ?></td>
+                        <th>Código</th>
+                        <th>Categoria</th>
+                        <th>Data</th>
+                        <th>Rua</th>
+                        <th>Bairro</th>
+                        <th>Usuario</th>
                     </tr>
-                    <?php
-                    }
-                ?>
+                        <?php
+                            $regiao = "Zona Norte";
+                            $tables1 = $adm->denunciaRegiao($regiao);
+                            foreach($tables1 as $dados){
+                        ?>
+                        <tr>
+                            <td><?php echo $dados['pk_idDenuncia']; ?></td>
+                            <td><?php echo $dados['campoCategoria']; ?></td>
+                            <td><?php echo $dados['dataDenuncia']; ?></td>
+                            <td><?php echo $dados['ruaDenuncia']; ?></td>
+                            <td><?php echo $dados['bairroDenuncia']; ?></td>
+                            <td><?php echo $dados['emailUsuario']; ?></td>
+                        </tr>
+                            <?php }?>
+                </table>
+            </div>
 
-            </table>
-
-            <h5>Zona Leste</h5>
-            <table class="table table-striped table-hover">
-                <tr>
-                    <th>id</th>
-                    <th>Zona</th>
-                    <th>Titulo</th>
-                    <th>Data</th>
-                    <th>Uf</th>
-                    <th>Bairro</th>
-                    <th>Cep</th>
-                    <th>Rua</th>
-                    <th>Cidade</th>
-                    <th>Zona</th>
-                    <th>Categoria</th>
-                    <th>Usuario</th>
-
-                </tr>
-                    <?php 
-                        require_once("../classe/Adm.php");
-                        $adm = new Adm();
-                        $regiao = "Zona Leste";
-                        $tables2 = $adm->denunciaRegiao($regiao);
-                        foreach($tables2 as $dados2){
-                    ?>
+            <div id="leste" style="display:none">
+                <h5>Zona Leste</h5>
+                <table class="table table-striped table-hover">
                     <tr>
-                        <td><?php echo $dados2['pk_idDenuncia']; ?></td>
-                        <td><?php echo $dados2['zonaDenuncia']; ?></td>
-                        <td><?php echo $dados2['tituloDenuncia']; ?></td>
-                        <td><?php echo $dados2['dataDenuncia']; ?></td>
-                        <td><?php echo $dados2['ufDenuncia']; ?></td>
-                        <td><?php echo $dados2['bairroDenuncia']; ?></td>
-                        <td><?php echo $dados2['cepDenuncia']; ?></td>
-                        <td><?php echo $dados2['ruaDenuncia']; ?></td>
-                        <td><?php echo $dados2['cidadeDenuncia']; ?></td>
-                        <td><?php echo $dados2['zonaDenuncia']; ?></td>
-                        <td><?php echo $dados2['campoCategoria']; ?></td>
-                        <td><?php echo $dados2['emailUsuario']; ?></td>
+                        <th>Código</th>
+                        <th>Categoria</th>
+                        <th>Data</th>
+                        <th>Rua</th>
+                        <th>Bairro</th>
+                        <th>Usuario</th>
                     </tr>
-                    <?php
-                    }
-                ?>
+                        <?php
+                            $regiao = "Zona Leste";
+                            $tables2 = $adm->denunciaRegiao($regiao);
+                            foreach($tables2 as $dados){
+                        ?>
+                        <tr>
+                            <td><?php echo $dados['pk_idDenuncia']; ?></td>
+                            <td><?php echo $dados['campoCategoria']; ?></td>
+                            <td><?php echo $dados['dataDenuncia']; ?></td>
+                            <td><?php echo $dados['ruaDenuncia']; ?></td>
+                            <td><?php echo $dados['bairroDenuncia']; ?></td>
+                            <td><?php echo $dados['emailUsuario']; ?></td>
+                        </tr>
+                        <?php
+                        }
+                        ?>
+                </table>
+            </div>
 
-            </table>
-
-            <h5>Zona Sul</h5>
-            <table class="table table-striped table-hover">
-                <tr>
-                    <th>id</th>
-                    <th>Zona</th>
-                    <th>Titulo</th>
-                    <th>Data</th>
-                    <th>Uf</th>
-                    <th>Bairro</th>
-                    <th>Cep</th>
-                    <th>Rua</th>
-                    <th>Cidade</th>
-                    <th>Zona</th>
-                    <th>Categoria</th>
-                    <th>Usuario</th>
-
-                </tr>
-                    <?php 
-                        require_once("../classe/Adm.php");
-                        $adm = new Adm();
-                        $regiao = "Zona Sul";
-                        $tables3 = $adm->denunciaRegiao($regiao);
-                        foreach($tables3 as $dados3){
-                    ?>
+            <div id="sul" style="display:none">
+                <h5>Zona Sul</h5>
+                <table class="table table-striped table-hover">
                     <tr>
-                        <td><?php echo $dados3['pk_idDenuncia']; ?></td>
-                        <td><?php echo $dados3['zonaDenuncia']; ?></td>
-                        <td><?php echo $dados3['tituloDenuncia']; ?></td>
-                        <td><?php echo $dados3['dataDenuncia']; ?></td>
-                        <td><?php echo $dados3['ufDenuncia']; ?></td>
-                        <td><?php echo $dados3['bairroDenuncia']; ?></td>
-                        <td><?php echo $dados3['cepDenuncia']; ?></td>
-                        <td><?php echo $dados3['ruaDenuncia']; ?></td>
-                        <td><?php echo $dados3['cidadeDenuncia']; ?></td>
-                        <td><?php echo $dados3['zonaDenuncia']; ?></td>
-                        <td><?php echo $dados3['campoCategoria']; ?></td>
-                        <td><?php echo $dados3['emailUsuario']; ?></td>
+                        <th>Código</th>
+                        <th>Categoria</th>
+                        <th>Data</th>
+                        <th>Rua</th>
+                        <th>Bairro</th>
+                        <th>Usuario</th>
                     </tr>
-                    <?php
-                    }
-                ?>
+                        <?php
+                            $regiao = "Zona Sul";
+                            $tables3 = $adm->denunciaRegiao($regiao);
+                            foreach($tables3 as $dados){
+                        ?>
+                        <tr>
+                            <td><?php echo $dados['pk_idDenuncia']; ?></td>
+                            <td><?php echo $dados['campoCategoria']; ?></td>
+                            <td><?php echo $dados['dataDenuncia']; ?></td>
+                            <td><?php echo $dados['ruaDenuncia']; ?></td>
+                            <td><?php echo $dados['bairroDenuncia']; ?></td>
+                            <td><?php echo $dados['emailUsuario']; ?></td>
+                        </tr>
+                        <?php
+                            }
+                        ?>
+                </table>
+            </div>
 
-            </table>
-
-            <h5>Zona Oeste</h5>
-            <table class="table table-striped table-hover">
-                <tr>
-                    <th>id</th>
-                    <th>Zona</th>
-                    <th>Titulo</th>
-                    <th>Data</th>
-                    <th>Uf</th>
-                    <th>Bairro</th>
-                    <th>Cep</th>
-                    <th>Rua</th>
-                    <th>Cidade</th>
-                    <th>Zona</th>
-                    <th>Categoria</th>
-                    <th>Usuario</th>
-
-                </tr>
-                    <?php 
-                        require_once("../classe/Adm.php");
-                        $adm = new Adm();
-                        $regiao = "Zona Oeste";
-                        $tables4 = $adm->denunciaRegiao($regiao);
-                        foreach($tables4 as $dados4){
-                    ?>
+            <div id="oeste" style="display:none">
+                <h5>Zona Oeste</h5>
+                <table class="table table-striped table-hover">
                     <tr>
-                        <td><?php echo $dados4['pk_idDenuncia']; ?></td>
-                        <td><?php echo $dados4['zonaDenuncia']; ?></td>
-                        <td><?php echo $dados4['tituloDenuncia']; ?></td>
-                        <td><?php echo $dados4['dataDenuncia']; ?></td>
-                        <td><?php echo $dados4['ufDenuncia']; ?></td>
-                        <td><?php echo $dados4['bairroDenuncia']; ?></td>
-                        <td><?php echo $dados4['cepDenuncia']; ?></td>
-                        <td><?php echo $dados4['ruaDenuncia']; ?></td>
-                        <td><?php echo $dados4['cidadeDenuncia']; ?></td>
-                        <td><?php echo $dados4['zonaDenuncia']; ?></td>
-                        <td><?php echo $dados4['campoCategoria']; ?></td>
-                        <td><?php echo $dados4['emailUsuario']; ?></td>
-                        
+                        <th>Código</th>
+                        <th>Categoria</th>
+                        <th>Data</th>
+                        <th>Rua</th>
+                        <th>Bairro</th>
+                        <th>Usuario</th>
                     </tr>
-                    <?php
-                    }
-                ?>
-
-            </table>
+                        <?php
+                            $regiao = "Zona Oeste";
+                            $tables4 = $adm->denunciaRegiao($regiao);
+                            foreach($tables4 as $dados4){
+                        ?>
+                        <tr>
+                            <td><?php echo $dados['pk_idDenuncia']; ?></td>
+                            <td><?php echo $dados['campoCategoria']; ?></td>
+                            <td><?php echo $dados['dataDenuncia']; ?></td>
+                            <td><?php echo $dados['ruaDenuncia']; ?></td>
+                            <td><?php echo $dados['bairroDenuncia']; ?></td>
+                            <td><?php echo $dados['emailUsuario']; ?></td>
+                
+                        </tr>
+                        <?php
+                        }
+                    ?>
+                </table>
+            </div>
             
-        <?php
-        }else if($_POST['txtRegiao'] == "todas"){
-            unset($_POST['txtRegiao']);
-        }
-        else{
-        ?>
-                        <table class="table table-striped table-hover">
-                <tr>
-                    <th>id</th>
-                    <th>Zona</th>
-                    <th>Titulo</th>
-                    <th>Data</th>
-                    <th>Uf</th>
-                    <th>Bairro</th>
-                    <th>Cep</th>
-                    <th>Rua</th>
-                    <th>Cidade</th>
-                    <th>Zona</th>
-                    <th>Categoria</th>
-                    <th>Usuario</th>
-
-                </tr>
-                    <?php 
-                        require_once("../classe/Adm.php");
-                        $adm = new Adm();
-                        $regiao = $_POST['txtRegiao'];
-                        $tables = $adm->denunciaRegiao($regiao);
-                        foreach($tables as $dados){
-                    ?>
-                    <tr>
-                        <td><?php echo $dados['pk_idDenuncia']; ?></td>
-                        <td><?php echo $dados['zonaDenuncia']; ?></td>
-                        <td><?php echo $dados['tituloDenuncia']; ?></td>
-                        <td><?php echo $dados['dataDenuncia']; ?></td>
-                        <td><?php echo $dados['ufDenuncia']; ?></td>
-                        <td><?php echo $dados['bairroDenuncia']; ?></td>
-                        <td><?php echo $dados['cepDenuncia']; ?></td>
-                        <td><?php echo $dados['ruaDenuncia']; ?></td>
-                        <td><?php echo $dados['cidadeDenuncia']; ?></td>
-                        <td><?php echo $dados['zonaDenuncia']; ?></td>
-                        <td><?php echo $dados['campoCategoria']; ?></td>
-                        <td><?php echo $dados['emailUsuario']; ?></td>
-                    </tr>
-                    <?php
-                    }
-                ?>
-
-            </table>
-        <?php
-        }
-        ?>
         
+
+        <div id="tudo">
+            <h5>Todas as denúncias</h5>
+            <table class="table table-striped table-hover">
+                    <tr>
+                        <th>Código</th>
+                        <th>Categoria</th>
+                        <th>Data</th>
+                        <th>Rua</th>
+                        <th>Bairro</th>
+                        <th>Usuario</th>
+                    </tr>
+                        <?php
+            
+                            $regiao = $_POST['txtRegiao'];
+                            $tables = $adm->denunciaRegiao($regiao);
+                            foreach($tables as $dados){
+                        ?>
+                        <tr>
+                            <td><?php echo $dados['pk_idDenuncia']; ?></td>
+                            <td><?php echo $dados['campoCategoria']; ?></td>
+                            <td><?php echo $dados['dataDenuncia']; ?></td>
+                            <td><?php echo $dados['ruaDenuncia']; ?></td>
+                            <td><?php echo $dados['bairroDenuncia']; ?></td>
+                            <td><?php echo $dados['emailUsuario']; ?></td>
+                        </tr>
+                        <?php
+                        }
+                    ?>
+                </table>
+        </div>
         
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="../javascript/selecionar-denuncia-regiao.js"></script>
 		<script src="../javascript/index-adm.js"></script>
     </body>
 </html>
