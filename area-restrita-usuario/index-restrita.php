@@ -240,6 +240,7 @@
             
                 </div>
             </div>
+        
             <div id="modalAlterarConta"class="ajuste-modal-alterar-conta">
                 <div class="modal-alterar-conta">
                     <form action="../CRUD/objeto-alterar-usuario.php" method="post" enctype="multipart/form-data" class="alterar">
@@ -257,7 +258,7 @@
                         <input type="text" name="numTelUsuario" value="<?php echo $linha['numTelUsuario'];?>" ><!--TELEFONE USUARIO -->
                         
                         <div class="btns-modal">
-                            <!-- Botao de deletar denuncia--><div onclick="modalConfirmacaoDeletarConta()" class="abrir-modal-confirmacao-deletar-conta">Deletar</div>
+                            <!-- Botao de deletar denuncia--><div data-bs-toggle="modal" data-bs-target="#modalDeletarConta" class="abrir-modal-confirmacao-deletar-conta">Deletar</div>
                         </div>
                         <p class="cancelar" onClick="modalAlterarConta()">Cancelar</p>
                         <input type="submit" value="Salvar">
@@ -267,26 +268,22 @@
             
         <?php } ?>
         <!-- MODAL PARA CONFIMAR EM DELETAR CONTA ***************************************************-->
-        <div class="bg-modal-confirmacao" id="bgModal-confirmacao">
-                <div class="modal-confirmacao" id="modalConfirmacao">
-                    <div>
-                        TEM CERTEZA DISSO???????????????
-                    </div>
-                    <span class="close-modal-confirmacao" onclick="fecharModalDeletarConta()" >&times;</span>
-                    <!-- ARRUMA ISSO FRONT END MACACO -->
-                    <div class="negar-deletar-conta" onclick="fecharModalDeletarConta()" >Não</div>
-                    <a class="deletar-conta-definitivamente" href="../CRUD/objeto-deletar-usuario.php?pk_Usuario=<?php echo $_SESSION['idUsuario']; ?>">Sim </a><!--Deletar Usuario-->  
+        
+            <!-- Modal -->
+            <div class="modal fade" id="modalDeletarConta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="alterar-label">Tem Certeza disso?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-        </div>
-        <script>
-            function modalConfirmacaoDeletarConta(){
-                document.getElementById('bgModal-confirmacao').style.top = "0";
-            }
-            function fecharModalDeletarConta(){
-                document.getElementById('bgModal-confirmacao').style.top = "-100%";
-            }
-        </script>
-
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                    <a class="btn btn-danger" href="../CRUD/objeto-deletar-usuario.php?pk_Usuario=<?php echo $_SESSION['idUsuario']; ?>">Sim </a><!--Deletar Usuario-->  
+                </div>
+                </div>
+            </div>
+            </div>
 
         <!--*************************************FIM DA MODAL********************-->
         <p id="mensagem"></p>
