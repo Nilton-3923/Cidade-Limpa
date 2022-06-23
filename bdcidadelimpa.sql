@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Jun-2022 às 05:12
+-- Tempo de geração: 23-Jun-2022 às 17:03
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -43,7 +43,7 @@ CREATE TABLE `tbadm` (
 --
 
 INSERT INTO `tbadm` (`pk_idAdm`, `nomeAdm`, `sobrenomeAdm`, `emailAdm`, `cep`, `senhaAdm`, `denunciaReslvAdm`, `imagemAdm`) VALUES
-(1, 'Adm', 'Adm', 'Adm@gmail.com', '10022555', '123', 8, NULL);
+(1, 'Adm', 'Adm', 'Adm@gmail.com', '10022555', '123', 9, NULL);
 
 -- --------------------------------------------------------
 
@@ -107,25 +107,26 @@ CREATE TABLE `tbdenuncia` (
 --
 
 INSERT INTO `tbdenuncia` (`pk_idDenuncia`, `tituloDenuncia`, `descDenuncia`, `imgDenuncia`, `dataDenuncia`, `ufDenuncia`, `bairroDenuncia`, `cepDenuncia`, `ruaDenuncia`, `cidadeDenuncia`, `coordeDenuncia`, `zonaDenuncia`, `statusDenuncia`, `fk_idUsuario`, `fk_idCategoria`, `verificacaoAdm`) VALUES
-(16, 'Nossa que legal', 'sdssadas', 'imgDenuncia/', '17/06/2022', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', 'lat: -23.5119082, lng: -46.4112154', 'Zona Leste', 'Não Resolvida', 6, 1, NULL),
-(18, 'sdasd', 'sdas', 'imgDenuncia/', '17/06/2022', 'SP', 'Jardim Nélia', '08142680', 'Rua Inês Sabino', 'São Paulo', 'lat: -23.5557714, lng: -46.6395571', 'Zona Norte', 'Não Resolvida', 6, 1, NULL),
-(19, 'Descarte de lixo', 'Muito lixo', 'imgDenuncia/', '18/06/2022', 'SP', 'Jardim Silva Teles', '08160-00', 'Rua Aricanga', 'São Paulo', 'lat: -23.4958356, lng: -46.411385', 'Zona Leste', 'Não Resolvida', 6, 1, NULL),
-(21, 'a', 'asdasdsdsad', 'imgDenuncia/', '18/06/2022', 'SP', 'Jardim Nélia', '08142-68', 'Rua Inês Sabino', 'São Paulo', 'lat: -23.5557714, lng: -46.6395571', 'Zona Leste', 'Não Resolvida', 6, 1, NULL),
-(25, 'Lixo Tiête', 'bjb', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549133, lng: -46.4156954', 'Zona Leste', 'Não Resolvida', 1, 1, 'TRUE'),
-(26, 'Lixo Tiête', 'lsl', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 1, 'TRUE'),
-(28, 'Lixo Tiête', 'jbshbxhxsxssx', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Bela Vista', '06060-220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5544852, lng: -46.7843437', 'Zona Leste', 'Não Resolvida', 1, 2, NULL),
-(30, 'Lixo Tiête', 'oo', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5539949, lng: -46.4147634', 'Zona Sul', 'Não Resolvida', 1, 1, 'TRUE'),
-(31, 'Lixo Tiête', 'kokk', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5539948, lng: -46.4149019', 'Zona Leste', 'Não Resolvida', 1, 1, NULL),
-(32, 'Lixo Tiête', 'ooj', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 1, NULL),
-(33, 'Lixo Tiête', 'iii', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Sul', 'Não Resolvida', 1, 1, NULL),
-(34, 'Lixo Tiête', 'i', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 2, NULL),
-(35, 'Lixo Tiête', 'jjj', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 2, NULL),
-(36, 'Lixo Tiête', 'kk', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Norte', 'Não Resolvida', 1, 1, NULL),
-(37, 'Lixo Tiête', ' zn', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Bela Vista', '06060-220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5554133, lng: -46.7843185', 'Zona Norte', 'Não Resolvida', 1, 1, NULL),
-(38, 'Lixo Guaianases', 'lk', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5539948, lng: -46.4149019', 'Zona Norte', 'Não Resolvida', 1, 1, NULL),
-(39, 'Lixo Tiête', 'ddd', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 1, NULL),
-(41, 'Lixo Tiête', 'pop', 'imgDenuncia/default.jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 2, NULL),
-(42, 'Lixo Tiête', 'jjj', 'imgDenuncia/caue.jpg', '19/06/2022', 'SP', 'Bela Vista', '06060-220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Leste', 'Não Resolvida', 1, 1, NULL);
+(16, 'Nossa que legal', 'sdssadas', 'imgDenuncia/', '17/06/2022', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', 'lat: -23.5119082, lng: -46.4112154', 'Zona Leste', 'Resolvida', 6, 1, ''),
+(18, 'sdasd', 'sdas', 'imgDenuncia/', '17/06/2022', 'SP', 'Jardim Nélia', '08142680', 'Rua Inês Sabino', 'São Paulo', 'lat: -23.5557714, lng: -46.6395571', 'Zona Norte', 'Resolvida', 6, 1, ''),
+(19, 'Descarte de lixo', 'Muito lixo', 'imgDenuncia/', '18/06/2022', 'SP', 'Jardim Silva Teles', '08160-00', 'Rua Aricanga', 'São Paulo', 'lat: -23.4958356, lng: -46.411385', 'Zona Leste', 'Resolvida', 6, 1, ''),
+(21, 'a', 'asdasdsdsad', 'imgDenuncia/', '18/06/2022', 'SP', 'Jardim Nélia', '08142-68', 'Rua Inês Sabino', 'São Paulo', 'lat: -23.5557714, lng: -46.6395571', 'Zona Leste', 'Não Resolvida', 6, 1, 'TRUE'),
+(25, 'Lixo Tiête', 'bjb', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549133, lng: -46.4156954', 'Zona Leste', 'Resolvida', 1, 1, ''),
+(26, 'Lixo Tiête', 'lsl', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Resolvida', 1, 1, ''),
+(28, 'Lixo Tiête', 'jbshbxhxsxssx', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Bela Vista', '06060-220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5544852, lng: -46.7843437', 'Zona Leste', 'Resolvida', 1, 2, ''),
+(30, 'Lixo Tiête', 'oo', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5539949, lng: -46.4147634', 'Zona Sul', 'Resolvida', 1, 1, ''),
+(31, 'Lixo Tiête', 'kokk', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5539948, lng: -46.4149019', 'Zona Leste', 'Resolvida', 1, 1, ''),
+(32, 'Lixo Tiête', 'ooj', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Resolvida', 1, 1, ''),
+(33, 'Lixo Tiête', 'iii', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Sul', 'Não Resolvida', 1, 1, 'TRUE'),
+(34, 'Lixo Tiête', 'i', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Resolvida', 1, 2, ''),
+(35, 'Lixo Tiête', 'jjj', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Resolvida', 1, 2, ''),
+(36, 'Lixo Tiête', 'kk', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Norte', 'Não Resolvida', 1, 1, 'TRUE'),
+(37, 'Lixo Tiête', ' zn', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Bela Vista', '06060-220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5554133, lng: -46.7843185', 'Zona Norte', 'Não Resolvida', 1, 1, 'TRUE'),
+(38, 'Lixo Guaianases', 'lk', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5539948, lng: -46.4149019', 'Zona Norte', 'Não Resolvida', 1, 1, 'TRUE'),
+(39, 'Lixo Tiête', 'ddd', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Resolvida', 1, 1, ''),
+(41, 'Lixo Tiête', 'pop', 'imgDenuncia/default.jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Resolvida', 1, 2, ''),
+(42, 'Lixo Tiête', 'jjj', 'imgDenuncia/caue.jpg', '19/06/2022', 'SP', 'Bela Vista', '06060-220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Leste', 'Resolvida', 1, 1, ''),
+(45, 'Descarte de lixo', 'Nossa a quantidade de lixo é impressionante em', 'imgDenuncia/logo cidade limpa.png', '23/06/2022', 'SP', 'Jardim Bartira', '08152-130', 'Rua Carrossel', 'São Paulo', 'lat: -23.5125383, lng: -46.4103802', 'Zona Leste', 'Não Resolvida', 10, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -181,7 +182,8 @@ CREATE TABLE `tbtelusuario` (
 
 INSERT INTO `tbtelusuario` (`pk_TelUsuario`, `numTelUsuario`, `fk_idUsuario`) VALUES
 (1, '(11) 97791-', 1),
-(8, '1197778855', 9);
+(8, '1197778855', 9),
+(9, '(11) 12222-', 10);
 
 -- --------------------------------------------------------
 
@@ -206,7 +208,8 @@ INSERT INTO `tbusuario` (`pk_Usuario`, `nomeUsuario`, `emailUsuario`, `senhaUsua
 (1, 'Gui', 'gui@gmail.com', '123', '01548000', 'imgUsuario/leno-brego.jpg'),
 (6, '', 'nilton@gmail.com', '123', '', 'imgUsuario/'),
 (7, 'Nycolas', 'nyco@gmail.com', '123', '08152130', NULL),
-(9, 'Cristiano Ronaldo', 'cr7@gmail.com', '123', '08411-31', 'imgUsuario/th (4).jpg');
+(9, 'Cristiano Ronaldo', 'cr7@gmail.com', '123', '08411-31', 'imgUsuario/th (4).jpg'),
+(10, 'Messi', 'messi@gmaill.com', '123', '08152-13', 'imgUsuario/mob-psycho-100-shigeo-kageyama-papel-de-parede-2048x1536_26 (1).jpg');
 
 --
 -- Índices para tabelas despejadas
@@ -286,7 +289,7 @@ ALTER TABLE `tbchatbot`
 -- AUTO_INCREMENT de tabela `tbdenuncia`
 --
 ALTER TABLE `tbdenuncia`
-  MODIFY `pk_idDenuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `pk_idDenuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de tabela `tbecoponto`
@@ -298,13 +301,13 @@ ALTER TABLE `tbecoponto`
 -- AUTO_INCREMENT de tabela `tbtelusuario`
 --
 ALTER TABLE `tbtelusuario`
-  MODIFY `pk_TelUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `pk_TelUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `tbusuario`
 --
 ALTER TABLE `tbusuario`
-  MODIFY `pk_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `pk_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restrições para despejos de tabelas
