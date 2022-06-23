@@ -671,6 +671,9 @@ main {
     justify-content: start;
     
 }
+.notificacao{
+    margin-right: 50px;
+}
 
 @media (max-width: 720px) {
     .navbar-logado{

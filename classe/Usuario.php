@@ -172,6 +172,42 @@
             return $query;
         }
 
+        public function verificarAdm(){
+            $conexao = Conexao::pegarConexao();
+
+            $idUsuario = $_SESSION['idUsuario'];
+
+            $query = "SELECT COUNT(verificacaoAdm) FROM tbdenuncia
+                        INNER JOIN tbusuario
+                            ON tbUsuario.pk_Usuario = tbDenuncia.fk_idUsuario
+                                WHERE pk_Usuario = $idUsuario AND verificacaoAdm = 'TRUE'
+                                    GROUP BY pk_Usuario";
+
+            $query = $conexao->query($query);
+
+            $query = $query->fetchAll();
+
+            return $query;
+        }
+
+        public function verificarAdmTabela(){
+            $conexao = Conexao::pegarConexao();
+
+            $idUsuario = $_SESSION['idUsuario'];
+
+            $query = "SELECT * FROM tbdenuncia
+                        INNER JOIN tbcategoria 
+                                ON tbcategoria.pk_idCategoria = tbdenuncia.fk_idCategoria 
+                                    WHERE fk_idUsuario = $idUsuario AND verificacaoAdm LIKE 'TRUE'";
+
+            $query = $conexao->query($query);
+
+            $query = $query->fetchAll();
+
+            return $query;
+        }
+
+
 
         //Método de o próprio usuario deletar a conta (DELETE)
         public function deletar(){
@@ -240,6 +276,19 @@
             $alterarTel->execute();
 
         }
+
+        public function denunciaRealizada($idDenuncia){
+            $conexao = Conexao::pegarConexao();
+
+            $verficarDenuncia = $conexao->prepare("UPDATE tbDenuncia 
+                                                    SET
+                                                    statusDenuncia = 'Resolvida'
+                                                    ,verificacaoAdm = ''
+                                                        WHERE pk_idDenuncia = '$idDenuncia'");
+
+            $verficarDenuncia->execute();
+        }
+        
 
     }
 

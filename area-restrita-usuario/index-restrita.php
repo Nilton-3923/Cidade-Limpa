@@ -9,7 +9,8 @@
     require_once("../classe/Categoria.php");
                                                 
     $categoria = new Categoria();
-    
+    $perfil = new Usuario();
+
     $listaCat = $categoria->listar();
 ?>
 
@@ -26,6 +27,8 @@
         <link rel="stylesheet" href="../css/alterar-modal.css">
         <link rel="stylesheet" href="../css/update-denuncia-modal.css">
         <link rel="stylesheet" href="../css/modal-confirmacao-deletar.css">
+        <link rel="stylesheet" href="../css/notificacao.css">
+
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <!-- JavaScript Bundle with Popper -->
@@ -34,7 +37,6 @@
         <link rel="shortcut icon" href="../imagens/reciclagem.png" type="image/x-icon">
     </head>
     <?php
-        $perfil = new Usuario();
         $listaPerfil = $perfil->perfil();
         foreach($listaPerfil as $lista)
         {
@@ -84,6 +86,9 @@
         ?>
 
         <nav>
+
+        
+            
             <div class="navbar-parte-1">
                 <div class="ajuste-logonav-1">
                     <div class="ajuste-logonav-2">
@@ -91,7 +96,25 @@
                     </div>
                 </div>
             </div>
-            
+            <div class="notificacao">
+                <?php
+                    $listar = $perfil->verificarAdm();
+                    foreach($listar as $row){ 
+                        if (empty($row[0])){
+                            $row[0] = 0;
+                        }
+                ?>
+                    
+                    <div class="mensagem" onClick="">
+                        <img src="../imagens/Talk.png" class="icon-mensagem">
+                        <div class="circulo-notificacao">
+                            <?php echo $row[0]; ?>
+                        </div>
+                    </div>
+                <?php  
+                    } 
+                ?>
+            </div>
             <div id="abre-modal" class="navbar-logado">
                 <div class="ajuste-div-foto">
                     <img class="foto-navbar ajuste-foto"src="../cadastro/<?php echo $lista['imgUsuario']; ?>">

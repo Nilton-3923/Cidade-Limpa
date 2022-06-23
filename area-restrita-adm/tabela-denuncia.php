@@ -158,7 +158,7 @@
                                             style="width:50px; height:50px"
                                             id="checkbox"
                                             >
-                                        </td>
+                            </td>
                         </tr>
                         <?php
                         }
