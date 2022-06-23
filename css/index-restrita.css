@@ -236,7 +236,7 @@ body{
     
 }
 .modal-alterar-conta > form > input[type=text]{
-    font-size:1vw;
+    font-size:20px;
     border: none;
     background:transparent;
     padding:5px 15px;
@@ -377,38 +377,21 @@ body{
 .criar-denuncia > form{
     display:flex;
     flex-direction: row;
-    position:relative;
-    right:15px;
 }
 
 
-.rua-e-num{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction:row;
-    gap:10px;
-}
-.rua-e-num > input[type=text]{
-    border:none;
-    font-size:20px;
-    padding:0 15px;
-}
-.rua{
-    
-}
+
 .num{
-    width:15%;
+    width:100%;
     text-align: center;
     background:rgb(230, 230, 230);
+
 }
 .categ-reg-ft{
     display:flex;
     flex-direction: column;
     height:100%;
     gap:25px;
-    position: relative;
-    right:35px;
 
 }
 .categ-reg-ft > select{
@@ -417,29 +400,35 @@ body{
     padding:0 15px;
     background:rgb(230, 230, 230);
 }
-.cidade-uf{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction:row;
-    gap:10px;
-}
-.cidade-uf > input[type=text]{
+
+.config-input{
     border:none;
     font-size:20px;
     padding:0 15px;
 }
-.cidade{
-   
+.ajuste-form{
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.ajuste-inputs-2dg{
+    display:flex;
+    flex-direction: column;
+    justify-content: end;
+    gap:20px;
+    width:50px;
+    height:50%;
+    position:relative;
+    right:35px;
+    
 }
 .uf{
-    width:15%;
+    width:100%;
     text-align: center;
 }
 .ajuste-para-correcao-inputs{
     display:flex;
     align-items: center;
-    justify-content: center;
     flex-direction:row;
     gap:10px;
     width:100%;

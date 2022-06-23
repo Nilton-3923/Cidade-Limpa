@@ -410,41 +410,42 @@
                 <span id="mensagem" style="opacity:0;color:red;display:none">*Endereço invalido</span>
                 
                 <form action="../cadastro/objeto-cadastro-denuncia.php" method="post" enctype="multipart/form-data">
-                <div class="form-pt1">
-
-                    <!--Id do usuario-->
-                    <input type="hidden" name="txtIdUsuario" value="<?php echo $_SESSION['idUsuario']; ?>"> 
-                    <div class="ajuste-para-correcao-inputs">
-                        <!--Titulo denuncia-->
-                        <input type="text" name="txtTituloDenuncia" aria-describedby="inputGroupPrepend" required placeholder="Titúlo">
-                        <div class="correcao-inputs"></div>
+                <div class="ajuste-form">
+                    <div class="form-pt1">
+                        <!--Id do usuario-->
+                        <input type="hidden" name="txtIdUsuario" value="<?php echo $_SESSION['idUsuario']; ?>"> 
+                        <div class="ajuste-para-correcao-inputs">
+                            <!--Titulo denuncia-->
+                            <input type="text" name="txtTituloDenuncia" aria-describedby="inputGroupPrepend" required placeholder="Titúlo">
+                            <div class="correcao-inputs"></div>
+                        </div>
+                        
+                        <!--Categoria da denuncia-->
+                        <div class="ajuste-para-correcao-inputs">
+                            <input type="text" id="cep" name="txtCepDenuncia" aria-describedby="inputGroupPrepend" required placeholder="CEP" maxlength="9">   
+                            <div class="correcao-inputs"></div>
+                        </div>
+                        <div class="ajuste-para-correcao-inputs">
+                            <input class="rua config-input desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="rua" name="txtRuaDenuncia" placeholder="Rua" >
+                        </div>
+                        <div class="ajuste-para-correcao-inputs">
+                            <input class="desabilitado"type="text" id="bairro" aria-describedby="inputGroupPrepend" required name="txtBairroDenuncia" placeholder="Bairro">
+                            <div class="correcao-inputs"></div>
+                        </div>
+                        <!--Endereços-->
+                        <div class="ajuste-para-correcao-inputs">
+                            <input class="cidade config-input desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="cidade" name="txtCidadeDenuncia" placeholder="Cidade" >
+                        </div>
+                        <!--Descrição denuncia-->
+                        <!--Aqui tem que ser uma área para escrever-->
+                        <textarea class="desc" name="txtDenuncia" id="denuncia" cols="23" rows="5" placeholder="Descrição"></textarea>
+                        
+                        
                     </div>
-                    
-                    <!--Categoria da denuncia-->
-
-                    <div class="ajuste-para-correcao-inputs">
-                        <input type="text" id="cep" name="txtCepDenuncia" aria-describedby="inputGroupPrepend" required placeholder="CEP" maxlength="9">   
-                        <div class="correcao-inputs"></div>
+                    <div class="ajuste-inputs-2dg">
+                        <input class="num config-input" type="text" id="numero" aria-describedby="inputGroupPrepend" required name="txtNumeroDenuncia" placeholder="Nº">   
+                        <input class="uf config-input desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="uf" name="txtUfDenuncia" placeholder="UF" >
                     </div>
-                    <div class="rua-e-num">
-                        <input class="rua desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="rua" name="txtRuaDenuncia" placeholder="Rua" >
-                        <input class="num" type="text" id="numero" aria-describedby="inputGroupPrepend" required name="txtNumeroDenuncia" placeholder="Nº">   
-                    </div>
-                    <div class="ajuste-para-correcao-inputs">
-                        <input class="desabilitado"type="text" id="bairro" aria-describedby="inputGroupPrepend" required name="txtBairroDenuncia" placeholder="Bairro">
-                        <div class="correcao-inputs"></div>
-                    </div>
-                    <!--Endereços-->
-                    <div class="cidade-uf">
-                        <input class="cidade desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="cidade" name="txtCidadeDenuncia" placeholder="Cidade" >
-                        <input class="uf desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="uf" name="txtUfDenuncia" placeholder="UF" >
-                    </div>
-                    
-                    <!--Descrição denuncia-->
-                    <!--Aqui tem que ser uma área para escrever-->
-                    <textarea class="desc" name="txtDenuncia" id="denuncia" cols="23" rows="5" placeholder="Descrição"></textarea>
-                    <br>
-    
                 </div>
                 <!--Número da casa-->
                 <div class="categ-reg-ft">
