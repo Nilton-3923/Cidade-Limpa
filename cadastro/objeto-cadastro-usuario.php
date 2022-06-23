@@ -35,7 +35,7 @@
         $_SESSION['verificarCadastroSucesso'] = TRUE;
 
 
-        header("Location: ../index.php");
+        header("Location: ../novo-login.php");
 
 
     }

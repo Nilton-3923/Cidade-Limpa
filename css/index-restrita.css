@@ -608,6 +608,9 @@ main {
   color: inherit;
   text-decoration: none;
 }
+#container:hover{
+    cursor: pointer;
+}
 
 .blog-card {
   display: flex;

@@ -136,23 +136,23 @@
             </div>
             <!------------NOTIFICAÇÃO DO ADM------------------------------------------>
             <div class="notificacao" onClick="abrirModal()">
-                <?php
-                    $listar = $perfil->verificarAdm();
-                    foreach($listar as $row){ 
-                        if (empty($row[0])){
-                            $row[0] = 0;
-                        }
-                ?>
-                    
-                    <div class="mensagem" onClick="">
-                        <img src="../imagens/Talk.png" class="icon-mensagem">
+                <div class="mensagem">
+                    <img src="../imagens/Talk.png" class="icon-mensagem">
+                
+                    <?php
+                        $listar = $perfil->verificarAdm();
+                        foreach($listar as $row){ 
+                            if (empty($row[0])){
+                                $row[0] = 0;
+                            }
+                    ?>
                         <div class="circulo-notificacao">
                             <?php echo $row[0]; ?>
                         </div>
-                    </div>
-                <?php  
-                    } 
-                ?>
+                    <?php  
+                        } 
+                    ?>
+                </div>
             </div>
             <!------------------------------------------------------>
             <div id="abre-modal" class="navbar-logado">
