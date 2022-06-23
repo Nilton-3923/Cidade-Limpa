@@ -1,0 +1,60 @@
+.select-normal{
+    width: 300px;
+}
+.table {
+    width: 98%;
+    margin: auto;
+}
+
+.tr{
+}
+
+.table:hover{
+    cursor: pointer;
+}
+.limitar-btn{
+    transition:background-color .3s;
+    text-decoration: none;
+    color:rgb(0, 71, 24);
+    padding:3px;
+    cursor:pointer;
+    margin: 3px;
+}
+.limitar-btn:hover{
+    background-color:rgba(255,255,255,0.4);
+}
+.pdf{
+    transition:background-color .3s;
+    text-decoration: none;
+    color:rgb(0, 71, 24);
+    padding:5px;
+    cursor:pointer;
+    margin: auto;
+    border: 1px solid black;
+}
+.pdf:hover{
+    border: 2px solid black;
+    color:rgb(0, 71, 24);
+    background-color:rgba(255,255,255,0.4);
+}
+.btn{
+    margin: 5px;
+}
+h1{
+    text-align: center;
+}
+form{
+    margin: 5px;
+}
+.deletar{
+    background-color: red;
+    padding: 3px;
+    color: white;
+    border-radius: 3px;
+}
+.alterar{
+    background-color: lightseagreen;
+    padding: 3px;
+    color: white;
+    border-radius: 3px;  
+}
