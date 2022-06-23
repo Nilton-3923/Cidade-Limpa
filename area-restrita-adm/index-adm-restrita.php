@@ -13,6 +13,7 @@
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" href="../css/index-adm.css">
 	<link rel="stylesheet" href="../css/adm-formatacao.css">
+	<link rel="stylesheet" href="../css/reset.css">
 
 	<title>Dashboard - Cidade Limpa</title>
     <link rel="shortcut icon" href="../imagens/reciclagem.png" type="image/x-icon">
@@ -236,7 +237,7 @@
 					$usersTotal = $adm->contarUsers();
 					
 				?>
-				<h1 class="title">Área do Adm</h1>
+				<h1 class="title">BEM VINDO ADMINISTRADOR</h1>
 				<ul class="breadcrumbs">
 					<li><a href="#">Home</a></li>
 					<li class="divider">/</li>

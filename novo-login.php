@@ -20,17 +20,19 @@
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/navbar.css">
     
+    
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-      rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    rel="stylesheet"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
       rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/toast.css">
+      />
+      <link rel="stylesheet" href="./css/toast.css">
+      <link rel="stylesheet" href="../css/reset.css">
 
     <title>Login</title>
     <link rel="shortcut icon" href="imagens/reciclagem.png" type="image/x-icon">
@@ -191,7 +193,7 @@
         </div>
         <div class="form-container sign-in-container">
             <form action="session/session-usuario.php" method="post">
-                <h1 style="margin-bottom:45px;">Login</h1>
+                <h1 style="margin-bottom:45px;">LOGIN</h1>
             
                 <input placeholder="Email" autocomplete="off" id="login" aria-describedby="inputGroupPrepend" required type="text" name="emailUsuario">
                 <input placeholder="Senha" id="senhaLogin" aria-describedby="inputGroupPrepend" required type="password" name="senhaUsuario">

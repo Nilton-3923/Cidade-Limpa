@@ -26,6 +26,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/reset.css">
+
     <title>Cidade Limpa</title>
     <link rel="shortcut icon" href="imagens/reciclagem.png" type="image/x-icon">
 </head>
@@ -54,16 +56,12 @@
                 <h1>Legenda</h1>
                 <div style="background:#fff;" class="-div-"></div>
                 <div class="div-legenda">
-                    <img class="marcador"src="./imagens/marcador.png">
-                    <p>- marcador padrão</p>
+                    <img class="marcador"src="https://www.comdominioadm.com.br/wp-content/uploads/2015/10/marcador-mapa2.png">
+                    <p>- Marcador denúncias</p>
                 </div>
                 <div class="div-legenda">
-                    <img class="marcador"src="./imagens/marcador.png">
-                    <p>- marcador padrão</p>
-                </div>
-                <div class="div-legenda">
-                    <img class="marcador"src="./imagens/marcador.png">
-                    <p>- marcador padrão</p>
+                    <img id="marcador-bandeira" class="marcador"src="https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png">
+                    <p>- Marcador ecopontos</p>
                 </div>
             </div>
         </div>

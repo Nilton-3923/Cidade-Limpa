@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="../css/index-adm.css">
     <link rel="stylesheet" href="../css/adm-formatacao.css">
     <link rel="stylesheet" href="../css/cadastro-ecoponto.css">
+    <link rel="stylesheet" href="../css/reset.css">
+
 
 	<title>Categoria - Cidade Limpa</title>
     <link rel="shortcut icon" href="../imagens/reciclagem.png" type="image/x-icon">

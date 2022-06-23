@@ -48,6 +48,8 @@
     <link rel="stylesheet" href="../css/cadastro-ecoponto2.css">
     <link rel="stylesheet" href="../css/toast.css">
     <link rel="stylesheet" href="../css/update-denuncia-modal.css">
+    <link rel="stylesheet" href="../css/reset.css">
+
     
 	<title>Ecoponto - Cidade Limpa</title>
     <link rel="shortcut icon" href="../imagens/reciclagem.png" type="image/x-icon">

@@ -13,7 +13,7 @@
     background:#424242;
 }
 :root{
-    --cor-legenda:blue;
+    --cor-legenda:#0db466;
 }
 body{
     background-color:black!important;
@@ -144,6 +144,10 @@ body{
 }
 .div-legenda > img{
     width:30px;
+}
+
+#marcador-bandeira{
+   width: 20px;
 }
 .div-legenda > p{
     color:#fff;
