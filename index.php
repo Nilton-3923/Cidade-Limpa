@@ -5,6 +5,16 @@
     require_once("classe/Denuncia.php");
     require_once("classe/Ecoponto.php");
 
+    //Verificando se a SESSION está vazia, então ele pré determina um valor 
+    if(empty($_SESSION['coordenada'])){
+        $coordenada = "lat:-23.5489,lng:-46.6388";   
+        $zoom = 12;
+    }
+    //Se a SESSION não estiver vazia ele dá os valores da pesquisa 
+    else {
+        $coordenada = $_SESSION['coordenada'];
+        $zoom = 18;
+    }
 
 ?>
 
@@ -30,7 +40,7 @@
         <div class="txt-apresentacao">
             <span>
                 <h1>O que é o Cidade Limpa?</h1>
-                <p>é um projeto criado para facilitar a denuncia de descarte irregular de lixo nas ruas. se você encontrar lixo acumulado perto de sua casa, basta tirar uma foto e fazer uma denuncia no nosso site, a denuncia será enviada para o governo que irá cuidar da limpeza do local.</p>
+                <p>É um projeto criado para facilitar a denuncia de descarte irregular de lixo nas ruas. se você encontrar lixo acumulado perto de sua casa, basta tirar uma foto e fazer uma denuncia no nosso site, a denuncia será enviada para o governo que irá cuidar da limpeza do local.</p>
             </span>
         </div>
     </div>
@@ -66,10 +76,12 @@
         </script>
         <div class="map-nav">
             <div class="ajuste-pesquisa">
-                <div class="pesquisa">
-                    <input type="text" placeholder="Localizar Denuncias">
-                    <button>🔍</button>
-                </div>
+                <form action="./objetos/objeto-pesquisar-mapa.php" method="post">
+                    <div class="pesquisa">
+                        <input type="text" name="pesquisa" placeholder="Localizar Denuncias">
+                        <button type="submit">🔍</button>
+                    </div>
+                </form>
             </div>
         </div>
         <!--Adicionando o maps-->
@@ -82,8 +94,8 @@
         function initMap(){
             // Opções para o mapa
             var options = {
-                zoom: 12,
-                center:{lat:-23.5489,lng:-46.6388},
+                zoom: <?php echo $zoom; ?>,
+                center:{<?php echo $coordenada; ?>},
                 styles:[{
                             "featureType": "poi",
                             "stylers": [{
