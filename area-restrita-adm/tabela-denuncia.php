@@ -125,10 +125,10 @@
 
         <div id="Nao-Resolvida" style="display: none">
             <h2>Todas as denúncias que não foram resolvidas.</h2>
-
-            <input type="checkbox" id="select-all">
-            <label>Selecionar a porra toda</label>
-            
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="select-all" >
+                <label>Selecionar todas as denúncias</label>
+            </div>
             <form action="../objetos/objeto-alterar-verificacao.php" method="POST">
                 <input type="submit" value="Verificar denúncia">
                 <table class="table table-striped table-hover">
