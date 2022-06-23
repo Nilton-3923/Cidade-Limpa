@@ -82,21 +82,53 @@
             return $user;
         }
 
-        //tabela Denuncia
-        public function tabelaDenuncia($limitar){
+        //TABELA DENUNCIA GERAL
+        public function tabelaDenuncia(){
             $conexao = Conexao::pegarConexao();
 
             $query = "SELECT * FROM tbDenuncia
-                      INNER JOIN tbUsuario ON tbDenuncia.fk_idUsuario = tbUsuario.pk_usuario
-                      INNER JOIN tbCategoria ON tbDenuncia.fk_idCategoria = tbCategoria.pk_idCategoria
-
-                      LIMIT 0,$limitar";
+                        INNER JOIN tbUsuario ON tbDenuncia.fk_idUsuario = tbUsuario.pk_usuario
+                            INNER JOIN tbCategoria ON tbDenuncia.fk_idCategoria = tbCategoria.pk_idCategoria";
 
             $query = $conexao->query($query);
 
             $query = $query->fetchAll();
             return $query;
         }
+
+        //TABELA DENUNCIA NÃO RESOLVIDA
+        public function tabelaDenunciaNaoResolvida(){
+            $conexao = Conexao::pegarConexao();
+
+            $query = "SELECT * FROM tbDenuncia
+                        INNER JOIN tbUsuario ON tbDenuncia.fk_idUsuario = tbUsuario.pk_usuario
+                            INNER JOIN tbCategoria ON tbDenuncia.fk_idCategoria = tbCategoria.pk_idCategoria
+                                WHERE statusDenuncia LIKE 'Não Resolvida'";
+
+            $query = $conexao->query($query);
+
+            $query = $query->fetchAll();
+            return $query;
+        }
+
+
+        //TABELA DENUNCIA RESOLVIDA
+        public function tabelaDenunciaResolvida(){
+            $conexao = Conexao::pegarConexao();
+
+            $query = "SELECT * FROM tbDenuncia
+                        INNER JOIN tbUsuario ON tbDenuncia.fk_idUsuario = tbUsuario.pk_usuario
+                            INNER JOIN tbCategoria ON tbDenuncia.fk_idCategoria = tbCategoria.pk_idCategoria
+                                WHERE statusDenuncia LIKE 'Resolvida'";
+
+            $query = $conexao->query($query);
+
+            $query = $query->fetchAll();
+            return $query;
+        }
+
+
+
 
         //Tabela Usuario
         public function tabelaUsuario($limitar){
@@ -146,6 +178,10 @@
             $query = $query->fetchAll();
             return $query;
         }
+
+        
+
+
         public function denunciaRegiao($regiao){
             $conexao = Conexao::pegarConexao();
 
@@ -211,6 +247,19 @@
                 return $coordenada; 
             }
     
+        }
+
+        public function verificarDenunciAdm($idDenuncia){
+            $conexao = Conexao::pegarConexao();
+
+            $verficarDenuncia = $conexao->prepare("UPDATE tbDenuncia 
+                                                    SET
+                                                    verificacaoAdm = 'TRUE'
+                                                        WHERE pk_idDenuncia = '$idDenuncia'");
+
+            $verficarDenuncia->execute();
+
+
         }
 
     }

@@ -1,6 +1,10 @@
 <?php
     session_start();
+    require_once("../classe/Adm.php");
     include_once("../session/valida-sentinela-adm.php");
+
+    $adm = new Adm();
+
 
 ?>
 <!DOCTYPE html>
@@ -72,79 +76,126 @@
 					</ul>
 				</div>
 			</nav>
-        <?php 
 
-            require_once("../classe/Adm.php");
-            $adm = new Adm();
-            $denuncias = $adm->denunciasNaoResolvidas();
-            foreach($denuncias as $den){}
-            if(!isset($_POST['limite']) || empty($_POST['limite'])){
-                $limitar=$den[0];
-            }
-            else{
-                $limitar = $_POST['limite'];
-            }
-            $tables = $adm->tabelaDenuncia($limitar);
-        ?>
             
         <div>
             <h1>TABELA DE DENÚNCIAS</h1>
             <!-- Form Para Limitar Denúncias -->
-            <form action="" method="post">
-                <select name="limite" id="" class="select-normal form-select form-select-sm"  aria-label=".form-select-sm example">
-                    <option selected value="<?php echo $den[0]; ?>">Limitar Tabela</option>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="<?php echo $den[0]; ?>">Tudo</option>
+                <select name="limite" id="select" class="select-normal form-select form-select-sm"  aria-label=".form-select-sm example" onChange="selecionados()">
+                    <option value="0">Vizualizar todas as denúncias</option>
+                    <option value="1">Vizualizar denúncias não resolvidas</option>
+                    <option value="2">Vizualizar denúncias resolvidas</option>
                 </select>
-                <input type="submit" class="btn btn-secondary" value="Limitar">
                 <a href="pdfs/pdf-table-denuncia.php" class="btn btn-secondary">Vizualizar Pdf</a>
                 
-            </form>
             
         </div>
-        
-        <table class="table table-striped table-hover">
-            <tr>
-                <th>id</th>
-                <th>Titulo</th>
-                <th>Data</th>
-                <th>Uf</th>
-                <th>Bairro</th>
-                <th>Cep</th>
-                <th>Rua</th>
-                <th>Cidade</th>
-                <th>Zona</th>
-                <th>Categoria</th>
-                <th>Usuario</th>
 
-            </tr>
-                <?php 
-                    foreach($tables as $dados){
-                ?>
+        <div id="tudo">
+            <h2>Todas as denúncias que foram feitas.</h2>
+            <table class="table table-striped table-hover">
                 <tr>
-                    <td><?php echo $dados['pk_idDenuncia']; ?></td>
-                    <td><?php echo $dados['tituloDenuncia']; ?></td>
-                    <td><?php echo $dados['dataDenuncia']; ?></td>
-                    <td><?php echo $dados['ufDenuncia']; ?></td>
-                    <td><?php echo $dados['bairroDenuncia']; ?></td>
-                    <td><?php echo $dados['cepDenuncia']; ?></td>
-                    <td><?php echo $dados['ruaDenuncia']; ?></td>
-                    <td><?php echo $dados['cidadeDenuncia']; ?></td>
-                    <td><?php echo $dados['zonaDenuncia']; ?></td>
-                    <td><?php echo $dados['campoCategoria']; ?></td>
-                    <td><?php echo $dados['emailUsuario']; ?></td>
+                    <th>Código</th>
+                        <th>Categoria</th>
+                        <th>Data</th>
+                        <th>Rua</th>
+                        <th>Bairro</th>
+                        <th>Usuario</th>
                 </tr>
-                <?php
-                }
-            ?>
+                    <?php
+                        $tables = $adm->tabelaDenuncia();
+                        foreach($tables as $dados){
+                    ?>
+                    <tr>
+                    <td>
+                        <?php echo $dados['pk_idDenuncia']; ?></td>
+                        <td><?php echo $dados['campoCategoria']; ?></td>
+                        <td><?php echo $dados['dataDenuncia']; ?></td>
+                        <td><?php echo $dados['ruaDenuncia']; ?></td>
+                        <td><?php echo $dados['bairroDenuncia']; ?></td>
+                        <td><?php echo $dados['emailUsuario']; ?></td>
+                    </tr>
+                    <?php
+                    }
+                    ?>
+            </table>
+        </div>
 
-        </table>
+        <div id="Nao-Resolvida" style="display: none">
+            <h2>Todas as denúncias que não foram resolvidas.</h2>
+
+            <form action="../objetos/objeto-alterar-verificacao.php" method="POST">
+                <input type="submit" value="Verificar denúncia">
+                <table class="table table-striped table-hover">
+                    <tr>
+                        <th>Código</th>
+                        <th>Categoria</th>
+                        <th>Data</th>
+                        <th>Rua</th>
+                        <th>Bairro</th>
+                        <th>Usuario</th>
+                        <th>Selecionar</th>
+                    </tr>
+                        <?php
+                            $tables = $adm->tabelaDenunciaNaoResolvida();
+                            foreach($tables as $dados){
+                        ?>
+                        <tr>
+                            <td><?php echo $dados['pk_idDenuncia']; ?></td>
+                            <td><?php echo $dados['campoCategoria']; ?></td>
+                            <td><?php echo $dados['dataDenuncia']; ?></td>
+                            <td><?php echo $dados['ruaDenuncia']; ?></td>
+                            <td><?php echo $dados['bairroDenuncia']; ?></td>
+                            <td><?php echo $dados['emailUsuario']; ?></td>
+                            <td>
+            
+                                    <input  type="checkbox"
+                                            name="id[]"
+                                            value="<?php echo $dados['pk_idDenuncia']; ?>"
+                                            style="width:50px; height:50px">
+                                        </td>
+                        </tr>
+                        <?php
+                        }
+                        ?>
+                </table>
+            </form>
+        </div>
+
+        <div id="resolvida" style="display: none">
+            <h2>Todas as denúncias que foram resolvidas.</h2>
+
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>Código</th>
+                    <th>Categoria</th>
+                    <th>Data</th>
+                    <th>Rua</th>
+                    <th>Bairro</th>
+                    <th>Usuario</th>
+                </tr>
+                    <?php
+                        $tables = $adm->tabelaDenunciaResolvida();
+                        foreach($tables as $dados){
+                    ?>
+                            <tr>
+                            <td><?php echo $dados['pk_idDenuncia']; ?></td>
+                            <td><?php echo $dados['campoCategoria']; ?></td>
+                            <td><?php echo $dados['dataDenuncia']; ?></td>
+                            <td><?php echo $dados['ruaDenuncia']; ?></td>
+                            <td><?php echo $dados['bairroDenuncia']; ?></td>
+                            <td><?php echo $dados['emailUsuario']; ?></td>
+                            </tr>
+                    <?php
+                        }
+                    ?>
+            </table>
+        </div>
 
         
         
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 		<script src="../javascript/index-adm.js"></script>
+        <script src="../javascript/selecionar-denuncia.js"></script>
     </body>
 </html>

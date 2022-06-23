@@ -270,12 +270,14 @@
                         <td><?php echo $dados4['zonaDenuncia']; ?></td>
                         <td><?php echo $dados4['campoCategoria']; ?></td>
                         <td><?php echo $dados4['emailUsuario']; ?></td>
+                        
                     </tr>
                     <?php
                     }
                 ?>
 
             </table>
+            
         <?php
         }else if($_POST['txtRegiao'] == "todas"){
             unset($_POST['txtRegiao']);
