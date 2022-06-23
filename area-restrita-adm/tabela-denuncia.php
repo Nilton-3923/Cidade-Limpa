@@ -124,6 +124,9 @@
         <div id="Nao-Resolvida" style="display: none">
             <h2>Todas as denúncias que não foram resolvidas.</h2>
 
+            <input type="checkbox" id="select-all">
+            <label>Selecionar a porra toda</label>
+            
             <form action="../objetos/objeto-alterar-verificacao.php" method="POST">
                 <input type="submit" value="Verificar denúncia">
                 <table class="table table-striped table-hover">
@@ -152,7 +155,9 @@
                                     <input  type="checkbox"
                                             name="id[]"
                                             value="<?php echo $dados['pk_idDenuncia']; ?>"
-                                            style="width:50px; height:50px">
+                                            style="width:50px; height:50px"
+                                            id="checkbox"
+                                            >
                                         </td>
                         </tr>
                         <?php

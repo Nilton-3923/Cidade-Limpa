@@ -4,6 +4,7 @@ const tabelaResolvida = document.getElementById('resolvida');
 
 
 const select = document.getElementById('select');
+
 function selecionados(){
      let valor  = select.options[select.selectedIndex].value;;
 
@@ -21,6 +22,13 @@ function selecionados(){
         tabelaResolvida.style.display = "block"
         tabelaTudo.style.display = "none"
         tabelaNaoResolvida.style.display = "none"
+    }
+}
+
+document.getElementById('select-all').onclick = function() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var checkbox of checkboxes) {
+        checkbox.checked = this.checked;
     }
 }
 
