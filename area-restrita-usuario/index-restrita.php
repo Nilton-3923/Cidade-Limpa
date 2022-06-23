@@ -168,7 +168,6 @@
             <div style="top:-170px;" id="navbarModal" class="navbar-modal">
                 <a href="../session/logout-usuario.php">Sair</a>
                 <a onClick="modalAlterarConta()"class="btn-alterar-conta">Alterar conta</a>
-                <a onClick="ApareceModalAlterarDenuncia()"class="btn-alterar-conta">Alterar denuncias</a>
             </div>
             
             
@@ -385,6 +384,8 @@
                     </form>
                 </div>
             </div>
+
+            
             
         <?php } ?>
         <!-- MODAL PARA CONFIMAR EM DELETAR CONTA ***************************************************-->
@@ -477,7 +478,7 @@
                             
                         <div style="width:100%;"class="form-input">
                             <div class="preview">
-                                <img id="file-ip-1-preview-2">
+                                <img src="../imagens/sair-adm.png"class="img-preview" id="file-ip-1-preview-2">
                                 <label for="file-ip-1-2">Escolher Imagem</label>
                                 <input type="file" id="file-ip-1-2" accept="image/*" name="fotoDenuncia" onchange="showPreview2(event);">
                             </div>

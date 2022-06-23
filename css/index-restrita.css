@@ -348,7 +348,7 @@ body{
     background-color: rgb(172, 39, 5);
     color:white;
     padding:5px;
-    font-size:1vw;
+    font-size:25px;
     cursor:pointer;
     border-radius:5px;
     border:none;
@@ -358,13 +358,12 @@ body{
     background-color: rgb(219, 50, 8);
 }
 .titulo-criar-denuncia{
-    font-size: 2.5vw;
+    font-size: 50px;
 }
 .criar-denuncia{
     background-color:white;
-    outline:solid 5px #064018;
-    width:700px;
-    height:500px;
+    width:40%;
+    height:70%;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -373,7 +372,7 @@ body{
     position:relative;
 }
 .desabilitado{
-    background-color:rgb(177, 177, 177);
+    background-color:rgba(0, 0, 0, 0.3)!important;
 }
 .criar-denuncia > form{
     display:flex;
@@ -392,17 +391,16 @@ body{
 }
 .rua-e-num > input[type=text]{
     border:none;
-    font-size:1.1vw;
+    font-size:20px;
     padding:0 15px;
-    border-radius:5px;
-    outline:solid 2px #064018;
 }
 .rua{
-    width:34%;
+    
 }
 .num{
-    width:10%;
+    width:15%;
     text-align: center;
+    background:rgb(230, 230, 230);
 }
 .categ-reg-ft{
     display:flex;
@@ -415,10 +413,9 @@ body{
 }
 .categ-reg-ft > select{
     border:none;
-    font-size:1.1vw;
+    font-size:20px;
     padding:0 15px;
-    border-radius:5px;
-    outline:solid 2px #064018;
+    background:rgb(230, 230, 230);
 }
 .cidade-uf{
     display:flex;
@@ -429,16 +426,14 @@ body{
 }
 .cidade-uf > input[type=text]{
     border:none;
-    font-size:1.1vw;
+    font-size:20px;
     padding:0 15px;
-    border-radius:5px;
-    outline:solid 2px #064018;
 }
 .cidade{
-    width:34%;
+   
 }
 .uf{
-    width:10%;
+    width:15%;
     text-align: center;
 }
 .ajuste-para-correcao-inputs{
@@ -452,11 +447,10 @@ body{
 }
 .ajuste-para-correcao-inputs > input[type=text]{
     border:none;
-    font-size:1.1vw;
+    font-size:20px;
     padding:0 15px;
-    border-radius:5px;
-    outline:solid 2px #064018;
-    width:30%;
+    
+    background:rgb(230, 230, 230);
 }
 .correcao-inputs{
     padding:0 15px;
@@ -471,11 +465,10 @@ body{
 }
 .desc{
     border:none;
-    font-size:1.1vw;
+    font-size:20px;
     padding:0 15px;
-    border-radius:5px;
-    outline:solid 2px #064018;
     resize:none;
+    background:rgb(230, 230, 230);
 }
 .alteracao-btn-criar-denuncia{
     background-color:rgb(182, 182, 182);
@@ -536,7 +529,7 @@ body{
     gap:15px;
 }
 .modal-alterar-denuncia > form > input{
-    font-size: 1.2vw;
+    font-size: 20px;
 
 }
 .movimento-seta{
@@ -552,7 +545,7 @@ body{
 .btn-basico{
     color:white;
     padding:5px;
-    font-size:1.1vw;
+    font-size:20px;
     border-radius:20px;
     cursor:pointer;
     padding:2px 10px;
@@ -566,7 +559,7 @@ body{
     background-color:red;
     color:white;
     padding:5px;
-    font-size:1.1vw;
+    font-size:20px;
     border-radius:20px;
     cursor:pointer;
     padding:2px 10px;
@@ -574,6 +567,12 @@ body{
 }
 .btn-del-denuncia:hover{
     opacity:0.8;
+}
+.img-preview{
+    width:200px;
+    height:150px;
+    background:rgb(230, 230, 230);
+    display:block!important;
 }
 
 /*CSS DO TEMPLATE DE CARD*/
@@ -721,4 +720,39 @@ main {
         height:90vh;
         border-radius:0;
     }
+    
+    .criar-denuncia{
+        width:100%;
+        height:100%;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+    }
+    .criar-denuncia > form{
+        flex-direction: column; 
+        right:0;
+    }
+    .ajuste-para-correcao-inputs > input[type=text]{
+        font-size:15px;
+    }
+    .rua-e-num > input[type=text]{
+        font-size:15px;
+    }
+    .cidade-uf > input[type=text]{
+        font-size:15px;
+    }
+    .desc{
+        font-size:15px;
+        width:80%;
+    }
+    .categ-reg-ft{
+        right:0;
+        align-items: center;
+        justify-content:center;
+    }
+    .categ-reg-ft > select{
+        font-size: 15px;
+        width:80%;
+    }
+
 }
