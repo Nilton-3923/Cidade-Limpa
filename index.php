@@ -34,12 +34,21 @@
 <body>
     <?php include 'includes/navbar.php'?>
     <div class="bem-vindo">
-        <img src="./imagens/logo.png">
-        <h1>BEM-VINDO AO CIDADE LIMPA!</h1>
+        <img id="imgBemVindo"src="./imagens/logo.png">
+        <h1 id="h1">BEM-VINDO AO CIDADE LIMPA!</h1>
     </div>
+    <script>
+        window.addEventListener('scroll',()=>{
+            document.getElementById('imgBemVindo').style.transform="translateY(-"+ window.scrollY * 0.5 +"px)";
+            document.getElementById('h1').style.transform="translateY(-"+ window.scrollY * 0.5 +"px)";
+
+            document.getElementById('imgBemVindo').style.opacity= 1 - window.scrollY * 0.002;
+            document.getElementById('h1').style.opacity= 1 - window.scrollY * 0.002;    
+        })
+    </script>
     <div id="sobre" class="apresentacao-cidade-limpa">
-        <img class="img-apresentacao" src="./imagens/img-apresentacao.png">
-        <div class="txt-apresentacao">
+        <img class="img-apresentacao scrollFade" src="./imagens/img-apresentacao.png">
+        <div class="txt-apresentacao scrollFade2">
             <span>
                 <h1>O que é o Cidade Limpa?</h1>
                 <p>Cidade Limpa é um projeto criado para auxiliar na busca de ecopontos e ampliar as formas de denúnciar descarte irregular de lixo.</p>
@@ -85,6 +94,68 @@
         </div>
         <!--Adicionando o maps-->
         <div id="map"></div>
+        <script>
+            // EFEITINHO DO SCROLL PEGUEI DA INTERNET PORQUE NÃO ENTENDI PORRA NENHUMA
+
+            var fadeElements = document.getElementsByClassName('scrollFade');
+            var fadeElements2 = document.getElementsByClassName('scrollFade2');
+
+            function scrollFade() {
+                var viewportBottom = window.scrollY + window.innerHeight;
+
+                for (var index = 0; index < fadeElements.length; index++) {
+                    var element = fadeElements[index];
+                    var rect = element.getBoundingClientRect();
+
+                    var elementFourth = rect.height/4;
+                    var fadeInPoint = window.innerHeight - elementFourth;
+                    var fadeOutPoint = -(rect.height/2);
+
+                    if (rect.top <= fadeInPoint) {
+                        element.classList.add('scrollFade--visible');
+                        element.classList.add('scrollFade--animate');
+                        element.classList.remove('scrollFade--hidden');
+                    } else {
+                        element.classList.remove('scrollFade--visible');
+                        element.classList.add('scrollFade--hidden');
+                    }
+
+                    if (rect.top <= fadeOutPoint) {
+                        element.classList.remove('scrollFade--visible');
+                        element.classList.add('scrollFade--hidden');
+                    }
+                }
+
+                for (var index2 = 0; index2 < fadeElements2.length; index2++) {
+                    var element2 = fadeElements2[index2];
+                    var rect2 = element2.getBoundingClientRect();
+
+                    var elementFourth2 = rect2.height/4;
+                    var fadeInPoint2 = window.innerHeight - elementFourth2;
+                    var fadeOutPoint2 = -(rect2.height/2);
+
+                    if (rect2.top <= fadeInPoint2) {
+                        element2.classList.add('scrollFade2--visible');
+                        element2.classList.add('scrollFade2--animate');
+                        element2.classList.remove('scrollFade2--hidden');
+                    } else {
+                        element2.classList.remove('scrollFade2--visible');
+                        element2.classList.add('scrollFade2--hidden');
+                    }
+
+                    if (rect2.top <= fadeOutPoint2) {
+                        element2.classList.remove('scrollFade2--visible');
+                        element2.classList.add('scrollFade2--hidden');
+                    }
+                }
+            }
+
+            document.addEventListener('scroll', scrollFade);
+            window.addEventListener('resize', scrollFade);
+            document.addEventListener('DOMContentLoaded', function() {
+                scrollFade();
+            });
+        </script>
     </section>
 
 

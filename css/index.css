@@ -200,6 +200,40 @@ body{
     bottom:5px;
     cursor: pointer;
 }
+/*EFEITINHO DE SCROLL*/
+
+.scrollFade {
+    opacity: 1;
+    pointer-events: all;
+}
+.scrollFade--hidden {
+    transform:translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+.scrollFade--visible {
+    transform:translateX(0%);
+    opacity: 1;
+    pointer-events: all;
+}
+.scrollFade2--hidden {
+    transform:translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+}
+.scrollFade2--visible {
+    transform:translateX(0%);
+    opacity: 1;
+    pointer-events: all;
+}
+.scrollFade2--animate {
+    transition: all 0.4s ease-in-out;
+}
+.scrollFade--animate {
+    transition: all 0.5s ease-in-out;
+}
+
+/*EFEITINHO DE SCROLL*/
 
 /*------------------------------------------------------*/
 

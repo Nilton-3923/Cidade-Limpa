@@ -8,9 +8,9 @@ nav{
     background-color:var(--cor-navbar);
     height:65px;
     width:100vw;
-    position:absolute;
+    position:fixed;
     top:0;
-    z-index: 999;
+    z-index: 9999;
 }
 .link-login{
     color:white;
