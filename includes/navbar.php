@@ -28,7 +28,8 @@
                     <div id="three"class="three"></div>
                 </div>
                 <div class="ajuste-link-login">
-                    <a class="link-login" href="novo-login.php">Login</a>
+                    <!------ARRUMAR ESSA PARTE NO CSS-------->
+                    <a class="link-login" href="novo-login.php">Login/Cadastre-se</a>
                 </div>
             </div>
             <div class="navbar-logado">
@@ -44,7 +45,8 @@
         <a class="mobile-links"id="nav-links"href="index.php">HOME</a>
         <a class="mobile-links"id="nav-links1"href="index.php#sobre">SOBRE</a>
         <a class="mobile-links"id="nav-links2"href="index.php#map">MAPA</a>
-        <a class="mobile-links"id="mobilelinks3"href="login-novo-novo.php">Login</a>
+        <!------ARRUMAR ESSA PARTE NO CSS-------->
+        <a class="mobile-links"id="mobilelinks3"href="login-novo-novo.php">Login/Cadastre-se</a>
     </div>
     <script>
         window.addEventListener('click',()=>{

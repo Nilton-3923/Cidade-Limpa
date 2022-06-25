@@ -47,7 +47,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class='bx bxs-spreadsheet icon' ></i> Categoria <i class='bx bx-chevron-right icon-right' ></i></a>
+                            <a href="#"><i class='bx bxs-spreadsheet icon' ></i> Categoria de denúncias <i class='bx bx-chevron-right icon-right' ></i></a>
                             <ul class="side-dropdown">
                                 <li><a href="cadastro-categoria.php">Cadastrar Categoria</a></li>
                             </ul>
@@ -100,7 +100,7 @@
                 </select>
             </form>
             <input type="submit" class="btn btn-secondary" value="Limitar">
-            <a href="pdfs/pdf-table-ecoponto.php" class="btn btn-secondary">Vizualizar Pdf</a>
+            <a href="pdfs/pdf-table-ecoponto.php" class="btn btn-secondary" target="_blank">Vizualizar Pdf</a>
             
         </div>
 

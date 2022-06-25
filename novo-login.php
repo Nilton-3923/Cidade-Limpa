@@ -175,7 +175,7 @@
                 
                 <div class="form-input">
                     <div class="preview">
-                        <img src="./imagens/sair-adm.png" style="display:block;width:200px;height:200px;background-color:#c4c4c4;" id="file-ip-1-preview">
+                        <img class="ajuste-img-preview" id="file-ip-1-preview">
                         <label for="file-ip-1">Escolher Imagem</label>
                         <input type="file" id="file-ip-1" accept="image/*" name="fotoUsuario" onchange="showPreview(event);"><!--COLOCAR O "NAME" DESSE INPUT PRA COMEÇAR A FUNCIONAR-->
                     </div>

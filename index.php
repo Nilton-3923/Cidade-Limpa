@@ -13,7 +13,7 @@
     //Se a SESSION não estiver vazia ele dá os valores da pesquisa 
     else {
         $coordenada = $_SESSION['coordenada'];
-        $zoom = 18;
+        $zoom = 17;
     }
 
 ?>
@@ -36,6 +36,8 @@
     <div id="home"class="bem-vindo">
         <img id="imgBemVindo"src="./imagens/logo.png">
         <h1 id="h1">BEM-VINDO AO CIDADE LIMPA!</h1>
+        <!-------ARRUMAR ESSE TEXTO COM O CSS--------->
+        <h2>Auxilindo a manter São Paulo uma cidade melhor.</h2>
     </div>
     <script>
         window.addEventListener('scroll',()=>{
@@ -67,11 +69,11 @@
                 <div style="background:#fff;" class="-div-"></div>
                 <div class="div-legenda">
                     <img class="marcador"src="https://www.comdominioadm.com.br/wp-content/uploads/2015/10/marcador-mapa2.png">
-                    <p>- Marcador denúncias</p>
+                    <p> - Marcador denúncias</p>
                 </div>
                 <div class="div-legenda">
                     <img id="marcador-bandeira" class="marcador"src="https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png">
-                    <p>- Marcador ecopontos</p>
+                    <p> - Marcador ecopontos</p>
                 </div>
             </div>
         </div>
@@ -84,7 +86,11 @@
         </script>
         <div id="navbar-do-mapa"class="map-nav">
             <img class="logo" src="./imagens/logo.png">
-            <h1 style="color:white;margin-left:25px;">DIGITE O NOME DE UMA RUA DE SÃO PAULO PARA LOCALIZAR AS DENUNCIAS</h1>
+<<<<<<< HEAD
+            <h1 style="color:white;margin-left:25px;">LOCALIZE O ECOPONTO MAIS PRÓXIMO DA SUA LOCALIZAÇÃO E VEJA OS PONTOS DE DENÚNCIA</h1>
+=======
+            <h1 class="h1-mapa">DIGITE O NOME DE UMA RUA DE SÃO PAULO PARA LOCALIZAR AS DENUNCIAS</h1>
+>>>>>>> f400fc5e1f5223d272635af2ca517f4ea0489b25
             <div class="ajuste-pesquisa">
                 <form action="./objetos/objeto-pesquisar-mapa.php?localizacao=index" method="post">
                     <div class="pesquisa">

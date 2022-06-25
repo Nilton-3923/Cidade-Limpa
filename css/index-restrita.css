@@ -33,7 +33,14 @@ body{
 #map{
     width: 50vw;
     height: 70vh;
-    border-radius:25px;
+    border-radius:0 0 25px 25px;
+}
+.pesquisa-map-usuario{
+    display:flex;
+    justify-content: end;
+    gap:5px;
+    padding:5px;
+    background-color:var(--cor-navbar) ;
 }
 .navbar-logado{
     display: flex;
@@ -666,6 +673,8 @@ main {
 .notificacao{
     margin-right: 50px;
 }
+
+
 
 @media (max-width: 720px) {
     .navbar-logado{

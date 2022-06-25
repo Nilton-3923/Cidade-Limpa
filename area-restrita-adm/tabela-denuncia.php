@@ -52,7 +52,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class='bx bxs-spreadsheet icon' ></i> Categoria <i class='bx bx-chevron-right icon-right' ></i></a>
+                            <a href="#"><i class='bx bxs-spreadsheet icon' ></i> Categoria de denúncias<i class='bx bx-chevron-right icon-right' ></i></a>
                             <ul class="side-dropdown">
                                 <li><a href="cadastro-categoria.php">Cadastrar Categoria</a></li>
                             </ul>
@@ -88,7 +88,7 @@
                     <option value="1">Vizualizar denúncias não resolvidas</option>
                     <option value="2">Vizualizar denúncias resolvidas</option>
                 </select>
-                <a href="pdfs/pdf-table-denuncia.php" class="btn btn-secondary">Vizualizar Pdf</a>
+                <a href="pdfs/pdf-table-denuncia.php" class="btn btn-secondary" target="_blank">Vizualizar Pdf</a>
                 
             
         </div>

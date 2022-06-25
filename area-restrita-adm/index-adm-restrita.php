@@ -200,7 +200,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#"><i class='bx bxs-spreadsheet icon' ></i> Categoria <i class='bx bx-chevron-right icon-right' ></i></a>
+					<a href="#"><i class='bx bxs-spreadsheet icon' ></i> Categoria de denúncias <i class='bx bx-chevron-right icon-right' ></i></a>
 					<ul class="side-dropdown">
 						<li><a href="cadastro-categoria.php">Cadastrar Categoria</a></li>
 					</ul>
@@ -335,7 +335,7 @@
 							<div class="menu">
 								<i class='bx bx-dots-horizontal-rounded icon'></i>
 								<ul class="menu-link">
-									<li><a href="pdfs/pdf-table-categoria.php">PDF</a></li>
+									<li><a href="pdfs/pdf-table-categoria.php" target="_blank">PDF</a></li>
 								</ul>
 							</div>
 						</div>
@@ -350,7 +350,7 @@
 							<div class="menu">
 								<i class='bx bx-dots-horizontal-rounded icon'></i>
 								<ul class="menu-link">
-									<li><a href="pdfs/pdf-table-usuario.php">PDF</a></li>
+									<li><a href="pdfs/pdf-table-usuario.php" target="_blank">PDF</a></li>
 								</ul>
 							</div>
 						</div>	
@@ -388,7 +388,7 @@
 							<div class="menu">
 								<i class='bx bx-dots-horizontal-rounded icon'></i>
 								<ul class="menu-link">
-									<li><a href="pdfs/pdf-grafico3.php">PDF</a></li>
+									<li><a href="pdfs/pdf-grafico3.php" target="_blank">PDF</a></li>
 								</ul>
 							</div>
 						</div>
@@ -402,7 +402,7 @@
 							<div class="menu">
 								<i class='bx bx-dots-horizontal-rounded icon'></i>
 								<ul class="menu-link">
-									<li><a href="pdfs/pdf-grafico4.php">PDF</a></li>
+									<li><a href="pdfs/pdf-grafico4.php" target="_blank">PDF</a></li>
 								</ul>
 							</div>
 						</div>

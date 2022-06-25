@@ -92,7 +92,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#"><i class='bx bxs-spreadsheet icon' ></i> Categoria <i class='bx bx-chevron-right icon-right' ></i></a>
+                            <a href="#"><i class='bx bxs-spreadsheet icon' ></i> Categoria de denúncias <i class='bx bx-chevron-right icon-right' ></i></a>
                             <ul class="side-dropdown">
                                 <li><a href="cadastro-categoria.php">Cadastrar Categoria</a></li>
                             </ul>
@@ -252,7 +252,7 @@
                     </div>
 
                     <select name="regiao" required id="regiao" class="form-select input-normal" aria-label="Default select example">
-                        <option selected disabled value="">Regiões de São Paulo</option>
+                        <option selected disabled value="">Selecione a região de São Paulo</option>
                         <option value="Zona Leste">Zona Leste</option>
                         <option value="Zona Norte">Zona Norte</option>
                         <option value="Zona Sul">Zona Sul</option>

@@ -84,7 +84,7 @@
                 </div>
                 <div>
                     <input type="submit" class="btn btn-secondary" value="cadastrar">
-                    <a href="pdfs/pdf-table-categoria.php" class="btn btn-secondary" >Vizualizar PDF</a>
+                    <a href="pdfs/pdf-table-categoria.php" class="btn btn-secondary" target="_blank">Vizualizar PDF</a>
                 </div>
                     
             </form>
