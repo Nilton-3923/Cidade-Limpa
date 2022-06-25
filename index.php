@@ -86,7 +86,7 @@
         </script>
         <div id="navbar-do-mapa"class="map-nav">
             <img class="logo" src="./imagens/logo.png">
-            <h1 style="color:white;margin-left:25px;">LOCALIZE O ECOPONTO MAIS PRÓXIMO DA SUA LOCALIZAÇÃO E VEJA OS PONTOS DE DENÚNCIA</h1>
+            <h1 style="color:white;margin-left:25px;">ACHE OS ECOPONTOS MAIS PRÓXIMO DA SUA LOCALIZAÇÃO E VEJA OS PONTOS DE DENÚNCIA</h1>
             <div class="ajuste-pesquisa">
                 <form action="./objetos/objeto-pesquisar-mapa.php?localizacao=index" method="post">
                     <div class="pesquisa">
