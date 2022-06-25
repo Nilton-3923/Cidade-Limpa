@@ -1,0 +1,96 @@
+.title-updateDen{
+    color: #525252;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.btn-update-den{
+    background-color:rgb(182, 182, 182);
+    color:#064018;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    padding:5px 15px;
+    font-size:1.2vw;
+    border-radius:5px;
+}
+.btn-update-den:hover{
+    background-color:rgb(207, 206, 206);
+}
+.btn-del-den{
+    margin: 15px;
+    background-color:red;
+    color:white;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    padding:5px 15px;
+    font-size:1.2vw;
+    border-radius:5px;
+    text-decoration: none;
+}
+.select-update-den{
+    border-radius: 5px;
+    color: #696969;
+}
+.file-update-den{
+    margin: 15px;
+}
+.logo-update{
+    width: 150px;
+    padding: 30px;
+}
+.img-logo-update{
+    width: 150px;
+    margin-top: -50px;
+    margin-left: 80px;
+    float: left;
+}
+.modal-header{
+    background-color: rgb(77, 104, 112);
+    border: 1px solid white;
+    height: 60px;
+}
+.alterar-label{
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+.div-update-den{
+    margin: 15px;
+}
+.label-modal{
+    color: #525252;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.descModal{
+    background-color: #fff;
+    width: 200px;
+    border-radius: 5px;
+}
+.fotoDen{
+    margin-top: 15px;
+    margin-right: 25px;
+    position: absolute;
+    right: 0;
+    top: 0; 
+}
+.imgDen{
+    max-width: 200px;
+    left: 20px;
+    box-shadow: 1px 1px 3px black;
+}
+.titleImg{
+    text-align: center;
+}
+.local{
+    font-size: 13px;
+}
+.formAdm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
