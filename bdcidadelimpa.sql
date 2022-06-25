@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Jun-2022 às 23:56
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 8.1.6
+-- Tempo de geração: 23-Jun-2022 às 05:12
+-- Versão do servidor: 10.4.22-MariaDB
+-- versão do PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -91,40 +91,41 @@ CREATE TABLE `tbdenuncia` (
   `dataDenuncia` varchar(13) NOT NULL,
   `ufDenuncia` varchar(2) NOT NULL,
   `bairroDenuncia` varchar(50) NOT NULL,
-  `cepDenuncia` varchar(9) NOT NULL,
+  `cepDenuncia` varchar(10) NOT NULL,
   `ruaDenuncia` varchar(50) NOT NULL,
   `cidadeDenuncia` varchar(50) NOT NULL,
   `coordeDenuncia` varchar(50) NOT NULL,
   `zonaDenuncia` varchar(15) NOT NULL,
   `statusDenuncia` varchar(50) NOT NULL,
   `fk_idUsuario` int(11) NOT NULL,
-  `fk_idCategoria` int(11) NOT NULL
+  `fk_idCategoria` int(11) NOT NULL,
+  `verificacaoAdm` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `tbdenuncia`
 --
 
-INSERT INTO `tbdenuncia` (`pk_idDenuncia`, `tituloDenuncia`, `descDenuncia`, `imgDenuncia`, `dataDenuncia`, `ufDenuncia`, `bairroDenuncia`, `cepDenuncia`, `ruaDenuncia`, `cidadeDenuncia`, `coordeDenuncia`, `zonaDenuncia`, `statusDenuncia`, `fk_idUsuario`, `fk_idCategoria`) VALUES
-(16, 'Nossa que legal', 'sdssadas', 'imgDenuncia/', '17/06/2022', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', 'lat: -23.5119082, lng: -46.4112154', 'Zona Leste', 'Não Resolvida', 6, 1),
-(18, 'sdasd', 'sdas', 'imgDenuncia/', '17/06/2022', 'SP', 'Jardim Nélia', '08142680', 'Rua Inês Sabino', 'São Paulo', 'lat: -23.5557714, lng: -46.6395571', 'Zona Norte', 'Não Resolvida', 6, 1),
-(19, 'Descarte de lixo', 'Muito lixo', 'imgDenuncia/', '18/06/2022', 'SP', 'Jardim Silva Teles', '08160-00', 'Rua Aricanga', 'São Paulo', 'lat: -23.4958356, lng: -46.411385', 'Zona Leste', 'Não Resolvida', 6, 1),
-(21, 'a', 'asdasdsdsad', 'imgDenuncia/', '18/06/2022', 'SP', 'Jardim Nélia', '08142-68', 'Rua Inês Sabino', 'São Paulo', 'lat: -23.5557714, lng: -46.6395571', 'Zona Leste', 'Não Resolvida', 6, 1),
-(25, 'Lixo Tiête', 'bjb', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549133, lng: -46.4156954', 'Zona Leste', 'Não Resolvida', 1, 1),
-(26, 'Lixo Tiête', 'lsl', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 1),
-(28, 'Lixo Tiête', 'jbshbxhxsxssx', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Bela Vista', '06060-220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5544852, lng: -46.7843437', 'Zona Leste', 'Não Resolvida', 1, 2),
-(30, 'Lixo Tiête', 'oo', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5539949, lng: -46.4147634', 'Zona Sul', 'Não Resolvida', 1, 1),
-(31, 'Lixo Tiête', 'kokk', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5539948, lng: -46.4149019', 'Zona Leste', 'Não Resolvida', 1, 1),
-(32, 'Lixo Tiête', 'ooj', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 1),
-(33, 'Lixo Tiête', 'iii', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Sul', 'Não Resolvida', 1, 1),
-(34, 'Lixo Tiête', 'i', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 2),
-(35, 'Lixo Tiête', 'jjj', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 2),
-(36, 'Lixo Tiête', 'kk', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Norte', 'Não Resolvida', 1, 1),
-(37, 'Lixo Tiête', ' zn', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Bela Vista', '06060-220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5554133, lng: -46.7843185', 'Zona Norte', 'Não Resolvida', 1, 1),
-(38, 'Lixo Guaianases', 'lk', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5539948, lng: -46.4149019', 'Zona Norte', 'Não Resolvida', 1, 1),
-(39, 'Lixo Tiête', 'ddd', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 1),
-(41, 'Lixo Tiête', 'pop', 'imgDenuncia/default.jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 2),
-(42, 'Lixo Tiête', 'jjj', 'imgDenuncia/caue.jpg', '19/06/2022', 'SP', 'Bela Vista', '06060-220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Leste', 'Não Resolvida', 1, 1);
+INSERT INTO `tbdenuncia` (`pk_idDenuncia`, `tituloDenuncia`, `descDenuncia`, `imgDenuncia`, `dataDenuncia`, `ufDenuncia`, `bairroDenuncia`, `cepDenuncia`, `ruaDenuncia`, `cidadeDenuncia`, `coordeDenuncia`, `zonaDenuncia`, `statusDenuncia`, `fk_idUsuario`, `fk_idCategoria`, `verificacaoAdm`) VALUES
+(16, 'Nossa que legal', 'sdssadas', 'imgDenuncia/', '17/06/2022', 'SP', 'Jardim Bartira', '08152130', 'Rua Carrossel', 'São Paulo', 'lat: -23.5119082, lng: -46.4112154', 'Zona Leste', 'Não Resolvida', 6, 1, NULL),
+(18, 'sdasd', 'sdas', 'imgDenuncia/', '17/06/2022', 'SP', 'Jardim Nélia', '08142680', 'Rua Inês Sabino', 'São Paulo', 'lat: -23.5557714, lng: -46.6395571', 'Zona Norte', 'Não Resolvida', 6, 1, NULL),
+(19, 'Descarte de lixo', 'Muito lixo', 'imgDenuncia/', '18/06/2022', 'SP', 'Jardim Silva Teles', '08160-00', 'Rua Aricanga', 'São Paulo', 'lat: -23.4958356, lng: -46.411385', 'Zona Leste', 'Não Resolvida', 6, 1, NULL),
+(21, 'a', 'asdasdsdsad', 'imgDenuncia/', '18/06/2022', 'SP', 'Jardim Nélia', '08142-68', 'Rua Inês Sabino', 'São Paulo', 'lat: -23.5557714, lng: -46.6395571', 'Zona Leste', 'Não Resolvida', 6, 1, NULL),
+(25, 'Lixo Tiête', 'bjb', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549133, lng: -46.4156954', 'Zona Leste', 'Não Resolvida', 1, 1, 'TRUE'),
+(26, 'Lixo Tiête', 'lsl', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 1, 'TRUE'),
+(28, 'Lixo Tiête', 'jbshbxhxsxssx', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Bela Vista', '06060-220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5544852, lng: -46.7843437', 'Zona Leste', 'Não Resolvida', 1, 2, NULL),
+(30, 'Lixo Tiête', 'oo', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5539949, lng: -46.4147634', 'Zona Sul', 'Não Resolvida', 1, 1, 'TRUE'),
+(31, 'Lixo Tiête', 'kokk', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5539948, lng: -46.4149019', 'Zona Leste', 'Não Resolvida', 1, 1, NULL),
+(32, 'Lixo Tiête', 'ooj', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 1, NULL),
+(33, 'Lixo Tiête', 'iii', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Sul', 'Não Resolvida', 1, 1, NULL),
+(34, 'Lixo Tiête', 'i', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 2, NULL),
+(35, 'Lixo Tiête', 'jjj', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 2, NULL),
+(36, 'Lixo Tiête', 'kk', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Norte', 'Não Resolvida', 1, 1, NULL),
+(37, 'Lixo Tiête', ' zn', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Bela Vista', '06060-220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5554133, lng: -46.7843185', 'Zona Norte', 'Não Resolvida', 1, 1, NULL),
+(38, 'Lixo Guaianases', 'lk', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5539948, lng: -46.4149019', 'Zona Norte', 'Não Resolvida', 1, 1, NULL),
+(39, 'Lixo Tiête', 'ddd', 'imgDenuncia/th (4).jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 1, NULL),
+(41, 'Lixo Tiête', 'pop', 'imgDenuncia/default.jpg', '19/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 2, NULL),
+(42, 'Lixo Tiête', 'jjj', 'imgDenuncia/caue.jpg', '19/06/2022', 'SP', 'Bela Vista', '06060-220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5557175, lng: -46.7845236', 'Zona Leste', 'Não Resolvida', 1, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -165,19 +166,6 @@ INSERT INTO `tbecoponto` (`pk_idEcoponto`, `ufEcoponto`, `logradouroEcoponto`, `
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tbrespadm`
---
-
-CREATE TABLE `tbrespadm` (
-  `pk_idRespAdm` int(11) NOT NULL,
-  `dataRespAdm` date NOT NULL,
-  `textoRespAdm` varchar(300) NOT NULL,
-  `fk_idUsuario` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `tbtelusuario`
 --
 
@@ -206,7 +194,7 @@ CREATE TABLE `tbusuario` (
   `nomeUsuario` varchar(150) NOT NULL,
   `emailUsuario` varchar(150) NOT NULL,
   `senhaUsuario` varchar(150) NOT NULL,
-  `cepUsuario` varchar(9) NOT NULL,
+  `cepUsuario` varchar(8) NOT NULL,
   `imgUsuario` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -260,13 +248,6 @@ ALTER TABLE `tbecoponto`
   ADD PRIMARY KEY (`pk_idEcoponto`);
 
 --
--- Índices para tabela `tbrespadm`
---
-ALTER TABLE `tbrespadm`
-  ADD PRIMARY KEY (`pk_idRespAdm`),
-  ADD KEY `fk_idUsuario` (`fk_idUsuario`);
-
---
 -- Índices para tabela `tbtelusuario`
 --
 ALTER TABLE `tbtelusuario`
@@ -314,12 +295,6 @@ ALTER TABLE `tbecoponto`
   MODIFY `pk_idEcoponto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT de tabela `tbrespadm`
---
-ALTER TABLE `tbrespadm`
-  MODIFY `pk_idRespAdm` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de tabela `tbtelusuario`
 --
 ALTER TABLE `tbtelusuario`
@@ -348,12 +323,6 @@ ALTER TABLE `tbchatbot`
 ALTER TABLE `tbdenuncia`
   ADD CONSTRAINT `tbdenuncia_ibfk_1` FOREIGN KEY (`fk_idCategoria`) REFERENCES `tbcategoria` (`pk_idCategoria`),
   ADD CONSTRAINT `tbdenuncia_ibfk_3` FOREIGN KEY (`fk_idUsuario`) REFERENCES `tbusuario` (`pk_Usuario`);
-
---
--- Limitadores para a tabela `tbrespadm`
---
-ALTER TABLE `tbrespadm`
-  ADD CONSTRAINT `tbrespadm_ibfk_1` FOREIGN KEY (`fk_idUsuario`) REFERENCES `tbusuario` (`pk_Usuario`);
 
 --
 -- Limitadores para a tabela `tbtelusuario`
