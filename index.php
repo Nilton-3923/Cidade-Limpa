@@ -67,11 +67,11 @@
                 <div style="background:#fff;" class="-div-"></div>
                 <div class="div-legenda">
                     <img class="marcador"src="https://www.comdominioadm.com.br/wp-content/uploads/2015/10/marcador-mapa2.png">
-                    <p>- Marcador denúncias</p>
+                    <p> - Marcador denúncias</p>
                 </div>
                 <div class="div-legenda">
                     <img id="marcador-bandeira" class="marcador"src="https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png">
-                    <p>- Marcador ecopontos</p>
+                    <p> - Marcador ecopontos</p>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
         </script>
         <div id="navbar-do-mapa"class="map-nav">
             <img class="logo" src="./imagens/logo.png">
-            <h1 style="color:white;margin-left:25px;">DIGITE O NOME DE UMA RUA DE SÃO PAULO PARA LOCALIZAR AS DENUNCIAS</h1>
+            <h1 class="h1-mapa">DIGITE O NOME DE UMA RUA DE SÃO PAULO PARA LOCALIZAR AS DENUNCIAS</h1>
             <div class="ajuste-pesquisa">
                 <form action="./objetos/objeto-pesquisar-mapa.php?localizacao=index" method="post">
                     <div class="pesquisa">

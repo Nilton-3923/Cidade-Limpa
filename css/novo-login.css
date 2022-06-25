@@ -4,7 +4,14 @@
 * {
 	box-sizing: border-box;
 }
-
+.ajuste-img-preview{
+	display:block!important;
+	width:200px!important;
+	height:200px;
+	background:url('../imagens/sair-adm.png'),#00b344;
+	background-size:cover;
+	background-position:center;
+}
 body {
 	background: #f6f5f7;
 	margin:0;

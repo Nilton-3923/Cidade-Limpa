@@ -182,7 +182,7 @@
             <h1 class="titulo-pagina">Criar Denuncia</h1>
             <div class="ajuste-info-e-mapa">
                 <div id="mapa">
-                    <form action="../objetos/objeto-pesquisar-mapa.php?localizacao=usuario" method="post">
+                    <form class="pesquisa-map-usuario"action="../objetos/objeto-pesquisar-mapa-usuario.php" method="post">
 
                         <input type="text" placeholder="Pesquisar local" name="pesquisa">
                         <button type="submit">Pesquisar</button>
