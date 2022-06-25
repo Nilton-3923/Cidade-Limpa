@@ -166,18 +166,18 @@
         <!-- Pills content -->
         <div class="tab-content centraliza-div">
         <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-            <form action="session/session-usuario.php" method="post">
+            <form action="session/session-usuario.php?localizacao=mobile" method="post">
             <h1 style="position:relative;top:-50px;"class="text-center">LOGIN</h1>
         
             <!-- Email input -->
             <div class="form-outline mb-4">
-                <input type="text" id="loginName" class="form-control" />
+                <input type="text" id="loginName" class="form-control" name="emailUsuario"/>
                 <label class="form-label" for="loginName">Email</label>
             </div>
         
             <!-- Password input -->
             <div class="form-outline mb-4">
-                <input type="password" id="loginPassword" class="form-control" />
+                <input type="password" id="loginPassword" class="form-control" name="senhaUsuario"/>
                 <label class="form-label" for="loginPassword">Senha</label>
             </div>
         
@@ -213,7 +213,7 @@
         <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
              <!---------------------------------REGISTRAR------------------------------------------->
             <div style="margin-top:125px;" class="centraliza-div">
-                <form class="display-flex-do-luquinhas" action="cadastro/objeto-cadastro-usuario.php" method="post" enctype="multipart/form-data">
+                <form class="display-flex-do-luquinhas" action="cadastro/objeto-cadastro-usuario.php?localizacao=mobile" method="post" enctype="multipart/form-data">
                     <h1 style="margin-bottom:15px;"class="text-center">REGISTRAR</h1>
                     <div class="form-input">
                         <div class="preview ajuste-preview">

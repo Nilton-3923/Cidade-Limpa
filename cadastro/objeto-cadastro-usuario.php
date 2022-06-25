@@ -8,20 +8,33 @@
     $email = $_POST['txtEmail'];
     $senha = $_POST['txtSenha'];
    
+    $localizacao = $_GET['localizacao']; 
+
     $usuario = new Usuario();
 
     if($usuario->verificar($email,$senha) === true){//Verificar se o usuario já existe
-        header("Location: ../novo-login.php");
-
-        $_SESSION['verificarCadastro'] = TRUE;
+        
+        if($localizacao != "mobile"){
+            header("Location: ../novo-login.php");
+    
+            $_SESSION['verificarCadastro'] = TRUE;
+        }else {
+            header("Location: ../login-novo-novo.php");
+        }
         
     }
     else{ 
         $nomeImagem = $_FILES['fotoUsuario']['name'];
-        $arquivoImagem = $_FILES['fotoUsuario']['tmp_name'];
 
-        $caminhoImagem = "imgUsuario/".$nomeImagem;
-        move_uploaded_file($arquivoImagem,$caminhoImagem);
+        if(!empty($nomeImagem)){
+            $arquivoImagem = $_FILES['fotoUsuario']['tmp_name'];
+    
+            $caminhoImagem = "imgUsuario/".$nomeImagem;
+            move_uploaded_file($arquivoImagem,$caminhoImagem);
+        }
+        else {
+            $caminhoImagem = "imgUsuario/user.png";
+        }
 
         $nome = $_POST['txtNome'];
         $tel = $_POST['telefone'];
@@ -32,11 +45,15 @@
         $usuario->setImgUsuario($caminhoImagem);
         
         echo $usuario->cadastrar($usuario,$tel);
-        $_SESSION['verificarCadastroSucesso'] = TRUE;
-
-
-        header("Location: ../novo-login.php");
-
+        
+        
+        if($localizacao != "mobile"){
+            header("Location: ../novo-login.php");
+            $_SESSION['verificarCadastroSucesso'] = TRUE;
+    
+        }else {
+            header("Location: ../login-novo-novo.php");
+        }
 
     }
     

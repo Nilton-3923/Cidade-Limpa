@@ -20,13 +20,13 @@
         }
     }
 
-    if(empty($_SESSION['coordenadaAdm'])){
+    if(empty($_SESSION['coordenada'])){
         $coordenada = "lat:-23.5489,lng:-46.6388";   
         $zoom = 12;
     }
     //Se a SESSION não estiver vazia ele dá os valores da pesquisa 
     else {
-        $coordenada = $_SESSION['coordenadaAdm'];
+        $coordenada = $_SESSION['coordenada'];
         $zoom = 18;
     }
 
@@ -361,7 +361,7 @@
             <div>
                 <h2>Mapa com os Ecopontos</h2>
                 <div>
-                    <form action="../objetos/objeto-pesquisar-mapa-adm.php" method="POST">
+                    <form action="../objetos/objeto-pesquisar-mapa.php?localizacao=adm" method="POST">
                         <input type="text" placeholder="digite a localização" name="pesquisa">
                         <button type="submit">Pesquisar</button>
                     </form>

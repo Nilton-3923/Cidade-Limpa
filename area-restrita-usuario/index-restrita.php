@@ -15,13 +15,13 @@
 
     $listaCat = $categoria->listar();
 
-    if(empty($_SESSION['coordenadaUsuario'])){
+    if(empty($_SESSION['coordenada'])){
         $coordenada = "lat:-23.5489,lng:-46.6388";   
         $zoom = 12;
     }
     //Se a SESSION não estiver vazia ele dá os valores da pesquisa 
     else {
-        $coordenada = $_SESSION['coordenadaUsuario'];
+        $coordenada = $_SESSION['coordenada'];
         $zoom = 18;
     }
 ?>
@@ -182,7 +182,7 @@
             <h1 class="titulo-pagina">Criar Denuncia</h1>
             <div class="ajuste-info-e-mapa">
                 <div id="mapa">
-                    <form action="../objetos/objeto-pesquisar-mapa-usuario.php" method="post">
+                    <form action="../objetos/objeto-pesquisar-mapa.php?localizacao=usuario" method="post">
 
                         <input type="text" placeholder="Pesquisar local" name="pesquisa">
                         <button type="submit">Pesquisar</button>

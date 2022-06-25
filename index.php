@@ -86,7 +86,7 @@
             <img class="logo" src="./imagens/logo.png">
             <h1 style="color:white;margin-left:25px;">DIGITE O NOME DE UMA RUA DE SÃO PAULO PARA LOCALIZAR AS DENUNCIAS</h1>
             <div class="ajuste-pesquisa">
-                <form action="./objetos/objeto-pesquisar-mapa.php" method="post">
+                <form action="./objetos/objeto-pesquisar-mapa.php?localizacao=index" method="post">
                     <div class="pesquisa">
                         <input type="text" name="pesquisa" placeholder="Localizar Denuncias">
                         <button type="submit">🔍</button>
