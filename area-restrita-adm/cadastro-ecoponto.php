@@ -18,8 +18,16 @@
             $localizacao = $ecoponto->geolocalizacaoExcel($linha[8], $linha[5], $linha[3],$linha[2], $linha[1]);
             $ecoponto->alterarLocalizacao($localizacao, $linha[0]);
         }
+    }
 
-        
+    if(empty($_SESSION['coordenadaAdm'])){
+        $coordenada = "lat:-23.5489,lng:-46.6388";   
+        $zoom = 12;
+    }
+    //Se a SESSION não estiver vazia ele dá os valores da pesquisa 
+    else {
+        $coordenada = $_SESSION['coordenadaAdm'];
+        $zoom = 18;
     }
 
     $pontosEcoponto = $ecoponto->mostrarEcoponto();
@@ -352,6 +360,12 @@
 
             <div>
                 <h2>Mapa com os Ecopontos</h2>
+                <div>
+                    <form action="../objetos/objeto-pesquisar-mapa-adm.php" method="POST">
+                        <input type="text" placeholder="digite a localização" name="pesquisa">
+                        <button type="submit">Pesquisar</button>
+                    </form>
+                </div>
                 <div id="map" style="width: 70%; height: 500px;"></div>
             </div>
 
@@ -363,8 +377,8 @@
             function initMap(){
                 // Opções para o mapa
                 var options = {
-                    zoom: 12,
-                    center:{lat:-23.5489,lng:-46.6388},
+                    zoom: <?php echo $zoom?>,
+                    center:{<?php echo $coordenada; ?>},
                     styles:[{
                                 "featureType": "poi",
                                 "stylers": [{
