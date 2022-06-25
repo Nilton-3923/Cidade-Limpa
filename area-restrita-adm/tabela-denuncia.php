@@ -103,12 +103,23 @@
                         <th>Rua</th>
                         <th>Bairro</th>
                         <th>Usuario</th>
+                        <th>Verificação do ADM</th>
                 </tr>
                 <?php
                         $tables = $adm->tabelaDenuncia();
                         foreach($tables as $dados){
+
+                            //CRIANDO UMA FUTURA VALIDAÇÃO PARA ANALISAR SE A DENÚNCIA TEM A VERIFICAÇÃO DO ADM
+
+                            //SE ELA TIVER A VERIFICAÇÃO O TARGET É NULO
+                            if($dados['pk_idDenuncia'] == 46){
+                                $target = "";
+                            }
+                            else{
+                                $target = "#exampleModal$dados[0]";
+                            }
                     ?>
-                    <tr data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $dados[0] ?>" >
+                    <tr data-bs-toggle="modal" data-bs-target="<?php echo $target?>" >
                         <td><?php echo $dados['pk_idDenuncia']; ?></td>
                         <td><?php echo $dados['campoCategoria']; ?></td>
                         <td><?php echo $dados['dataDenuncia']; ?></td>
@@ -125,21 +136,21 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <label for="" class="label-modal">Id: <?php echo $dados[0]; ?></label><br>
-                                <label for="" class="label-modal">Título: <?php echo $dados['tituloDenuncia']; ?></label><br>
+                                <label for="" class="label-modal">Código: <?php echo $dados[0]; ?></label><br>
                                 <label for="" class="label-modal">Data: <?php echo $dados['dataDenuncia']; ?></label><br>
-                                <label for="" class="label-modal">Descrição Denúncia: <br>
+                                <label for="" class="label-modal"><?php echo $dados['campoCategoria']; ?></label><br>
+                                <label for="" class="label-modal"><?php echo $dados['tituloDenuncia']; ?></label><br>
                                 <div class="form-floating mb-3">
-                                    <textarea disabled class="descModal" id="message" type="text" rows="2" placeholder="Descrição Denúncia"  data-sb-validations="required"><?php echo $dados['descDenuncia']; ?></textarea>
+                                    <p><?php echo $dados['descDenuncia']; ?></p>
                                 </div>
                                 <div class="fotoDen">
                                     <label for="" class="label-modal titleImg">Imagem Denúncia: <br>
                                     <img class="imgDen" src="../cadastro/<?php echo $dados['imgDenuncia']; ?>" alt="">
                                 </div>
-                                <label for="" class="label-modal local">Localização: <?php echo $dados[8].",". $dados[6].",". $dados[9]." - ". $dados[5]; ?></label><br>
+                                <label for="" class="label-modal local"><?php echo $dados[8].",". $dados[6].",". $dados[9]." - ". $dados[5]; ?></label><br>
                             </div>
                                 <div class="formAdm">
-                                    <label for="" class="label-modal coment">Comentar <br>
+                                    <label for="" class="label-modal coment">Adicionar comentário <br>
                                     <form action="../teste.php" method="post">
                                         <textarea name="comentarioAdm" class="descModal" id="message" type="text" rows="3" placeholder="Comentar..."  data-sb-validations="required"></textarea>
                                 </div>
@@ -179,13 +190,13 @@
                             $tables = $adm->tabelaDenunciaNaoResolvida();
                             foreach($tables as $dados){
                         ?>
-                        <tr data-bs-toggle="modal" data-bs-target="#exampleModal2<?php echo $dados[0] ?>">
-                            <td><?php echo $dados['pk_idDenuncia']; ?></td>
-                            <td><?php echo $dados['campoCategoria']; ?></td>
-                            <td><?php echo $dados['dataDenuncia']; ?></td>
-                            <td><?php echo $dados['ruaDenuncia']; ?></td>
-                            <td><?php echo $dados['bairroDenuncia']; ?></td>
-                            <td><?php echo $dados['emailUsuario']; ?></td>
+                        <tr >
+                            <td data-bs-toggle="modal" data-bs-target="#exampleModal2<?php echo $dados[0] ?>"><?php echo $dados['pk_idDenuncia']; ?></td>
+                            <td data-bs-toggle="modal" data-bs-target="#exampleModal2<?php echo $dados[0] ?>"><?php echo $dados['campoCategoria']; ?></td>
+                            <td data-bs-toggle="modal" data-bs-target="#exampleModal2<?php echo $dados[0] ?>"><?php echo $dados['dataDenuncia']; ?></td>
+                            <td data-bs-toggle="modal" data-bs-target="#exampleModal2<?php echo $dados[0] ?>"><?php echo $dados['ruaDenuncia']; ?></td>
+                            <td data-bs-toggle="modal" data-bs-target="#exampleModal2<?php echo $dados[0] ?>"><?php echo $dados['bairroDenuncia']; ?></td>
+                            <td data-bs-toggle="modal" data-bs-target="#exampleModal2<?php echo $dados[0] ?>"><?php echo $dados['emailUsuario']; ?></td>
                             <td>
             
                                     <input  type="checkbox"
@@ -205,29 +216,29 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <label for="" class="label-modal">Id: <?php echo $dados[0]; ?></label><br>
-                                <label for="" class="label-modal">Título: <?php echo $dados['tituloDenuncia']; ?></label><br>
+                                <label for="" class="label-modal">Código: <?php echo $dados[0]; ?></label><br>
                                 <label for="" class="label-modal">Data: <?php echo $dados['dataDenuncia']; ?></label><br>
-                                <label for="" class="label-modal">Descrição Denúncia: <br>
+                                <label for="" class="label-modal"><?php echo $dados['campoCategoria']; ?></label><br>
                                 <div class="form-floating mb-3">
-                                    <textarea disabled class="descModal" id="message" type="text" rows="2" placeholder="Descrição Denúncia"  data-sb-validations="required"><?php echo $dados['descDenuncia']; ?></textarea>
+                                    <p><?php echo $dados['descDenuncia']; ?></p>
                                 </div>
                                 <div class="fotoDen">
                                     <label for="" class="label-modal titleImg">Imagem Denúncia: <br>
                                     <img class="imgDen" src="../cadastro/<?php echo $dados['imgDenuncia']; ?>" alt="">
                                 </div>
-                                <label for="" class="label-modal local">Localização: <?php echo $dados[8].",". $dados[6].",". $dados[9]." - ". $dados[5]; ?></label><br>
+                                <label for="" class="label-modal local"><?php echo $dados[8].",". $dados[6].",". $dados[9]." - ". $dados[5]; ?></label><br>
                             </div>
                                 <div class="formAdm">
-                                    <label for="" class="label-modal coment">Comentar <br>
+                                    <label for="" class="label-modal coment">Adicionar comentário <br>
                                     <form action="../teste.php" method="post">
-                                        <textarea name="comentarioAdm" class="descModal" id="message" type="text" rows="3" placeholder="Comentar..."  data-sb-validations="required"></textarea>
+                                        <!--------------AJEITAR ESSA PARTE NO FRONT, DEIXAR MAIS BONITINHA--------------->
+                                        <textarea name="comentarioAdm" class="descModal" id="message" type="text" rows="3" placeholder="Digite seu comentário a respeito da denúncia."  data-sb-validations="required" ></textarea>
                                 </div>
-                            <div class="modal-footer">
-                                        <input type="submit"  class="btn btn-secondary" >
+                                        <div class="modal-footer">
+                                            <input type="submit"  class="btn btn-secondary" >
+                                        </div>
                                     </form>
                                 
-                            </div>
                             </div>
                         </div>
                         </div>
@@ -271,27 +282,23 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <label for="" class="label-modal">Id: <?php echo $dados[0]; ?></label><br>
-                                <label for="" class="label-modal">Título: <?php echo $dados['tituloDenuncia']; ?></label><br>
+                                <label for="" class="label-modal">Código: <?php echo $dados[0]; ?></label><br>
                                 <label for="" class="label-modal">Data: <?php echo $dados['dataDenuncia']; ?></label><br>
-                                <label for="" class="label-modal">Descrição Denúncia: <br>
+                                <label for="" class="label-modal">Título: <?php echo $dados['campoCategoria']; ?></label><br>
+                                <label for="" class="label-modal">Título: <?php echo $dados['tituloDenuncia']; ?></label><br>
                                 <div class="form-floating mb-3">
-                                    <textarea disabled class="descModal" id="message" type="text" rows="2" placeholder="Descrição Denúncia"  data-sb-validations="required"><?php echo $dados['descDenuncia']; ?></textarea>
+                                    <p><?php echo $dados['descDenuncia']; ?></p>
                                 </div>
                                 <div class="fotoDen">
                                     <label for="" class="label-modal titleImg">Imagem Denúncia: <br>
                                     <img class="imgDen" src="../cadastro/<?php echo $dados['imgDenuncia']; ?>" alt="">
                                 </div>
-                                <label for="" class="label-modal local">Localização: <?php echo $dados[8].",". $dados[6].",". $dados[9]." - ". $dados[5]; ?></label><br>
+                                <label for="" class="label-modal local"><?php echo $dados[8].",". $dados[6].",". $dados[9]." - ". $dados[5]; ?></label><br>
                             </div>
                                 <div class="formAdm">
-                                    <label for="" class="label-modal coment">Comentar <br>
-                                    <form action="../teste.php" method="post">
-                                        <textarea name="comentarioAdm" class="descModal" id="message" type="text" rows="3" placeholder="Comentar..."  data-sb-validations="required"></textarea>
-                                </div>
-                            <div class="modal-footer">
-                                        <input type="submit"  class="btn btn-secondary" >
-                                    </form>
+                                    <!--------AQUI TERÁ O COMENTÁRIO QUE FOI FEITO PELO ADM------------>
+                                    <label for="" class="label-modal coment">Seu comentário <br>
+                                    <p>MUDAR PARA O INNER JOIN COM O OCOMENTÁRIO DO ADM</p>
                                 
                             </div>
                             </div>
