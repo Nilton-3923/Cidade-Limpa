@@ -33,7 +33,7 @@
 </head>
 <body>
     <?php include 'includes/navbar.php'?>
-    <div class="bem-vindo">
+    <div id="home"class="bem-vindo">
         <img id="imgBemVindo"src="./imagens/logo.png">
         <h1 id="h1">BEM-VINDO AO CIDADE LIMPA!</h1>
     </div>
@@ -94,6 +94,44 @@
         </div>
         <!--Adicionando o maps-->
         <div id="map"></div>
+        <script>
+            const options = {
+                root:null,
+                threshold:1,
+                rootMargin:'0px',
+            };
+            const observerHome = new IntersectionObserver(function(entries,observer){
+                entries.forEach(entry =>{
+                    if(entry.isIntersecting){
+                        document.getElementById('nav-links').classList.add('navLinkAtivado');
+                        document.getElementById('nav-links1').classList.remove('navLinkAtivado');
+                        document.getElementById('nav-links2').classList.remove('navLinkAtivado');
+                    }
+                });
+            },options)
+            const observerSobre = new IntersectionObserver(function(entries,observer){
+                entries.forEach(entry =>{
+                    if(entry.isIntersecting){
+                        document.getElementById('nav-links').classList.remove('navLinkAtivado');
+                        document.getElementById('nav-links1').classList.add('navLinkAtivado');
+                        document.getElementById('nav-links2').classList.remove('navLinkAtivado');
+                    }
+                });
+            },options)
+            const observerMap = new IntersectionObserver(function(entries,observer){
+                entries.forEach(entry =>{
+                    if(entry.isIntersecting){
+                        document.getElementById('nav-links').classList.remove('navLinkAtivado');
+                        document.getElementById('nav-links1').classList.remove('navLinkAtivado');
+                        document.getElementById('nav-links2').classList.add('navLinkAtivado');
+                    }
+                });
+            },options)
+
+            observerHome.observe(document.querySelector('#home'));
+            observerSobre.observe(document.querySelector('#sobre'));
+            observerMap.observe(document.querySelector('#map'));
+        </script>
         <script>
             // EFEITINHO DO SCROLL PEGUEI DA INTERNET PORQUE NÃO ENTENDI PORRA NENHUMA
 
@@ -281,16 +319,6 @@
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5opbRMRKjMKTKajH2CdyKJCIsqOdwdUI&callback=initMap"
     ></script>    
-    <script>
-        var home = document.getElementById('nav-links');
-        var sobre = document.getElementById('nav-links1');
-        var portalDeDenuncias = document.getElementById('nav-links2');
-
-        home.classList.add('navLinkAtivado');
-
-        document.getElementById('mobilelinks').classList.add('navLinkAtivado')
-        
-    </script>
    
     <?php include 'includes/footer.php'?>
 </body>

@@ -47,6 +47,7 @@ body{
 .bem-vindo > h1{
     font-size: 100px;
     color:#fff;
+    text-align: center;
 }
 .bem-vindo > img{
     width:800px;
