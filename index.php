@@ -86,11 +86,7 @@
         </script>
         <div id="navbar-do-mapa"class="map-nav">
             <img class="logo" src="./imagens/logo.png">
-<<<<<<< HEAD
             <h1 style="color:white;margin-left:25px;">LOCALIZE O ECOPONTO MAIS PRÓXIMO DA SUA LOCALIZAÇÃO E VEJA OS PONTOS DE DENÚNCIA</h1>
-=======
-            <h1 class="h1-mapa">DIGITE O NOME DE UMA RUA DE SÃO PAULO PARA LOCALIZAR AS DENUNCIAS</h1>
->>>>>>> f400fc5e1f5223d272635af2ca517f4ea0489b25
             <div class="ajuste-pesquisa">
                 <form action="./objetos/objeto-pesquisar-mapa.php?localizacao=index" method="post">
                     <div class="pesquisa">
