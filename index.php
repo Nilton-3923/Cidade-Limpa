@@ -82,7 +82,7 @@
                 document.getElementById('bl2').classList.toggle("blAtivado");               
             })
         </script>
-        <div class="map-nav">
+        <div id="navbar-do-mapa"class="map-nav">
             <div class="ajuste-pesquisa">
                 <form action="./objetos/objeto-pesquisar-mapa.php" method="post">
                     <div class="pesquisa">
@@ -106,6 +106,7 @@
                         document.getElementById('nav-links').classList.add('navLinkAtivado');
                         document.getElementById('nav-links1').classList.remove('navLinkAtivado');
                         document.getElementById('nav-links2').classList.remove('navLinkAtivado');
+                        document.getElementById('navbar-do-mapa').classList.remove('aparece-map-nav');
                     }
                 });
             },options)
@@ -115,6 +116,7 @@
                         document.getElementById('nav-links').classList.remove('navLinkAtivado');
                         document.getElementById('nav-links1').classList.add('navLinkAtivado');
                         document.getElementById('nav-links2').classList.remove('navLinkAtivado');
+                        document.getElementById('navbar-do-mapa').classList.remove('aparece-map-nav');
                     }
                 });
             },options)
@@ -124,6 +126,7 @@
                         document.getElementById('nav-links').classList.remove('navLinkAtivado');
                         document.getElementById('nav-links1').classList.remove('navLinkAtivado');
                         document.getElementById('nav-links2').classList.add('navLinkAtivado');
+                        document.getElementById('navbar-do-mapa').classList.add('aparece-map-nav');
                     }
                 });
             },options)

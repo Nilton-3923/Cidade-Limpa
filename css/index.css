@@ -25,7 +25,6 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    position:relative;
 }
 #map{
     width:100%;
@@ -155,15 +154,23 @@ body{
     font-size: 24px;
 }
 .map-nav{
+    transition:all 0.5s;
     display:flex;
     align-items: center;
     justify-content: center;
-    position:absolute;
+    position:fixed;
     top:0;
     width:100%;
     height:65px;
-    z-index:999;
+    z-index:1001;
     background-color: var(--cor-navbar);
+
+    opacity: 0;            /*MUDA NO SCROLL*/
+    pointer-events: none;   /*MUDA NO SCROLL*/
+}
+.aparece-map-nav{
+    opacity:1;
+    pointer-events: all;
 }
 .ajuste-pesquisa{
     width:80%;
@@ -235,6 +242,9 @@ body{
 }
 
 /*EFEITINHO DE SCROLL*/
+
+
+
 
 /*------------------------------------------------------*/
 
