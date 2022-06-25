@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="navbar-parte-2">
-            <a id="nav-links"href="index.php">HOME</a>
+            <a id="nav-links"href="index.php#home">HOME</a>
             <a id="nav-links1"href="index.php#sobre">SOBRE</a>
             <a id="nav-links2"href="index.php#map">MAPA</a>
         </div>
@@ -41,9 +41,9 @@
         </div>
     </nav>
     <div style="top:-100px;" id="menuMobileLateral"class="menu-mobile-lateral">
-        <a class="mobile-links"id="mobilelinks"href="index.php">HOME</a>
-        <a class="mobile-links"id="mobilelinks1"href="index.php#sobre">SOBRE</a>
-        <a class="mobile-links"id="mobilelinks2"href="index.php#map">MAPA</a>
+        <a class="mobile-links"id="nav-links"href="index.php">HOME</a>
+        <a class="mobile-links"id="nav-links1"href="index.php#sobre">SOBRE</a>
+        <a class="mobile-links"id="nav-links2"href="index.php#map">MAPA</a>
         <a class="mobile-links"id="mobilelinks3"href="login-novo-novo.php">Login</a>
     </div>
     <script>
