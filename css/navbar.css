@@ -150,11 +150,12 @@ nav{
         text-align: center;
     }
     .menu-mobile-lateral{
+        width:50%;
         transition:all .45s;
         display:flex;
         flex-direction: column;
         background-color:var(--cor-navbar);
-        position:absolute;
+        position:fixed;
         z-index: 888;
         right:0;
     }

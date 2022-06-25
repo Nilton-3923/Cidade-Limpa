@@ -263,6 +263,7 @@ footer a {
     background:rgb(77, 104, 112);
     display:flex;
 	justify-content: start;
+	align-items: center;
     padding-left:25px;
 }
 .voltar{

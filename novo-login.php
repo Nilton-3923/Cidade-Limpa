@@ -43,7 +43,7 @@
 
 
     <div class="nav-bar-login">
-        <h1><a class="voltar" href="./index.php"><img style="width:125px; position: absolute; top: 0;"src="./imagens/logo.png" alt="VOLTAR"></a></h1>
+        <a class="voltar" href="./index.php"><img style="width:125px;"src="./imagens/logo.png" alt="VOLTAR"></a>
     </div>
 
     <!-------------------VERIFICAÇÃO PARA A CRIAÇÃO DA MODAL DE NOTIFICAÇÃO (VERFICAÇÃO DO LOGIN)------------------------------------------>
@@ -175,7 +175,7 @@
                 
                 <div class="form-input">
                     <div class="preview">
-                        <img style="display:block;width:200px;height:200px;background:linear-gradient(#c4c4c4,#8a8a8a);" id="file-ip-1-preview">
+                        <img src="./imagens/sair-adm.png" style="display:block;width:200px;height:200px;background-color:#c4c4c4;" id="file-ip-1-preview">
                         <label for="file-ip-1">Escolher Imagem</label>
                         <input type="file" id="file-ip-1" accept="image/*" name="fotoUsuario" onchange="showPreview(event);"><!--COLOCAR O "NAME" DESSE INPUT PRA COMEÇAR A FUNCIONAR-->
                     </div>

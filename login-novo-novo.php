@@ -107,6 +107,7 @@
         height:65px;
         background:rgb(77, 104, 112);
         display:flex;
+        align-items:center;
         justify-content: start;
         padding-left:25px;
     }
@@ -146,7 +147,7 @@
 <!--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
 <body>
     <div class="nav-bar-login">
-        <h1><a class="voltar" href="./index.php"><img style="width:125px;"src="./imagens/logo.png" alt="VOLTAR"></a></h1>
+        <h1><a class="voltar" href="./index.php"><img style="width:75px;"src="./imagens/logo.png" alt="VOLTAR"></a></h1>
     </div>
     <div class="login-responsivo">
             <!-- Pills navs -->

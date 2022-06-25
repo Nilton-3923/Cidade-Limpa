@@ -47,7 +47,10 @@
         <a class="mobile-links"id="mobilelinks3"href="login-novo-novo.php">Login</a>
     </div>
     <script>
-        document.getElementById('menuMobile').addEventListener('click',()=>{
+        window.addEventListener('click',()=>{
+            abreAeMeu();
+        })
+        document.getElementById('menuMobile').addEventListener('click',function abreAeMeu(){
             if(document.getElementById('two').style.opacity === "1"){
 
                 document.getElementById('one').style.transform="rotate(45deg) translateY(6px)";

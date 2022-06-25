@@ -83,6 +83,8 @@
             })
         </script>
         <div id="navbar-do-mapa"class="map-nav">
+            <img class="logo" src="./imagens/logo.png">
+            <h1 style="color:white;margin-left:25px;">DIGITE O NOME DE UMA RUA DE SÃO PAULO PARA LOCALIZAR AS DENUNCIAS</h1>
             <div class="ajuste-pesquisa">
                 <form action="./objetos/objeto-pesquisar-mapa.php" method="post">
                     <div class="pesquisa">

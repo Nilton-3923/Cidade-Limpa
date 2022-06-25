@@ -174,7 +174,7 @@
             </nav>
             <div style="top:-170px;" id="navbarModal" class="navbar-modal">
                 <a href="../session/logout-usuario.php">Sair</a>
-                <a onClick="modalAlterarConta()"class="btn-alterar-conta">Alterar conta</a>
+                <a onClick="modalAlterarConta()"class="btn-alterar-conta">Editar conta</a>
             </div>
             
             
@@ -376,6 +376,7 @@
         
             <div id="modalAlterarConta"class="ajuste-modal-alterar-conta">
                 <div class="modal-alterar-conta">
+                    <button type="button" class="btn-close" onClick="modalAlterarConta()" aria-label="Close"></button>
                     <form action="../CRUD/objeto-alterar-usuario.php" method="post" enctype="multipart/form-data" class="alterar">
                             <div class="form-input">
                                 <div class="preview">
@@ -393,7 +394,6 @@
                         <div class="btns-modal">
                             <!-- Botao de deletar denuncia--><div data-bs-toggle="modal" data-bs-target="#modalDeletarConta" class="abrir-modal-confirmacao-deletar-conta">Deletar</div>
                         </div>
-                        <p class="cancelar" onClick="modalAlterarConta()">Cancelar</p>
                         <input type="submit" value="Salvar">
                     </form>
                 </div>
@@ -424,7 +424,7 @@
         <p id="mensagem"></p>
         <div id="modalCriarDenuncia" class="ajuste-criar-denuncia">
             <div class="criar-denuncia">
-                <p onClick="cancelarModalCriarDenuncia()"class="btn-cancelar-modalCriarDenuncia">Cancelar</p>
+                <button type="button" onClick="cancelarModalCriarDenuncia()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 <h1 class="titulo-criar-denuncia">Denuncia</h1>
                 <span id="mensagem" style="opacity:0;color:red;display:none">*Endereço invalido</span>
                 

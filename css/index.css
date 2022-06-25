@@ -15,6 +15,9 @@
 :root{
     --cor-legenda:#0db466;
 }
+html{
+    overflow-x:hidden;
+}
 body{
     background-color:black!important;
     padding-top:65px;
@@ -160,7 +163,7 @@ body{
     justify-content: center;
     position:fixed;
     top:0;
-    width:100%;
+    width:100vw;
     height:65px;
     z-index:1001;
     background-color: var(--cor-navbar);
@@ -173,7 +176,7 @@ body{
     pointer-events: all;
 }
 .ajuste-pesquisa{
-    width:80%;
+    width:40%;
     display:flex;
     justify-content:end;
 
@@ -235,7 +238,7 @@ body{
     pointer-events: all;
 }
 .scrollFade2--animate {
-    transition: all 0.4s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 .scrollFade--animate {
     transition: all 0.5s ease-in-out;
