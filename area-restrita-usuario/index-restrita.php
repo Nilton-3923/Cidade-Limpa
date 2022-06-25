@@ -204,7 +204,7 @@
         </div>
         <div class="divisao-pagina"></div>
 
-        <h1 class="segundo-titulo">DENUNCIAS FEITAS POR VOCÊ</h1>
+        <h1 class="segundo-titulo">DENÚNCIAS FEITAS POR VOCÊ</h1>
         <div class="ajuste-denuncias">
             <div class="denuncias">
         <?php
@@ -287,55 +287,64 @@
         </div>
         </div>
         <!-- **************************** -->
-        <div class="modal fade" id="exampleModalToggle<?php echo $linha[0]; ?>" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal fade" id="exampleModalToggle<?php echo $linha[0]; ?>" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1" >
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                 <div class="modal-header">
                     <img src="../imagens/logo.png" class="logo-update" alt="">
-                    <h5 class="alterar-label">Alterar Denúncia</h5>
+                    <h5 class="alterar-label">Denúncia <?php echo $linha['tituloDenuncia']; ?></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <form action="../CRUD/objeto-alterar-denuncia.php" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="pk_idDenuncia" value="<?php echo $linha['pk_idDenuncia'];?>">
-                        <div class="div-update-den" >
-                            <label for="" class="title-updateDen">Título da Denúncia</label>
-                            <input type="text" name="tituloDenuncia" class="form-control" name="" value="<?php echo $linha['tituloDenuncia']; ?>">
-                        </div>
-                        <div class="div-update-den">
-                            <label for="" class="title-updateDen" >Descrição da Denúncia</label>
-                            <input type="text" name="descDenuncia" class="form-control" value="<?php echo $linha['descDenuncia']; ?>">
-                        </div>
-                        <div class="div-update-den">
-                            <label for="" class="title-updateDen">Categorias</label>
-                            <select name="txtCategoria" class="form-select" id="">
-                                <?php 
-                                    require_once("../classe/Categoria.php");
-                                                        
-                                    $categoria = new Categoria();
-                                    $listaCat = $categoria->listar();
-                                    foreach($listaCat as $categorias){
-                                        if($linha['fk_idCategoria']==$categorias[0]){
-                                            $sel = "selected";	
-                                        }
-                                        else{
-                                            $sel = " ";	
-                                        }
-                                ?>
-                                <option value="<?php echo $categorias['pk_idCategoria'];?>" <?php echo $sel; ?>><?php echo $categorias['campoCategoria']; ?></option>
-                                    <?php } ?>
-                            </select>
-                        </div>
-                        <div class="div-update-den">
-                            <input class="form-control" type="file" name="imgDenuncia">
-                        </div>   
-                        <button type="button" class="btn-del-den" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $linha[0]; ?>">
-                                Denúncia Resolvida
-                        </button>
-                        <input type="submit" class="btn-update-den" value="Salvar">
-                    </form>
+                
+                <div>
+                    <div>
+                        <img src="../cadastro/<?php echo $linha['imgDenuncia']; ?>"style="width: 98%;">
+                    </div>
+                    <div class="modal-body">
+                        <form action="../CRUD/objeto-alterar-denuncia.php" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="pk_idDenuncia" value="<?php echo $linha['pk_idDenuncia'];?>">
+                            <div class="div-update-den" >
+                                <h2> <?php echo $linha['tituloDenuncia']; ?> </h2>
+                            </div>
+                            <div class="div-update-den">
+                                <label for="" class="title-updateDen" >Descrição da Denúncia</label>
+                                <input type="text" name="descDenuncia" class="form-control" value="<?php echo $linha['descDenuncia']; ?>">
+                            </div>
+                            <div class="div-update-den">
+                                <label for="" class="title-updateDen">Categorias</label>
+                                <select name="txtCategoria" class="form-select" id="">
+                                    <?php
+                                        require_once("../classe/Categoria.php");
+                    
+                                        $categoria = new Categoria();
+                                        $listaCat = $categoria->listar();
+                                        foreach($listaCat as $categorias){
+                                            if($linha['fk_idCategoria']==$categorias[0]){
+                                                $sel = "selected";
+                                            }
+                                            else{
+                                                $sel = " ";
+                                            }
+                                    ?>
+                                    <option value="<?php echo $categorias['pk_idCategoria'];?>" <?php echo $sel; ?>><?php echo $categorias['campoCategoria']; ?></option>
+                                        <?php } ?>
+                                </select>
+                            </div>
+                            <div class="div-update-den">
+                                <input class="form-control" type="file" name="imgDenuncia">
+                            </div>
+                            <button type="button" class="btn-del-den" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $linha[0]; ?>">
+                                    Denúncia Resolvida
+                            </button>
+                            <input type="submit" class="btn-update-den" value="Salvar">
+                        </form>
+                    </div>
                 </div>
                
+
+
+
+
                 </div>
             </div>
         </div>
