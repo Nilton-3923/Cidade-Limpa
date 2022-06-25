@@ -255,7 +255,8 @@
 
             $query = "SELECT imgDenuncia,imgUsuario,nomeUsuario,tituloDenuncia,descDenuncia,dataDenuncia,ufDenuncia,bairroDenuncia,cepDenuncia,ruaDenuncia,cidadeDenuncia,statusDenuncia FROM tbDenuncia
                       INNER JOIN tbUsuario ON tbDenuncia.fk_idUsuario = tbUsuario.pk_Usuario
-                      WHERE statusDenuncia NOT LIKE 'Resolvida%'";
+                      WHERE statusDenuncia NOT LIKE 'Resolvida%'
+                      ORDER BY pk_idDenuncia DESC";
 
             $query = $conexao->query($query);
 
@@ -317,7 +318,8 @@
             $alterarDenuncia = $conexao->prepare("UPDATE tbDenuncia 
                                                     SET
                                                         statusDenuncia = 'Resolvida'
-                                                        WHERE pk_idDenuncia = '$idDenuncia'");
+                                                        WHERE pk_idDenuncia = '$idDenuncia'
+                                                        ORDER BY pk_idDenuncia DESC");
 
             $alterarDenuncia->execute();
         }
@@ -356,8 +358,10 @@
             $conexao = Conexao::pegarConexao();
 
             $query = "SELECT * FROM tbDenuncia
-                      INNER JOIN tbUsuario ON tbUsuario.pk_Usuario = tbDenuncia.fk_idUsuario
-                      WHERE zonaDenuncia LIKE '%$regiao%'";
+                        INNER JOIN tbUsuario ON tbUsuario.pk_Usuario = tbDenuncia.fk_idUsuario
+                            WHERE zonaDenuncia LIKE '%$regiao%'
+                                ORDER BY pk_idDenuncia DESC
+                      ";
 
             $query = $conexao->query($query);
             $query = $query->fetchAll();

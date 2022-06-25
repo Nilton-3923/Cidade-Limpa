@@ -88,7 +88,8 @@
 
             $query = "SELECT * FROM tbDenuncia
                         INNER JOIN tbUsuario ON tbDenuncia.fk_idUsuario = tbUsuario.pk_usuario
-                            INNER JOIN tbCategoria ON tbDenuncia.fk_idCategoria = tbCategoria.pk_idCategoria";
+                            INNER JOIN tbCategoria ON tbDenuncia.fk_idCategoria = tbCategoria.pk_idCategoria
+                            ORDER BY pk_idDenuncia DESC";
 
             $query = $conexao->query($query);
 
@@ -103,7 +104,8 @@
             $query = "SELECT * FROM tbDenuncia
                         INNER JOIN tbUsuario ON tbDenuncia.fk_idUsuario = tbUsuario.pk_usuario
                             INNER JOIN tbCategoria ON tbDenuncia.fk_idCategoria = tbCategoria.pk_idCategoria
-                                WHERE statusDenuncia LIKE 'Não Resolvida'";
+                                WHERE statusDenuncia LIKE 'Não Resolvida'
+                                ORDER BY pk_idDenuncia DESC";
 
             $query = $conexao->query($query);
 
@@ -119,7 +121,8 @@
             $query = "SELECT * FROM tbDenuncia
                         INNER JOIN tbUsuario ON tbDenuncia.fk_idUsuario = tbUsuario.pk_usuario
                             INNER JOIN tbCategoria ON tbDenuncia.fk_idCategoria = tbCategoria.pk_idCategoria
-                                WHERE statusDenuncia LIKE 'Resolvida'";
+                                WHERE statusDenuncia LIKE 'Resolvida'
+                                ORDER BY pk_idDenuncia DESC";
 
             $query = $conexao->query($query);
 
@@ -186,9 +189,10 @@
             $conexao = Conexao::pegarConexao();
 
             $query = "SELECT * FROM tbDenuncia
-                      INNER JOIN tbUsuario ON tbDenuncia.fk_idUsuario = tbUsuario.pk_usuario
-                      INNER JOIN tbCategoria ON tbDenuncia.fk_idCategoria = tbCategoria.pk_idCategoria
-                      WHERE zonaDenuncia LIKE '%$regiao%'";
+                        INNER JOIN tbUsuario ON tbDenuncia.fk_idUsuario = tbUsuario.pk_usuario
+                            INNER JOIN tbCategoria ON tbDenuncia.fk_idCategoria = tbCategoria.pk_idCategoria
+                                WHERE zonaDenuncia LIKE '%$regiao%'
+                                    ORDER BY pk_idDenuncia DESC";
 
             $query = $conexao->query($query);
             $query = $query->fetchAll();
