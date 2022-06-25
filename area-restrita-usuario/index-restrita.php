@@ -5,13 +5,25 @@
     require_once("../classe/Conexao.php");
     require_once("../classe/Usuario.php");
     require_once("../classe/Denuncia.php");
+    require_once("../classe/Ecoponto.php");
 
     require_once("../classe/Categoria.php");
                                                 
     $categoria = new Categoria();
     $perfil = new Usuario();
+    
 
     $listaCat = $categoria->listar();
+
+    if(empty($_SESSION['coordenadaUsuario'])){
+        $coordenada = "lat:-23.5489,lng:-46.6388";   
+        $zoom = 12;
+    }
+    //Se a SESSION não estiver vazia ele dá os valores da pesquisa 
+    else {
+        $coordenada = $_SESSION['coordenadaUsuario'];
+        $zoom = 18;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -169,7 +181,14 @@
             <div class="div-principal">
             <h1 class="titulo-pagina">Criar Denuncia</h1>
             <div class="ajuste-info-e-mapa">
-                <div id="map"></div>
+                <div id="mapa">
+                    <form action="../objetos/objeto-pesquisar-mapa-usuario.php" method="post">
+
+                        <input type="text" placeholder="Pesquisar local" name="pesquisa">
+                        <button type="submit">Pesquisar</button>
+                    </form>
+                    <div id="map"></div>
+                </div>
                 <div class="info-denuncia">
                     <h2>O que é preciso para denunciar?</h2>
                     <div class="div-info">
@@ -506,8 +525,8 @@
         function initMap(){
             // Opções para o mapa
             var options = {
-                zoom: 12,
-                center:{lat:-23.5489,lng:-46.6388},
+                zoom: <?php echo $zoom; ?>,
+                center:{<?php echo $coordenada; ?>},
                 styles:[{
                             "featureType": "poi",
                             "stylers": [{
@@ -557,6 +576,24 @@
                                     +'<img style="height:150px; width:300px; margin-left:12px;"src="../cadastro/<?php echo $img;?>">'
                          },
                 <?php
+                }
+                
+                $ecoponto = new Ecoponto;
+                $pontosEcoponto = $ecoponto->mostrarEcoponto();
+                foreach ($pontosEcoponto as $row){
+                    $bairro = $row['bairroEcoponto'];
+                    $rua = $row['ruaEcoponto'];
+                    $numero = $row['numeroEcoponto'];
+                    $regiao = $row['zonaEcoponto'];
+                ?>
+                    {
+                    coords:{<?php echo $row['coordeEcoponto'];?>},
+                    content:'<h2 style="color: green">Ecoponto <?php echo $bairro; ?></h2>'
+                            +'<h3><?php echo "$rua, $numero"; ?></h3>'
+                            +'<h3 style="font-weight: normal"><?php echo $regiao; ?></h3>',
+                    iconImage: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+                    },    
+               <?php
                 }
                 ?>
             ]
