@@ -14,26 +14,27 @@
 }
 
 body{
-    padding-top:90px;
+    padding-top:65px;
 }
 .div-principal{
     display:flex;
     align-items:center;
     justify-content:center;
     flex-direction: column;
-    min-height:70vh;
+    height:100vh;
     gap:50px;
     padding:50px;
+    background:#037f8d;
 
 }
 .titulo-pagina{
     font-size:60px;
+    color:#fff;
 }
 
 #map{
     width: 50vw;
     height: 70vh;
-    border-radius:0 0 25px 25px;
 }
 .ajuste-pesquisa{
     background-color:var(--cor-navbar);
@@ -116,6 +117,7 @@ body{
     justify-content: space-between;
 }
 .info-denuncia{
+    background:linear-gradient(to top,#012E40 70%,transparent 100%),url(../imagens/bem-vindo.jpg);
     display:flex;
     align-items: center;
     justify-content: center;
@@ -123,21 +125,19 @@ body{
     gap:15px;
     font-size:25px;
     width:30%;
-    border-radius:20px;
-    outline:thick solid #064018;
+    border-radius:10px;
     position:relative;
     padding:15px;
 }
 .info-denuncia > h2{
-    
     text-align: center;
-    color:#064018;
+    color:#fff;
 }
 .div-info{
     display:flex;
     flex-direction: column;
     text-align: center;
-    gap:50px;
+    gap:15px;
     width:60%;
 }
 .div-info > ul{
@@ -146,11 +146,11 @@ body{
     gap:15px;
 }
 .div-info > ul > li{
-    color:#5ca32d;
+    color:rgb(170, 170, 170);
 }
 .btn-denunciar{
-    transition:background-color .3s;
-    background-color: #064018;
+    transition:all .3s;
+    background-color: #007cad;
     border-radius:20px;
     padding:20px;
     font-size:25px;
@@ -159,16 +159,20 @@ body{
     cursor:pointer;
 }
 .btn-denunciar:hover{
-    background-color: #0b6929;
+    transform:scale(1.04);
+    opacity:0.8;
 }
 
 .divisao-pagina{
     height:3px;
     border-radius:50px;
     background-color: #064018;
-    margin:100px 75px;
+    
 }
 .segundo-titulo{
+    background-color:var(--cor-navbar);
+    color:#fff;
+    padding:10px 0;
     font-size:35px;
     width:100%;
     text-align: center;
@@ -189,6 +193,11 @@ body{
 }
 #container {
     width: 330px!important;
+    transition:transform 0.3s;
+}
+#container:hover{
+    transform:scale(1.1);
+
 }
 
 .post-image {
@@ -710,6 +719,7 @@ main {
 .notificacao{
     margin-right: 50px;
 }
+
 
 
 

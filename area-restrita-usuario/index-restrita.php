@@ -199,12 +199,12 @@
                             <li>Foto da denuncia</li>
                             <li>Descrição sobre a situação do local</li>
                         </ul>
-                        <p onClick="modalCriarDenuncia()"class="btn-denunciar">Clique aqui para Denunciar</p>
+                        <p onClick="modalCriarDenuncia()"class="btn-denunciar">Criar Denuncia</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="divisao-pagina"></div>
+        <!--<div class="divisao-pagina"></div>-->
 
         <h1 class="segundo-titulo">DENÚNCIAS FEITAS POR VOCÊ</h1>
         <div class="ajuste-denuncias">
