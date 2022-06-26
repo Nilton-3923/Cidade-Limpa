@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26-Jun-2022 às 01:01
+-- Tempo de geração: 26-Jun-2022 às 02:42
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -29,21 +29,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tbadm` (
   `pk_idAdm` int(11) NOT NULL,
-  `nomeAdm` varchar(150) NOT NULL,
-  `sobrenomeAdm` varchar(150) NOT NULL,
+  `loginAdm` varchar(150) NOT NULL,
   `emailAdm` varchar(200) NOT NULL,
-  `cep` varchar(14) NOT NULL,
-  `senhaAdm` varchar(200) NOT NULL,
-  `denunciaReslvAdm` int(11) NOT NULL,
-  `imagemAdm` varchar(500) DEFAULT NULL
+  `senhaAdm` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `tbadm`
 --
 
-INSERT INTO `tbadm` (`pk_idAdm`, `nomeAdm`, `sobrenomeAdm`, `emailAdm`, `cep`, `senhaAdm`, `denunciaReslvAdm`, `imagemAdm`) VALUES
-(1, 'Adm', 'Adm', 'Adm@gmail.com', '10022555', '123', 8, NULL);
+INSERT INTO `tbadm` (`pk_idAdm`, `loginAdm`, `emailAdm`, `senhaAdm`) VALUES
+(1, 'Adm', 'Adm@gmail.com', '123');
 
 -- --------------------------------------------------------
 
@@ -173,7 +169,8 @@ CREATE TABLE `tbrespadm` (
   `pk_idRespAdm` int(11) NOT NULL,
   `dataRespAdm` date NOT NULL,
   `textoRespAdm` varchar(300) NOT NULL,
-  `fk_idDenuncia` int(11) NOT NULL
+  `fk_idDenuncia` int(11) NOT NULL,
+  `fk_idAdm` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -265,7 +262,8 @@ ALTER TABLE `tbecoponto`
 --
 ALTER TABLE `tbrespadm`
   ADD PRIMARY KEY (`pk_idRespAdm`),
-  ADD KEY `tbrespadm_ibfk_1` (`fk_idDenuncia`);
+  ADD KEY `tbrespadm_ibfk_1` (`fk_idDenuncia`),
+  ADD KEY `fk_idAdm` (`fk_idAdm`);
 
 --
 -- Índices para tabela `tbtelusuario`
@@ -354,7 +352,8 @@ ALTER TABLE `tbdenuncia`
 -- Limitadores para a tabela `tbrespadm`
 --
 ALTER TABLE `tbrespadm`
-  ADD CONSTRAINT `tbrespadm_ibfk_1` FOREIGN KEY (`fk_idDenuncia`) REFERENCES `tbdenuncia` (`pk_idDenuncia`);
+  ADD CONSTRAINT `tbrespadm_ibfk_1` FOREIGN KEY (`fk_idDenuncia`) REFERENCES `tbdenuncia` (`pk_idDenuncia`),
+  ADD CONSTRAINT `tbrespadm_ibfk_2` FOREIGN KEY (`fk_idAdm`) REFERENCES `tbadm` (`pk_idAdm`);
 
 --
 -- Limitadores para a tabela `tbtelusuario`
