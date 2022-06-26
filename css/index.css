@@ -46,10 +46,15 @@ body{
     backdrop-filter: blur(8px);
     gap:5%;
 }
-.bem-vindo > h1{
-    font-size: 100px;
+.titulo-bem-vindo{
+    font-size: 85px;
     color:#fff;
     text-align: center;
+}
+.legenda-bem-vindo{
+    color:#fff;
+    text-align: center;
+    font-size:35px;
 }
 .bem-vindo > img{
     width:800px;
@@ -175,10 +180,21 @@ body{
     opacity:1;
     pointer-events: all;
 }
-.ajuste-pesquisa{
-    width:40%;
+.ajuste-img-map{
     display:flex;
-    justify-content:end;
+    justify-content: center;
+    width:100%;
+}
+
+.h1-mapa{
+    width:100%;
+    color:white;
+    margin-left:25px;
+}
+.ajuste-pesquisa{
+    width:100%;
+    display:flex;
+    justify-content:center;
 
 }
 .pesquisa{
@@ -245,10 +261,6 @@ body{
 }
 
 /*EFEITINHO DE SCROLL*/
-.h1-mapa{
-    color:white;
-    margin-left:25px;
-}
 
 
 
@@ -267,8 +279,18 @@ body{
     .bem-vindo{
         background-position:center ;
     }
-    .bem-vindo > h1{
+    #h1{
+        display:flex;
+        align-items: center;
+        gap:15px;
+        flex-direction: column;
+    }
+    .titulo-bem-vindo{
+        width:90%;
         font-size: 35px;
+    }
+    .legenda-bem-vindo{
+        font-size: 15px;
     }
     .bem-vindo > img{
         width:200px;
@@ -295,7 +317,7 @@ body{
         width:80%;
     }
     .ajuste-pesquisa{
-        width:100%;
+        width:70%;
         justify-content: center;
     }
     .txt-apresentacao > span > h1{font-size:35px;}
@@ -306,7 +328,7 @@ body{
         align-items: center;
         justify-content: center;
         text-align: center;
-        font-size:20px;
+        font-size:15px;
         background-color:rgb(65, 87, 94);
         position:fixed;
         top:65px;
@@ -314,5 +336,8 @@ body{
         width:100vw;
         height:65px;
         z-index:1001;
+    }
+    .ajuste-img-map{
+        width:max-content;
     }
 }

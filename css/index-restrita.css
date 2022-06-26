@@ -35,12 +35,43 @@ body{
     height: 70vh;
     border-radius:0 0 25px 25px;
 }
-.pesquisa-map-usuario{
+.ajuste-pesquisa{
+    background-color:var(--cor-navbar);
+    width:100%;
     display:flex;
-    justify-content: end;
-    gap:5px;
-    padding:5px;
-    background-color:var(--cor-navbar) ;
+    justify-content:end;
+    padding:10px;
+
+}
+.pesquisa{
+    display: flex;
+    position:relative;
+}
+.pesquisa > input[type=text]{
+    transition:box-shadow 0.2s;
+    box-shadow: 0 0 0 3px rgba(77, 104, 112, 0),0 0 0 4px rgba(255, 255, 255, 0);
+
+    outline:#9B9B9B solid 1px;
+    border:none;
+    font-size:15px;
+    width:250px;
+    border-radius:5px;
+    padding:10px 15px;
+}
+.pesquisa > input[type=text]:focus{
+    box-shadow: 0 0 0 3px rgb(77, 104, 112),0 0 0 4px rgb(255, 255, 255);
+}
+.pesquisa > button{
+    background:#ffffff;
+    border:none;
+    outline:none;
+    font-size:24px;
+    padding:0 10px;
+    border-radius:50%;
+    position:absolute;
+    right:8px;
+    bottom:5px;
+    cursor: pointer;
 }
 .navbar-logado{
     display: flex;

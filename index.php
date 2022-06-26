@@ -35,9 +35,10 @@
     <?php include 'includes/navbar.php'?>
     <div id="home"class="bem-vindo">
         <img id="imgBemVindo"src="./imagens/logo.png">
-        <h1 id="h1">BEM-VINDO AO CIDADE LIMPA!</h1>
-        <!-------ARRUMAR ESSE TEXTO COM O CSS--------->
-        <h2>Auxilindo a manter São Paulo uma cidade melhor.</h2>
+        <div id="h1">
+            <h1 class="titulo-bem-vindo">BEM-VINDO AO CIDADE LIMPA!</h1>
+            <h1 class="legenda-bem-vindo">Ajudando a fazer São Paulo uma cidade mais limpa.</h1>
+        </div>
     </div>
     <script>
         window.addEventListener('scroll',()=>{
@@ -85,8 +86,10 @@
             })
         </script>
         <div id="navbar-do-mapa"class="map-nav">
-            <img class="logo" src="./imagens/logo.png">
-            <h1 style="color:white;margin-left:25px;">ACHE OS ECOPONTOS MAIS PRÓXIMO DA SUA LOCALIZAÇÃO E VEJA OS PONTOS DE DENÚNCIA</h1>
+            <div class="ajuste-img-map">
+                <img class="logo" src="./imagens/logo.png">
+            </div>
+            <h1 class="h1-mapa">ACHE OS ECOPONTOS MAIS PRÓXIMOS DA SUA LOCALIZAÇÃO E VEJA OS PONTOS DE DENÚNCIA</h1>
             <div class="ajuste-pesquisa">
                 <form action="./objetos/objeto-pesquisar-mapa.php?localizacao=index" method="post">
                     <div class="pesquisa">
