@@ -36,7 +36,6 @@
         <link rel="stylesheet" href="../css/reset.css">
         <Link rel="stylesheet" href="../css/index-restrita.css">
         <link rel="stylesheet" href="../css/input-foto.css">
-        <link rel="stylesheet" href="../css/alterar-modal.css">
         <link rel="stylesheet" href="../css/update-denuncia-modal.css">
         <link rel="stylesheet" href="../css/modal-confirmacao-deletar.css">
         <link rel="stylesheet" href="../css/notificacao.css">
