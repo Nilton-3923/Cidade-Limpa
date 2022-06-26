@@ -34,7 +34,8 @@
         public function contagem(){
             $conexao = Conexao::pegarConexao();
 
-            $query = "SELECT denunciaReslvAdm FROM tbAdm";
+            $query = "SELECT COUNT(pk_idDenuncia) FROM tbDenuncia
+                        WHERE statusDenuncia LIKE 'Resolvida'";
             $query = $conexao->query($query);
 
             $query = $query->fetchAll();

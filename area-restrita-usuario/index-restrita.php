@@ -183,7 +183,7 @@
             <div class="ajuste-info-e-mapa">
                 <div id="mapa">
                     <div class="ajuste-pesquisa">
-                        <form action="../objetos/objeto-pesquisar-mapa-usuario.php" method="post">
+                        <form action="../objetos/objeto-pesquisar-mapa.php?localizacao=usuario" method="post">
                             <div class="pesquisa">
                                 <input type="text" name="pesquisa" placeholder="Localizar Denuncias">
                                 <button type="submit">🔍</button>
