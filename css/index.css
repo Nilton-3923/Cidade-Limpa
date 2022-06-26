@@ -47,17 +47,17 @@ body{
     gap:5%;
 }
 .titulo-bem-vindo{
-    font-size: 85px;
+    font-size: 75px;
     color:#fff;
     text-align: center;
 }
 .legenda-bem-vindo{
     color:#fff;
     text-align: center;
-    font-size:35px;
+    font-size:25px;
 }
 .bem-vindo > img{
-    width:800px;
+    width:650px;
 }
 .apresentacao-cidade-limpa{
     width:100%;

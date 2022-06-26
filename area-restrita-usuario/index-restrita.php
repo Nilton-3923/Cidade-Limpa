@@ -192,7 +192,7 @@
                     <div id="map"></div>
                 </div>
                 <div class="info-denuncia">
-                    <h2>O que é preciso para denunciar?</h2>
+                    <h1>O que é preciso para denunciar?</h1>
                     <div class="div-info">
                         <ul>
                             <li>Endereço do local</li>
@@ -206,7 +206,7 @@
         </div>
         <!--<div class="divisao-pagina"></div>-->
 
-        <h1 class="segundo-titulo">DENÚNCIAS FEITAS POR VOCÊ</h1>
+        <h1 class="segundo-titulo">SUAS DENÚNCIAS</h1>
         <div class="ajuste-denuncias">
             <div class="denuncias">
         <?php
