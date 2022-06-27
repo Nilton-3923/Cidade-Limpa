@@ -387,12 +387,18 @@
         
             <div id="modalAlterarConta"class="ajuste-modal-alterar-conta">
                 <div class="modal-alterar-conta">
+                    <!--navbar da modal-->
                     <div class="nav-modal-bts">
                         <div class="ajuste-img-nav-modal">
                             <img class="logo-update"src="../imagens/logo.png">
                         </div>
+                        <div class="ajuste-texto-nav-modal">
+                            <h1>Editar Conta</h1>
+                        </div>
                         <div class="ajuste-fechar-nav-modal">
-                            <button type="button" class="btn-close" onClick="modalAlterarConta()" aria-label="Close"></button>
+                            <div class="ajuste2-nav-fechar-modal">
+                                <button type="button" class="btn-close btn-close-white" onClick="modalAlterarConta()" aria-label="Close"></button>
+                            </div>
                         </div>
                     </div>
                     
@@ -448,15 +454,19 @@
                     <div class="ajuste-img-nav-modal">
                         <img class="logo-update"src="../imagens/logo.png">
                     </div>
+                    <div class="ajuste-texto-nav-modal">
+                        <h1>Criar Denuncia</h1>
+                    </div>
                     <div class="ajuste-fechar-nav-modal">
-                        <button type="button" onClick="cancelarModalCriarDenuncia()" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="ajuste2-nav-fechar-modal">
+                            <button type="button" class="btn-close btn-close-white" onClick="cancelarModalCriarDenuncia()" aria-label="Close"></button>
+                        </div>
                     </div>
                 </div>
-
-                <h1 class="titulo-criar-denuncia">Denuncia</h1>
+                    
                 <span id="mensagem" style="opacity:0;color:red;display:none">*Endereço invalido</span>
                 
-                <form action="../cadastro/objeto-cadastro-denuncia.php" method="post" enctype="multipart/form-data">
+                <form class="form-criar-denuncia" action="../cadastro/objeto-cadastro-denuncia.php" method="post" enctype="multipart/form-data">
                 <div class="ajuste-form">
                     <div class="form-pt1">
                         <!--Id do usuario-->
@@ -465,40 +475,40 @@
                                 <input type="hidden" name="txtIdUsuario" value="<?php echo $_SESSION['idUsuario']; ?>"> 
                                 <div class="ajuste-para-correcao-inputs">
                                     <!--Titulo denuncia-->
-                                    <input type="text" name="txtTituloDenuncia" aria-describedby="inputGroupPrepend" required placeholder="Titúlo">
+                                    <input class="form-control " type="text" name="txtTituloDenuncia" aria-describedby="inputGroupPrepend" required placeholder="Titúlo">
                                 
                                 </div>
                                 
                                 <!--Categoria da denuncia-->
                                 <div class="ajuste-para-correcao-inputs">
-                                    <input type="text" id="cep" name="txtCepDenuncia" aria-describedby="inputGroupPrepend" required placeholder="CEP" maxlength="9">   
+                                    <input class="form-control " type="text" id="cep" name="txtCepDenuncia" aria-describedby="inputGroupPrepend" required placeholder="CEP" maxlength="9">   
                                 </div>
                                 <div class="ajuste-para-correcao-inputs">
-                                    <input class="rua config-input desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="rua" name="txtRuaDenuncia" placeholder="Rua" >
+                                    <input class="form-control rua desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="rua" name="txtRuaDenuncia" placeholder="Rua" >
                                 </div>
                                 <div class="ajuste-para-correcao-inputs">
-                                    <input class="desabilitado"type="text" id="bairro" aria-describedby="inputGroupPrepend" required name="txtBairroDenuncia" placeholder="Bairro">
+                                    <input class="form-control desabilitado"type="text" id="bairro" aria-describedby="inputGroupPrepend" required name="txtBairroDenuncia" placeholder="Bairro">
                                 </div>
                                 <!--Endereços-->
                                 <div class="ajuste-para-correcao-inputs">
-                                    <input class="cidade config-input desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="cidade" name="txtCidadeDenuncia" placeholder="Cidade" >
+                                    <input class="form-control cidade desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="cidade" name="txtCidadeDenuncia" placeholder="Cidade" >
                                 </div>
                             </div>
                             <div class="ajuste-inputs-2dg">
-                                <input class="num config-input" type="text" id="numero" aria-describedby="inputGroupPrepend" required name="txtNumeroDenuncia" placeholder="Nº">   
-                                <input class="uf config-input desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="uf" name="txtUfDenuncia" placeholder="UF" >
+                                <input class="form-control num " type="text" id="numero" aria-describedby="inputGroupPrepend" required name="txtNumeroDenuncia" placeholder="Nº">   
+                                <input class="form-control uf desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="uf" name="txtUfDenuncia" placeholder="UF" >
                             </div>
                         </div>
                         
                         <!--Descrição denuncia-->
                         <!--Aqui tem que ser uma área para escrever-->
-                        <textarea class="desc" name="txtDenuncia" id="denuncia" cols="28" rows="5" placeholder="Descrição"></textarea>
+                        <textarea class="form-control desc" name="txtDenuncia" id="denuncia" cols="28" rows="5" placeholder="Descrição"></textarea>
                         
                     </div>
                 </div>
                 <!--Número da casa-->
                 <div class="categ-reg-ft">
-                    <select name="txtCategoria">
+                    <select class="form-select"name="txtCategoria">
                         <option disabled selected>Selecione a Categoria</option>
                         <?php 
                             foreach($listaCat as $linha)
@@ -512,7 +522,7 @@
                             ?>
                         </select>
                         <!--Região-->
-                        <select name="regiao" id="regiao">
+                        <select class="form-select"name="regiao" id="regiao">
                             <option disabled selected>Regiões de São Paulo</option>
                             <option value="Zona Leste">Zona Leste</option>
                             <option value="Zona Norte">Zona Norte</option>
