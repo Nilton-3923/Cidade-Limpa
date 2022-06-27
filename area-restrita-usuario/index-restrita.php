@@ -99,7 +99,7 @@
         <div class="modal-denuncia-resolvida" id="modal-denuncia-resolvida" style="display:none"> 
         <h3>Estamos verificando se algumas denúncias que você fez já foram realizadas</h3>
         <form action="../objetos/objeto-denuncia-resolvida.php" method="POST">
-        <input type="submit" value="Denúncia resolvida">
+        <input class="btn-update-den btn-postitivo"type="submit" value="Denúncia resolvida">
         
             <table>
             <tr>
@@ -279,7 +279,7 @@
         
             </table>
             <div class="modal-footer-131417">
-                <input type="submit" class="btn-update-den" value="Denúncia resolvida">
+                <input type="submit" class="btn-update-den btn-positivo" value="Denúncia resolvida">
             </div>
             
         </form>
@@ -338,7 +338,7 @@
                             <button type="button" class="btn-del-den" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $linha[0]; ?>">
                                     Denúncia Resolvida
                             </button>
-                            <input type="submit" class="btn-update-den" value="Salvar">
+                            <input type="submit" class="btn-update-den btn-positivo" value="Salvar">
                         </form>
                     </div>
                 </div>
@@ -410,15 +410,15 @@
                                     <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
                                 </div>
                             </div>
-                        <input type="hidden" name="pk_Usuario" value="<?php echo $_SESSION['idUsuario'];?>" >
-                        <input type="text" name="nomeUsuario" value="<?php echo $linha['nomeUsuario'];?>" ><!--NOME USUARIO -->
-                        <input class="input-desabilitado" type="text" name="emailUsuario" disabled value="<?php echo $linha['emailUsuario'];?>" ><!--TELEFONE USUARIO -->
-                        <input type="text" name="senhaUsuario" value="<?php echo $linha['senhaUsuario'];?>" ><!--SENHA USUARIO -->
-                        <input type="text" name="numTelUsuario" value="<?php echo $linha['numTelUsuario'];?>" ><!--TELEFONE USUARIO -->
+                        <input class="form-control"type="hidden" name="pk_Usuario" value="<?php echo $_SESSION['idUsuario'];?>" >
+                        <input class="form-control"type="text" name="nomeUsuario" value="<?php echo $linha['nomeUsuario'];?>" ><!--NOME USUARIO -->
+                        <input class="form-control" type="text" name="emailUsuario" disabled value="<?php echo $linha['emailUsuario'];?>" ><!--TELEFONE USUARIO -->
+                        <input class="form-control"type="text" name="senhaUsuario" value="<?php echo $linha['senhaUsuario'];?>" ><!--SENHA USUARIO -->
+                        <input class="form-control"type="text" name="numTelUsuario" value="<?php echo $linha['numTelUsuario'];?>" ><!--TELEFONE USUARIO -->
                         
                         <div class="btns-modal">
-                            <!-- Botao de deletar denuncia--><div data-bs-toggle="modal" data-bs-target="#modalDeletarConta" class="abrir-modal-confirmacao-deletar-conta">Deletar</div>
-                            <input class="salvar1111"type="submit" value="Salvar">
+                            <!-- Botao de deletar denuncia--><div data-bs-toggle="modal" data-bs-target="#modalDeletarConta" class="btn-update-den btn-negativo">Deletar</div>
+                            <input class="btn-update-den btn-positivo"type="submit" value="Salvar">
                         </div>
                     </form>
                 </div>
@@ -539,7 +539,7 @@
                             </div>
                         </div>
 
-                        <input class="btn-denunciar alteracao-btn-criar-denuncia"type="submit" value="Denunciar">
+                        <input class="btn-update-den btn-positivo"type="submit" value="Denunciar">
                         
                     </div>
                     <script>
