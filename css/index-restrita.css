@@ -55,7 +55,7 @@ body{
     outline:#9B9B9B solid 1px;
     border:none;
     font-size:15px;
-    width:250px;
+    width:300px;
     border-radius:5px;
     padding:10px 15px;
 }
@@ -71,7 +71,7 @@ body{
     border-radius:50%;
     position:absolute;
     right:8px;
-    bottom:5px;
+    bottom:4px;
     cursor: pointer;
 }
 .navbar-logado{
@@ -514,9 +514,26 @@ body{
     gap:20px;
 }
 .ajuste-11347{
+    width:100%;
     display:flex;
     flex-direction: column;
     gap:20px;
+}
+.modal-footer-131417{
+    width:100%;
+    display:flex;
+    justify-content: end;
+}
+.ajuste-h1-1437{
+    font-size:20px;
+    font-weight:700;
+    text-align:center;
+    width:70%;
+}
+.modal-body{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
 }
 .desc{
     border:none;

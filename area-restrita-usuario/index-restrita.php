@@ -242,13 +242,13 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>Estamos verificando se algumas denúncias que você fez já foram realizadas</p>
+                <h1 class="ajuste-h1-1437">Estamos verificando se algumas denúncias que você fez já foram realizadas</h1>
                 <form action="../objetos/objeto-denuncia-resolvida.php" method="POST">
 
                 <hr>
         
-            <table>
-            <tr >
+            <table class="table  table-striped">
+            <tr>
                 <th>Categoria</th>
                 <th>Data</th>
                 <th>Rua</th>
@@ -278,7 +278,7 @@
             ?>
         
             </table>
-            <div class="modal-footer">
+            <div class="modal-footer-131417">
                 <input type="submit" class="btn-update-den" value="Denúncia resolvida">
             </div>
             
@@ -300,7 +300,7 @@
                 
                 <div>
                     <div>
-                        <img src="../cadastro/<?php echo $linha['imgDenuncia']; ?>"style="width: 98%;">
+                        <img src="../cadastro/<?php echo $linha['imgDenuncia']; ?>"style="width: 100%;">
                     </div>
                     <div class="modal-body">
                         <form action="../CRUD/objeto-alterar-denuncia.php" method="post" enctype="multipart/form-data">
