@@ -184,7 +184,7 @@
                     <div class="ajuste-pesquisa">
                         <form action="../objetos/objeto-pesquisar-mapa.php?localizacao=usuario" method="post">
                             <div class="pesquisa">
-                                <input type="text" name="pesquisa" placeholder="Localizar Denuncias">
+                                <input type="text" name="pesquisa" placeholder="Digite CEP, logradouro ou bairro">
                                 <button type="submit">🔍</button>
                             </div>
                         </form>
