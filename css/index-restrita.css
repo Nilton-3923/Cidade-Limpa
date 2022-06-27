@@ -152,7 +152,7 @@ body{
 }
 .btn-denunciar{
     transition:all .3s;
-    background-color: #007cad;
+    background-color: #52BF04;
     border-radius:20px;
     padding:20px;
     font-size:25px;
@@ -749,7 +749,7 @@ main {
     color:#fff!important;
 }
 .btn-positivo{
-    background:green!important;
+    background:#13678A!important;
     color:#fff!important;
 }
 @media (max-width: 720px) {
