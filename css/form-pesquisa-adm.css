@@ -1,0 +1,10 @@
+.div-pesquisa-usuario{
+    display: flex;
+    flex-direction: row;
+}
+.btn-pesquisa{
+    margin:10px;
+}
+.form-den{
+    
+}
