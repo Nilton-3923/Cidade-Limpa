@@ -435,7 +435,16 @@
         <p id="mensagem"></p>
         <div id="modalCriarDenuncia" class="ajuste-criar-denuncia">
             <div class="criar-denuncia">
-                <button type="button" onClick="cancelarModalCriarDenuncia()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                <div class="nav-modal-bts">
+                    <div class="ajuste-img-nav-modal">
+                        <img class="logo-update"src="../imagens/logo.png">
+                    </div>
+                    <div class="ajuste-fechar-nav-modal">
+                        <button type="button" onClick="cancelarModalCriarDenuncia()" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                </div>
+
                 <h1 class="titulo-criar-denuncia">Denuncia</h1>
                 <span id="mensagem" style="opacity:0;color:red;display:none">*Endereço invalido</span>
                 
