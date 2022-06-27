@@ -8,7 +8,9 @@
 	display:block!important;
 	width:200px!important;
 	height:200px;
-	background:url('../imagens/sair-adm.png'),#00b344;
+	background:url('../imagens/user.png'),#f6f5f7;
+	border:thin solid black;
+	border-radius:50%;
 	background-size:cover;
 	background-position:center;
 }

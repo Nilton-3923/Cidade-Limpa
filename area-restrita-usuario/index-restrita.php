@@ -239,7 +239,7 @@
             <div class="modal-header">
                 <img src="../imagens/logo.png" class="logo-update" alt="">
                 <h5 class="alterar-label">Verificação da Denúncia!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <p>Estamos verificando se algumas denúncias que você fez já foram realizadas</p>
@@ -295,7 +295,7 @@
                 <div class="modal-header">
                     <img src="../imagens/logo.png" class="logo-update" alt="">
                     <h5 class="alterar-label">Denúncia <?php echo $linha['tituloDenuncia']; ?></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 
                 <div>
@@ -387,11 +387,19 @@
         
             <div id="modalAlterarConta"class="ajuste-modal-alterar-conta">
                 <div class="modal-alterar-conta">
-                    <button type="button" class="btn-close" onClick="modalAlterarConta()" aria-label="Close"></button>
+                    <div class="nav-modal-bts">
+                        <div class="ajuste-img-nav-modal">
+                            <img class="logo-update"src="../imagens/logo.png">
+                        </div>
+                        <div class="ajuste-fechar-nav-modal">
+                            <button type="button" class="btn-close" onClick="modalAlterarConta()" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    
                     <form action="../CRUD/objeto-alterar-usuario.php" method="post" enctype="multipart/form-data" class="alterar">
                             <div class="form-input">
                                 <div class="preview">
-                                    <img id="file-ip-1-preview">
+                                    <img src="../imagens/user.png"class="f1111"id="file-ip-1-preview">
                                     <label for="file-ip-1">Escolher Imagem</label>
                                     <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
                                 </div>
@@ -404,8 +412,8 @@
                         
                         <div class="btns-modal">
                             <!-- Botao de deletar denuncia--><div data-bs-toggle="modal" data-bs-target="#modalDeletarConta" class="abrir-modal-confirmacao-deletar-conta">Deletar</div>
+                            <input class="salvar1111"type="submit" value="Salvar">
                         </div>
-                        <input type="submit" value="Salvar">
                     </form>
                 </div>
             </div>
@@ -452,38 +460,40 @@
                 <div class="ajuste-form">
                     <div class="form-pt1">
                         <!--Id do usuario-->
-                        <input type="hidden" name="txtIdUsuario" value="<?php echo $_SESSION['idUsuario']; ?>"> 
-                        <div class="ajuste-para-correcao-inputs">
-                            <!--Titulo denuncia-->
-                            <input type="text" name="txtTituloDenuncia" aria-describedby="inputGroupPrepend" required placeholder="Titúlo">
-                            <div class="correcao-inputs"></div>
+                        <div class="ajuste-13477">
+                            <div class="ajuste-11347">
+                                <input type="hidden" name="txtIdUsuario" value="<?php echo $_SESSION['idUsuario']; ?>"> 
+                                <div class="ajuste-para-correcao-inputs">
+                                    <!--Titulo denuncia-->
+                                    <input type="text" name="txtTituloDenuncia" aria-describedby="inputGroupPrepend" required placeholder="Titúlo">
+                                
+                                </div>
+                                
+                                <!--Categoria da denuncia-->
+                                <div class="ajuste-para-correcao-inputs">
+                                    <input type="text" id="cep" name="txtCepDenuncia" aria-describedby="inputGroupPrepend" required placeholder="CEP" maxlength="9">   
+                                </div>
+                                <div class="ajuste-para-correcao-inputs">
+                                    <input class="rua config-input desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="rua" name="txtRuaDenuncia" placeholder="Rua" >
+                                </div>
+                                <div class="ajuste-para-correcao-inputs">
+                                    <input class="desabilitado"type="text" id="bairro" aria-describedby="inputGroupPrepend" required name="txtBairroDenuncia" placeholder="Bairro">
+                                </div>
+                                <!--Endereços-->
+                                <div class="ajuste-para-correcao-inputs">
+                                    <input class="cidade config-input desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="cidade" name="txtCidadeDenuncia" placeholder="Cidade" >
+                                </div>
+                            </div>
+                            <div class="ajuste-inputs-2dg">
+                                <input class="num config-input" type="text" id="numero" aria-describedby="inputGroupPrepend" required name="txtNumeroDenuncia" placeholder="Nº">   
+                                <input class="uf config-input desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="uf" name="txtUfDenuncia" placeholder="UF" >
+                            </div>
                         </div>
                         
-                        <!--Categoria da denuncia-->
-                        <div class="ajuste-para-correcao-inputs">
-                            <input type="text" id="cep" name="txtCepDenuncia" aria-describedby="inputGroupPrepend" required placeholder="CEP" maxlength="9">   
-                            <div class="correcao-inputs"></div>
-                        </div>
-                        <div class="ajuste-para-correcao-inputs">
-                            <input class="rua config-input desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="rua" name="txtRuaDenuncia" placeholder="Rua" >
-                        </div>
-                        <div class="ajuste-para-correcao-inputs">
-                            <input class="desabilitado"type="text" id="bairro" aria-describedby="inputGroupPrepend" required name="txtBairroDenuncia" placeholder="Bairro">
-                            <div class="correcao-inputs"></div>
-                        </div>
-                        <!--Endereços-->
-                        <div class="ajuste-para-correcao-inputs">
-                            <input class="cidade config-input desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="cidade" name="txtCidadeDenuncia" placeholder="Cidade" >
-                        </div>
                         <!--Descrição denuncia-->
                         <!--Aqui tem que ser uma área para escrever-->
-                        <textarea class="desc" name="txtDenuncia" id="denuncia" cols="23" rows="5" placeholder="Descrição"></textarea>
+                        <textarea class="desc" name="txtDenuncia" id="denuncia" cols="28" rows="5" placeholder="Descrição"></textarea>
                         
-                        
-                    </div>
-                    <div class="ajuste-inputs-2dg">
-                        <input class="num config-input" type="text" id="numero" aria-describedby="inputGroupPrepend" required name="txtNumeroDenuncia" placeholder="Nº">   
-                        <input class="uf config-input desabilitado"type="text" aria-describedby="inputGroupPrepend" required id="uf" name="txtUfDenuncia" placeholder="UF" >
                     </div>
                 </div>
                 <!--Número da casa-->
