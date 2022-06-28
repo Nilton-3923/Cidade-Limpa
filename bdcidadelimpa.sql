@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28-Jun-2022 às 03:04
+-- Tempo de geração: 28-Jun-2022 às 03:10
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -97,17 +97,6 @@ CREATE TABLE `tbdenuncia` (
   `fk_idCategoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Extraindo dados da tabela `tbdenuncia`
---
-
-INSERT INTO `tbdenuncia` (`pk_idDenuncia`, `tituloDenuncia`, `descDenuncia`, `imgDenuncia`, `dataDenuncia`, `ufDenuncia`, `bairroDenuncia`, `cepDenuncia`, `ruaDenuncia`, `cidadeDenuncia`, `coordeDenuncia`, `zonaDenuncia`, `statusDenuncia`, `fk_idUsuario`, `fk_idCategoria`) VALUES
-(44, 'Lixo em Na rua', 'Lixo na minha rua tá fogo', 'imgDenuncia/atencao.png', '27/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Leste', 'Não Resolvida', 1, 1),
-(45, 'Casos de Dengue', 'Casos de Dengue por conta de lixo', 'imgDenuncia/verificado.png', '27/06/2022', 'SP', 'Bela Vista', '06060-220', 'Rua Alberto Torres', 'Osasco', 'lat: -23.5553781, lng: -46.7844741', 'Zona Norte', 'Não Resolvida', 1, 2),
-(46, 'Lixo Guaianases', 'Lixo', 'imgDenuncia/atencao.png', '27/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5549093, lng: -46.4157249', 'Zona Norte', 'Não Resolvida', 1, 1),
-(47, 'Lixo Guaianases', 'lixo', 'imgDenuncia/', '27/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5544294, lng: -46.4149617', 'Zona Leste', 'Não Resolvida', 1, 1),
-(48, 'Lixo Tiête', 'jvj', 'imgDenuncia/', '27/06/2022', 'SP', 'Vila Marilena', '08411-330', 'Rua General Rocha Calado', 'São Paulo', 'lat: -23.5539949, lng: -46.4147634', 'Zona Oeste', 'Não Resolvida', 1, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -139,7 +128,22 @@ INSERT INTO `tbecoponto` (`pk_idEcoponto`, `ufEcoponto`, `logradouroEcoponto`, `
 (17, 'SP', 'São Paulo', 'Ferreira', '05524-000', 'Rua Caminho do Engenho', 'São Paulo', 'lat: -23.5965996, lng: -46.7442267', 'Zona Oeste', '800'),
 (18, 'SP', 'São Paulo', 'Jardim Sarah', '05382-140', 'Rua Paulino Baptista Conti', 'São Paulo', 'lat: -23.5767652, lng: -46.761696', 'Zona Oeste', '1'),
 (19, 'SP', 'São Paulo', 'Morumbi', '05651-002', 'Avenida Giovanni Gronchi', 'São Paulo', 'lat: -23.6100262, lng: -46.7268579', 'Zona Oeste', '3413'),
-(20, 'SP', 'São Paulo', 'Conjunto Habitacional Instituto Adventista', '05868-600', 'Rua Rosifloras', 'São Paulo', 'lat: -23.6642031, lng: -46.7753902', 'Zona Sul', '301');
+(20, 'SP', 'São Paulo', 'Conjunto Habitacional Instituto Adventista', '05868-600', 'Rua Rosifloras', 'São Paulo', 'lat: -23.6642031, lng: -46.7753902', 'Zona Sul', '301'),
+(21, 'SP', 'São Paulo', 'Parque Fernanda', '05889-230', 'Rua Antônio Canon', 'São Paulo', 'lat: -23.6720648, lng: -46.7909595', 'Zona Sul', '400'),
+(22, 'SP', 'São Paulo', 'Parque Arariba', '05778-180', 'Rua Caio Graco da Silva Prado', 'São Paulo', 'lat: -23.6384692, lng: -46.7560749', 'Zona Sul', '1235'),
+(23, 'SP', 'São Paulo', 'Vila Andrade', '05729-100', 'Rua Campo Novo do Sul', 'São Paulo', 'lat: -23.6380934, lng: -46.7415898', 'Zona Sul', '500'),
+(24, 'SP', 'São Paulo', 'Paraíso do Morumbi', '05706-300', 'Rua Irapará', 'São Paulo', 'lat: -23.6226533, lng: -46.7250532', 'Zona Oeste', '73'),
+(34, 'SP', 'São Paulo', 'Imirim', '02537-000', 'Rua Padre João Gualberto', 'São Paulo', 'lat: -23.490477, lng: -46.6534463', 'Zona Norte', '3168'),
+(35, 'SP', 'São Paulo', 'Jardim Centenário', '02882-030', 'Avenida Félix Alves Pereira', 'São Paulo', 'lat: -23.5557714, lng: -46.6395571', 'Zona Norte', '113'),
+(36, 'SP', 'São Paulo', 'Vila Santista', '02560-220', 'Travessa Geraldo Ferraz', 'São Paulo', 'lat: -23.4931207, lng: -46.6706479', 'Zona Norte', '38'),
+(37, 'SP', 'São Paulo', 'Jardim Antártica', '02652-170', 'Rua Dom Aquino', 'São Paulo', 'lat: -23.4568645, lng: -46.6591389', 'Zona Norte', '103'),
+(38, 'SP', 'São Paulo', 'Vila Palmeiras', '02725-030', 'Rua Antônio Rates', 'São Paulo', 'lat: -23.4965808, lng: -46.6838586', 'Zona Norte', '1'),
+(39, 'SP', 'São Paulo', 'Balneário Mar Paulista', '04467-000', 'Estrada do Alvarenga', 'São Paulo', 'lat: -23.6954148, lng: -46.6515951', 'Zona Norte', '2475'),
+(40, 'SP', 'São Paulo', 'Balneário Mar Paulista', '04467-000', 'Estrada do Alvarenga', 'São Paulo', 'lat: -23.6954148, lng: -46.6515951', 'Zona Sul', '2475'),
+(41, 'SP', 'São Paulo', 'Jardim Itacolomi', '04385-090', 'Rua Visconde de Santa Isabel', 'São Paulo', 'lat: -23.6631055, lng: -46.6580814', 'Zona Sul', '131'),
+(51, 'SP', 'São Paulo', 'Parque Guarani', '08235-620', 'Rua Manuel Alves da Rocha', 'São Paulo', 'lat: -23.5208853, lng: -46.4635939', 'Zona Leste', '584'),
+(52, 'SP', 'São Paulo', 'Jardim Nossa Senhora do Carmo', '08275-310', 'Rua Machado Nunes', 'São Paulo', 'lat: -23.5790199, lng: -46.486113', 'Zona Leste', '95'),
+(55, 'SP', 'São Paulo', 'Vila Santa Cruz (Zona Leste)', '08411-010', 'Rua da Passagem Funda', 'São Paulo', 'lat: -23.5552296, lng: -46.4129776', 'Zona Leste', '250');
 
 -- --------------------------------------------------------
 
@@ -155,17 +159,6 @@ CREATE TABLE `tbrespadm` (
   `fk_idDenuncia` int(11) NOT NULL,
   `fk_idAdm` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `tbrespadm`
---
-
-INSERT INTO `tbrespadm` (`pk_idRespAdm`, `dataRespAdm`, `textoRespAdm`, `denunciaVerificada`, `fk_idDenuncia`, `fk_idAdm`) VALUES
-(3, '27/06/2022', 'Estamos verificando se essa denúncia foi resolvida?', 'Verificada', 44, 1),
-(4, '27/06/2022', 'Estamos verificando se essa denúncia foi resolvida?', 'Verificada', 45, 1),
-(5, '27/06/2022', 'Olá amigo', 'Verificada', 46, 1),
-(6, '27/06/2022', 'olha lixo', 'Verificada', 47, 1),
-(7, '27/06/2022', 'Estamos verificando se essa denúncia foi resolvida?', 'Verificada', 48, 1);
 
 -- --------------------------------------------------------
 
@@ -297,19 +290,19 @@ ALTER TABLE `tbchatbot`
 -- AUTO_INCREMENT de tabela `tbdenuncia`
 --
 ALTER TABLE `tbdenuncia`
-  MODIFY `pk_idDenuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `pk_idDenuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de tabela `tbecoponto`
 --
 ALTER TABLE `tbecoponto`
-  MODIFY `pk_idEcoponto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `pk_idEcoponto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de tabela `tbrespadm`
 --
 ALTER TABLE `tbrespadm`
-  MODIFY `pk_idRespAdm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `pk_idRespAdm` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `tbtelusuario`
