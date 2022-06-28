@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28-Jun-2022 às 03:10
+-- Tempo de geração: 29-Jun-2022 às 00:38
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -58,7 +58,10 @@ CREATE TABLE `tbcategoria` (
 
 INSERT INTO `tbcategoria` (`pk_idCategoria`, `campoCategoria`) VALUES
 (1, 'Descarte Irregular de Lixo'),
-(2, 'Casos de Dengue');
+(2, 'Descarte com Água Parada'),
+(3, 'Descarte Orgânico'),
+(4, 'Descarte de Entulho'),
+(5, 'Descarte de Resíduo Tóxico');
 
 -- --------------------------------------------------------
 
@@ -96,6 +99,15 @@ CREATE TABLE `tbdenuncia` (
   `fk_idUsuario` int(11) NOT NULL,
   `fk_idCategoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tbdenuncia`
+--
+
+INSERT INTO `tbdenuncia` (`pk_idDenuncia`, `tituloDenuncia`, `descDenuncia`, `imgDenuncia`, `dataDenuncia`, `ufDenuncia`, `bairroDenuncia`, `cepDenuncia`, `ruaDenuncia`, `cidadeDenuncia`, `coordeDenuncia`, `zonaDenuncia`, `statusDenuncia`, `fk_idUsuario`, `fk_idCategoria`) VALUES
+(44, 'Está me atrapalhando!', 'Preciso que alguém venha limpar, está cheirando mal e não consigo andar pela calsada', 'imgDenuncia/lixo.jpg', '28/06/2022', 'SP', 'Jardim São Carlos (Zona Leste)', '08411-530', 'Rua Aracazeiro', 'São Paulo', 'lat: -23.5568282, lng: -46.4133316', 'Zona Leste', 'Não Resolvida', 1, 1),
+(46, 'Há insetos estranhos', 'Há um acúmulo de água parada aqui.', 'imgDenuncia/agua.webp', '28/06/2022', 'SP', 'Vila Ema', '03277-030', 'Rua Roberto Morel', 'São Paulo', 'lat: -23.58386, lng: -46.5461581', 'Zona Leste', 'Não Resolvida', 1, 2),
+(48, 'Está impossibilitando minha pa', 'Descartaram entulho no meio da rua!!', 'imgDenuncia/entulho-na-rua.jpg', '28/06/2022', 'SP', 'Jardim Nair', '08071-130', 'Rua Rafael Zimbardi', 'São Paulo', 'lat: -23.4900846, lng: -46.4459136', 'Zona Leste', 'Não Resolvida', 10, 4);
 
 -- --------------------------------------------------------
 
@@ -143,7 +155,13 @@ INSERT INTO `tbecoponto` (`pk_idEcoponto`, `ufEcoponto`, `logradouroEcoponto`, `
 (41, 'SP', 'São Paulo', 'Jardim Itacolomi', '04385-090', 'Rua Visconde de Santa Isabel', 'São Paulo', 'lat: -23.6631055, lng: -46.6580814', 'Zona Sul', '131'),
 (51, 'SP', 'São Paulo', 'Parque Guarani', '08235-620', 'Rua Manuel Alves da Rocha', 'São Paulo', 'lat: -23.5208853, lng: -46.4635939', 'Zona Leste', '584'),
 (52, 'SP', 'São Paulo', 'Jardim Nossa Senhora do Carmo', '08275-310', 'Rua Machado Nunes', 'São Paulo', 'lat: -23.5790199, lng: -46.486113', 'Zona Leste', '95'),
-(55, 'SP', 'São Paulo', 'Vila Santa Cruz (Zona Leste)', '08411-010', 'Rua da Passagem Funda', 'São Paulo', 'lat: -23.5552296, lng: -46.4129776', 'Zona Leste', '250');
+(55, 'SP', 'São Paulo', 'Vila Santa Cruz (Zona Leste)', '08411-010', 'Rua da Passagem Funda', 'São Paulo', 'lat: -23.5552296, lng: -46.4129776', 'Zona Leste', '250'),
+(56, 'SP', 'São Paulo', 'Jardim São Carlos (Zona Leste)', '08062-520', 'Rua El Rey', 'São Paulo', 'lat: -23.5095788, lng: -46.4721889', 'Zona Leste', '508'),
+(57, 'SP', 'São Paulo', 'Jardim Santa Margarida', '08191-250', 'Rua Duarte Martins Mourão', 'São Paulo', 'lat: -23.478025, lng: -46.3830729', 'Zona Leste', '307'),
+(58, 'SP', 'São Paulo', 'Liberdade', '01517-100', 'Viaduto 31 de Março', 'São Paulo', 'lat: -23.5564135, lng: -46.6288282', 'Zona Oeste', '198'),
+(59, 'SP', 'São Paulo', 'Parque Residencial Oratorio', '03266-200', 'Rua João Gregório Lemos', 'São Paulo', 'lat: -23.5991018, lng: -46.5350304', 'Zona Leste', '307'),
+(60, 'SP', 'São Paulo', 'Conjunto Residencial Sitio Oratório', '03978-310', 'Rua dos Voras', 'São Paulo', 'lat: -23.6233137, lng: -46.509249', 'Zona Sul', '25'),
+(61, 'SP', 'Santo André', 'Vila Linda', '09175-670', 'Rua Grajaú', 'São Paulo', 'lat: -23.6870417, lng: -46.517953', 'Zona Sul', '45');
 
 -- --------------------------------------------------------
 
@@ -178,7 +196,8 @@ CREATE TABLE `tbtelusuario` (
 
 INSERT INTO `tbtelusuario` (`pk_TelUsuario`, `numTelUsuario`, `fk_idUsuario`) VALUES
 (1, '(11) 97791-', 1),
-(8, '1197778855', 9);
+(8, '1197778855', 9),
+(9, '(11) 98726-', 10);
 
 -- --------------------------------------------------------
 
@@ -200,9 +219,10 @@ CREATE TABLE `tbusuario` (
 --
 
 INSERT INTO `tbusuario` (`pk_Usuario`, `nomeUsuario`, `emailUsuario`, `senhaUsuario`, `cepUsuario`, `imgUsuario`) VALUES
-(1, 'Gui', 'gui@gmail.com', '123', '01548000', 'imgUsuario/leno-brego.jpg'),
+(1, 'Guilherme', 'gui@gmail.com', '123', '01548000', 'imgUsuario/leno-brego.jpg'),
 (7, 'Nycolas', 'nyco@gmail.com', '123', '08152130', NULL),
-(9, 'Cristiano Ronaldo', 'cr7@gmail.com', '123', '08411-31', 'imgUsuario/th (4).jpg');
+(9, 'Cristiano Ronaldo', 'cr7@gmail.com', '123', '08411-31', 'imgUsuario/th (4).jpg'),
+(10, 'Ricardo Freire', 'ricardo@gmail.com', '123', '08411-530', 'imgUsuario/ricardo.jpg');
 
 --
 -- Índices para tabelas despejadas
@@ -278,7 +298,7 @@ ALTER TABLE `tbadm`
 -- AUTO_INCREMENT de tabela `tbcategoria`
 --
 ALTER TABLE `tbcategoria`
-  MODIFY `pk_idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `pk_idCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `tbchatbot`
@@ -290,13 +310,13 @@ ALTER TABLE `tbchatbot`
 -- AUTO_INCREMENT de tabela `tbdenuncia`
 --
 ALTER TABLE `tbdenuncia`
-  MODIFY `pk_idDenuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `pk_idDenuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT de tabela `tbecoponto`
 --
 ALTER TABLE `tbecoponto`
-  MODIFY `pk_idEcoponto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `pk_idEcoponto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT de tabela `tbrespadm`
@@ -308,13 +328,13 @@ ALTER TABLE `tbrespadm`
 -- AUTO_INCREMENT de tabela `tbtelusuario`
 --
 ALTER TABLE `tbtelusuario`
-  MODIFY `pk_TelUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `pk_TelUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `tbusuario`
 --
 ALTER TABLE `tbusuario`
-  MODIFY `pk_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `pk_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restrições para despejos de tabelas
