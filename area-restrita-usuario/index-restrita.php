@@ -68,7 +68,7 @@
             $_SESSION['msgDenunciaCriada'] = FALSE; 
 
         ?>
-        <div class="toast" role="alert" id="aviso" aria-live="assertive" aria-atomic="true">
+        <div class="toast ajuste-toast" role="alert" id="aviso" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
             <img src="../imagens/reciclagem.png" style="width:20px;"  class="rounded me-2" alt="...">
             <strong class="me-auto">AVISO</strong>

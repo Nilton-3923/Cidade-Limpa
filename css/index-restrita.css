@@ -119,6 +119,8 @@ body{
 }
 .info-denuncia{
     background:linear-gradient(to top,#012E40 70%,transparent 100%),url(../imagens/bem-vindo.jpg);
+    background-repeat:no-repeat;
+    background-position:50% -20%;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -751,6 +753,12 @@ main {
 .btn-positivo{
     background:#13678A!important;
     color:#fff!important;
+}
+.ajuste-toast{
+    position:fixed;
+    top:165px;
+    right:0;
+    z-index:99999;
 }
 @media (max-width: 720px) {
     .navbar-logado{
