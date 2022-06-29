@@ -53,7 +53,6 @@
 
 	<link rel="stylesheet" href="../css/index-adm.css">
     <link rel="stylesheet" href="../css/cadastro-ecoponto.css">
-    <link rel="stylesheet" href="../css/cadastro-ecoponto2.css">
     <link rel="stylesheet" href="../css/toast.css">
     <link rel="stylesheet" href="../css/update-denuncia-modal.css">
     <link rel="stylesheet" href="../css/reset.css">
@@ -111,7 +110,7 @@
 				</form>
 				<span class="divider"></span>
 				<div class="profile">
-					<img src="../imagens/sair-adm.png" alt="">
+					<img style="transform:rotate(90deg);"src="../imagens/sair-adm.png" alt="">
 					<ul class="profile-link">
 						<li><a href="../session/logout-adm.php"><i class='bx bxs-log-out-circle' ></i> Sair</a></li>
 					</ul>
@@ -217,156 +216,168 @@
         
 
             <div class="cadastro-ecoponto">
-                
-                <h1>Cadastrar Ecoponto</h1>
-                <form action="../cadastro/objeto-cadastro-ecoponto.php" method="post" class="">
+                <h1 class="ajuste-h1-00154">Cadastrar Ecoponto</h1>
+                <form class="ajuste-01045"action="../cadastro/objeto-cadastro-ecoponto.php" method="post" >
+                    <div class="ajuste-00154">
+                        <div class="ajuste-00145">
+                            <div class="form-floating">
+                                <input type="text" required placeholder="CEP" id="cep" name="cep" class="form-control  input-normal" maxlength="9">
+                                <label for="floatingInput">CEP</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" required placeholder="Bairro" id="bairro" name="bairro" class="form-control input-normal">
+                                <label for="floatingInput">Bairro</label>
+                            </div>
         
-                    <div class="form-floating">
-                        <input type="text" required placeholder="CEP" id="cep" name="cep" class="form-control  input-normal" maxlength="9">
-                        <label for="floatingInput">CEP</label>
-                    </div>
-                    <div class="form-floating">
-                        <input type="text" required placeholder="Bairro" id="bairro" name="bairro" class="form-control input-normal">
-                        <label for="floatingInput">Bairro</label>
-                    </div>
-
-                    <div class="form-floating">
-                        <input type="text" required placeholder="Rua" id="rua" name="rua" class="form-control input-normal">
-                        <label for="floatingInput">Rua</label>
-                    </div>
-
-                    <div class="box-flex">
-                        <div class="form-floating">
-                            <input type="text" required placeholder="Cidade" id="cidade" name="cidade" class="form-control input-normal">
-                            <label for="floatingInput">Cidade</label>
-                        </div>
-                        <div class="form-floating">
-                            <input type="text" required placeholder="Uf" id="uf" name="uf" class="form-control input-menor input-inline">
-                            <label for="floatingInput">UF</label>
-                        </div>
-                    </div>
-
-                    <div class="form-floating">
-                        <input type="text" required placeholder="Número" name="numero" class="form-control input-menor">
-                        <label for="floatingInput">Número</label>
-                    </div>
-
-                    <select name="regiao" required id="regiao" class="form-select input-normal" aria-label="Default select example">
-                        <option selected disabled value="">Selecione a região de São Paulo</option>
-                        <option value="Zona Leste">Zona Leste</option>
-                        <option value="Zona Norte">Zona Norte</option>
-                        <option value="Zona Sul">Zona Sul</option>
-                        <option value="Zona Oeste">Zona Oeste</option>
-                    </select><br>
+                            <div class="form-floating">
+                                <input type="text" required placeholder="Rua" id="rua" name="rua" class="form-control input-normal">
+                                <label for="floatingInput">Rua</label>
+                            </div>
         
-                    <input type="submit" class="btn btn-secondary" value="Cadastrar">
+                            <div class="box-flex">
+                                <div class="form-floating">
+                                    <input type="text" required placeholder="Cidade" id="cidade" name="cidade" class="form-control input-normal">
+                                    <label for="floatingInput">Cidade</label>
+                                </div>
+                            </div>
+                            <select name="regiao" required id="regiao" class="form-select input-normal" aria-label="Default select example">
+                                <option selected disabled value="">Selecione a região de São Paulo</option>
+                                <option value="Zona Leste">Zona Leste</option>
+                                <option value="Zona Norte">Zona Norte</option>
+                                <option value="Zona Sul">Zona Sul</option>
+                                <option value="Zona Oeste">Zona Oeste</option>
+                            </select>
+                        </div>
+                        <div class="ajuste-00014">
+                            <div class="form-floating">
+                                <input type="text" required placeholder="Uf" id="uf" name="uf" class="form-control input-menor input-inline">
+                                <label for="floatingInput">UF</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" required placeholder="Número" name="numero" class="form-control input-menor">
+                                <label for="floatingInput">Número</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+        
+                    <input type="submit" class="btn btn-secondary ajuste-btn-01054" value="Cadastrar">
                 </form>
             </div>
             
             <div class="cadastro-excel">
-                <h2 class="title2">Cadastrar com uma planilha Excel</h2>
-                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Tutorial
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <img src="../imagens/logo.png" class="logo-update" alt="">
-                        <h5 class="alterar-label">Passo 1</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <span><img src="../imagens/atencao.png" style="width: 30px;" alt=""></span> Faça o dowload do modelo formatado
-                        <hr><p>Clique aqui:</p><img src="../imagens/formato-xml.jpg" alt="" srcset="">
-                    </div>
-                    <div class="modal-footer">
-                       
-                        <button type="button"  data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#exampleModal2" class="btn btn-primary">Proximo</button>
-                    </div>
+                <div class="ajuste-1558">
+                    <div class="ajuste-11547">
+                        <div class="ajuste-1548">
+                            <h2 class="title2">Cadastrar com uma planilha Excel</h2>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Tutorial
+                            </button>
+                        </div>
+        
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <img src="../imagens/logo.png" class="logo-update" alt="">
+                                <h5 class="alterar-label">Passo 1</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <span><img src="../imagens/atencao.png" style="width: 30px;" alt=""></span> Faça o dowload do modelo formatado
+                                <hr><p>Clique aqui:</p><img src="../imagens/formato-xml.jpg" alt="" srcset="">
+                            </div>
+                            <div class="modal-footer">
+                               
+                                <button type="button"  data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#exampleModal2" class="btn btn-primary">Proximo</button>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <img src="../imagens/logo.png" class="logo-update" alt="">
+                                <h5 class="alterar-label">Passo 2</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <span><img src="../imagens/atencao.png" style="width: 30px;" alt=""></span> Preencha os Dados de localização
+                                <hr>
+                                <img src="../imagens/dadosEcopontos.jpg" style="width: 300px;" alt="" srcset="">
+                            </div>
+                            <div class="modal-footer">
+                               
+                                <button type="button"  data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#exampleModal3" class="btn btn-primary">Proximo</button>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <img src="../imagens/logo.png" class="logo-update" alt="">
+                                <h5 class="alterar-label">Passo 3</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <span><img src="../imagens/atencao.png" style="width: 30px;" alt=""></span> Salve sua planilha com os dados 
+                                <hr>
+                                <img src="../imagens/salvar.jpg" style="width: 250px;" alt="" srcset="">
+                            </div>
+                            <div class="modal-footer">
+                               
+                                <button type="button"  data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#exampleModal4" class="btn btn-primary">Proximo</button>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <img src="../imagens/logo.png" class="logo-update" alt="">
+                                <h5 class="alterar-label">Passo 4</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <span><img src="../imagens/verificado.png" style="width: 25px;" alt=""></span> Importe sua planilha
+                                <hr>
+                                <img src="../imagens/importar.jpg" style="width: 400px;" alt="" srcset="">
+                            </div>
+                            <div class="modal-footer">
+                               
+                                <button type="button"  data-bs-dismiss="modal" data-bs-toggle="modal"  class="btn btn-primary">Proximo</button>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <p>* É necessário que a planilha tenha sido salva como .xml</p>
+                        <a href="xml/formato-cadastro.xml" download="Formato-cadastro">Download do EXCEL(Exemplo)</a>
+                        <form class="ajuste-1566"action="../cadastro/cadastro-xml-ecopontos.php" method="post" enctype="multipart/form-data">
+                            <input type="file" name="arquivo" class="form-control input-normal">
+                            <input type="submit" class="btn btn-secondary" value="Cadastrar">
+                        </form>
                     </div>
                 </div>
-                </div>
-                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <img src="../imagens/logo.png" class="logo-update" alt="">
-                        <h5 class="alterar-label">Passo 2</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <span><img src="../imagens/atencao.png" style="width: 30px;" alt=""></span> Preencha os Dados de localização
-                        <hr>
-                        <img src="../imagens/dadosEcopontos.jpg" style="width: 300px;" alt="" srcset="">
-                    </div>
-                    <div class="modal-footer">
-                       
-                        <button type="button"  data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#exampleModal3" class="btn btn-primary">Proximo</button>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <img src="../imagens/logo.png" class="logo-update" alt="">
-                        <h5 class="alterar-label">Passo 3</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <span><img src="../imagens/atencao.png" style="width: 30px;" alt=""></span> Salve sua planilha com os dados 
-                        <hr>
-                        <img src="../imagens/salvar.jpg" style="width: 250px;" alt="" srcset="">
-                    </div>
-                    <div class="modal-footer">
-                       
-                        <button type="button"  data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#exampleModal4" class="btn btn-primary">Proximo</button>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <img src="../imagens/logo.png" class="logo-update" alt="">
-                        <h5 class="alterar-label">Passo 4</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <span><img src="../imagens/verificado.png" style="width: 25px;" alt=""></span> Importe sua planilha
-                        <hr>
-                        <img src="../imagens/importar.jpg" style="width: 400px;" alt="" srcset="">
-                    </div>
-                    <div class="modal-footer">
-                       
-                        <button type="button"  data-bs-dismiss="modal" data-bs-toggle="modal"  class="btn btn-primary">Proximo</button>
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <p>* É necessário que a planilha tenha sido salva como .xml</p>
-                <a href="xml/formato-cadastro.xml" download="Formato-cadastro">Download do EXCEL(Exemplo)</a>
-                <form action="../cadastro/cadastro-xml-ecopontos.php" method="post" enctype="multipart/form-data">
-                    <input type="file" name="arquivo" class="form-control input-normal">
-                    <input type="submit" class="btn btn-secondary" value="Cadastrar">
-                </form>
-                
+                <img src="../imagens/excel.jpg">
             </div>
 
-            <div>
-                <h2>Mapa com os Ecopontos</h2>
-                <div>
-                    <form action="../objetos/objeto-pesquisar-mapa.php?localizacao=adm" method="POST">
-                        <input type="text" placeholder="digite a localização" name="pesquisa">
-                        <button type="submit">Pesquisar</button>
-                    </form>
+            <div class="ajuste-8965">
+                <div class="ajuste-8984">
+                    <h2>Mapa com os Ecopontos</h2>
+                    <div>
+                        <form class="ajuste-8888"action="../objetos/objeto-pesquisar-mapa.php?localizacao=adm" method="POST">
+                            <input class="form-control"type="text" placeholder="digite a localização" name="pesquisa">
+                            <button class="btn btn-secondary"type="submit">Pesquisar</button>
+                        </form>
+                    </div>
                 </div>
-                <div id="map" style="width: 70%; height: 500px;"></div>
+                <div id="map" style="width: 70%; height: 100%;"></div>
             </div>
 
             <span id="mensagem"></span>
