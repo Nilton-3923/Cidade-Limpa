@@ -151,7 +151,7 @@
             
             
             <div class="div-principal">
-            <h1 class="titulo-pagina">Criar Denuncia</h1>
+            <h1 class="titulo-pagina">Criar Denúncia</h1>
             <div class="ajuste-info-e-mapa">
                 <div id="mapa">
                     <div class="ajuste-pesquisa">
@@ -225,7 +225,7 @@
                     foreach($teste as $mensagemAdm){
                 ?>
                 <div>
-                    Denúncia do dia: <?php echo $mensagemAdm['pk_idDenuncia'].
+                    Denúncia do dia: <?php echo $mensagemAdm['dataDenuncia'].
                     "<br>
                     localização:".$mensagemAdm['ruaDenuncia'].",".$mensagemAdm['bairroDenuncia']."-".$mensagemAdm['ufDenuncia']
                     ."<br>".
@@ -269,39 +269,33 @@
                         <form action="../CRUD/objeto-alterar-denuncia.php" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="pk_idDenuncia" value="<?php echo $linha['pk_idDenuncia'];?>">
                             <div class="div-update-den" >
-                                <h2> <?php echo $linha['tituloDenuncia']; ?> </h2>
+                                <h1><?php echo $linha['tituloDenuncia'];?></h1>
+                            </div>
+                            <?php 
+                                    if($linha['statusDenuncia'] == 'Resolvida'){
+                                        $btn = 'disabled';
+                                        $tituloBtn = 'ok';
+                                    }
+                                    else{
+                                        $btn = '';
+                                        $tituloBtn = 'Denúncia Resolvida';
+                                    }
+                            ?>
+                            <div class="div-update-den">
+                                <label for="" class="title-updateDen" >Descrição da Denúncia</label><br>
+                                <?php echo $linha['descDenuncia']; ?>
                             </div>
                             <div class="div-update-den">
-                                <label for="" class="title-updateDen" >Descrição da Denúncia</label>
-                                <input type="text" name="descDenuncia" class="form-control" value="<?php echo $linha['descDenuncia']; ?>">
-                            </div>
-                            <div class="div-update-den">
+                                
                                 <label for="" class="title-updateDen">Categorias</label>
-                                <select name="txtCategoria" class="form-select" id="">
-                                    <?php
-                                        require_once("../classe/Categoria.php");
-                    
-                                        $categoria = new Categoria();
-                                        $listaCat = $categoria->listar();
-                                        foreach($listaCat as $categorias){
-                                            if($linha['fk_idCategoria']==$categorias[0]){
-                                                $sel = "selected";
-                                            }
-                                            else{
-                                                $sel = " ";
-                                            }
-                                    ?>
-                                    <option value="<?php echo $categorias['pk_idCategoria'];?>" <?php echo $sel; ?>><?php echo $categorias['campoCategoria']; ?></option>
-                                        <?php } ?>
-                                </select>
+                                <p><?php  echo $linha['campoCategoria'];?></p><br>
+                                <p><?php echo $linha['statusDenuncia'];?></p>
                             </div>
-                            <div class="div-update-den">
-                                <input class="form-control" type="file" name="imgDenuncia">
-                            </div>
-                            <button type="button" class="btn-del-den" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $linha[0]; ?>">
-                                    Denúncia Resolvida
+                            
+                            <button <?php echo $btn; ?> type="button" class="btn-del-den" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?php echo $linha[0]; ?>">
+                                    <?php echo $tituloBtn; ?>
                             </button>
-                            <input type="submit" class="btn-update-den btn-positivo" value="Salvar">
+                            <input type="button" class="btn-update-den btn-positivo" data-bs-dismiss="modal" aria-label="Close" value="Cancela">
                         </form>
                     </div>
                 </div>
@@ -327,7 +321,7 @@
                    Tem cer de que essa denúncia foi resolvida?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn-del-den" data-bs-dismiss="modal">Cancelar</button>
+                    <button  type="button" class="btn-del-den" data-bs-dismiss="modal">Cancelar</button>
                     <a class="btn-update-den"href="../CRUD/objeto-deletar-denuncia.php?pk_idDenuncia=<?php echo $linha['pk_idDenuncia'];?>">Sim, Tenho.</a>
                 </div>
                 </div>

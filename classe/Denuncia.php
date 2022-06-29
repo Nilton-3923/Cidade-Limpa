@@ -285,13 +285,18 @@
         public function deletarDenuncia($idDenuncia){
             $conexao = Conexao::pegarConexao();
 
-            $deleteDenuncia = $conexao->prepare("DELETE FROM tbDenuncia
-                                                WHERE pk_idDenuncia = $idDenuncia");
+            $deleteDenuncia = $conexao->prepare("UPDATE tbDenuncia 
+                                                    SET
+                                                    statusDenuncia = 'Resolvida'
+                                                        WHERE pk_idDenuncia = '$idDenuncia'");
+
 
             $deleteDenuncia->execute();
-            $contagem = $conexao->prepare("UPDATE tbAdm 
-                                            SET denunciaReslvAdm = denunciaReslvAdm+1");
-            $contagem->execute();
+
+            $deleteMsg = $conexao->prepare("DELETE FROM tbRespAdm
+                                            WHERE fk_idDenuncia = '$idDenuncia'");
+
+            $deleteMsg->execute();
 
             return 'deletado';
 
